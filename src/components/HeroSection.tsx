@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ dict, formDict }: HeroSectionProps) {
   return (
-    <section className="relative pt-20 pb-32 md:pt-32 md:pb-48 overflow-hidden">
+    <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-[#fafafa]">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[color-mix(in_srgb,var(--color-primary),transparent_95%)] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>

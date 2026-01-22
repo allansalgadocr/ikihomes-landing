@@ -3,6 +3,7 @@ import Link from "next/link";
 interface FooterProps {
   dict: {
     badge: string;
+    trust_line?: string;
     links: {
       about: string;
       contact: string;
@@ -31,6 +32,13 @@ export function Footer({ dict }: FooterProps) {
              {dict.contact_email}
            </a>
         </div>
+
+        {/* Trust Line (New) */}
+        {dict.trust_line && (
+            <div className="hidden md:block text-sm text-gray-400 font-medium">
+                {dict.trust_line}
+            </div>
+        )}
         
         {/* Legal & Nav Links */}
         <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 font-medium">
