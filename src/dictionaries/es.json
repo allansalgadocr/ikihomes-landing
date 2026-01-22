@@ -1,9 +1,10 @@
 {
     "hero": {
-        "badge": "Pronto en Costa Rica",
-        "headline_1": "La plataforma inmobiliaria inteligente",
-        "headline_2": "para agentes modernos.",
-        "subheadline": "Listados, leads, CRM e insights de IA — todo en un solo lugar. Deja de hacer malabares con herramientas sueltas y empieza a cerrar tratos.",
+        "badge": "Próximamente en Costa Rica",
+        "headline_1": "Una forma profesional",
+        "headline_2": "de vender propiedades.",
+        "subheadline": "Centraliza tus propiedades, comparte enlaces confiables por WhatsApp y gestiona leads sin caos.",
+        "cta": "Únete a la lista de espera",
         "logo_alt": "Logo de IkiHomes"
     },
     "form": {
@@ -15,66 +16,54 @@
             "developer": "Desarrollador",
             "buyer": "Comprador"
         },
-        "button": "Obtener Acceso Anticipado",
+        "button": "Únete a la lista de espera",
         "button_pending": "Uniéndote...",
-        "footer": "Cupos limitados para la beta. Sin spam, nunca.",
+        "footer": "No spam. Solo avisos importantes sobre el lanzamiento.",
         "success_title": "Bienvenido al círculo íntimo.",
         "success_msg": "Estás en la lista. Revisa tu bandeja de entrada.",
         "add_another": "Agregar otro correo"
     },
     "value_props": {
-        "title": "Todo lo que necesitas para ganar",
-        "subtitle": "Hemos eliminado el desorden y nos enfocamos en los cuatro pilares de un negocio inmobiliario moderno.",
+        "title": "Por qué IkiHomes",
+        "subtitle": "Diseñado para agentes inmobiliarios en Costa Rica.",
+        "cta": "Únete a la lista de espera",
         "items": [
             {
-                "title": "Plataforma Todo-en-Uno",
-                "description": "Listados, CRM, leads y análisis en un solo panel. No más cambios de pestañas."
+                "title": "Comparte profesionalmente",
+                "description": "Propiedades con enlaces limpios y confiables para WhatsApp."
             },
             {
-                "title": "Creado para Agentes",
-                "description": "Diseñado para tu flujo de trabajo diario, no como un portal genérico. Tú eres la prioridad."
+                "title": "Centraliza todo",
+                "description": "Tus conversaciones y leads en un solo lugar, sin caos."
             },
             {
-                "title": "Insights con IA",
-                "description": "Calificación inteligente de leads y descripciones automáticas para ahorrarte horas."
-            },
-            {
-                "title": "Hecho para Crecer",
-                "description": "Herramientas que escalan desde agente individual hasta agencia. Crecemos contigo."
+                "title": "Hecho para Costa Rica",
+                "description": "Adaptado a las necesidades reales del mercado local."
             }
         ]
     },
-    "differentiation": {
-        "title": "No es otro clon del MLS",
-        "subtitle_1": "La mayoría de plataformas son para navegar. Construimos IkiHomes para ",
-        "subtitle_2": "cerrar ventas",
-        "competitor": {
-            "title": "Los Otros",
-            "items": [
-                "Funciones de CRM infladas que nunca usas",
-                "Interfaces lentas y obsoletas",
-                "Listados genéricos de portales locales",
-                "Soporte lento y análisis básicos"
-            ]
-        },
-        "ikihomes": {
-            "badge": "ELECCIÓN MODERNA",
-            "title": "Plataforma IkiHomes",
-            "items": [
-                "Diseñado para velocidad y control",
-                "Diseño premium centrado en el agente",
-                "IA que escribe descripciones y califica leads",
-                "Alta visibilidad para los mejores agentes"
-            ]
-        }
+    "social_proof": {
+        "title": "Construyendo confianza",
+        "items": [
+            "Hecho en Costa Rica",
+            "Diseñado para agentes reales",
+            "Actualmente en beta privada"
+        ],
+        "statement": "Estamos trabajando con agentes inmobiliarios locales para el lanzamiento."
+    },
+    "about": {
+        "title": "Sobre Nosotros",
+        "content": "IkiHomes es una plataforma diseñada para profesionalizar la forma en que los agentes inmobiliarios gestionan y comparten propiedades."
     },
     "footer": {
-        "badge": "Llegando a Costa Rica",
+        "badge": "Pronto en Costa Rica",
         "links": {
             "about": "Nosotros",
             "contact": "Contacto",
-            "privacy": "Privacidad"
+            "privacy": "Privacidad",
+            "terms": "Términos"
         },
+        "contact_email": "contact@ikihomescr.com",
         "copyright": "IkiHomes. Todos los derechos reservados."
     }
 }

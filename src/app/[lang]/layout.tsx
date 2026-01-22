@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Arsenal_SC, Poppins } from "next/font/google";
+import { Urbanist, Source_Sans_3 } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import "../globals.css";
 
-const arsenalSC = Arsenal_SC({
-  variable: "--font-arsenal-sc",
+const urbanist = Urbanist({
+  variable: "--font-urbanist",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export async function generateMetadata(
@@ -24,11 +24,11 @@ export async function generateMetadata(
   
   const isEs = lang === "es";
   const title = isEs 
-    ? "IkiHomes - La Plataforma Inmobiliaria Inteligente" 
-    : "IkiHomes - The Smarter Real Estate Platform";
+    ? "IkiHomes | Plataforma Inmobiliaria para Agentes en Costa Rica" 
+    : "IkiHomes | Real Estate Platform for Agents in Costa Rica";
   const description = isEs
-    ? "Listados, leads, CRM e insights de IA — todo en un solo lugar. Pronto en Costa Rica."
-    : "Listings, leads, CRM, and AI insights — all in one place. Coming soon for modern agents in Costa Rica.";
+    ? "Centraliza tus propiedades, comparte enlaces confiables por WhatsApp y gestiona leads sin caos. La nueva forma profesional de vender en Costa Rica."
+    : "Centralize your properties, share trusted WhatsApp links, and manage leads without chaos. The new professional way to sell in Costa Rica.";
 
   return {
     title,
@@ -66,7 +66,7 @@ export default async function RootLayout(
         <link rel="alternate" hrefLang="x-default" href="https://ikihomescr.com/en" />
       </head>
       <body
-        className={`${arsenalSC.variable} ${poppins.variable} antialiased`}
+        className={`${urbanist.variable} ${sourceSans.variable} antialiased`}
       >
         <LanguageSelector />
         {children}

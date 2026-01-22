@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const locales = ["en", "es"];
-const defaultLocale = "en";
+const defaultLocale = "es";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -25,6 +25,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    "/((?!_next|favicon.ico|favicon.svg|apple-touch-icon.png|logo.svg|og-image.png).*)",
+    "/((?!_next|favicon.ico|favicon.svg|apple-touch-icon.png|logo.svg|og-image.png|hero-dashboard.png|whatsapp-preview.png|ui-detail-card.png|map-visual.png).*)",
   ],
 };

@@ -19,13 +19,13 @@ export function LanguageSelector() {
 
   return (
     <div className="absolute top-4 right-4 md:top-8 md:right-8 z-50">
-      <div className="bg-white/80 backdrop-blur-md border border-olive/20 rounded-full p-1 flex shadow-sm">
+      <div className="bg-white/80 backdrop-blur-md border border-primary/20 rounded-full p-1 flex shadow-sm">
         <button
           onClick={() => handleLanguageChange("en")}
           className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${
             currentLang === "en"
-              ? "bg-olive text-white shadow-sm"
-              : "text-gray-500 hover:text-olive"
+              ? "bg-primary text-white shadow-sm"
+              : "text-gray-500 hover:text-primary"
           }`}
         >
           EN
@@ -34,8 +34,8 @@ export function LanguageSelector() {
           onClick={() => handleLanguageChange("es")}
           className={`px-3 py-1 text-sm font-medium rounded-full transition-all ${
             currentLang === "es"
-              ? "bg-olive text-white shadow-sm"
-              : "text-gray-500 hover:text-olive"
+              ? "bg-primary text-white shadow-sm"
+              : "text-gray-500 hover:text-primary"
           }`}
         >
           ES

@@ -1,9 +1,10 @@
 {
     "hero": {
         "badge": "Coming Soon to Costa Rica",
-        "headline_1": "The smarter real estate platform",
-        "headline_2": "for modern agents.",
-        "subheadline": "Listings, leads, CRM, and AI insights — all in one place. Stop juggling customized tools and start closing focused deals.",
+        "headline_1": "A professional way",
+        "headline_2": "to sell properties.",
+        "subheadline": "Centralize your properties, share trusted WhatsApp links, and manage leads without chaos.",
+        "cta": "Join the Waitlist",
         "logo_alt": "IkiHomes Logo"
     },
     "form": {
@@ -15,66 +16,54 @@
             "developer": "Developer",
             "buyer": "Buyer"
         },
-        "button": "Get Early Access",
+        "button": "Join the Waitlist",
         "button_pending": "Joining...",
-        "footer": "Limited spots available for the beta. No spam, ever.",
+        "footer": "No spam. Only important launch updates.",
         "success_title": "Welcome to the inner circle.",
         "success_msg": "You're on the list. Watch your inbox.",
         "add_another": "Add another email"
     },
     "value_props": {
-        "title": "Everything you need to win",
-        "subtitle": "We've stripped away the clutter and focused on the four pillars of a modern real estate business.",
+        "title": "Why IkiHomes",
+        "subtitle": "Designed for real estate agents in Costa Rica.",
+        "cta": "Join the Waitlist",
         "items": [
             {
-                "title": "All-in-One Platform",
-                "description": "Listings, CRM, leads, and analytics in one dashboard. No more tab switching."
+                "title": "Share Professionally",
+                "description": "Properties with clean, trusted links for WhatsApp."
             },
             {
-                "title": "Built for Agents",
-                "description": "Designed for your daily workflow, not just as a generic portal. You are the priority."
+                "title": "Centralize Everything",
+                "description": "Your conversations and leads in one place, no chaos."
             },
             {
-                "title": "AI-Powered Insights",
-                "description": "Smarter lead scoring and automated listing descriptions to save you hours."
-            },
-            {
-                "title": "Made for Growth",
-                "description": "Tools that scale from solo agent to agency. We grow as you grow."
+                "title": "Made for Costa Rica",
+                "description": "Adapted to the real needs of the local market."
             }
         ]
     },
-    "differentiation": {
-        "title": "Not another MLS clone",
-        "subtitle_1": "Most platforms are built for browsing. We built IkiHomes for ",
-        "subtitle_2": "closing",
-        "competitor": {
-            "title": "The Other Guys",
-            "items": [
-                "Bloated CRM features you never use",
-                "Clunky, outdated interfaces",
-                "Generic local portal listings",
-                "Slow support and basic analytics"
-            ]
-        },
-        "ikihomes": {
-            "badge": "MODERN CHOICE",
-            "title": "IkiHomes Platform",
-            "items": [
-                "Purpose-built for speed and control",
-                "Premium, agent-centric design",
-                "AI that writes descriptions & scores leads",
-                "High-visibility for top agents"
-            ]
-        }
+    "social_proof": {
+        "title": "Building Trust",
+        "items": [
+            "Made in Costa Rica",
+            "Designed for Real Agents",
+            "Currently in Private Beta"
+        ],
+        "statement": "We are working with local real estate agents for the launch."
+    },
+    "about": {
+        "title": "About Us",
+        "content": "IkiHomes is a platform designed to professionalize how real estate agents manage and share properties."
     },
     "footer": {
         "badge": "Coming to Costa Rica",
         "links": {
             "about": "About",
             "contact": "Contact",
-            "privacy": "Privacy"
+            "privacy": "Privacy",
+            "terms": "Terms"
         },
+        "contact_email": "contact@ikihomescr.com",
         "copyright": "IkiHomes. All rights reserved."
     }
 }

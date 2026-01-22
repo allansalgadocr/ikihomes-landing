@@ -1,15 +1,8 @@
-import { 
-  Squares2X2Icon, 
-  UserGroupIcon, 
-  SparklesIcon, 
-  ChartBarIcon 
-} from "@heroicons/react/24/outline";
-import { FeatureCard } from "./FeatureCard";
-
 interface ValuePropsSectionProps {
   dict: {
     title: string;
     subtitle: string;
+    cta?: string;
     items: Array<{
       title: string;
       description: string;
@@ -18,33 +11,54 @@ interface ValuePropsSectionProps {
 }
 
 export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
-  const icons = [
-    <Squares2X2Icon key="1" className="w-6 h-6" />,
-    <UserGroupIcon key="2" className="w-6 h-6" />,
-    <SparklesIcon key="3" className="w-6 h-6" />,
-    <ChartBarIcon key="4" className="w-6 h-6" />,
-  ];
-
   return (
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-arsenal">{dict.title}</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-urbanist">{dict.title}</h2>
           <p className="text-gray-600">
             {dict.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 3 Column Grid for Pain/Benefit/Differentiator */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {dict.items.map((feature, index) => (
-            <FeatureCard 
-              key={index} 
-              icon={icons[index]} 
-              title={feature.title} 
-              description={feature.description} 
-            />
+            <div key={index} className="p-6 bg-gray-50 rounded-2xl border border-gray-100/50 hover:shadow-sm transition-shadow flex flex-col">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 font-urbanist">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                    {feature.description}
+                </p>
+                {index === 0 && (
+                   <div className="mt-6 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                      <img src="/whatsapp-preview.png" alt="WhatsApp Sharing Preview" className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" />
+                   </div>
+                )}
+                {index === 1 && (
+                   <div className="mt-6 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                      <img src="/ui-detail-card.png" alt="UI Detail Preview" className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" />
+                   </div>
+                )}
+                {index === 2 && (
+                   <div className="mt-6 rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                      <img src="/map-visual.png" alt="Cost Rica Map Preview" className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" />
+                   </div>
+                )}
+            </div>
           ))}
         </div>
+
+        {/* Secondary CTA */}
+        {dict.cta && (
+          <div className="text-center">
+            <a 
+              href="#join-waitlist"
+              className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+            >
+              {dict.cta}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
