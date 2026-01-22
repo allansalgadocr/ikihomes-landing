@@ -49,6 +49,11 @@ export async function generateMetadata(
 
 
 
+
+import { getDictionary } from "../../dictionaries";
+import { StatusBanner } from "@/components/StatusBanner";
+// ... imports
+
 export default async function RootLayout(
   props: {
     children: React.ReactNode;
@@ -57,6 +62,7 @@ export default async function RootLayout(
 ) {
   const { children, params } = props;
   const { lang } = await params;
+  const dict = await getDictionary(lang as "en" | "es");
 
   return (
     <html lang={lang}>
@@ -68,6 +74,7 @@ export default async function RootLayout(
       <body
         className={`${urbanist.variable} ${sourceSans.variable} antialiased`}
       >
+        <StatusBanner text={dict.status_banner} />
         <LanguageSelector />
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />

@@ -1,8 +1,10 @@
 {
+    "status_banner": "IkiHomes está en beta privada. Estamos construyendo una nueva forma de publicar propiedades en Costa Rica.",
     "hero": {
         "badge": "Próximamente en Costa Rica",
         "headline_1": "Una forma profesional",
         "headline_2": "de vender propiedades.",
+        "grounding": "Diseñado para agentes que quieren trabajar con orden, claridad y confianza.",
         "subheadline": "Centraliza tus propiedades, comparte enlaces confiables por WhatsApp y gestiona leads sin caos.",
         "cta": "Únete a la lista de espera",
         "logo_alt": "Logo de IkiHomes"

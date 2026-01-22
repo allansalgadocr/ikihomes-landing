@@ -8,6 +8,7 @@ interface HeroSectionProps {
     headline_1: string;
     headline_2: string;
     subheadline: string;
+    grounding?: string;
     cta: string; // Not used directly here as it is passed to form or separate button, but keeping for completion
     logo_alt: string;
   };
@@ -38,6 +39,12 @@ export function HeroSection({ dict, formDict }: HeroSectionProps) {
           <span className="font-extrabold text-primary">{dict.headline_2}</span>
         </h1>
         
+        {dict.grounding && (
+          <p className="text-lg md:text-xl text-gray-800 font-medium mb-4 max-w-xl mx-auto animate-fade-in-up delay-150">
+            {dict.grounding}
+          </p>
+        )}
+
         <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl mx-auto animate-fade-in-up delay-200">
           {dict.subheadline}
         </p>

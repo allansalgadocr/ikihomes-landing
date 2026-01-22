@@ -1,8 +1,10 @@
 {
+    "status_banner": "IkiHomes is in private beta. We are building a new way to publish properties in Costa Rica.",
     "hero": {
         "badge": "Coming Soon to Costa Rica",
         "headline_1": "A professional way",
         "headline_2": "to sell properties.",
+        "grounding": "Designed for agents who want to work with order, clarity, and confidence.",
         "subheadline": "Centralize your properties, share trusted WhatsApp links, and manage leads without chaos.",
         "cta": "Join the Waitlist",
         "logo_alt": "IkiHomes Logo"
