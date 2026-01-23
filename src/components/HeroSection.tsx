@@ -20,8 +20,16 @@ export function HeroSection({ dict, formDict }: HeroSectionProps) {
     <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-[#fafafa]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[color-mix(in_srgb,var(--color-primary),transparent_95%)] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[color-mix(in_srgb,var(--color-primary-light),transparent_90%)] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/3"></div>
+         {/* Lifestyle Background Image */}
+         <img 
+            src="/lifestyle-background.png" 
+            alt="Background" 
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+         />
+         <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
+
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[color-mix(in_srgb,var(--color-primary),transparent_95%)] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 z-0"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[color-mix(in_srgb,var(--color-primary-light),transparent_90%)] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/3 z-0"></div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -35,8 +43,8 @@ export function HeroSection({ dict, formDict }: HeroSectionProps) {
         
         
         <h1 className="text-4xl md:text-6xl text-gray-900 mb-6 tracking-tight leading-tight font-urbanist animate-fade-in-up delay-100">
-          <span className="font-semibold text-gray-800">{dict.headline_1}</span> <br className="hidden md:block" />
-          <span className="font-extrabold text-primary">{dict.headline_2}</span>
+          <span className="font-semibold text-gray-800 tracking-tight">{dict.headline_1}</span> <br className="hidden md:block" />
+          <span className="font-extrabold text-primary tracking-tight">{dict.headline_2}</span>
         </h1>
         
         {dict.grounding && (
@@ -60,7 +68,7 @@ export function HeroSection({ dict, formDict }: HeroSectionProps) {
            <img 
               src="/hero-dashboard.png" 
               alt="IkiHomes Dashboard Preview" 
-              className="rounded-xl shadow-2xl border border-gray-200/50 w-full max-w-5xl mx-auto"
+              className="relative rounded-xl shadow-[0_20px_50px_-12px_rgba(45,90,94,0.15)] border border-[rgba(45,90,94,0.1)] w-full max-w-5xl mx-auto"
            />
         </div>
       </div>

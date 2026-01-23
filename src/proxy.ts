@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 const locales = ["en", "es"];
 const defaultLocale = "es";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Check if there is any supported locale in the pathname
@@ -25,6 +25,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    "/((?!_next|favicon.ico|favicon.svg|apple-touch-icon.png|logo.svg|og-image.png|hero-dashboard.png|whatsapp-preview.png|ui-detail-card.png|map-visual.png).*)",
+    "/((?!_next|favicon.ico|favicon.svg|apple-touch-icon.png|logo.svg|og-image.png|hero-dashboard.png|whatsapp-preview.png|ui-detail-card.png|map-visual.png|lifestyle-background.png|costa-rica-map-preview.png|iso-devices.png|founder-headshot.png).*)",
   ],
 };

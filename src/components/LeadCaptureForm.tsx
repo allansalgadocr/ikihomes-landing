@@ -68,7 +68,7 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
             id="email"
             required
             placeholder={dict.email_placeholder}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm min-h-[48px] text-base"
           />
         </div>
         
@@ -78,7 +78,7 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
              <select
               name="role"
               id="role"
-              className="w-full h-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/90 text-gray-600 cursor-pointer"
+              className="w-full h-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/90 text-gray-600 cursor-pointer min-h-[48px] text-base"
              >
                 <option value="Agent">{dict.roles.agent}</option>
                 <option value="Agency Owner">{dict.roles.agency_owner}</option>
