@@ -1,12 +1,14 @@
 {
-    "status_banner": "IkiHomes is in private beta. We are building a new way to publish properties in Costa Rica.",
+    "status_banner": "IkiHomes is now live in Costa Rica. Buyer requests are waiting for agents in your zone.",
     "hero": {
-        "badge": "Coming Soon to Costa Rica",
-        "headline_1": "A professional way",
-        "headline_2": "to sell properties.",
-        "grounding": "Designed for agents who want to work with order, clarity, and confidence.",
-        "subheadline": "Centralize your properties, share trusted WhatsApp links, and manage leads without chaos.",
-        "cta": "Join the Waitlist",
+        "badge": "Real Buyers Are Looking for Agents Like You",
+        "headline_1": "Real buyers request agents.",
+        "headline_2": "Be the first to respond.",
+        "grounding": "Compete on responsiveness. Win clients. Build trust.",
+        "subheadline": "IkiHomes connects Costa Rica buyers with agents who respond fast. Get buyer requests directly in your zone — and let your trust badge speak for you.",
+        "cta": "Start for Free",
+        "cta_secondary": "See how it works ↓",
+        "cta_footnote": "Free plan available · No credit card required",
         "logo_alt": "IkiHomes Logo"
     },
     "form": {
@@ -18,48 +20,48 @@
             "developer": "Developer",
             "buyer": "Buyer"
         },
-        "button": "Join the Waitlist",
-        "button_pending": "Joining...",
-        "footer": "No spam. Only important launch updates.",
-        "success_title": "Welcome to the inner circle.",
-        "success_msg": "You're on the list. Watch your inbox.",
+        "button": "Request Access",
+        "button_pending": "Sending...",
+        "footer": "No spam. Only important platform updates.",
+        "success_title": "Access request received.",
+        "success_msg": "We'll reach out to you shortly. Check your inbox.",
         "add_another": "Add another email"
     },
     "value_props": {
-        "title": "Why IkiHomes",
-        "subtitle": "Designed for real estate agents in Costa Rica.",
-        "cta": "Join the Waitlist",
+        "title": "Win Clients. Build Trust.",
+        "subtitle": "IkiHomes gives agents in Costa Rica the tools to receive buyer requests, respond fast, and earn the trust badges that make you stand out.",
+        "cta": "Start for Free",
         "items": [
             {
-                "title": "Look Professional on WhatsApp",
-                "description": "Properties with clean, trusted links for WhatsApp."
+                "title": "Receive Buyer Requests in Your Zone",
+                "description": "Real buyers post property requests — IkiHomes broadcasts them to the best-matched agents. Be in the loop, not the last to know."
             },
             {
-                "title": "Goodbye to Lead Chaos",
-                "description": "Your conversations and leads in one place, no chaos."
+                "title": "Respond Fast. Win the Client.",
+                "description": "Response speed is tracked and shown to buyers. Agents who respond faster get visibility and earn the ⚡ Lightning Responder badge."
             },
             {
-                "title": "Made for Costa Rica",
-                "description": "Adapted to the real needs of the local market."
+                "title": "Built for Costa Rica's Market",
+                "description": "Zone-based matching, local property types, and Spanish-first experience. No generic tool — a platform built for how agents work here."
             }
         ]
     },
     "social_proof": {
-        "title": "Building Trust",
+        "title": "Built on Real Buyer Demand",
         "items": [
-            "Made in Costa Rica",
-            "Designed for Real Agents",
-            "50+ Agents on Waitlist"
+            "Live in Costa Rica",
+            "Buyer requests matched by zone",
+            "Trust badges based on real response data"
         ],
-        "statement": "We are working with local real estate agents for the launch."
+        "statement": "IkiHomes is designed so the most responsive agents win — not just the ones who pay the most."
     },
     "about": {
-        "title": "About Us",
-        "content": "IkiHomes is a platform designed to professionalize how real estate agents manage and share properties."
+        "title": "About IkiHomes",
+        "content": "IkiHomes is a platform that connects property buyers in Costa Rica with professional agents — ranked by responsiveness and trust, not just by who pays more."
     },
     "footer": {
-        "badge": "Coming to Costa Rica",
-        "trust_line": "Made in Costa Rica · Real Properties · Real Agents",
+        "badge": "Live in Costa Rica",
+        "trust_line": "Made in Costa Rica · Real Buyers · Real Agents",
         "links": {
             "about": "About",
             "contact": "Contact",

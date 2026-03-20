@@ -39,7 +39,10 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
   }, [state]);
 
   const handleSubmit = () => {
-    sendGAEvent("event", "lead_form_submit", { category: "lead" });
+    sendGAEvent("event", "agent_signup_started", {
+      category: "landing",
+      source: "request_access_form",
+    });
   };
 
   if (state.ok) {

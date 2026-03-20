@@ -24,11 +24,11 @@ export async function generateMetadata(
   
   const isEs = lang === "es";
   const title = isEs 
-    ? "IkiHomes | Plataforma Inmobiliaria para Agentes en Costa Rica" 
-    : "IkiHomes | Real Estate Platform for Agents in Costa Rica";
+    ? "IkiHomes | Recibe Solicitudes de Compradores — Agentes Inmobiliarios Costa Rica" 
+    : "IkiHomes | Get Buyer Requests — Real Estate Agents Costa Rica";
   const description = isEs
-    ? "Centraliza tus propiedades, comparte enlaces confiables por WhatsApp y gestiona leads sin caos. La nueva forma profesional de vender en Costa Rica."
-    : "Centralize your properties, share trusted WhatsApp links, and manage leads without chaos. The new professional way to sell in Costa Rica.";
+    ? "Recibe solicitudes de compradores en tu zona. Responde rápido, gana insignias de confianza y cierra más clientes. La plataforma para agentes inmobiliarios en Costa Rica."
+    : "Receive buyer property requests in your zone. Respond fast, earn trust badges, and win clients. The platform for real estate agents in Costa Rica.";
 
   return {
     title,
@@ -42,7 +42,19 @@ export async function generateMetadata(
       },
     },
     openGraph: {
+      title,
+      description,
       images: ["/og-image.png"],
+      type: "website",
+      locale: isEs ? "es_CR" : "en_US",
+      siteName: "IkiHomes",
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/favicon.png", type: "image/png" },
+      ],
+      apple: "/favicon.png",
     },
   };
 }

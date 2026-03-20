@@ -12,7 +12,7 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
 
   return (
     <main className="min-h-screen flex flex-col">
-      <HeroSection dict={dict.hero} formDict={dict.form} />
+      <HeroSection dict={dict.hero} />
       <StickyCTA label={dict.hero.cta} />
       <ValuePropsSection dict={dict.value_props} />
       <SocialProofSection dict={dict.social_proof} />
