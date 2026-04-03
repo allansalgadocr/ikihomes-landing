@@ -13,7 +13,7 @@ interface FormModalProps {
 
 export function FormModal({ closeLabel }: FormModalProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
 
   const open = useCallback(() => {
     setIsOpen(true);
@@ -74,7 +74,7 @@ export function FormModal({ closeLabel }: FormModalProps) {
 
       {/* Dialog */}
       <div
-        ref={dialogRef as React.RefObject<HTMLDivElement>}
+        ref={dialogRef}
         tabIndex={-1}
         className="relative w-full max-w-[680px] max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in"
       >
