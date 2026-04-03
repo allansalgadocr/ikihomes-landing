@@ -6,7 +6,7 @@
         "headline_2": "Join early. Position yourself first.",
         "subheadline": "The platform that rewards speed and trust — not just presence.",
         "cta": "Join Early Access",
-        "cta_secondary": "How It Will Work ↓",
+        "cta_secondary": "Why join early ↓",
         "cta_footnote": "No cost · Costa Rica",
         "logo_alt": "IkiHomes Logo",
         "dashboard_badge": "Early Access Preview"
@@ -28,21 +28,50 @@
         "add_another": "Add another email"
     },
     "value_props": {
-        "title": "Win Clients. Build Trust.",
-        "subtitle": "IkiHomes gives agents in Costa Rica the tools to receive buyer requests, respond fast, and earn the trust badges that make you stand out.",
+        "title": "Why join before launch",
+        "subtitle": "Limited early access spots in Costa Rica",
         "cta": "Join Early Access",
         "items": [
             {
-                "title": "Receive Buyer Requests in Your Zone",
-                "description": "Real buyers post property requests — IkiHomes broadcasts them to the best-matched agents. Be in the loop, not the last to know."
+                "title": "Build your presence early",
+                "description": "Set up your profile and trust signals before competition grows."
             },
             {
-                "title": "Respond Fast. Win the Client.",
-                "description": "Response speed is tracked and shown to buyers. Agents who respond faster get visibility and earn the ⚡ Lightning Responder badge."
+                "title": "Get ahead on visibility",
+                "description": "IkiHomes is designed to reward trust and responsiveness — not just presence."
             },
             {
-                "title": "Built for Costa Rica's Market",
-                "description": "Zone-based matching, local property types, and Spanish-first experience. No generic tool — a platform built for how agents work here."
+                "title": "Be ready for buyer demand",
+                "description": "When demand arrives, you'll already be positioned to respond first."
+            }
+        ]
+    },
+    "trust_visible": {
+        "eyebrow": "Trust",
+        "title": "Trust will be visible",
+        "body": "Agents stand out through the signals that matter: responsiveness, activity, and credibility. Your profile will speak for you before you say a word.",
+        "badge_speed": "Response time tracked",
+        "badge_verified": "Verified by IkiHomes",
+        "badge_zone": "Zone-matched to buyers",
+        "cta": "Join Early Access",
+        "img_src": "/agent-trust-card-en.png",
+        "img_alt": "IkiHomes agent trust card showing response speed badge, verified status and star rating"
+    },
+    "how_it_works": {
+        "title": "How IkiHomes will work",
+        "cta": "Join Early Access",
+        "steps": [
+            {
+                "title": "A buyer posts a request in your zone",
+                "description": "Location, budget, and property type — all in one place."
+            },
+            {
+                "title": "The right agents get the opportunity",
+                "description": "IkiHomes matches serious buyers with agents covering the right areas."
+            },
+            {
+                "title": "Fast, trusted agents stand out",
+                "description": "Buyers see clear trust signals and choose with confidence."
             }
         ]
     },

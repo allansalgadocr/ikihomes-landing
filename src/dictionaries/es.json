@@ -6,7 +6,7 @@
         "headline_2": "Únete temprano. Posiciónate primero.",
         "subheadline": "La plataforma que recompensa velocidad y confianza — no solo presencia.",
         "cta": "Únete al Acceso Anticipado",
-        "cta_secondary": "Cómo Funcionará ↓",
+        "cta_secondary": "Por qué unirte ↓",
         "cta_footnote": "Sin costo · Costa Rica",
         "logo_alt": "Logo de IkiHomes",
         "dashboard_badge": "Vista Previa de Acceso Anticipado"
@@ -28,21 +28,50 @@
         "add_another": "Agregar otro correo"
     },
     "value_props": {
-        "title": "Gana Clientes. Construye Confianza.",
-        "subtitle": "IkiHomes le da a los agentes de Costa Rica las herramientas para recibir solicitudes de compradores, responder rápido y obtener las insignias de confianza que los hacen destacar.",
+        "title": "Por qué unirte antes del lanzamiento",
+        "subtitle": "Plazas limitadas de acceso anticipado en Costa Rica",
         "cta": "Únete al Acceso Anticipado",
         "items": [
             {
-                "title": "Recibe Solicitudes de Compradores en Tu Zona",
-                "description": "Compradores reales publican solicitudes de propiedades — IkiHomes las envía a los agentes mejor calificados. Mantente en el circuito, no el último en enterarse."
+                "title": "Construye tu presencia temprano",
+                "description": "Configura tu perfil y señales de confianza antes de que crezca la competencia."
             },
             {
-                "title": "Responde Rápido. Gana el Cliente.",
-                "description": "La velocidad de respuesta se mide y se muestra a los compradores. Los agentes que responden más rápido ganan visibilidad y obtienen la insignia ⚡ Respuesta Relámpago."
+                "title": "Adelántate en visibilidad",
+                "description": "Diseñado para recompensar confianza y capacidad de respuesta — no solo presencia."
             },
             {
-                "title": "Construido para el Mercado de Costa Rica",
-                "description": "Emparejamiento por zona, tipos de propiedades locales y experiencia en español. No es una herramienta genérica — es una plataforma construida para cómo trabajan los agentes aquí."
+                "title": "Prepárate para la demanda local",
+                "description": "Cuando llegue la demanda, ya estarás posicionado para responder primero."
+            }
+        ]
+    },
+    "trust_visible": {
+        "eyebrow": "Confianza",
+        "title": "La confianza será visible",
+        "body": "Los agentes destacarán por las señales que importan: capacidad de respuesta, actividad y credibilidad profesional. Tu perfil hablará por ti antes de que digas una palabra.",
+        "badge_speed": "Tiempo de respuesta medido",
+        "badge_verified": "Verificado por IkiHomes",
+        "badge_zone": "Emparejado por zona",
+        "cta": "Únete al Acceso Anticipado",
+        "img_src": "/agent-trust-card-es.png",
+        "img_alt": "Tarjeta de confianza del agente IkiHomes mostrando velocidad de respuesta, estado verificado y calificación"
+    },
+    "how_it_works": {
+        "title": "Cómo funcionará IkiHomes",
+        "cta": "Únete al Acceso Anticipado",
+        "steps": [
+            {
+                "title": "Un comprador publica lo que busca en tu zona",
+                "description": "Ubicación, presupuesto y tipo de propiedad — todo en un solo lugar."
+            },
+            {
+                "title": "Los agentes indicados reciben la oportunidad",
+                "description": "IkiHomes conecta compradores serios con agentes que cubren las zonas correctas."
+            },
+            {
+                "title": "Los agentes rápidos y confiables destacan",
+                "description": "Los compradores ven señales claras de confianza y eligen con seguridad."
             }
         ]
     },
