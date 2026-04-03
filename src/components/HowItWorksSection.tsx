@@ -1,6 +1,7 @@
 "use client";
 
 import { sendGAEvent } from "@next/third-parties/google";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -16,6 +17,8 @@ interface HowItWorksSectionProps {
 }
 
 export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
+  const sectionReveal = useScrollReveal<HTMLElement>();
+
   const handleCTAClick = () => {
     sendGAEvent("event", "agent_signup_started", {
       category: "landing",
@@ -24,7 +27,7 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-white relative">
+    <section ref={sectionReveal} className="reveal py-20 md:py-28 bg-white relative">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section headline */}
         <div className="text-center mb-14">
@@ -35,9 +38,9 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
 
         {/* Steps — 3 columns on desktop with connecting line */}
         <div className="relative mb-16">
-          {/* Connecting line between step circles — spans from center of col 1 to center of col 3 */}
+          {/* Connecting line — animates with a draw effect */}
           <div
-            className="hidden md:block absolute top-[1.375rem] left-1/6 right-1/6 h-px bg-gray-200"
+            className="line-draw hidden md:block absolute top-[1.375rem] left-1/6 right-1/6 h-px bg-primary/30"
             aria-hidden="true"
           />
 
@@ -45,7 +48,7 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
             {dict.steps.map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center relative"
+                className="reveal-child flex flex-col items-center text-center relative"
               >
                 {/* Step number */}
                 <div className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center mb-6 type-heading text-sm relative z-10 ring-4 ring-white">

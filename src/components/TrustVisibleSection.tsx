@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -22,6 +23,13 @@ interface TrustVisibleSectionProps {
 export function TrustVisibleSection({ dict }: TrustVisibleSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const firedRef = useRef(false);
+  const revealRef = useScrollReveal<HTMLElement>();
+
+  // Merge refs
+  const setRef = (el: HTMLElement | null) => {
+    sectionRef.current = el;
+    (revealRef as React.MutableRefObject<HTMLElement | null>).current = el;
+  };
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
@@ -51,15 +59,15 @@ export function TrustVisibleSection({ dict }: TrustVisibleSectionProps) {
 
   return (
     <section
-      ref={sectionRef}
+      ref={setRef}
       id="trust-visible"
-      className="py-20 md:py-28 bg-gray-50/80 relative"
+      className="reveal py-20 md:py-28 bg-gray-50/80 relative"
     >
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-          {/* Left: copy */}
-          <div>
+          {/* Left: copy — slides in from left */}
+          <div className="reveal-child">
             {/* Eyebrow */}
             <span className="type-caps inline-flex items-center gap-2 text-xs text-primary mb-5 font-semibold">
               <span className="w-4 h-px bg-primary" />
@@ -113,8 +121,8 @@ export function TrustVisibleSection({ dict }: TrustVisibleSectionProps) {
             )}
           </div>
 
-          {/* Right: agent trust card mockup */}
-          <div className="flex justify-center md:justify-end">
+          {/* Right: agent trust card mockup — scale-in reveal */}
+          <div className="reveal-child flex justify-center md:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/8 blur-2xl rounded-3xl scale-95 translate-y-4" />
               <img

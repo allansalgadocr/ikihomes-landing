@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -18,6 +19,12 @@ interface EarlyEdgeSectionProps {
 export function EarlyEdgeSection({ dict }: EarlyEdgeSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const firedRef = useRef(false);
+  const revealRef = useScrollReveal<HTMLElement>();
+
+  const setRef = (el: HTMLElement | null) => {
+    sectionRef.current = el;
+    (revealRef as React.MutableRefObject<HTMLElement | null>).current = el;
+  };
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
@@ -47,9 +54,9 @@ export function EarlyEdgeSection({ dict }: EarlyEdgeSectionProps) {
 
   return (
     <section
-      ref={sectionRef}
+      ref={setRef}
       id="early-edge"
-      className="py-20 md:py-28 bg-midnight relative overflow-hidden"
+      className="reveal py-20 md:py-28 bg-midnight relative overflow-hidden"
     >
       {/* Subtle topo texture overlay for depth */}
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(/topo-pattern.svg)", backgroundSize: "600px" }} />
@@ -70,8 +77,8 @@ export function EarlyEdgeSection({ dict }: EarlyEdgeSectionProps) {
         </p>
 
         <ul className="space-y-4 mb-12 max-w-md mx-auto text-left">
-          {dict.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-start gap-3">
+          {dict.bullets.map((bullet, index) => (
+            <li key={bullet} className="reveal-child flex items-start gap-3">
               <svg className="w-5 h-5 text-primary-light mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>

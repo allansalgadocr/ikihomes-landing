@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 
-const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
+const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "";
 const EMBED_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSevBAr9lrgEUAxoGrrAzmYjrufesVmxQ4C-eRD_b-i_8VCLew/viewform?embedded=true";
 
@@ -25,13 +25,17 @@ export function FormModal({ closeLabel }: FormModalProps) {
   }, []);
 
   useEffect(() => {
-    if (FORM_URL === "#") return;
-
     const handleClick = (e: MouseEvent) => {
-      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>(
-        `a[href="${FORM_URL}"]`
-      );
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>("a");
       if (!anchor) return;
+
+      const href = anchor.getAttribute("href") || "";
+      const isFormLink =
+        (FORM_URL && href === FORM_URL) ||
+        href.includes("forms.gle") ||
+        href.includes("docs.google.com/forms");
+
+      if (!isFormLink) return;
       e.preventDefault();
       open();
     };

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -34,6 +35,7 @@ const ICONS = [
 export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const firedRef = useRef<Set<number>>(new Set());
+  const sectionReveal = useScrollReveal<HTMLElement>();
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
@@ -73,7 +75,11 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
   };
 
   return (
-    <section id="value-props" className="py-20 md:py-28 bg-gray-50/80 relative">
+    <section
+      ref={sectionReveal}
+      id="value-props"
+      className="reveal py-20 md:py-28 bg-gray-50/80 relative"
+    >
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section headline + urgency line */}
         <div className="text-center mb-14">
@@ -87,13 +93,13 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
           )}
         </div>
 
-        {/* Value points */}
+        {/* Value points — staggered reveal */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
           {dict.items.map((item, index) => (
             <div
               key={index}
               ref={(el) => { cardRefs.current[index] = el; }}
-              className="flex flex-col items-center md:items-start text-center md:text-left bg-white rounded-xl p-6 border border-gray-100 shadow-sm"
+              className="reveal-child flex flex-col items-center md:items-start text-center md:text-left bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
             >
               <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
                 {ICONS[index]}

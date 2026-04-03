@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -17,6 +18,12 @@ interface FinalCTASectionProps {
 export function FinalCTASection({ dict }: FinalCTASectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const firedRef = useRef(false);
+  const revealRef = useScrollReveal<HTMLElement>();
+
+  const setRef = (el: HTMLElement | null) => {
+    sectionRef.current = el;
+    (revealRef as React.MutableRefObject<HTMLElement | null>).current = el;
+  };
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
@@ -46,9 +53,9 @@ export function FinalCTASection({ dict }: FinalCTASectionProps) {
 
   return (
     <section
-      ref={sectionRef}
+      ref={setRef}
       id="final-cta"
-      className="py-20 md:py-28 bg-primary/4 relative"
+      className="reveal py-20 md:py-28 bg-primary/4 relative"
     >
       <div className="max-w-2xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <h2 className="type-heading text-3xl md:text-4xl text-gray-900 leading-snug mb-5">

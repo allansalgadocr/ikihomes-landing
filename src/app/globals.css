@@ -14,6 +14,157 @@
   /* ── Font-family tokens ── */
   --font-urbanist: var(--font-urbanist);
   --font-source-sans: var(--font-source-sans);
+
+  /* ── Animation tokens ── */
+  --animate-fade-in: fade-in 0.7s ease-out both;
+  --animate-fade-in-up: fade-in-up 0.7s ease-out both;
+  --animate-fade-in-down: fade-in-down 0.5s ease-out both;
+  --animate-scale-in: scale-in 0.5s ease-out both;
+}
+
+/* ── Keyframes ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger delay utilities (used with animate-fade-in-up etc.) */
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* ── Scroll-reveal system (progressive enhancement) ──
+   Elements start visible. Only apply the hidden-before-reveal state
+   when JavaScript is available (html[data-js] is set by layout).
+   This way content is always accessible to crawlers and no-JS users.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Pre-reveal state: only when JS is available */
+html[data-js] .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-js] .reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-js] .reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-js] .reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Staggered children within a revealed parent */
+html[data-js] .reveal-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-js] .reveal-child-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stagger delays for children */
+html[data-js] .reveal-child:nth-child(1),
+html[data-js] .reveal-child-scale:nth-child(1) { transition-delay: 0ms; }
+html[data-js] .reveal-child:nth-child(2),
+html[data-js] .reveal-child-scale:nth-child(2) { transition-delay: 120ms; }
+html[data-js] .reveal-child:nth-child(3),
+html[data-js] .reveal-child-scale:nth-child(3) { transition-delay: 240ms; }
+html[data-js] .reveal-child:nth-child(4),
+html[data-js] .reveal-child-scale:nth-child(4) { transition-delay: 360ms; }
+
+/* Revealed state — triggered by IntersectionObserver */
+html[data-js] [data-revealed="true"].reveal,
+html[data-js] [data-revealed="true"].reveal-scale,
+html[data-js] [data-revealed="true"].reveal-left,
+html[data-js] [data-revealed="true"].reveal-right {
+  opacity: 1;
+  transform: none;
+}
+
+html[data-js] [data-revealed="true"] .reveal-child,
+html[data-js] [data-revealed="true"] .reveal-child-scale {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── How-it-works connecting line draw animation ── */
+html[data-js] .line-draw {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+html[data-js] [data-revealed="true"] .line-draw {
+  transform: scaleX(1);
+}
+
+/* ── noscript fallback — belts and suspenders ── */
+noscript .reveal,
+noscript .reveal-scale,
+noscript .reveal-left,
+noscript .reveal-right,
+noscript .reveal-child,
+noscript .reveal-child-scale {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* ── Typography compositions ──
