@@ -84,9 +84,38 @@
         ],
         "statement": "IkiHomes está diseñado para que ganen los agentes más responsivos — no solo los que pagan más."
     },
+    "early_edge": {
+        "eyebrow": "Ventaja Temprana",
+        "title": "Los agentes que lleguen primero tendrán ventaja",
+        "body": "Quienes se unan ahora serán los primeros en construir su presencia, generar señales de confianza y prepararse para la visibilidad cuando IkiHomes crezca.",
+        "bullets": [
+            "Sé de los primeros agentes en la plataforma",
+            "Arma tu perfil antes del lanzamiento público",
+            "Posiciónate antes de que escale la demanda"
+        ],
+        "cta": "Únete al Acceso Anticipado"
+    },
+    "built_for_cr": {
+        "eyebrow": "Mercado de Lanzamiento",
+        "title": "Hecho para Costa Rica",
+        "body": "Diseñado para el mercado inmobiliario costarricense, con un enfoque local para agentes, compradores y zonas clave. Comenzando con acceso anticipado en áreas seleccionadas — y expandiendo conforme crece la demanda.",
+        "zones": ["Área Metropolitana", "Escazú", "Santa Ana", "Costa de Guanacaste"],
+        "cta": "Únete al Acceso Anticipado",
+        "img_src": "/costa-rica-map-preview.png",
+        "img_alt": "Mapa de Costa Rica destacando las zonas de lanzamiento de IkiHomes incluyendo San José, Escazú, Santa Ana y Guanacaste"
+    },
+    "final_cta": {
+        "title": "Únete temprano. Prepárate primero.",
+        "body": "IkiHomes se prepara para su lanzamiento en Costa Rica. Únete al acceso anticipado y sé de los primeros agentes en construir visibilidad en la plataforma.",
+        "cta": "Únete al Acceso Anticipado",
+        "microcopy": "Te compartiremos novedades conforme se amplíe el acceso. Sin spam, nunca."
+    },
     "about": {
         "title": "Sobre IkiHomes",
         "content": "IkiHomes es una plataforma que conecta compradores de propiedades en Costa Rica con agentes profesionales — clasificados por capacidad de respuesta y confianza, no solo por quién paga más."
+    },
+    "modal": {
+        "close": "Cerrar"
     },
     "footer": {
         "badge": "Acceso Anticipado en Costa Rica",

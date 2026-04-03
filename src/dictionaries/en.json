@@ -84,9 +84,38 @@
         ],
         "statement": "IkiHomes is designed so the most responsive agents win — not just the ones who pay the most."
     },
+    "early_edge": {
+        "eyebrow": "Early Advantage",
+        "title": "Early agents will have an edge",
+        "body": "The agents who join now will be the first to shape their presence, build trust signals, and prepare for visibility as IkiHomes expands.",
+        "bullets": [
+            "Be among the first agents on the platform",
+            "Build your profile before public rollout",
+            "Position yourself before demand scales"
+        ],
+        "cta": "Join Early Access"
+    },
+    "built_for_cr": {
+        "eyebrow": "Launch Market",
+        "title": "Built for Costa Rica",
+        "body": "Designed for the Costa Rican real estate market, with a local-first approach for agents, buyers, and key zones. Starting with early access in selected areas — and expanding as demand grows.",
+        "zones": ["San José Metro", "Escazú", "Santa Ana", "Guanacaste Coast"],
+        "cta": "Join Early Access",
+        "img_src": "/costa-rica-map-preview.png",
+        "img_alt": "Map of Costa Rica highlighting IkiHomes launch zones including San José, Escazú, Santa Ana, and Guanacaste"
+    },
+    "final_cta": {
+        "title": "Join early. Be ready first.",
+        "body": "IkiHomes is preparing for launch in Costa Rica. Join early access and be among the first agents to build visibility on the platform.",
+        "cta": "Join Early Access",
+        "microcopy": "We'll share updates as access expands. No spam, ever."
+    },
     "about": {
         "title": "About IkiHomes",
         "content": "IkiHomes is a platform that connects property buyers in Costa Rica with professional agents — ranked by responsiveness and trust, not just by who pays more."
+    },
+    "modal": {
+        "close": "Close"
     },
     "footer": {
         "badge": "Early Access in Costa Rica",
