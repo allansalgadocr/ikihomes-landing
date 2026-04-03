@@ -1,15 +1,15 @@
 {
-    "status_banner": "IkiHomes is now live in Costa Rica. Buyer requests are waiting for agents in your zone.",
+    "status_banner": "Early access is now open in Costa Rica.",
     "hero": {
-        "badge": "Real Buyers Are Looking for Agents Like You",
-        "headline_1": "Real buyers request agents.",
-        "headline_2": "Be the first to respond.",
-        "grounding": "Compete on responsiveness. Win clients. Build trust.",
-        "subheadline": "IkiHomes connects Costa Rica buyers with agents who respond fast. Get buyer requests directly in your zone — and let your trust badge speak for you.",
-        "cta": "Start for Free",
-        "cta_secondary": "See how it works ↓",
-        "cta_footnote": "Free plan available · No credit card required",
-        "logo_alt": "IkiHomes Logo"
+        "badge": "Early Access Now Open in Costa Rica",
+        "headline_1": "Receive real buyer requests in your zone",
+        "headline_2": "Join early. Position yourself first.",
+        "subheadline": "The platform that rewards speed and trust — not just presence.",
+        "cta": "Join Early Access",
+        "cta_secondary": "How It Will Work ↓",
+        "cta_footnote": "No cost · Costa Rica",
+        "logo_alt": "IkiHomes Logo",
+        "dashboard_badge": "Early Access Preview"
     },
     "form": {
         "email_placeholder": "Enter your email",
@@ -30,7 +30,7 @@
     "value_props": {
         "title": "Win Clients. Build Trust.",
         "subtitle": "IkiHomes gives agents in Costa Rica the tools to receive buyer requests, respond fast, and earn the trust badges that make you stand out.",
-        "cta": "Start for Free",
+        "cta": "Join Early Access",
         "items": [
             {
                 "title": "Receive Buyer Requests in Your Zone",
@@ -49,7 +49,7 @@
     "social_proof": {
         "title": "Built on Real Buyer Demand",
         "items": [
-            "Live in Costa Rica",
+            "Early access in Costa Rica",
             "Buyer requests matched by zone",
             "Trust badges based on real response data"
         ],
@@ -60,7 +60,7 @@
         "content": "IkiHomes is a platform that connects property buyers in Costa Rica with professional agents — ranked by responsiveness and trust, not just by who pays more."
     },
     "footer": {
-        "badge": "Live in Costa Rica",
+        "badge": "Early Access in Costa Rica",
         "trust_line": "Made in Costa Rica · Real Buyers · Real Agents",
         "links": {
             "about": "About",

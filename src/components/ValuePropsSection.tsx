@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 
-const PORTAL_URL = process.env.NEXT_PUBLIC_REALTORS_APP_URL || "https://app.ikihomescr.com";
+const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface ValuePropsSectionProps {
   dict: {
@@ -126,7 +126,9 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
           <div className="text-center">
             <a 
               id="value-props-cta"
-              href={`${PORTAL_URL}/sign-up`}
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleCTAClick}
               className="inline-block px-10 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-[#3D6E72] hover:shadow-xl transition-all transform hover:-translate-y-0.5"
             >

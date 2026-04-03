@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 
-const PORTAL_URL = process.env.NEXT_PUBLIC_REALTORS_APP_URL || "https://app.ikihomescr.com";
+const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface StickyCTAProps {
   label: string;
@@ -43,7 +43,9 @@ export function StickyCTA({ label }: StickyCTAProps) {
         </div>
         <a 
           id="sticky-cta"
-          href={`${PORTAL_URL}/sign-up`}
+          href={FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={handleClick}
           className="bg-primary text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-primary/90 hover:shadow-lg transition-all text-sm md:text-base ml-auto sm:ml-0 min-h-[44px] flex items-center"
         >

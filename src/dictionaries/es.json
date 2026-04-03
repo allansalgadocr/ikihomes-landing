@@ -1,15 +1,15 @@
 {
-    "status_banner": "IkiHomes ya está en vivo en Costa Rica. Hay solicitudes de compradores esperando a agentes en tu zona.",
+    "status_banner": "Acceso anticipado disponible ahora en Costa Rica.",
     "hero": {
-        "badge": "Compradores reales están buscando agentes como tú",
-        "headline_1": "Compradores reales buscan agentes.",
-        "headline_2": "Sé el primero en responder.",
-        "grounding": "Compite por velocidad. Gana clientes. Construye confianza.",
-        "subheadline": "IkiHomes conecta compradores en Costa Rica con agentes que responden rápido. Recibe solicitudes directamente en tu zona — y que tu insignia de confianza hable por ti.",
-        "cta": "Comienza Gratis",
-        "cta_secondary": "Cómo funciona ↓",
-        "cta_footnote": "Plan gratuito disponible · Sin tarjeta de crédito",
-        "logo_alt": "Logo de IkiHomes"
+        "badge": "Acceso Anticipado Abierto en Costa Rica",
+        "headline_1": "Recibe solicitudes reales en tu zona",
+        "headline_2": "Únete temprano. Posiciónate primero.",
+        "subheadline": "La plataforma que recompensa velocidad y confianza — no solo presencia.",
+        "cta": "Únete al Acceso Anticipado",
+        "cta_secondary": "Cómo Funcionará ↓",
+        "cta_footnote": "Sin costo · Costa Rica",
+        "logo_alt": "Logo de IkiHomes",
+        "dashboard_badge": "Vista Previa de Acceso Anticipado"
     },
     "form": {
         "email_placeholder": "Ingresa tu correo",
@@ -30,7 +30,7 @@
     "value_props": {
         "title": "Gana Clientes. Construye Confianza.",
         "subtitle": "IkiHomes le da a los agentes de Costa Rica las herramientas para recibir solicitudes de compradores, responder rápido y obtener las insignias de confianza que los hacen destacar.",
-        "cta": "Comienza Gratis",
+        "cta": "Únete al Acceso Anticipado",
         "items": [
             {
                 "title": "Recibe Solicitudes de Compradores en Tu Zona",
@@ -49,7 +49,7 @@
     "social_proof": {
         "title": "Construido sobre Demanda Real de Compradores",
         "items": [
-            "Disponible en Costa Rica",
+            "Acceso anticipado en Costa Rica",
             "Solicitudes de compradores emparejadas por zona",
             "Insignias de confianza basadas en datos reales de respuesta"
         ],
@@ -60,7 +60,7 @@
         "content": "IkiHomes es una plataforma que conecta compradores de propiedades en Costa Rica con agentes profesionales — clasificados por capacidad de respuesta y confianza, no solo por quién paga más."
     },
     "footer": {
-        "badge": "Disponible en Costa Rica",
+        "badge": "Acceso Anticipado en Costa Rica",
         "trust_line": "Hecho en Costa Rica · Compradores reales · Agentes reales",
         "links": {
             "about": "Nosotros",

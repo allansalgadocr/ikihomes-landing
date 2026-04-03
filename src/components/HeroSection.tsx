@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 
-const PORTAL_URL = process.env.NEXT_PUBLIC_REALTORS_APP_URL || "https://app.ikihomescr.com";
+const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface HeroSectionProps {
   dict: {
@@ -11,7 +11,6 @@ interface HeroSectionProps {
     headline_1: string;
     headline_2: string;
     subheadline: string;
-    grounding?: string;
     cta: string;
     cta_secondary?: string;
     cta_footnote?: string;
@@ -20,7 +19,6 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ dict }: HeroSectionProps) {
-  // Analytics: fire page-viewed event once on mount
   useEffect(() => {
     sendGAEvent("event", "agent_landing_page_viewed", { category: "landing" });
   }, []);
@@ -33,87 +31,108 @@ export function HeroSection({ dict }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-[#fafafa]">
-         {/* Lifestyle Background Image */}
-         <img 
-            src="/lifestyle-background.png" 
-            alt="Background" 
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
-         />
-         <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
-
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[color-mix(in_srgb,var(--color-primary),transparent_95%)] rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 z-0"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[color-mix(in_srgb,var(--color-primary-light),transparent_90%)] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/3 z-0"></div>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      {/* Full-bleed hero image */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/hero-lifestyle.jpg"
+          alt="Costa Rica luxury homes aerial view"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/*
+          Two-layer gradient:
+          1. Left-to-right scrim — protects left-aligned text, lets right side breathe
+          2. Bottom vignette — anchors the lower portion for CTA readability
+        */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: [
+              "linear-gradient(to right, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.28) 50%, transparent 75%)",
+              "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 45%)",
+            ].join(", "),
+          }}
+        />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="flex justify-center mb-8 animate-fade-in">
-            <img src="/logo.svg" alt={dict.logo_alt} className="h-12 md:h-16" />
-        </div>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 w-full relative z-10 py-20">
+        <div className="max-w-xl text-center md:text-left">
+          {/* Logo */}
+          <div className="mb-12 animate-fade-in">
+            <img
+              src="/logo.svg"
+              alt={dict.logo_alt}
+              className="h-10 md:h-12 brightness-0 invert mx-auto md:mx-0"
+            />
+          </div>
 
-        {/* Trust badge */}
-        <div className="flex justify-center mb-6 animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            {dict.badge}
-          </span>
-        </div>
-        
-        <h1 className="text-4xl md:text-6xl text-gray-900 mb-6 tracking-tight leading-tight font-urbanist animate-fade-in-up delay-100">
-          <span className="font-semibold text-gray-800 tracking-tight">{dict.headline_1}</span> <br className="hidden md:block" />
-          <span className="font-extrabold text-primary tracking-tight">{dict.headline_2}</span>
-        </h1>
-        
-        {dict.grounding && (
-          <p className="text-lg md:text-xl text-gray-800 font-semibold mb-4 max-w-xl mx-auto animate-fade-in-up delay-150">
-            {dict.grounding}
-          </p>
-        )}
-
-        <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl mx-auto animate-fade-in-up delay-200">
-          {dict.subheadline}
-        </p>
-
-        {/* Primary CTA — direct link to portal sign-up */}
-        <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            id="hero-cta"
-            href={`${PORTAL_URL}/sign-up`}
-            onClick={handleCTAClick}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base md:text-lg min-h-[52px] min-w-[200px]"
+          {/*
+            Headline hierarchy:
+            Line 1 = value prop (the hook) → largest, heaviest (Urbanist 900)
+            Line 2 = motivator (urgency)   → smaller, lighter (Urbanist 700)
+            This follows the F-pattern: hook first, context second.
+          */}
+          <h1
+            className="mb-8 animate-fade-in-up delay-100"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            {dict.cta}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          {dict.cta_secondary && (
-            <a
-              href="#value-props"
-              className="text-sm text-gray-500 hover:text-primary transition-colors font-medium underline underline-offset-4"
-            >
-              {dict.cta_secondary}
-            </a>
-          )}
-        </div>
+            <span className="type-display text-white text-[2.25rem] md:text-5xl lg:text-6xl leading-[1.1] block mb-4">
+              {dict.headline_1}
+            </span>
+            <span className="type-heading text-white/75 text-xl md:text-2xl lg:text-3xl leading-snug block">
+              {dict.headline_2}
+            </span>
+          </h1>
 
-        {/* Social proof micro-line */}
-        {dict.cta_footnote && (
-          <p className="mt-6 text-xs text-gray-400 animate-fade-in-up delay-400">
-            {dict.cta_footnote}
+          {/* Subheadline — quiet, supporting */}
+          <p
+            className="type-body text-base md:text-lg text-white/60 mb-10 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-150"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
+          >
+            {dict.subheadline}
           </p>
-        )}
 
-        {/* Hero Dashboard Image */}
-        <div className="mt-16 relative animate-fade-in-up delay-500">
-           <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-10 h-full w-full"></div>
-           <img 
-              src="/hero-dashboard.png" 
-              alt="IkiHomes Dashboard Preview" 
-              className="relative rounded-xl shadow-[0_20px_50px_-12px_rgba(45,90,94,0.15)] border border-[rgba(45,90,94,0.1)] w-full max-w-5xl mx-auto"
-           />
+          {/* CTA block — stacked vertically for clear hierarchy */}
+          <div className="animate-fade-in-up delay-200 flex flex-col sm:flex-row items-center md:items-start gap-5">
+            <a
+              id="hero-cta"
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCTAClick}
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 bg-white text-gray-900 font-bold rounded-lg shadow-xl hover:bg-white/90 hover:shadow-2xl transition-all transform hover:-translate-y-0.5 text-base md:text-lg min-h-[52px]"
+            >
+              {dict.cta}
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+            {dict.cta_secondary && (
+              <a
+                href="#value-props"
+                className="type-caps text-xs text-white/45 hover:text-white/80 transition-colors font-semibold py-4"
+              >
+                {dict.cta_secondary}
+              </a>
+            )}
+          </div>
+
+          {/* Microcopy */}
+          {dict.cta_footnote && (
+            <p className="type-caps mt-8 text-[11px] text-white/35 animate-fade-in-up delay-300">
+              {dict.cta_footnote}
+            </p>
+          )}
         </div>
       </div>
     </section>

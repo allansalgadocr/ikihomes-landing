@@ -1,17 +1,60 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2D5A5E; /* Deep Teal */
+  /* ── Colour tokens ── */
+  --color-primary: #2D5A5E;
   --color-primary-light: #578589;
-  --color-secondary: #FDFDFD; /* Body BG */
+  --color-secondary: #FDFDFD;
   --color-warm-accent: #F3A712;
   --color-midnight: #0F172A;
-  
+
   --color-bg: #FDFDFD;
   --color-card: #FFFFFF;
-  
+
+  /* ── Font-family tokens ── */
   --font-urbanist: var(--font-urbanist);
   --font-source-sans: var(--font-source-sans);
+}
+
+/* ── Typography compositions ──
+   Use these as single-class tokens on elements so weight/family/spacing
+   stay consistent without repeating Tailwind utilities everywhere.
+   ─────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Hero headline — Urbanist Black (900), tight tracking */
+  .type-display {
+    font-family: var(--font-urbanist), sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+
+  /* Section headings — Urbanist Bold (700) */
+  .type-heading {
+    font-family: var(--font-urbanist), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  /* Body / value-prop text — Source Sans 3 Regular (400) */
+  .type-body {
+    font-family: var(--font-source-sans), sans-serif;
+    font-weight: 400;
+    line-height: 1.625;
+  }
+
+  /* Body emphasis — Source Sans 3 Semibold (600) */
+  .type-body-semibold {
+    font-family: var(--font-source-sans), sans-serif;
+    font-weight: 600;
+    line-height: 1.625;
+  }
+
+  /* ALL-CAPS micro text (secondary CTAs, microcopy) */
+  .type-caps {
+    font-family: var(--font-source-sans), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
 }
 
 html {
@@ -22,10 +65,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-midnight);
   font-family: var(--font-source-sans), sans-serif;
-  line-height: 1.625; /* leading-relaxed */
+  line-height: 1.625;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-urbanist), sans-serif;
-  letter-spacing: -0.025em; /* tracking-tight */
+  letter-spacing: -0.025em;
 }
