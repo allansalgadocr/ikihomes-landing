@@ -12,18 +12,14 @@
         "dashboard_badge": "Early Access Preview"
     },
     "form": {
-        "email_placeholder": "Enter your email",
-        "role_label": "I am a",
-        "roles": {
-            "agent": "Agent",
-            "agency_owner": "Agency Owner",
-            "developer": "Developer",
-            "buyer": "Buyer"
-        },
+        "name_placeholder": "Full name",
+        "email_placeholder": "Email address",
+        "zones_label": "Which zones do you work in?",
+        "zones_placeholder": "E.g. Escazú, Santa Ana, San José",
         "button": "Request Access",
         "button_pending": "Sending...",
         "footer": "No spam. Only important platform updates.",
-        "success_title": "Access request received.",
+        "success_title": "Request received!",
         "success_msg": "We'll reach out to you shortly. Check your inbox.",
         "add_another": "Add another email"
     },

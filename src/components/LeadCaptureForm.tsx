@@ -6,14 +6,10 @@ import { submitLead, SubmitLeadState } from "@/actions/submitLead";
 
 interface LeadCaptureFormProps {
   dict: {
+    name_placeholder: string;
     email_placeholder: string;
-    role_label: string;
-    roles: {
-      agent: string;
-      agency_owner: string;
-      developer: string;
-      buyer: string;
-    };
+    zones_label: string;
+    zones_placeholder: string;
     button: string;
     button_pending: string;
     footer: string;
@@ -50,7 +46,7 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
       <div className="bg-primary/10 rounded-lg p-6 text-center border border-primary/20 animate-fade-in">
         <h3 className="text-xl font-semibold text-primary mb-2 font-urbanist">{dict.success_title}</h3>
         <p className="text-gray-600">{dict.success_msg}</p>
-        <button 
+        <button
           onClick={() => window.location.reload()}
           className="mt-4 text-sm text-primary underline hover:text-primary/80"
         >
@@ -62,36 +58,48 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
 
   return (
     <form action={formAction} onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-4">
-      <div className="flex flex-col md:flex-row gap-3">
-        <div className="flex-grow">
-          <label htmlFor="email" className="sr-only">Email address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder={dict.email_placeholder}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm min-h-[48px] text-base"
-          />
-        </div>
-        
-        {/* Optional Role Selector */}
-        <div className="w-full md:w-auto">
-             <label htmlFor="role" className="sr-only">{dict.role_label}</label>
-             <select
-              name="role"
-              id="role"
-              className="w-full h-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white/90 text-gray-600 cursor-pointer min-h-[48px] text-base"
-             >
-                <option value="Agent">{dict.roles.agent}</option>
-                <option value="Agency Owner">{dict.roles.agency_owner}</option>
-                <option value="Developer">{dict.roles.developer}</option>
-                <option value="Buyer">{dict.roles.buyer}</option>
-             </select>
-        </div>
+      {/* Name */}
+      <div>
+        <label htmlFor="lead-name" className="sr-only">{dict.name_placeholder}</label>
+        <input
+          type="text"
+          name="name"
+          id="lead-name"
+          required
+          placeholder={dict.name_placeholder}
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm min-h-[48px] text-base"
+        />
       </div>
 
-      {/* Honeypot Field */}
+      {/* Email */}
+      <div>
+        <label htmlFor="lead-email" className="sr-only">{dict.email_placeholder}</label>
+        <input
+          type="email"
+          name="email"
+          id="lead-email"
+          required
+          placeholder={dict.email_placeholder}
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm min-h-[48px] text-base"
+        />
+      </div>
+
+      {/* Zones */}
+      <div>
+        <label htmlFor="lead-zones" className="block text-sm text-gray-500 mb-1.5 font-medium">
+          {dict.zones_label}
+        </label>
+        <input
+          type="text"
+          name="zones"
+          id="lead-zones"
+          required
+          placeholder={dict.zones_placeholder}
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white/90 backdrop-blur-sm min-h-[48px] text-base"
+        />
+      </div>
+
+      {/* Honeypot */}
       <input
         type="text"
         name="company"
@@ -111,7 +119,7 @@ export function LeadCaptureForm({ dict }: LeadCaptureFormProps) {
       {state.error && (
         <p className="text-red-500 text-sm mt-2">{state.error}</p>
       )}
-      
+
       <p className="text-xs text-center text-gray-500 mt-4">
         {dict.footer}
       </p>

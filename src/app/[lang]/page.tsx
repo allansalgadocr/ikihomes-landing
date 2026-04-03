@@ -25,7 +25,7 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
       <EarlyEdgeSection dict={dict.early_edge} />
       <FinalCTASection dict={dict.final_cta} />
       <Footer dict={dict.footer} formDict={dict.form} />
-      <FormModal closeLabel={dict.modal.close} />
+      <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
     </main>
   );
 }

@@ -12,18 +12,14 @@
         "dashboard_badge": "Vista Previa de Acceso Anticipado"
     },
     "form": {
-        "email_placeholder": "Ingresa tu correo",
-        "role_label": "Soy",
-        "roles": {
-            "agent": "Agente",
-            "agency_owner": "Dueño de Agencia",
-            "developer": "Desarrollador",
-            "buyer": "Comprador"
-        },
+        "name_placeholder": "Nombre completo",
+        "email_placeholder": "Correo electrónico",
+        "zones_label": "¿En cuáles zonas trabajas?",
+        "zones_placeholder": "Ej: Escazú, Santa Ana, San José",
         "button": "Solicitar Acceso",
         "button_pending": "Enviando...",
         "footer": "Sin spam. Solo avisos importantes de la plataforma.",
-        "success_title": "Solicitud de acceso recibida.",
+        "success_title": "¡Solicitud recibida!",
         "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
         "add_another": "Agregar otro correo"
     },

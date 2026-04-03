@@ -9,8 +9,9 @@ export async function submitLead(
   prevState: SubmitLeadState,
   formData: FormData
 ): Promise<SubmitLeadState> {
+  const name = (formData.get("name") as string) || "";
   const email = formData.get("email") as string;
-  const role = (formData.get("role") as string) || "";
+  const zones = (formData.get("zones") as string) || "";
   const company = formData.get("company") as string; // Honeypot
 
   // 1. Bot Protection (Honeypot)
@@ -19,26 +20,34 @@ export async function submitLead(
     return { ok: true };
   }
 
-  // 2. Validate Email
+  // 2. Validate required fields
+  if (!name.trim()) {
+    return { ok: false, error: "Por favor ingresa tu nombre." };
+  }
+
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { ok: false, error: "Please enter a valid email address." };
+    return { ok: false, error: "Por favor ingresa un correo válido." };
+  }
+
+  if (!zones.trim()) {
+    return { ok: false, error: "Por favor ingresa tus zonas de trabajo." };
   }
 
   // 3. Prepare Google Forms Payload
   const formUrl = process.env.GOOGLE_FORMS_ACTION_URL;
+  const nameEntryId = process.env.GOOGLE_FORMS_ENTRY_NAME;
   const emailEntryId = process.env.GOOGLE_FORMS_ENTRY_EMAIL;
-  const roleEntryId = process.env.GOOGLE_FORMS_ENTRY_ROLE;
+  const zonesEntryId = process.env.GOOGLE_FORMS_ENTRY_ZONES;
 
-  if (!formUrl || !emailEntryId) {
+  if (!formUrl || !emailEntryId || !nameEntryId || !zonesEntryId) {
     console.error("Missing Google Forms configuration");
-    return { ok: false, error: "Configuration error. Please try again later." };
+    return { ok: false, error: "Error de configuración. Intenta de nuevo." };
   }
 
   const googleFormData = new URLSearchParams();
-  googleFormData.append(emailEntryId, email);
-  if (role && roleEntryId) {
-    googleFormData.append(roleEntryId, role);
-  }
+  googleFormData.append(nameEntryId, name.trim());
+  googleFormData.append(emailEntryId, email.trim());
+  googleFormData.append(zonesEntryId, zones.trim());
 
   try {
     const response = await fetch(formUrl, {
@@ -47,20 +56,16 @@ export async function submitLead(
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      // Google Forms returns opaque response for cors usually, but server-side fetch is fine.
-      // However, Google Forms might return 200 even on error if it's a form view.
-      // We assume if it doesn't throw, it worked.
     });
 
     if (!response.ok) {
-       // Log status text if possible
       console.error("Google Forms returned status:", response.status, response.statusText);
-      return { ok: false, error: "Failed to submit. Please try again." };
+      return { ok: false, error: "Error al enviar. Intenta de nuevo." };
     }
 
     return { ok: true };
   } catch (err) {
     console.error("Lead submission error:", err);
-    return { ok: false, error: "An unexpected error occurred." };
+    return { ok: false, error: "Ocurrió un error inesperado." };
   }
 }

@@ -61,11 +61,8 @@ export async function generateMetadata(
       follow: true,
     },
     icons: {
-      icon: [
-        { url: "/favicon.ico" },
-        { url: "/favicon.png", type: "image/png" },
-      ],
-      apple: "/favicon.png",
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
     },
   };
 }

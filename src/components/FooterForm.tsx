@@ -58,9 +58,10 @@ export function FooterForm({ placeholder, buttonText, successMessage }: FooterFo
                 )}
             </button>
         </div>
-        
-        {/* Hidden Fields */}
-        <input type="hidden" name="role" value="Footer Entry" />
+
+        {/* Send minimal data — footer is just quick email capture */}
+        <input type="hidden" name="name" value="(footer)" />
+        <input type="hidden" name="zones" value="(not specified)" />
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
         {state.error && (
