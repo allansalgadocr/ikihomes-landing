@@ -1,4 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export async function generateMetadata(
+  props: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const { lang } = await props.params;
+  const isEs = lang === "es";
+
+  return {
+    title: isEs
+      ? "Términos y Condiciones | IkiHomes"
+      : "Terms & Conditions | IkiHomes",
+    description: isEs
+      ? "Términos y condiciones de uso del sitio web de IkiHomes durante la fase de pre-lanzamiento. Jurisdicción: Costa Rica."
+      : "Terms and conditions for using the IkiHomes website during the pre-launch phase. Jurisdiction: Costa Rica.",
+    alternates: {
+      canonical: `/${lang}/terms`,
+      languages: {
+        en: "/en/terms",
+        es: "/es/terms",
+        "x-default": "/es/terms",
+      },
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function TermsPage(props: { params: Promise<{ lang: string }> }) {
   const { lang } = await props.params;

@@ -1,4 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export async function generateMetadata(
+  props: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const { lang } = await props.params;
+  const isEs = lang === "es";
+
+  return {
+    title: isEs
+      ? "Política de Privacidad | IkiHomes"
+      : "Privacy Policy | IkiHomes",
+    description: isEs
+      ? "Cómo IkiHomes recopila, usa y protege tus datos personales. Cumplimiento PRODHAB (Ley 8968), Costa Rica."
+      : "How IkiHomes collects, uses, and protects your personal data. PRODHAB compliant (Ley 8968), Costa Rica.",
+    alternates: {
+      canonical: `/${lang}/privacy`,
+      languages: {
+        en: "/en/privacy",
+        es: "/es/privacy",
+        "x-default": "/es/privacy",
+      },
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default async function PrivacyPage(props: { params: Promise<{ lang: string }> }) {
   const { lang } = await props.params;

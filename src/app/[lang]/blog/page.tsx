@@ -40,11 +40,13 @@ export async function generateMetadata(
       type: "website",
       locale: lang === "es" ? "es_CR" : "en_US",
       siteName: "IkiHomes",
+      images: [{ url: "https://ikihomescr.com/og-image.png", width: 1024, height: 1024 }],
     },
     twitter: {
       card: "summary_large_image",
       title: t.title,
       description: t.description,
+      images: ["https://ikihomescr.com/og-image.png"],
     },
   };
 }

@@ -26,7 +26,7 @@ export async function generateMetadata(
 
   // Keyword-first titles — nobody searches "IkiHomes" yet
   const title = isEs
-    ? "Agentes Inmobiliarios Costa Rica — Recibe Solicitudes de Compradores | IkiHomes"
+    ? "Agentes Inmobiliarios Costa Rica — Solicitudes de Compradores | IkiHomes"
     : "Real Estate Agents Costa Rica — Get Buyer Requests | IkiHomes";
 
   // Zone names in description for bold matches in search results

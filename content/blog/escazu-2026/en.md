@@ -1,6 +1,6 @@
 ---
-title: "Escazú Real Estate in 2026: What Every Agent Needs to Know"
-description: "Analysis of Escazu's 2026 real estate market. Price trends, growth projections, international buyer profiles, and opportunities for agents."
+title: "Escazu Real Estate in 2026: What Every Agent Must Know"
+description: "Analysis of the Escazu 2026 real estate market. Price trends, growth projections, international buyer profiles, and opportunities for agents."
 keywords: ["Escazú real estate market", "Costa Rica real estate 2026", "Escazú property agent", "buy house Escazú"]
 date: "2026-04-01"
 author: "IkiHomes"
