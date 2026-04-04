@@ -23,7 +23,7 @@ export function FooterForm({ placeholder, buttonText, successMessage }: FooterFo
   useEffect(() => {
      if (state.ok) {
        sendGAEvent("event", "footer_form_success", { category: "lead" });
-       trackMetaEvent("Lead", { content_name: "Footer Signup" });
+       trackMetaEvent("Lead", { content_name: "early_access", zone: "not_specified" });
      } else if (state.error) {
        sendGAEvent("event", "footer_form_error", { category: "lead", error: state.error });
      }

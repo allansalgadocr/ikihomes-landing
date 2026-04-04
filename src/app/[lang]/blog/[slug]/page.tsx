@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllSlugs, getPost } from "@/lib/blog";
 import { BlogMarkdown } from "@/components/BlogMarkdown";
+import { BlogPixelTracker } from "@/components/BlogPixelTracker";
 
 const BASE = "https://ikihomescr.com";
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
@@ -174,6 +175,7 @@ export default async function BlogPostPage(props: PageProps) {
   return (
     <>
       <BlogPostingJsonLd post={post} lang={lang} slug={slug} />
+      <BlogPixelTracker slug={slug} />
       <main className="min-h-screen bg-white py-20 px-4">
         <article className="max-w-3xl mx-auto">
           <nav className="mb-8">

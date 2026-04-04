@@ -2,12 +2,29 @@
 
 import { useEffect } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { trackMetaEvent } from "@/components/MetaPixel";
 
-/** Fires page-view event on mount */
+/** Fires page-view event on mount + ViewContent at 50% scroll */
 export function HeroPageView() {
   useEffect(() => {
     sendGAEvent("event", "agent_landing_page_viewed", { category: "landing" });
+
+    // ViewContent when user scrolls past 50% of the page
+    let fired = false;
+    const handleScroll = () => {
+      if (fired) return;
+      const scrollPercent =
+        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent >= 0.5) {
+        fired = true;
+        trackMetaEvent("ViewContent", { content_name: "landing_page" });
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return null;
 }
 

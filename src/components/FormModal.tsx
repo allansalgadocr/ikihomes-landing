@@ -27,6 +27,7 @@ const initialState: SubmitLeadState = { ok: false };
 export function FormModal({ closeLabel, formDict }: FormModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [state, formAction, isPending] = useActionState(submitLead, initialState);
 
   const open = useCallback(() => {
@@ -81,7 +82,11 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
   useEffect(() => {
     if (state.ok) {
       sendGAEvent("event", "lead_form_success", { category: "lead", source: "modal" });
-      trackMetaEvent("Lead", { content_name: "Early Access Signup" });
+      // Get submitted values for Meta Pixel Lead event
+      const form = formRef.current;
+      const name = (form?.querySelector<HTMLInputElement>("[name=name]")?.value) || "";
+      const zones = (form?.querySelector<HTMLInputElement>("[name=zones]")?.value) || "";
+      trackMetaEvent("Lead", { content_name: "early_access", name, zone: zones });
     } else if (state.error) {
       sendGAEvent("event", "lead_form_error", { category: "lead", error: state.error, source: "modal" });
     }
@@ -169,7 +174,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
                 </h3>
               </div>
 
-              <form action={formAction} onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} action={formAction} onSubmit={handleSubmit} className="space-y-4">
                 {/* Name */}
                 <div>
                   <label htmlFor="modal-name" className="sr-only">
