@@ -127,9 +127,12 @@ export function HeroSection({ dict }: HeroSectionProps) {
             )}
           </div>
 
-          {/* Microcopy */}
+          {/* Post-signup clarity */}
           {dict.cta_footnote && (
-            <p className="type-caps mt-8 text-[11px] text-white/35 animate-fade-in-up delay-300">
+            <p
+              className="type-body mt-8 text-sm text-white/45 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-300"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
+            >
               {dict.cta_footnote}
             </p>
           )}

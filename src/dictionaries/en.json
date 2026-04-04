@@ -1,5 +1,5 @@
 {
-    "status_banner": "Early access is now open in Costa Rica.",
+    "status_banner": "Early access now available in Costa Rica — limited spots.",
     "hero": {
         "badge": "Early Access Now Open in Costa Rica",
         "headline_1": "Receive real buyer requests in your zone",
@@ -7,7 +7,7 @@
         "subheadline": "The platform that rewards speed and trust — not just presence.",
         "cta": "Join Early Access",
         "cta_secondary": "Why join early ↓",
-        "cta_footnote": "No cost · Costa Rica",
+        "cta_footnote": "No cost · Secure your spot before launch.",
         "logo_alt": "IkiHomes Logo",
         "dashboard_badge": "Early Access Preview"
     },
@@ -21,16 +21,16 @@
         "footer": "No spam. Only important platform updates.",
         "success_title": "Request received!",
         "success_msg": "We'll reach out to you shortly. Check your inbox.",
-        "add_another": "Add another email"
+        "add_another": "Submit another request"
     },
     "value_props": {
         "title": "Why join before launch",
         "subtitle": "Limited early access spots in Costa Rica",
-        "cta": "Join Early Access",
+        "cta": "Request Access",
         "items": [
             {
                 "title": "Build your presence early",
-                "description": "Set up your profile and trust signals before competition grows."
+                "description": "Be among the first on the platform, before competition grows."
             },
             {
                 "title": "Get ahead on visibility",
@@ -42,20 +42,9 @@
             }
         ]
     },
-    "trust_visible": {
-        "eyebrow": "Trust",
-        "title": "Trust will be visible",
-        "body": "Agents stand out through the signals that matter: responsiveness, activity, and credibility. Your profile will speak for you before you say a word.",
-        "badge_speed": "Response time tracked",
-        "badge_verified": "Verified by IkiHomes",
-        "badge_zone": "Zone-matched to buyers",
-        "cta": "Join Early Access",
-        "img_src": "/agent-trust-card-en.png",
-        "img_alt": "IkiHomes agent trust card showing response speed badge, verified status and star rating"
-    },
     "how_it_works": {
         "title": "How IkiHomes will work",
-        "cta": "Join Early Access",
+        "cta": "Request Access",
         "steps": [
             {
                 "title": "A buyer posts a request in your zone",
@@ -71,40 +60,52 @@
             }
         ]
     },
-    "social_proof": {
-        "title": "Built on Real Buyer Demand",
-        "items": [
-            "Early access in Costa Rica",
-            "Buyer requests matched by zone",
-            "Trust badges based on real response data"
+    "founder": {
+        "body": "We're building IkiHomes because Costa Rica's real estate market deserves better. Buyers who don't know who to trust with their search. Agents who do great work but have no way to prove it at first contact. IkiHomes exists to solve that — built in Costa Rica, for Costa Rica.",
+        "signature": "— The IkiHomes Team, San José, Costa Rica"
+    },
+    "trust_visible": {
+        "eyebrow": "Trust",
+        "title": "Trust will be visible",
+        "anchor": "We understand that trust isn't declared. It's demonstrated. That's why every signal on IkiHomes is based on real data, not self-promotion.",
+        "body": "Agents stand out through the signals that matter: responsiveness, activity, and credibility. Your profile will speak for you before you say a word.",
+        "badge_speed": "Response time tracked",
+        "badge_verified": "Verified by IkiHomes",
+        "badge_zone": "Matched to buyers in your zone",
+        "cta": "Secure your spot",
+        "img_src": "/agent-trust-card-en.png",
+        "img_alt": "IkiHomes agent trust card showing response speed badge, verified status and star rating"
+    },
+    "built_for_cr": {
+        "eyebrow": "Launch Market",
+        "title": "Built for Costa Rica",
+        "body": "Designed for the Costa Rican real estate market, with a local-first approach for agents, buyers, and key zones. Starting with early access in selected areas — and expanding as demand grows.",
+        "zones": [
+            { "name": "San José Metro", "description": "The highest volume of real estate searches in the country." },
+            { "name": "Escazú", "description": "High concentration of international buyers and active premium market." },
+            { "name": "Santa Ana", "description": "Growing demand in residential and investment opportunities." },
+            { "name": "Guanacaste", "description": "Beach market with high-intent international buyers." }
         ],
-        "statement": "IkiHomes is designed so the most responsive agents win — not just the ones who pay the most."
+        "cta": "Join Early Access",
+        "img_src": "/costa-rica-map-preview.png",
+        "img_alt": "Map of Costa Rica highlighting IkiHomes launch zones including San José, Escazú, Santa Ana, and Guanacaste"
     },
     "early_edge": {
         "eyebrow": "Early Advantage",
         "title": "Early agents will have an edge",
         "body": "The agents who join now will be the first to shape their presence, build trust signals, and prepare for visibility as IkiHomes expands.",
         "bullets": [
-            "Be among the first agents on the platform",
-            "Build your profile before public rollout",
-            "Position yourself before demand scales"
+            "Priority access to buyer requests in your zone",
+            "First agents set the trust standard",
+            "Your feedback will shape the platform"
         ],
-        "cta": "Join Early Access"
-    },
-    "built_for_cr": {
-        "eyebrow": "Launch Market",
-        "title": "Built for Costa Rica",
-        "body": "Designed for the Costa Rican real estate market, with a local-first approach for agents, buyers, and key zones. Starting with early access in selected areas — and expanding as demand grows.",
-        "zones": ["San José Metro", "Escazú", "Santa Ana", "Guanacaste Coast"],
-        "cta": "Join Early Access",
-        "img_src": "/costa-rica-map-preview.png",
-        "img_alt": "Map of Costa Rica highlighting IkiHomes launch zones including San José, Escazú, Santa Ana, and Guanacaste"
+        "cta": "Reserve your spot"
     },
     "final_cta": {
         "title": "Join early. Be ready first.",
-        "body": "IkiHomes is preparing for launch in Costa Rica. Join early access and be among the first agents to build visibility on the platform.",
+        "body": "The first spots in each zone will fill first. Secure yours before public launch.",
         "cta": "Join Early Access",
-        "microcopy": "We'll share updates as access expands. No spam, ever."
+        "microcopy": "No cost. No commitment. Just your spot secured."
     },
     "about": {
         "title": "About IkiHomes",

@@ -10,6 +10,7 @@ interface TrustVisibleSectionProps {
   dict: {
     eyebrow: string;
     title: string;
+    anchor: string;
     body: string;
     badge_speed: string;
     badge_verified: string;
@@ -74,9 +75,13 @@ export function TrustVisibleSection({ dict }: TrustVisibleSectionProps) {
               {dict.eyebrow}
             </span>
 
-            <h2 className="type-heading text-3xl md:text-4xl text-gray-900 leading-snug mb-5">
+            <h2 className="type-heading text-3xl md:text-4xl text-gray-900 leading-snug mb-4">
               {dict.title}
             </h2>
+
+            <p className="type-body-semibold text-base text-primary/80 leading-relaxed mb-4 italic">
+              {dict.anchor}
+            </p>
 
             <p className="type-body text-base text-gray-600 leading-relaxed mb-8">
               {dict.body}

@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { ValuePropsSection } from "@/components/ValuePropsSection";
 import { TrustVisibleSection } from "@/components/TrustVisibleSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { FounderSection } from "@/components/FounderSection";
 import { BuiltForCostaRicaSection } from "@/components/BuiltForCostaRicaSection";
 import { EarlyEdgeSection } from "@/components/EarlyEdgeSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
@@ -20,6 +21,7 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
       <StickyCTA label={dict.hero.cta} />
       <ValuePropsSection dict={dict.value_props} />
       <HowItWorksSection dict={dict.how_it_works} />
+      <FounderSection dict={dict.founder} />
       <TrustVisibleSection dict={dict.trust_visible} />
       <BuiltForCostaRicaSection dict={dict.built_for_cr} />
       <EarlyEdgeSection dict={dict.early_edge} />

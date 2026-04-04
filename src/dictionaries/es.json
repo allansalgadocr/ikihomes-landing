@@ -1,5 +1,5 @@
 {
-    "status_banner": "Acceso anticipado disponible ahora en Costa Rica.",
+    "status_banner": "Acceso anticipado disponible ahora en Costa Rica — cupos limitados.",
     "hero": {
         "badge": "Acceso Anticipado Abierto en Costa Rica",
         "headline_1": "Recibe solicitudes reales en tu zona",
@@ -7,7 +7,7 @@
         "subheadline": "La plataforma que recompensa velocidad y confianza — no solo presencia.",
         "cta": "Únete al Acceso Anticipado",
         "cta_secondary": "Por qué unirte ↓",
-        "cta_footnote": "Sin costo · Costa Rica",
+        "cta_footnote": "Sin costo · Asegura tu lugar antes del lanzamiento.",
         "logo_alt": "Logo de IkiHomes",
         "dashboard_badge": "Vista Previa de Acceso Anticipado"
     },
@@ -21,16 +21,16 @@
         "footer": "Sin spam. Solo avisos importantes de la plataforma.",
         "success_title": "¡Solicitud recibida!",
         "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
-        "add_another": "Agregar otro correo"
+        "add_another": "Enviar otra solicitud"
     },
     "value_props": {
         "title": "Por qué unirte antes del lanzamiento",
         "subtitle": "Plazas limitadas de acceso anticipado en Costa Rica",
-        "cta": "Únete al Acceso Anticipado",
+        "cta": "Solicitar Acceso",
         "items": [
             {
                 "title": "Construye tu presencia temprano",
-                "description": "Configura tu perfil y señales de confianza antes de que crezca la competencia."
+                "description": "Sé de los primeros en la plataforma, antes de que crezca la competencia."
             },
             {
                 "title": "Adelántate en visibilidad",
@@ -42,20 +42,9 @@
             }
         ]
     },
-    "trust_visible": {
-        "eyebrow": "Confianza",
-        "title": "La confianza será visible",
-        "body": "Los agentes destacarán por las señales que importan: capacidad de respuesta, actividad y credibilidad profesional. Tu perfil hablará por ti antes de que digas una palabra.",
-        "badge_speed": "Tiempo de respuesta medido",
-        "badge_verified": "Verificado por IkiHomes",
-        "badge_zone": "Emparejado por zona",
-        "cta": "Únete al Acceso Anticipado",
-        "img_src": "/agent-trust-card-es.png",
-        "img_alt": "Tarjeta de confianza del agente IkiHomes mostrando velocidad de respuesta, estado verificado y calificación"
-    },
     "how_it_works": {
         "title": "Cómo funcionará IkiHomes",
-        "cta": "Únete al Acceso Anticipado",
+        "cta": "Solicitar Acceso",
         "steps": [
             {
                 "title": "Un comprador publica lo que busca en tu zona",
@@ -71,40 +60,52 @@
             }
         ]
     },
-    "social_proof": {
-        "title": "Construido sobre Demanda Real de Compradores",
-        "items": [
-            "Acceso anticipado en Costa Rica",
-            "Solicitudes de compradores emparejadas por zona",
-            "Insignias de confianza basadas en datos reales de respuesta"
+    "founder": {
+        "body": "Construimos IkiHomes porque el mercado inmobiliario en Costa Rica merece algo mejor. Compradores que no saben a quién confiarle su búsqueda. Agentes que trabajan bien pero no tienen cómo demostrarlo al primer contacto. IkiHomes nace para resolver eso — desde Costa Rica, para Costa Rica.",
+        "signature": "— Equipo IkiHomes, San José, Costa Rica"
+    },
+    "trust_visible": {
+        "eyebrow": "Confianza",
+        "title": "La confianza será visible",
+        "anchor": "Entendemos que la confianza no se declara. Se demuestra. Por eso cada señal en IkiHomes se basa en datos reales, no en autopromoción.",
+        "body": "Los agentes destacarán por las señales que importan: capacidad de respuesta, actividad y credibilidad profesional. Tu perfil hablará por ti antes de que digas una palabra.",
+        "badge_speed": "Tiempo de respuesta medido",
+        "badge_verified": "Verificado por IkiHomes",
+        "badge_zone": "Conectado con compradores de tu zona",
+        "cta": "Asegura tu plaza",
+        "img_src": "/agent-trust-card-es.png",
+        "img_alt": "Tarjeta de confianza del agente IkiHomes mostrando velocidad de respuesta, estado verificado y calificación"
+    },
+    "built_for_cr": {
+        "eyebrow": "Mercado de Lanzamiento",
+        "title": "Hecho para Costa Rica",
+        "body": "Diseñado para el mercado inmobiliario costarricense, con un enfoque local para agentes, compradores y zonas clave. Comenzando con acceso anticipado en áreas seleccionadas — y expandiendo conforme crece la demanda.",
+        "zones": [
+            { "name": "Área Metropolitana", "description": "El mayor volumen de búsquedas inmobiliarias del país." },
+            { "name": "Escazú", "description": "Alta concentración de compradores internacionales y mercado premium activo." },
+            { "name": "Santa Ana", "description": "Demanda creciente en residencial y oportunidades de inversión." },
+            { "name": "Guanacaste", "description": "Mercado de playa con comprador internacional de alta intención." }
         ],
-        "statement": "IkiHomes está diseñado para que ganen los agentes más responsivos — no solo los que pagan más."
+        "cta": "Únete al Acceso Anticipado",
+        "img_src": "/costa-rica-map-preview.png",
+        "img_alt": "Mapa de Costa Rica destacando las zonas de lanzamiento de IkiHomes incluyendo San José, Escazú, Santa Ana y Guanacaste"
     },
     "early_edge": {
         "eyebrow": "Ventaja Temprana",
         "title": "Los agentes que lleguen primero tendrán ventaja",
         "body": "Quienes se unan ahora serán los primeros en construir su presencia, generar señales de confianza y prepararse para la visibilidad cuando IkiHomes crezca.",
         "bullets": [
-            "Sé de los primeros agentes en la plataforma",
-            "Arma tu perfil antes del lanzamiento público",
-            "Posiciónate antes de que escale la demanda"
+            "Acceso prioritario a solicitudes de compradores en tu zona",
+            "Los primeros agentes establecerán el estándar de confianza",
+            "Tu opinión dará forma a la plataforma"
         ],
-        "cta": "Únete al Acceso Anticipado"
-    },
-    "built_for_cr": {
-        "eyebrow": "Mercado de Lanzamiento",
-        "title": "Hecho para Costa Rica",
-        "body": "Diseñado para el mercado inmobiliario costarricense, con un enfoque local para agentes, compradores y zonas clave. Comenzando con acceso anticipado en áreas seleccionadas — y expandiendo conforme crece la demanda.",
-        "zones": ["Área Metropolitana", "Escazú", "Santa Ana", "Costa de Guanacaste"],
-        "cta": "Únete al Acceso Anticipado",
-        "img_src": "/costa-rica-map-preview.png",
-        "img_alt": "Mapa de Costa Rica destacando las zonas de lanzamiento de IkiHomes incluyendo San José, Escazú, Santa Ana y Guanacaste"
+        "cta": "Reserva tu lugar"
     },
     "final_cta": {
         "title": "Únete temprano. Prepárate primero.",
-        "body": "IkiHomes se prepara para su lanzamiento en Costa Rica. Únete al acceso anticipado y sé de los primeros agentes en construir visibilidad en la plataforma.",
+        "body": "Las primeras plazas en cada zona se llenarán primero. Asegura la tuya antes del lanzamiento público.",
         "cta": "Únete al Acceso Anticipado",
-        "microcopy": "Te compartiremos novedades conforme se amplíe el acceso. Sin spam, nunca."
+        "microcopy": "Sin costo. Sin compromiso. Solo tu lugar asegurado."
     },
     "about": {
         "title": "Sobre IkiHomes",

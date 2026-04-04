@@ -11,7 +11,7 @@ interface BuiltForCostaRicaSectionProps {
     eyebrow: string;
     title: string;
     body: string;
-    zones: string[];
+    zones: Array<{ name: string; description: string }>;
     cta: string;
     img_src: string;
     img_alt: string;
@@ -78,18 +78,22 @@ export function BuiltForCostaRicaSection({ dict }: BuiltForCostaRicaSectionProps
               {dict.body}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-col gap-4 mb-8">
               {dict.zones.map((zone) => (
-                <span
-                  key={zone}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-primary text-sm font-medium border border-primary/15 shadow-sm"
-                >
-                  <span className="relative flex h-2 w-2 shrink-0">
+                <div key={zone.name} className="flex items-start gap-3">
+                  <span className="relative flex h-2 w-2 shrink-0 mt-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-50" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
                   </span>
-                  {zone}
-                </span>
+                  <div>
+                    <span className="type-body-semibold text-sm text-primary block">
+                      {zone.name}
+                    </span>
+                    <span className="type-body text-xs text-gray-500">
+                      {zone.description}
+                    </span>
+                  </div>
+                </div>
               ))}
             </div>
 
