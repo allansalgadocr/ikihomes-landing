@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { sendGAEvent } from "@next/third-parties/google";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -130,9 +131,11 @@ export function TrustVisibleSection({ dict }: TrustVisibleSectionProps) {
           <div className="reveal-child flex justify-center md:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/8 blur-2xl rounded-3xl scale-95 translate-y-4" />
-              <img
+              <Image
                 src={dict.img_src}
                 alt={dict.img_alt}
+                width={288}
+                height={288}
                 className="relative w-64 md:w-72 rounded-2xl shadow-[0_20px_48px_-8px_rgba(45,90,94,0.18)] border border-gray-100"
               />
             </div>

@@ -101,6 +101,16 @@
         ],
         "cta": "Reserva tu lugar"
     },
+    "blog_teaser": {
+        "eyebrow": "Artículos",
+        "title": "Desde el blog",
+        "card_title": "Costa Rica tiene MLS — pero no funciona como crees",
+        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué puedes hacer.",
+        "card_date": "2026-04-03",
+        "card_image": "/blog-mls-costa-rica-reality.png",
+        "read_article": "Leer artículo",
+        "view_all": "Ver todos los artículos"
+    },
     "final_cta": {
         "title": "Únete temprano. Prepárate primero.",
         "body": "Las primeras plazas en cada zona se llenarán primero. Asegura la tuya antes del lanzamiento público.",
@@ -121,7 +131,8 @@
             "about": "Nosotros",
             "contact": "Contacto",
             "privacy": "Privacidad",
-            "terms": "Términos"
+            "terms": "Términos",
+            "blog": "Blog"
         },
         "contact_email": "contact@ikihomescr.com",
         "copyright": "IkiHomes. Todos los derechos reservados."

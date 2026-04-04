@@ -23,12 +23,16 @@ export async function generateMetadata(
   const { lang } = await props.params;
 
   const isEs = lang === "es";
+
+  // Keyword-first titles — nobody searches "IkiHomes" yet
   const title = isEs
-    ? "IkiHomes | Recibe Solicitudes de Compradores — Agentes Inmobiliarios Costa Rica"
-    : "IkiHomes | Get Buyer Requests — Real Estate Agents Costa Rica";
+    ? "Agentes Inmobiliarios Costa Rica — Recibe Solicitudes de Compradores | IkiHomes"
+    : "Real Estate Agents Costa Rica — Get Buyer Requests | IkiHomes";
+
+  // Zone names in description for bold matches in search results
   const description = isEs
-    ? "Recibe solicitudes de compradores en tu zona. Responde rápido, gana insignias de confianza y cierra más clientes. La plataforma para agentes inmobiliarios en Costa Rica."
-    : "Receive buyer property requests in your zone. Respond fast, earn trust badges, and win clients. The platform for real estate agents in Costa Rica.";
+    ? "Recibe solicitudes de compradores en tu zona. Escazú, Santa Ana, San José, Guanacaste. Responde rápido, gana insignias de confianza y cierra más clientes. La plataforma para agentes inmobiliarios en Costa Rica."
+    : "Receive buyer property requests in your zone. Escazú, Santa Ana, San José, Guanacaste. Respond fast, earn trust badges, and win clients. The platform for real estate agents in Costa Rica.";
 
   return {
     title,
@@ -39,13 +43,22 @@ export async function generateMetadata(
       languages: {
         en: "/en",
         es: "/es",
-        "x-default": "/en",
+        "x-default": "/es",
       },
     },
     openGraph: {
       title,
       description,
-      images: ["/og-image.png"],
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1024,
+          height: 1024,
+          alt: isEs
+            ? "IkiHomes — Plataforma para agentes inmobiliarios en Costa Rica"
+            : "IkiHomes — Platform for real estate agents in Costa Rica",
+        },
+      ],
       type: "website",
       locale: isEs ? "es_CR" : "en_US",
       siteName: "IkiHomes",
@@ -64,13 +77,20 @@ export async function generateMetadata(
       icon: "/favicon.ico",
       apple: "/apple-touch-icon.png",
     },
+    other: {
+      "geo.region": "CR",
+      "geo.placename": "San José, Costa Rica",
+    },
   };
 }
 
 import { getDictionary } from "../../dictionaries";
 import { StatusBanner } from "@/components/StatusBanner";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Footer } from "@/components/Footer";
+import { FormModal } from "@/components/FormModal";
 
-/** JSON-LD structured data for Organization + LocalBusiness */
+/** JSON-LD structured data for Organization + WebSite */
 function StructuredData({ lang }: { lang: string }) {
   const isEs = lang === "es";
 
@@ -80,28 +100,10 @@ function StructuredData({ lang }: { lang: string }) {
     name: "IkiHomes",
     url: "https://ikihomescr.com",
     logo: "https://ikihomescr.com/logo.svg",
+    image: "https://ikihomescr.com/og-image.png",
     description: isEs
       ? "Plataforma que conecta compradores de propiedades en Costa Rica con agentes inmobiliarios clasificados por confianza y capacidad de respuesta."
       : "Platform connecting property buyers in Costa Rica with real estate agents ranked by trust and responsiveness.",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "contact@ikihomescr.com",
-      contactType: "customer service",
-      availableLanguage: ["Spanish", "English"],
-    },
-    sameAs: [],
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "IkiHomes",
-    url: "https://ikihomescr.com",
-    logo: "https://ikihomescr.com/logo.svg",
-    image: "https://ikihomescr.com/og-image.png",
-    description: isEs
-      ? "Plataforma inmobiliaria en Costa Rica. Recibe solicitudes de compradores reales en tu zona."
-      : "Real estate platform in Costa Rica. Receive real buyer requests in your zone.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "CR",
@@ -129,9 +131,13 @@ function StructuredData({ lang }: { lang: string }) {
         containedInPlace: { "@type": "Country", name: "Costa Rica" },
       },
     ],
-    priceRange: "$$",
-    openingHours: "Mo-Fr 08:00-18:00",
-    email: "contact@ikihomescr.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "contact@ikihomescr.com",
+      contactType: "customer service",
+      availableLanguage: ["Spanish", "English"],
+    },
+    sameAs: [],
   };
 
   const webSiteSchema = {
@@ -139,7 +145,7 @@ function StructuredData({ lang }: { lang: string }) {
     "@type": "WebSite",
     name: "IkiHomes",
     url: "https://ikihomescr.com",
-    inLanguage: [isEs ? "es" : "en"],
+    inLanguage: ["es", "en"],
     description: isEs
       ? "La plataforma para agentes inmobiliarios en Costa Rica."
       : "The platform for real estate agents in Costa Rica.",
@@ -151,12 +157,6 @@ function StructuredData({ lang }: { lang: string }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessSchema),
         }}
       />
       <script
@@ -184,7 +184,7 @@ export default async function RootLayout(
       <head>
         <link rel="alternate" hrefLang="en" href="https://ikihomescr.com/en" />
         <link rel="alternate" hrefLang="es" href="https://ikihomescr.com/es" />
-        <link rel="alternate" hrefLang="x-default" href="https://ikihomescr.com/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://ikihomescr.com/es" />
         <StructuredData lang={lang} />
         {/* noscript: remove data-js so reveal classes don't hide content */}
         <noscript>
@@ -196,7 +196,10 @@ export default async function RootLayout(
       >
         <StatusBanner text={dict.status_banner} />
         <LanguageSelector />
+        <SiteHeader lang={lang} />
         {children}
+        <Footer lang={lang} dict={dict.footer} formDict={dict.form} />
+        <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>

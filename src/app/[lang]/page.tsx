@@ -5,9 +5,8 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { FounderSection } from "@/components/FounderSection";
 import { BuiltForCostaRicaSection } from "@/components/BuiltForCostaRicaSection";
 import { EarlyEdgeSection } from "@/components/EarlyEdgeSection";
+import { BlogTeaserSection } from "@/components/BlogTeaserSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
-import { Footer } from "@/components/Footer";
-import { FormModal } from "@/components/FormModal";
 import { StickyCTA } from "@/components/StickyCTA";
 import { getDictionary } from "@/dictionaries";
 
@@ -25,9 +24,8 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
       <TrustVisibleSection dict={dict.trust_visible} />
       <BuiltForCostaRicaSection dict={dict.built_for_cr} />
       <EarlyEdgeSection dict={dict.early_edge} />
+      <BlogTeaserSection lang={lang} dict={dict.blog_teaser} />
       <FinalCTASection dict={dict.final_cta} />
-      <Footer dict={dict.footer} formDict={dict.form} />
-      <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
     </main>
   );
 }

@@ -24,7 +24,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    "/((?!_next|favicon.ico|favicon.svg|apple-touch-icon.png|logo.svg|og-image.png|hero-dashboard.png|hero-lifestyle.jpg|agent-trust-card.png|agent-trust-card-en.png|agent-trust-card-es.png|whatsapp-preview.png|ui-detail-card.png|map-visual.png|lifestyle-background.png|costa-rica-map-preview.png|iso-devices.png|founder-headshot.png).*)",
+    // Skip internal paths (_next), static assets, and sitemap/robots
+    "/((?!_next|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.gif$|.*\\.txt$|.*\\.xml$|sitemap|robots).*)",
   ],
 };

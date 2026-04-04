@@ -1,7 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-import { sendGAEvent } from "@next/third-parties/google";
+import Image from "next/image";
+import { HeroPageView, HeroCTA } from "./HeroTracking";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
@@ -19,31 +17,21 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ dict }: HeroSectionProps) {
-  useEffect(() => {
-    sendGAEvent("event", "agent_landing_page_viewed", { category: "landing" });
-  }, []);
-
-  const handleCTAClick = () => {
-    sendGAEvent("event", "agent_signup_started", {
-      category: "landing",
-      source: "hero_cta",
-    });
-  };
-
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-      {/* Full-bleed hero image */}
+      {/* GA page view tracker */}
+      <HeroPageView />
+
+      {/* Full-bleed hero image — next/image for LCP optimization */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/hero-lifestyle.jpg"
           alt="Costa Rica luxury homes aerial view"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
-        {/*
-          Two-layer gradient:
-          1. Left-to-right scrim — protects left-aligned text, lets right side breathe
-          2. Bottom vignette — anchors the lower portion for CTA readability
-        */}
         <div
           className="absolute inset-0"
           style={{
@@ -59,19 +47,17 @@ export function HeroSection({ dict }: HeroSectionProps) {
         <div className="max-w-xl text-center md:text-left">
           {/* Logo */}
           <div className="mb-12 animate-fade-in">
-            <img
+            <Image
               src="/logo.svg"
               alt={dict.logo_alt}
-              className="h-10 md:h-12 brightness-0 invert mx-auto md:mx-0"
+              width={160}
+              height={48}
+              className="h-10 md:h-12 w-auto brightness-0 invert mx-auto md:mx-0"
+              priority
             />
           </div>
 
-          {/*
-            Headline hierarchy:
-            Line 1 = value prop (the hook) → largest, heaviest (Urbanist 900)
-            Line 2 = motivator (urgency)   → smaller, lighter (Urbanist 700)
-            This follows the F-pattern: hook first, context second.
-          */}
+          {/* h1 — server-rendered for SEO crawlability */}
           <h1
             className="mb-8 animate-fade-in-up delay-100"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
@@ -84,7 +70,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
             </span>
           </h1>
 
-          {/* Subheadline — quiet, supporting */}
+          {/* Subheadline */}
           <p
             className="type-body text-base md:text-lg text-white/60 mb-10 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-150"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
@@ -92,14 +78,10 @@ export function HeroSection({ dict }: HeroSectionProps) {
             {dict.subheadline}
           </p>
 
-          {/* CTA block — stacked vertically for clear hierarchy */}
+          {/* CTA block */}
           <div className="animate-fade-in-up delay-200 flex flex-col sm:flex-row items-center md:items-start gap-5">
-            <a
-              id="hero-cta"
+            <HeroCTA
               href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
               className="inline-flex items-center justify-center gap-2 px-9 py-4 bg-white text-gray-900 font-bold rounded-lg shadow-xl hover:bg-white/90 hover:shadow-2xl transition-all transform hover:-translate-y-0.5 text-base md:text-lg min-h-[52px]"
             >
               {dict.cta}
@@ -116,7 +98,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </a>
+            </HeroCTA>
             {dict.cta_secondary && (
               <a
                 href="#value-props"
