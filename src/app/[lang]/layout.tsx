@@ -89,6 +89,7 @@ import { StatusBanner } from "@/components/StatusBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Footer } from "@/components/Footer";
 import { FormModal } from "@/components/FormModal";
+import { MetaPixel } from "@/components/MetaPixel";
 
 /** JSON-LD structured data for Organization + WebSite */
 function StructuredData({ lang }: { lang: string }) {
@@ -201,6 +202,7 @@ export default async function RootLayout(
         <Footer lang={lang} dict={dict.footer} formDict={dict.form} />
         <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        <MetaPixel />
       </body>
     </html>
   );

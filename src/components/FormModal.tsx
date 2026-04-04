@@ -3,6 +3,7 @@
 import { useActionState, useCallback, useEffect, useRef, useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { submitLead, SubmitLeadState } from "@/actions/submitLead";
+import { trackMetaEvent } from "@/components/MetaPixel";
 
 const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "";
 
@@ -80,6 +81,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
   useEffect(() => {
     if (state.ok) {
       sendGAEvent("event", "lead_form_success", { category: "lead", source: "modal" });
+      trackMetaEvent("Lead", { content_name: "Early Access Signup" });
     } else if (state.error) {
       sendGAEvent("event", "lead_form_error", { category: "lead", error: state.error, source: "modal" });
     }

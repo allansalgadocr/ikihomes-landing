@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { submitLead, SubmitLeadState } from "@/actions/submitLead";
 import { sendGAEvent } from "@next/third-parties/google";
 import { useEffect } from "react";
+import { trackMetaEvent } from "@/components/MetaPixel";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 interface FooterFormProps {
@@ -22,6 +23,7 @@ export function FooterForm({ placeholder, buttonText, successMessage }: FooterFo
   useEffect(() => {
      if (state.ok) {
        sendGAEvent("event", "footer_form_success", { category: "lead" });
+       trackMetaEvent("Lead", { content_name: "Footer Signup" });
      } else if (state.error) {
        sendGAEvent("event", "footer_form_error", { category: "lead", error: state.error });
      }
