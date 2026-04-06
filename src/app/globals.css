@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Colour tokens ── */
+  /* ── Colour tokens (elevated: no pure black/white) ── */
   --color-primary: #2D5A5E;
   --color-primary-light: #578589;
-  --color-secondary: #FDFDFD;
+  --color-secondary: #FAFAF9;
   --color-warm-accent: #F3A712;
   --color-midnight: #0F172A;
 
-  --color-bg: #FDFDFD;
+  --color-bg: #FAFAF9;
   --color-card: #FFFFFF;
+
+  /* ── Elevated shadow stacks ── */
+  --shadow-elevated: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.04);
+  --shadow-elevated-hover: 0 2px 4px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.06);
+  --shadow-soft: 0 1px 3px rgba(0,0,0,0.03), 0 6px 16px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 40px rgba(45,90,94,0.12), 0 0 80px rgba(45,90,94,0.06);
 
   /* ── Font-family tokens ── */
   --font-urbanist: var(--font-urbanist);
@@ -59,6 +65,11 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 /* Stagger delay utilities (used with animate-fade-in-up etc.) */
@@ -176,7 +187,8 @@ noscript .reveal-child-scale {
   .type-display {
     font-family: var(--font-urbanist), sans-serif;
     font-weight: 900;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.035em;
+    font-feature-settings: "liga" 1, "calt" 1;
   }
 
   /* Section headings — Urbanist Bold (700) */
@@ -190,14 +202,14 @@ noscript .reveal-child-scale {
   .type-body {
     font-family: var(--font-source-sans), sans-serif;
     font-weight: 400;
-    line-height: 1.625;
+    line-height: 1.7;
   }
 
   /* Body emphasis — Source Sans 3 Semibold (600) */
   .type-body-semibold {
     font-family: var(--font-source-sans), sans-serif;
     font-weight: 600;
-    line-height: 1.625;
+    line-height: 1.7;
   }
 
   /* ALL-CAPS micro text (secondary CTAs, microcopy) */
@@ -205,6 +217,48 @@ noscript .reveal-child-scale {
     font-family: var(--font-source-sans), sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+  }
+
+  /* ── Elevated card ── */
+  .card-elevated {
+    background: var(--color-card);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    box-shadow: var(--shadow-elevated);
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-elevated-hover);
+  }
+
+  /* ── Elevated CTA button ── */
+  .btn-elevated {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out, background-color 150ms ease-out;
+    min-height: 52px;
+  }
+
+  .btn-elevated:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-elevated:active {
+    transform: translateY(0);
+    transition-duration: 100ms;
+  }
+
+  /* ── Section divider (gradient fade) ── */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(45, 90, 94, 0.15), transparent);
   }
 }
 
@@ -216,7 +270,9 @@ body {
   background-color: var(--color-bg);
   color: var(--color-midnight);
   font-family: var(--font-source-sans), sans-serif;
-  line-height: 1.625;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,h2,h3,h4,h5,h6 {
