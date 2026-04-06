@@ -1,11 +1,10 @@
 import { HeroSection } from "@/components/HeroSection";
+import { IntroSection } from "@/components/IntroSection";
 import { ValuePropsSection } from "@/components/ValuePropsSection";
-import { TrustVisibleSection } from "@/components/TrustVisibleSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { FounderSection } from "@/components/FounderSection";
+import { DifferentiationSection } from "@/components/DifferentiationSection";
 import { BuiltForCostaRicaSection } from "@/components/BuiltForCostaRicaSection";
 import { EarlyEdgeSection } from "@/components/EarlyEdgeSection";
-import { BlogTeaserSection } from "@/components/BlogTeaserSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { StickyCTA } from "@/components/StickyCTA";
 import { getDictionary } from "@/dictionaries";
@@ -18,13 +17,12 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
     <main className="min-h-screen flex flex-col">
       <HeroSection dict={dict.hero} />
       <StickyCTA label={dict.hero.cta} />
+      <IntroSection dict={dict.intro} />
       <ValuePropsSection dict={dict.value_props} />
       <HowItWorksSection dict={dict.how_it_works} />
-      <FounderSection dict={dict.founder} />
-      <TrustVisibleSection dict={dict.trust_visible} />
+      <DifferentiationSection dict={dict.differentiation} />
       <BuiltForCostaRicaSection dict={dict.built_for_cr} />
       <EarlyEdgeSection dict={dict.early_edge} />
-      <BlogTeaserSection lang={lang} dict={dict.blog_teaser} />
       <FinalCTASection dict={dict.final_cta} />
     </main>
   );

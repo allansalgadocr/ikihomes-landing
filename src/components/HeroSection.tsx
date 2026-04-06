@@ -5,13 +5,10 @@ const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface HeroSectionProps {
   dict: {
-    badge: string;
-    headline_1: string;
-    headline_2: string;
+    headline: string;
     subheadline: string;
     cta: string;
-    cta_secondary?: string;
-    cta_footnote?: string;
+    microcopy?: string;
     logo_alt: string;
   };
 }
@@ -59,27 +56,22 @@ export function HeroSection({ dict }: HeroSectionProps) {
 
           {/* h1 — server-rendered for SEO crawlability */}
           <h1
-            className="mb-8 animate-fade-in-up delay-100"
+            className="type-display text-white text-[2.25rem] md:text-5xl lg:text-6xl leading-[1.1] mb-8 animate-fade-in-up delay-100"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            <span className="type-display text-white text-[2.25rem] md:text-5xl lg:text-6xl leading-[1.1] block mb-4">
-              {dict.headline_1}
-            </span>
-            <span className="type-heading text-white/75 text-xl md:text-2xl lg:text-3xl leading-snug block">
-              {dict.headline_2}
-            </span>
+            {dict.headline}
           </h1>
 
           {/* Subheadline */}
           <p
-            className="type-body text-base md:text-lg text-white/60 mb-10 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-150"
+            className="type-body text-base md:text-lg text-white/70 mb-10 max-w-md mx-auto md:mx-0 animate-fade-in-up delay-150"
             style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
           >
             {dict.subheadline}
           </p>
 
           {/* CTA block */}
-          <div className="animate-fade-in-up delay-200 flex flex-col sm:flex-row items-center md:items-start gap-5">
+          <div className="animate-fade-in-up delay-200">
             <HeroCTA
               href={FORM_URL}
               className="inline-flex items-center justify-center gap-2 px-9 py-4 bg-white text-gray-900 font-bold rounded-lg shadow-xl hover:bg-white/90 hover:shadow-2xl transition-all transform hover:-translate-y-0.5 text-base md:text-lg min-h-[52px]"
@@ -99,23 +91,15 @@ export function HeroSection({ dict }: HeroSectionProps) {
                 />
               </svg>
             </HeroCTA>
-            {dict.cta_secondary && (
-              <a
-                href="#value-props"
-                className="type-caps text-xs text-white/45 hover:text-white/80 transition-colors font-semibold py-4"
-              >
-                {dict.cta_secondary}
-              </a>
-            )}
           </div>
 
-          {/* Post-signup clarity */}
-          {dict.cta_footnote && (
+          {/* Microcopy */}
+          {dict.microcopy && (
             <p
-              className="type-body mt-8 text-sm text-white/45 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-300"
+              className="type-body mt-6 text-sm text-white/45 max-w-sm mx-auto md:mx-0 animate-fade-in-up delay-300"
               style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
             >
-              {dict.cta_footnote}
+              {dict.microcopy}
             </p>
           )}
         </div>

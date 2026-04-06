@@ -4,13 +4,9 @@ import { useEffect, useRef } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
-
 interface ValuePropsSectionProps {
   dict: {
     title: string;
-    subtitle?: string;
-    cta?: string;
     items: Array<{
       title: string;
       description: string;
@@ -67,13 +63,6 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
     };
   }, [dict.items]);
 
-  const handleCTAClick = () => {
-    sendGAEvent("event", "agent_signup_started", {
-      category: "landing",
-      source: "value_props_cta",
-    });
-  };
-
   return (
     <section
       ref={sectionReveal}
@@ -81,20 +70,15 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
       className="reveal py-20 md:py-28 bg-gray-50/80 relative"
     >
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section headline + urgency line */}
+        {/* Section headline */}
         <div className="text-center mb-14">
-          <h2 className="type-heading text-3xl md:text-4xl text-gray-900 mb-3">
+          <h2 className="type-heading text-3xl md:text-4xl text-gray-900">
             {dict.title}
           </h2>
-          {dict.subtitle && (
-            <p className="type-caps text-xs text-gray-400">
-              {dict.subtitle}
-            </p>
-          )}
         </div>
 
         {/* Value points — staggered reveal */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {dict.items.map((item, index) => (
             <div
               key={index}
@@ -105,7 +89,7 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
                 {ICONS[index]}
               </div>
 
-              <h3 className="type-heading text-lg text-gray-900 mb-2 min-h-[3.5rem] flex items-end">
+              <h3 className="type-heading text-lg text-gray-900 mb-2 min-h-14 flex items-end">
                 {item.title}
               </h3>
 
@@ -115,25 +99,6 @@ export function ValuePropsSection({ dict }: ValuePropsSectionProps) {
             </div>
           ))}
         </div>
-
-        {/* CTA */}
-        {dict.cta && (
-          <div className="text-center">
-            <a
-              id="value-props-cta"
-              href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base"
-            >
-              {dict.cta}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </div>
-        )}
       </div>
     </section>
   );

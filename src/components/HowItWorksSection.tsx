@@ -1,14 +1,10 @@
 "use client";
 
-import { sendGAEvent } from "@next/third-parties/google";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface HowItWorksSectionProps {
   dict: {
     title: string;
-    cta?: string;
     steps: Array<{
       title: string;
       description: string;
@@ -18,13 +14,6 @@ interface HowItWorksSectionProps {
 
 export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   const sectionReveal = useScrollReveal<HTMLElement>();
-
-  const handleCTAClick = () => {
-    sendGAEvent("event", "agent_signup_started", {
-      category: "landing",
-      source: "how_it_works_cta",
-    });
-  };
 
   return (
     <section ref={sectionReveal} className="reveal py-20 md:py-28 bg-white relative">
@@ -66,24 +55,6 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
             ))}
           </div>
         </div>
-
-        {/* CTA */}
-        {dict.cta && (
-          <div className="text-center">
-            <a
-              href={FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base"
-            >
-              {dict.cta}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </div>
-        )}
       </div>
     </section>
   );
