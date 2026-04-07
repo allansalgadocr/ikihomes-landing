@@ -31,9 +31,9 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
         </div>
 
         <div className="relative">
-          {/* Connecting line */}
+          {/* Connecting line — behind step circles */}
           <div
-            className="line-draw hidden md:block absolute top-7 left-1/6 right-1/6 h-px"
+            className="line-draw hidden md:block absolute top-7 left-1/6 right-1/6 h-px z-0"
             aria-hidden="true"
             style={{ background: "linear-gradient(90deg, transparent, rgba(160,226,186,0.35), transparent)" }}
           />
@@ -46,16 +46,16 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
               >
                 {/* Step number — accent ring on dark */}
                 <div
-                  className="w-14 h-14 rounded-full bg-accent/15 text-accent flex items-center justify-center mb-8 type-heading text-base relative z-10 ring-1 ring-accent/25"
+                  className="w-14 h-14 rounded-full bg-secondary text-accent flex items-center justify-center mb-8 type-heading text-base relative z-10 ring-2 ring-accent/30"
                 >
                   {index + 1}
                 </div>
 
-                <h3 className="type-subheading text-lg text-white mb-3 min-h-14 flex items-end justify-center">
+                <h3 className="type-subheading text-lg text-white mb-3 md:min-h-14 flex items-end justify-center">
                   {step.title}
                 </h3>
 
-                <p className="type-body text-[0.9375rem] text-white/50 leading-relaxed max-w-xs">
+                <p className="type-body text-[0.9375rem] text-white/50 leading-relaxed max-w-68">
                   {step.description}
                 </p>
               </div>

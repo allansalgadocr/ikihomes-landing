@@ -12,7 +12,7 @@
         "email_placeholder": "Correo electrónico",
         "zones_label": "¿En cuáles zonas trabajas?",
         "zones_placeholder": "Ej: Escazú, Santa Ana, San José",
-        "button": "Solicitar Acceso",
+        "button": "Reservar mi lugar",
         "button_pending": "Enviando...",
         "footer": "Sin spam. Solo avisos importantes de la plataforma.",
         "success_title": "¡Solicitud recibida!",
@@ -53,8 +53,8 @@
                 "description": "IkiHomes prioriza cercanía con la zona, presentación profesional y preparación para atender oportunidades reales."
             },
             {
-                "title": "Los agentes que responden mejor destacan",
-                "description": "Cada solicitud crea una oportunidad real para los agentes que transmiten confianza y responden con agilidad."
+                "title": "Los primeros en responder se quedan con el lead",
+                "description": "Cada solicitud es visible para un grupo limitado de agentes Pro. Solo los primeros en responder quedan visibles al comprador. La velocidad define quién gana."
             }
         ]
     },
