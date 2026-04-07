@@ -1,93 +1,98 @@
 {
     "status_banner": "Acceso anticipado disponible ahora en Costa Rica — cupos limitados.",
+    "nav": {
+        "badge": "Acceso anticipado"
+    },
     "hero": {
-        "headline": "La plataforma donde compradores serios encuentran agentes confiables",
-        "subheadline": "IkiHomes se prepara para abrir en Costa Rica con un modelo enfocado en confianza, rapidez de respuesta y relevancia por zona.",
-        "cta": "Quiero acceso anticipado",
-        "microcopy": "Apertura inicial por zonas seleccionadas.",
+        "eyebrow": "Abriendo por zonas en Costa Rica",
+        "headline_start": "La plataforma donde compradores serios encuentran ",
+        "headline_em": "agentes confiables",
+        "subheadline": "Los compradores ya están buscando. Los primeros agentes en responder se quedan con el lead. IkiHomes abre pronto — por zonas, con cupos limitados.",
+        "cta": "Reservar mi lugar →",
         "logo_alt": "Logo de IkiHomes"
     },
-    "form": {
-        "name_placeholder": "Nombre completo",
-        "email_placeholder": "Correo electrónico",
-        "zones_label": "¿En cuáles zonas trabajas?",
-        "zones_placeholder": "Ej: Escazú, Santa Ana, San José",
-        "button": "Reservar mi lugar",
-        "button_pending": "Enviando...",
-        "footer": "Sin spam. Solo avisos importantes de la plataforma.",
-        "success_title": "¡Solicitud recibida!",
-        "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
-        "add_another": "Enviar otra solicitud"
-    },
-    "intro": {
-        "title": "Hoy no basta con estar visible",
-        "body_1": "En el mercado inmobiliario, la diferencia también está en cómo te perciben, qué tan rápido respondes y qué tan bien representas tu zona.",
-        "body_2": "IkiHomes nace para ayudar a que los agentes correctos estén mejor posicionados cuando un comprador realmente está listo para avanzar."
-    },
-    "value_props": {
-        "title": "Por qué ingresar antes del lanzamiento",
+    "stats": {
         "items": [
-            {
-                "title": "Prepárate antes de la apertura",
-                "description": "Los agentes que entren en esta etapa podrán organizar su presencia antes de que IkiHomes abra públicamente en su zona."
-            },
-            {
-                "title": "Perfil que genera confianza",
-                "description": "La credibilidad no se construye solo con inventario. También se construye con presentación, claridad y capacidad de respuesta."
-            },
-            {
-                "title": "Mejor posición al abrir",
-                "description": "Cuando comiencen a entrar las primeras solicitudes, tendrán ventaja los agentes que ya estén listos para responder con seriedad."
-            }
+            { "number": "3", "label": "agentes máximo por solicitud" },
+            { "number": "$0", "label": "para entrar en etapa anticipada" },
+            { "number": "$49", "label": "/mes en lanzamiento · Plan Pro" }
         ]
     },
-    "how_it_works": {
-        "title": "Cómo funcionará IkiHomes",
+    "mechanic": {
+        "label": "Cómo funciona",
+        "title": "El que responde primero, gana el lead",
+        "subtitle": "Cada solicitud llega a un grupo reducido de agentes Pro. Solo los primeros 3 en responder quedan visibles al comprador. Los demás no.",
         "steps": [
             {
                 "title": "El comprador comparte lo que busca",
                 "description": "Zona, presupuesto, tipo de propiedad y contexto de compra."
             },
             {
-                "title": "La plataforma identifica agentes relevantes",
-                "description": "IkiHomes prioriza cercanía con la zona, presentación profesional y preparación para atender oportunidades reales."
+                "title": "IkiHomes notifica a agentes Pro en esa zona",
+                "description": "Solo agentes verificados y activos reciben la solicitud completa."
             },
             {
-                "title": "Los primeros en responder se quedan con el lead",
-                "description": "Cada solicitud es visible para un grupo limitado de agentes Pro. Solo los primeros en responder quedan visibles al comprador. La velocidad define quién gana."
+                "title": "Los primeros 3 en responder se quedan con el lead",
+                "description": "La solicitud se cierra. La velocidad define quién gana.",
+                "pill": "Solo 3 respuestas aceptadas"
             }
         ]
     },
-    "differentiation": {
-        "title": "Diseñado para un mercado donde la confianza pesa",
-        "body": "IkiHomes no busca llenar una página de perfiles. Busca crear un entorno donde los compradores puedan identificar mejor a los agentes que proyectan seriedad, conocimiento local y capacidad de respuesta.",
+    "trust": {
+        "label": "Por qué importa",
+        "title": "Construido para que la confianza sea visible",
+        "subtitle": "IkiHomes no es un directorio. Es una plataforma donde el comprador identifica al agente correcto antes de contactarlo.",
         "cards": [
             {
-                "title": "Confianza visible",
-                "description": "La credibilidad debe sentirse desde el primer contacto."
+                "title": "Verificado por IkiHomes",
+                "description": "Identidad validada. Visible en tu perfil y en cada listing compartido."
             },
             {
-                "title": "Respuesta que diferencia",
-                "description": "Responder a tiempo no es un detalle. Es parte de cómo un comprador evalúa a un agente."
+                "title": "Insignias por tiempo de respuesta",
+                "description": "Tu velocidad es pública. Los compradores la ven antes de decidir a quién contactar."
             },
             {
                 "title": "Relevancia por zona",
-                "description": "Estar bien posicionado en la zona correcta vale más que aparecer en todo lado sin contexto."
+                "description": "Las solicitudes van a los agentes más relevantes para esa zona. No al que pagó más."
             }
         ]
     },
-    "built_for_cr": {
-        "title": "Pensado para cómo se mueve el mercado en Costa Rica",
-        "body": "Aquí el mercado inmobiliario se define por confianza, seguimiento y conocimiento real de cada zona. IkiHomes se está construyendo con esa lógica: mejor posicionamiento, menos ruido y una experiencia más útil tanto para compradores como para agentes."
+    "split": {
+        "label": "Acceso anticipado",
+        "title": "Llega listo cuando abra tu zona",
+        "body": "Los agentes en pre-lanzamiento configuran su perfil antes de que lleguen las primeras solicitudes. Los que entren después competirán contra ellos desde el día uno.",
+        "cta": "Reservar mi lugar →",
+        "microcopy": "Sin spam. Solo avisos importantes de la plataforma.",
+        "preview_label": "Agentes activos — Escazú",
+        "preview_footer_text": "Tiempo medio de respuesta en esta zona:",
+        "preview_footer_value": "38 min",
+        "preview_caption": "Ejemplo ilustrativo del producto",
+        "agents": [
+            { "initials": "CM", "name": "Carlos Mora", "zone": "Escazú · Santa Ana", "badge": "⚡ Lightning", "badge_type": "lightning" },
+            { "initials": "AL", "name": "Ana López", "zone": "Escazú · Curridabat", "badge": "Respuesta rápida", "badge_type": "fast" },
+            { "initials": "RV", "name": "Roberto Vega", "zone": "Santa Ana · Pozos", "badge": "Activo", "badge_type": "active" }
+        ]
     },
-    "early_edge": {
-        "title": "Llegar listo hace la diferencia",
-        "body": "El acceso anticipado no es solo cuestión de tiempo. Es llegar con perfil, presencia y posicionamiento definidos para cuando IkiHomes comience a abrir mercado por zonas."
-    },
-    "final_cta": {
+    "bottom_cta": {
         "title": "Prepárate para abrir con mejor posición",
-        "body": "IkiHomes iniciará por etapas en Costa Rica. Este es el momento para estar listo.",
-        "cta": "Quiero acceso anticipado"
+        "subtitle": "IkiHomes inicia por etapas en Costa Rica. Este es el momento para estar listo.",
+        "cta": "Reservar mi lugar →",
+        "zones": "Apertura inicial · Escazú · Santa Ana · GAM"
+    },
+    "form": {
+        "modal_title": "Solicitar acceso anticipado",
+        "name_label": "Nombre completo",
+        "name_placeholder": "Nombre completo",
+        "email_label": "Correo electrónico",
+        "email_placeholder": "Correo electrónico",
+        "zones_label": "Zona principal de trabajo",
+        "zones_placeholder": "Ej: Escazú, Santa Ana, San José",
+        "button": "Reservar mi lugar →",
+        "button_pending": "Enviando...",
+        "footer": "Sin spam. Solo avisos importantes de la plataforma.",
+        "success_title": "¡Solicitud recibida!",
+        "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
+        "add_another": "Enviar otra solicitud"
     },
     "blog_teaser": {
         "eyebrow": "Artículos",
@@ -107,16 +112,12 @@
         "close": "Cerrar"
     },
     "footer": {
-        "badge": "Acceso Anticipado en Costa Rica",
-        "trust_line": "Hecho en Costa Rica · Compradores reales · Agentes reales",
+        "copyright": "© 2026 IkiHomes · Hecho en Costa Rica · Compradores reales · Agentes reales",
         "links": {
-            "about": "Nosotros",
-            "contact": "Contacto",
+            "blog": "Blog",
             "privacy": "Privacidad",
-            "terms": "Términos",
-            "blog": "Blog"
+            "terms": "Términos"
         },
-        "contact_email": "contact@ikihomescr.com",
-        "copyright": "IkiHomes. Todos los derechos reservados."
+        "contact_email": "contact@ikihomescr.com"
     }
 }

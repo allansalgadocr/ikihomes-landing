@@ -7,7 +7,7 @@ import "../globals.css";
 const urbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["400", "500", "700", "900"],
 });
 
 const sourceSans = Source_Sans_3({
@@ -87,6 +87,7 @@ export async function generateMetadata(
 import { getDictionary } from "../../dictionaries";
 import { StatusBanner } from "@/components/StatusBanner";
 import { SiteHeader } from "@/components/SiteHeader";
+import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { FormModal } from "@/components/FormModal";
 import { MetaPixel } from "@/components/MetaPixel";
@@ -198,8 +199,9 @@ export default async function RootLayout(
         <StatusBanner text={dict.status_banner} />
         <LanguageSelector />
         <SiteHeader lang={lang} />
+        <NavBar dict={dict.nav} />
         {children}
-        <Footer lang={lang} dict={dict.footer} formDict={dict.form} />
+        <Footer lang={lang} dict={dict.footer} />
         <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <MetaPixel />

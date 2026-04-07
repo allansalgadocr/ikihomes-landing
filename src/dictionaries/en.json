@@ -1,93 +1,98 @@
 {
     "status_banner": "Early access now available in Costa Rica — limited spots.",
+    "nav": {
+        "badge": "Early access"
+    },
     "hero": {
-        "headline": "The platform where serious buyers find trusted agents",
-        "subheadline": "IkiHomes is getting ready to launch in Costa Rica with a model built around trust, response time, and local relevance.",
-        "cta": "Request early access",
-        "microcopy": "Opening by select zones.",
+        "eyebrow": "Opening by zones in Costa Rica",
+        "headline_start": "The platform where serious buyers find ",
+        "headline_em": "trusted agents",
+        "subheadline": "Buyers are already searching. The first agents to respond win the lead. IkiHomes opens soon — by zones, with limited spots.",
+        "cta": "Reserve my spot →",
         "logo_alt": "IkiHomes Logo"
     },
-    "form": {
-        "name_placeholder": "Full name",
-        "email_placeholder": "Email address",
-        "zones_label": "Which zones do you work in?",
-        "zones_placeholder": "E.g. Escazú, Santa Ana, San José",
-        "button": "Request Access",
-        "button_pending": "Sending...",
-        "footer": "No spam. Only important platform updates.",
-        "success_title": "Request received!",
-        "success_msg": "We'll reach out to you shortly. Check your inbox.",
-        "add_another": "Submit another request"
-    },
-    "intro": {
-        "title": "Visibility alone is not enough",
-        "body_1": "In real estate, the difference also comes down to how you're perceived, how fast you respond, and how well you represent your area.",
-        "body_2": "IkiHomes exists to help the right agents be better positioned when a buyer is actually ready to move forward."
-    },
-    "value_props": {
-        "title": "Why join before launch",
+    "stats": {
         "items": [
-            {
-                "title": "Get set before opening",
-                "description": "Agents who join at this stage will be able to organize their presence before IkiHomes opens publicly in their zone."
-            },
-            {
-                "title": "A profile that builds trust",
-                "description": "Credibility isn't built on listings alone. It's also built on presentation, clarity, and responsiveness."
-            },
-            {
-                "title": "Stronger position at launch",
-                "description": "When the first inquiries start coming in, agents who are already prepared to respond with professionalism will have the edge."
-            }
+            { "number": "3", "label": "agents max per request" },
+            { "number": "$0", "label": "to join during early access" },
+            { "number": "$49", "label": "/mo at launch · Pro Plan" }
         ]
     },
-    "how_it_works": {
-        "title": "How IkiHomes works",
+    "mechanic": {
+        "label": "How it works",
+        "title": "First to respond wins the lead",
+        "subtitle": "Each request goes to a small group of Pro agents. Only the first 3 to respond are visible to the buyer. The rest are not.",
         "steps": [
             {
                 "title": "The buyer shares what they're looking for",
                 "description": "Zone, budget, property type, and buying context."
             },
             {
-                "title": "The platform identifies relevant agents",
-                "description": "IkiHomes prioritizes proximity to the zone, professional presentation, and readiness to handle real opportunities."
+                "title": "IkiHomes notifies Pro agents in that zone",
+                "description": "Only verified and active agents receive the full request."
             },
             {
-                "title": "Agents who respond well stand out",
-                "description": "Each inquiry becomes a real opportunity for agents who project trust and respond with speed."
+                "title": "The first 3 to respond win the lead",
+                "description": "The request closes. Speed defines who wins.",
+                "pill": "Only 3 responses accepted"
             }
         ]
     },
-    "differentiation": {
-        "title": "Built for a market where trust matters",
-        "body": "IkiHomes isn't trying to fill a page with profiles. It's designed to create an environment where buyers can more easily identify agents who project professionalism, local knowledge, and responsiveness.",
+    "trust": {
+        "label": "Why it matters",
+        "title": "Built so trust is visible",
+        "subtitle": "IkiHomes is not a directory. It's a platform where buyers identify the right agent before reaching out.",
         "cards": [
             {
-                "title": "Visible trust",
-                "description": "Credibility should come through from the very first contact."
+                "title": "Verified by IkiHomes",
+                "description": "Validated identity. Visible on your profile and every shared listing."
             },
             {
-                "title": "Response that sets you apart",
-                "description": "Responding on time isn't a detail. It's part of how a buyer evaluates an agent."
+                "title": "Response time badges",
+                "description": "Your speed is public. Buyers see it before deciding who to contact."
             },
             {
                 "title": "Relevance by zone",
-                "description": "Being well positioned in the right area is worth more than showing up everywhere without context."
+                "description": "Requests go to the most relevant agents for that zone. Not the highest bidder."
             }
         ]
     },
-    "built_for_cr": {
-        "title": "Built for how real estate moves in Costa Rica",
-        "body": "Here, real estate runs on trust, follow-through, and real knowledge of each zone. IkiHomes is being built with that logic: better positioning, less noise, and a more useful experience for both buyers and agents."
+    "split": {
+        "label": "Early access",
+        "title": "Be ready when your zone opens",
+        "body": "Pre-launch agents set up their profile before the first requests arrive. Those who join later will compete against them from day one.",
+        "cta": "Reserve my spot →",
+        "microcopy": "No spam. Only important platform updates.",
+        "preview_label": "Active agents — Escazú",
+        "preview_footer_text": "Average response time in this zone:",
+        "preview_footer_value": "38 min",
+        "preview_caption": "Illustrative product example",
+        "agents": [
+            { "initials": "CM", "name": "Carlos Mora", "zone": "Escazú · Santa Ana", "badge": "⚡ Lightning", "badge_type": "lightning" },
+            { "initials": "AL", "name": "Ana López", "zone": "Escazú · Curridabat", "badge": "Fast response", "badge_type": "fast" },
+            { "initials": "RV", "name": "Roberto Vega", "zone": "Santa Ana · Pozos", "badge": "Active", "badge_type": "active" }
+        ]
     },
-    "early_edge": {
-        "title": "Showing up ready makes the difference",
-        "body": "Early access isn't just about timing. It's about arriving with your profile, presence, and positioning already in place for when IkiHomes begins opening market by zone."
+    "bottom_cta": {
+        "title": "Get ready to launch in a stronger position",
+        "subtitle": "IkiHomes will roll out in stages across Costa Rica. Now is the time to be ready.",
+        "cta": "Reserve my spot →",
+        "zones": "Initial opening · Escazú · Santa Ana · GAM"
     },
-    "final_cta": {
-        "title": "Request early access and launch in a stronger position",
-        "body": "IkiHomes will roll out in stages across Costa Rica. Now is the time to be ready.",
-        "cta": "Request early access"
+    "form": {
+        "modal_title": "Request early access",
+        "name_label": "Full name",
+        "name_placeholder": "Full name",
+        "email_label": "Email address",
+        "email_placeholder": "Email address",
+        "zones_label": "Primary work zone",
+        "zones_placeholder": "E.g. Escazú, Santa Ana, San José",
+        "button": "Reserve my spot →",
+        "button_pending": "Sending...",
+        "footer": "No spam. Only important platform updates.",
+        "success_title": "Request received!",
+        "success_msg": "We'll reach out to you shortly. Check your inbox.",
+        "add_another": "Submit another request"
     },
     "blog_teaser": {
         "eyebrow": "Insights",
@@ -107,16 +112,12 @@
         "close": "Close"
     },
     "footer": {
-        "badge": "Early Access in Costa Rica",
-        "trust_line": "Made in Costa Rica · Real Buyers · Real Agents",
+        "copyright": "© 2026 IkiHomes · Made in Costa Rica · Real Buyers · Real Agents",
         "links": {
-            "about": "About",
-            "contact": "Contact",
+            "blog": "Blog",
             "privacy": "Privacy",
-            "terms": "Terms",
-            "blog": "Blog"
+            "terms": "Terms"
         },
-        "contact_email": "contact@ikihomescr.com",
-        "copyright": "IkiHomes. All rights reserved."
+        "contact_email": "contact@ikihomescr.com"
     }
 }

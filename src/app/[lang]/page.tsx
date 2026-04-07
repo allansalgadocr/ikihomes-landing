@@ -1,11 +1,9 @@
 import { HeroSection } from "@/components/HeroSection";
-import { IntroSection } from "@/components/IntroSection";
-import { ValuePropsSection } from "@/components/ValuePropsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { DifferentiationSection } from "@/components/DifferentiationSection";
-import { BuiltForCostaRicaSection } from "@/components/BuiltForCostaRicaSection";
-import { EarlyEdgeSection } from "@/components/EarlyEdgeSection";
-import { FinalCTASection } from "@/components/FinalCTASection";
+import { StatsBar } from "@/components/StatsBar";
+import { MechanicSection } from "@/components/MechanicSection";
+import { TrustSection } from "@/components/TrustSection";
+import { SplitSection } from "@/components/SplitSection";
+import { BottomCTASection } from "@/components/BottomCTASection";
 import { StickyCTA } from "@/components/StickyCTA";
 import { getDictionary } from "@/dictionaries";
 
@@ -17,13 +15,11 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
     <main className="min-h-screen flex flex-col">
       <HeroSection dict={dict.hero} />
       <StickyCTA label={dict.hero.cta} />
-      <IntroSection dict={dict.intro} />
-      <ValuePropsSection dict={dict.value_props} />
-      <HowItWorksSection dict={dict.how_it_works} />
-      <DifferentiationSection dict={dict.differentiation} />
-      <BuiltForCostaRicaSection dict={dict.built_for_cr} />
-      <EarlyEdgeSection dict={dict.early_edge} />
-      <FinalCTASection dict={dict.final_cta} />
+      <StatsBar dict={dict.stats} />
+      <MechanicSection dict={dict.mechanic} />
+      <TrustSection dict={dict.trust} />
+      <SplitSection dict={dict.split} />
+      <BottomCTASection dict={dict.bottom_cta} />
     </main>
   );
 }

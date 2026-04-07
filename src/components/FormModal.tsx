@@ -10,7 +10,10 @@ const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "";
 interface FormModalProps {
   closeLabel: string;
   formDict: {
+    modal_title?: string;
+    name_label?: string;
     name_placeholder: string;
+    email_label?: string;
     email_placeholder: string;
     zones_label: string;
     zones_placeholder: string;
@@ -82,7 +85,6 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
   useEffect(() => {
     if (state.ok) {
       sendGAEvent("event", "lead_form_success", { category: "lead", source: "modal" });
-      // Get submitted values for Meta Pixel Lead event
       const form = formRef.current;
       const name = (form?.querySelector<HTMLInputElement>("[name=name]")?.value) || "";
       const zones = (form?.querySelector<HTMLInputElement>("[name=zones]")?.value) || "";
@@ -100,6 +102,13 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
   };
 
   if (!isOpen) return null;
+
+  const inputClass =
+    "w-full px-4 py-3 rounded-lg bg-white text-base transition-all outline-none";
+  const inputBorder =
+    "border-[1.5px] border-[#d0d0d0] focus:border-[#23696A]";
+  const labelClass =
+    "block text-[11px] uppercase text-[#555] mb-1.5 font-medium";
 
   return (
     <div
@@ -120,14 +129,13 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
         tabIndex={-1}
         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in"
       >
-        {/* Close button */}
+        {/* Close button — icon only */}
         <div className="flex justify-end p-4 pb-0">
           <button
             onClick={close}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors rounded-lg hover:bg-gray-100"
+            className="inline-flex items-center justify-center w-8 h-8 text-gray-400 hover:text-gray-700 transition-colors rounded-lg hover:bg-gray-100"
             aria-label={closeLabel}
           >
-            <span className="hidden sm:inline">{closeLabel}</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -137,7 +145,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
         {/* Form content */}
         <div className="px-6 sm:px-8 pb-8 pt-2">
           {state.ok ? (
-            /* ── Success state ── */
+            /* Success state */
             <div className="text-center py-6 animate-fade-in">
               <div className="mx-auto w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-5">
                 <svg className="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,31 +162,29 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
 
               <button
                 onClick={close}
-                className="px-6 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                className="px-6 py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors text-sm"
               >
                 {closeLabel}
               </button>
             </div>
           ) : (
-            /* ── Form state ── */
             <>
-              {/* Header */}
+              {/* Header — no logo, just title */}
               <div className="text-center mb-6">
-                <img
-                  src="/logo.svg"
-                  alt="IkiHomes"
-                  className="h-8 mx-auto mb-4"
-                />
                 <h3 className="type-heading text-xl text-gray-900 mb-1">
-                  {formDict.button}
+                  {formDict.modal_title || formDict.button}
                 </h3>
               </div>
 
               <form ref={formRef} action={formAction} onSubmit={handleSubmit} className="space-y-4">
                 {/* Name */}
                 <div>
-                  <label htmlFor="modal-name" className="sr-only">
-                    {formDict.name_placeholder}
+                  <label
+                    htmlFor="modal-name"
+                    className={labelClass}
+                    style={{ letterSpacing: "0.04em" }}
+                  >
+                    {formDict.name_label || formDict.name_placeholder}
                   </label>
                   <input
                     type="text"
@@ -186,29 +192,35 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
                     id="modal-name"
                     required
                     autoFocus
-                    placeholder={formDict.name_placeholder}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white text-base"
+                    className={`${inputClass} ${inputBorder}`}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="modal-email" className="sr-only">
-                    {formDict.email_placeholder}
+                  <label
+                    htmlFor="modal-email"
+                    className={labelClass}
+                    style={{ letterSpacing: "0.04em" }}
+                  >
+                    {formDict.email_label || formDict.email_placeholder}
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="modal-email"
                     required
-                    placeholder={formDict.email_placeholder}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white text-base"
+                    className={`${inputClass} ${inputBorder}`}
                   />
                 </div>
 
                 {/* Zones */}
                 <div>
-                  <label htmlFor="modal-zones" className="block text-sm text-gray-500 mb-1.5 font-medium">
+                  <label
+                    htmlFor="modal-zones"
+                    className={labelClass}
+                    style={{ letterSpacing: "0.04em" }}
+                  >
                     {formDict.zones_label}
                   </label>
                   <input
@@ -217,7 +229,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
                     id="modal-zones"
                     required
                     placeholder={formDict.zones_placeholder}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all bg-white text-base"
+                    className={`${inputClass} ${inputBorder}`}
                   />
                 </div>
 
@@ -234,7 +246,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="w-full px-8 py-3.5 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed text-base"
+                  className="w-full px-8 py-3.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all disabled:opacity-70 disabled:cursor-not-allowed text-base"
                 >
                   {isPending ? (
                     <span className="inline-flex items-center gap-2">
@@ -242,12 +254,7 @@ export function FormModal({ closeLabel, formDict }: FormModalProps) {
                       {formDict.button_pending}
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-2">
-                      {formDict.button}
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </span>
+                    formDict.button
                   )}
                 </button>
 
