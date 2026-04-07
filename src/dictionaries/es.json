@@ -15,7 +15,7 @@
         "items": [
             { "number": "3", "label": "agentes máximo por solicitud" },
             { "number": "$0", "label": "para entrar en etapa anticipada" },
-            { "number": "$49", "label": "/mes en lanzamiento · Plan Pro" }
+            { "number": "—", "label": "Cupos limitados · Etapa anticipada" }
         ]
     },
     "mechanic": {

@@ -15,7 +15,7 @@
         "items": [
             { "number": "3", "label": "agents max per request" },
             { "number": "$0", "label": "to join during early access" },
-            { "number": "$49", "label": "/mo at launch · Pro Plan" }
+            { "number": "—", "label": "Limited spots · Early stage" }
         ]
     },
     "mechanic": {
