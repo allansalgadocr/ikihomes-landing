@@ -16,22 +16,26 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
   const sectionReveal = useScrollReveal<HTMLElement>();
 
   return (
-    <section ref={sectionReveal} className="reveal py-24 md:py-32 relative">
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section headline */}
+    <section ref={sectionReveal} className="reveal py-24 md:py-32 bg-secondary relative overflow-hidden">
+      {/* Subtle radial glow */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[700px] h-[500px] rounded-full opacity-[0.08] pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, #A0E2BA, transparent 70%)" }}
+      />
+
+      <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="type-heading text-3xl md:text-4xl text-gray-900">
+          <h2 className="type-heading text-[1.75rem] md:text-4xl text-white">
             {dict.title}
           </h2>
         </div>
 
-        {/* Steps — 3 columns on desktop with connecting line */}
         <div className="relative">
-          {/* Connecting line — gradient fade for elevated feel */}
+          {/* Connecting line */}
           <div
-            className="line-draw hidden md:block absolute top-6.5 left-1/6 right-1/6 h-px"
+            className="line-draw hidden md:block absolute top-7 left-1/6 right-1/6 h-px"
             aria-hidden="true"
-            style={{ background: "linear-gradient(90deg, transparent, rgba(45,90,94,0.25), transparent)" }}
+            style={{ background: "linear-gradient(90deg, transparent, rgba(160,226,186,0.35), transparent)" }}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
@@ -40,19 +44,18 @@ export function HowItWorksSection({ dict }: HowItWorksSectionProps) {
                 key={index}
                 className="reveal-child flex flex-col items-center text-center relative"
               >
-                {/* Step number — elevated with glow */}
+                {/* Step number — accent ring on dark */}
                 <div
-                  className="w-13 h-13 rounded-full bg-primary text-white flex items-center justify-center mb-8 type-heading text-sm relative z-10 ring-4 ring-[#FAFAF9]"
-                  style={{ boxShadow: "0 2px 8px rgba(45,90,94,0.25), 0 0 0 1px rgba(45,90,94,0.1)" }}
+                  className="w-14 h-14 rounded-full bg-accent/15 text-accent flex items-center justify-center mb-8 type-heading text-base relative z-10 ring-1 ring-accent/25"
                 >
                   {index + 1}
                 </div>
 
-                <h3 className="type-heading text-lg text-gray-900 mb-3 min-h-14 flex items-end justify-center">
+                <h3 className="type-subheading text-lg text-white mb-3 min-h-14 flex items-end justify-center">
                   {step.title}
                 </h3>
 
-                <p className="type-body text-sm text-gray-500 leading-relaxed max-w-xs">
+                <p className="type-body text-[0.9375rem] text-white/50 leading-relaxed max-w-xs">
                   {step.description}
                 </p>
               </div>
