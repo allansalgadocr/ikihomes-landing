@@ -144,16 +144,14 @@ export function SplitSection({ dict }: SplitSectionProps) {
                     {dict.preview_footer_value}
                   </span>
                 </div>
+                <div
+                  className="text-[10px] mt-1.5"
+                  style={{ color: "#bbb" }}
+                >
+                  {dict.preview_caption}
+                </div>
               </div>
             </div>
-
-            {/* Caption */}
-            <p
-              className="text-[10px] mt-2 text-center"
-              style={{ color: "#bbb" }}
-            >
-              {dict.preview_caption}
-            </p>
           </div>
         </div>
       </div>

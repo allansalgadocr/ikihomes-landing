@@ -12,19 +12,28 @@ interface MechanicSectionProps {
 }
 
 const stepIcons = [
-  // Clock
-  <svg key="clock" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#23696A" strokeWidth="1.5">
-    <circle cx="9" cy="9" r="7" />
-    <path d="M9 5v4l3 2" />
+  // Search/magnifier with location pin — buyer describes what they want
+  <svg key="search" width="18" height="18" viewBox="0 0 18 18" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="7.5" cy="7.5" r="5" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M11.5 11.5L16 16" stroke="#23696A" strokeWidth="1.5" />
+    <circle cx="7.5" cy="6.5" r="1.5" stroke="#A0E2BA" strokeWidth="1.2" />
+    <path d="M7.5 8v1" stroke="#A0E2BA" strokeWidth="1.2" />
   </svg>,
-  // Envelope
-  <svg key="envelope" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#23696A" strokeWidth="1.5">
-    <rect x="2" y="4" width="14" height="10" rx="2" />
-    <path d="M2 7l7 4 7-4" />
+  // Bell with signal waves — IkiHomes notifies agents
+  <svg key="notify" width="18" height="18" viewBox="0 0 18 18" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 14a2 2 0 0 0 4 0" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M9 2v1" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M9 3a5 5 0 0 1 5 5c0 2.5 1 4 1 4H3s1-1.5 1-4a5 5 0 0 1 5-5z" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M14.5 5.5c1 .8 1.5 2 1.5 2" stroke="#A0E2BA" strokeWidth="1.2" />
+    <path d="M15.5 3c1.2 1 2 2.8 2 2.8" stroke="#A0E2BA" strokeWidth="1.2" />
   </svg>,
-  // Star
-  <svg key="star" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#23696A" strokeWidth="1.5">
-    <path d="M9 2l2 4.5H16l-4 3 1.5 4.5L9 11.5l-4.5 2.5L6 9.5 2 6.5h5z" />
+  // Trophy/podium — first 3 win
+  <svg key="trophy" width="18" height="18" viewBox="0 0 18 18" fill="none" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 14h6" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M9 11v3" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M5 2h8v5a4 4 0 0 1-8 0V2z" stroke="#23696A" strokeWidth="1.5" />
+    <path d="M5 4H3.5a1.5 1.5 0 0 0 0 3H5" stroke="#A0E2BA" strokeWidth="1.2" />
+    <path d="M13 4h1.5a1.5 1.5 0 0 1 0 3H13" stroke="#A0E2BA" strokeWidth="1.2" />
   </svg>,
 ];
 
