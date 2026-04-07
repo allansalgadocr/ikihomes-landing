@@ -198,7 +198,6 @@ export default async function RootLayout(
       >
         <StatusBanner text={dict.status_banner} />
         <LanguageSelector />
-        <SiteHeader lang={lang} />
         <NavBar dict={dict.nav} />
         {children}
         <Footer lang={lang} dict={dict.footer} />
