@@ -48,13 +48,13 @@ export function MechanicSection({ dict }: MechanicSectionProps) {
           {dict.label}
         </div>
         <h2
-          className="type-heading text-[26px] leading-[1.25] mb-2.5"
+          className="type-heading text-[34px] leading-[1.2] mb-3"
           style={{ color: "#091120" }}
         >
           {dict.title}
         </h2>
         <p
-          className="text-sm leading-[1.65] max-w-[440px] mb-10"
+          className="text-[15px] leading-[1.65] max-w-[480px] mb-10"
           style={{ color: "#666" }}
         >
           {dict.subtitle}
@@ -87,12 +87,12 @@ export function MechanicSection({ dict }: MechanicSectionProps) {
                 {stepIcons[i]}
               </div>
               <h3
-                className="text-sm font-medium leading-[1.35] mb-1.5"
+                className="text-[15px] font-medium leading-[1.35] mb-1.5"
                 style={{ color: "#091120" }}
               >
                 {step.title}
               </h3>
-              <p className="text-xs leading-[1.6]" style={{ color: "#777" }}>
+              <p className="text-sm leading-[1.6]" style={{ color: "#777" }}>
                 {step.description}
               </p>
               {step.pill && (

@@ -54,7 +54,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
         </div>
 
         {/* H1 */}
-        <h1 className="type-heading text-white text-4xl md:text-[36px] leading-[1.2] mb-4">
+        <h1 className="type-heading text-white text-[32px] md:text-[44px] leading-[1.15] mb-5">
           {dict.headline_start}
           <em className="not-italic" style={{ color: "#A0E2BA" }}>
             {dict.headline_em}
@@ -63,7 +63,7 @@ export function HeroSection({ dict }: HeroSectionProps) {
 
         {/* Subheadline */}
         <p
-          className="text-sm leading-[1.7] mb-8 max-w-[420px]"
+          className="text-[15px] leading-[1.7] mb-8 max-w-[440px]"
           style={{ color: "rgba(255,255,255,0.55)" }}
         >
           {dict.subheadline}

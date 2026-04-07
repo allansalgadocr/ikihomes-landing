@@ -49,13 +49,13 @@ export function SplitSection({ dict }: SplitSectionProps) {
               {dict.label}
             </div>
             <h2
-              className="type-heading text-[26px] leading-[1.25] mb-2.5"
+              className="type-heading text-[34px] leading-[1.2] mb-3"
               style={{ color: "#091120" }}
             >
               {dict.title}
             </h2>
             <p
-              className="text-sm leading-[1.65] mb-7"
+              className="text-[15px] leading-[1.65] mb-7"
               style={{ color: "#666" }}
             >
               {dict.body}

@@ -18,11 +18,11 @@ export function BottomCTASection({ dict }: BottomCTASectionProps) {
       style={{ background: "#14425B" }}
     >
       <div className="max-w-[1100px] mx-auto">
-        <h2 className="type-heading text-[26px] text-white leading-[1.3] mb-2.5">
+        <h2 className="type-heading text-[34px] text-white leading-[1.2] mb-3">
           {dict.title}
         </h2>
         <p
-          className="text-sm mb-7"
+          className="text-[15px] mb-7"
           style={{ color: "rgba(255,255,255,0.45)" }}
         >
           {dict.subtitle}

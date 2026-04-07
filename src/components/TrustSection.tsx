@@ -37,11 +37,11 @@ export function TrustSection({ dict }: TrustSectionProps) {
         >
           {dict.label}
         </div>
-        <h2 className="type-heading text-[26px] leading-[1.25] text-white mb-2.5">
+        <h2 className="type-heading text-[34px] leading-[1.2] text-white mb-3">
           {dict.title}
         </h2>
         <p
-          className="text-sm leading-[1.65] max-w-[440px] mb-10"
+          className="text-[15px] leading-[1.65] max-w-[480px] mb-10"
           style={{ color: "rgba(255,255,255,0.45)" }}
         >
           {dict.subtitle}
@@ -63,11 +63,11 @@ export function TrustSection({ dict }: TrustSectionProps) {
               >
                 {cardIcons[i]}
               </div>
-              <h3 className="text-sm font-medium text-white leading-[1.35] mb-1.5">
+              <h3 className="text-[15px] font-medium text-white leading-[1.35] mb-1.5">
                 {card.title}
               </h3>
               <p
-                className="text-xs leading-[1.6]"
+                className="text-sm leading-[1.6]"
                 style={{ color: "rgba(255,255,255,0.4)" }}
               >
                 {card.description}
