@@ -86,7 +86,17 @@ Open with a one-paragraph lede that names the dynamic: Guanacaste corrected, the
 
 Then the H2s, in this order:
 
-1. **La corrección que reordenó el mercado** / *The Correction That Reordered the Market* — the headline number is the **30%–35% correction** in the luxury segment from 2024 peaks (cite Coldwell Banker's December 2025 market update inline). The boom that preceded it was **~400% across 2020–2023** per the **Universidad Nacional's Observatorio de Turismo, Migración y Desarrollo Sostenible (UNA OBSERMIDE)** — this is the strongest single citation in the post and should be named explicitly. Frame the correction as *normalization*, not crash. Median Guanacaste/Nicoya listing prices held at $1.32M as of June 2025 (Coldwell Banker), down only 3.05% YoY — meaning the correction concentrated in the ultra-luxury tier (>$2M, where price cuts averaged 15.2%) while broader inventory held firmer. That nuance matters.
+1. **La corrección que reordenó el mercado** / *The Correction That Reordered the Market* — the headline narrative is normalization, not crash. **Anchor with two distinct citations:**
+   - For the **boom**: cite **OBTUR-UNA** (the **Observatorio de Turismo, Migraciones y Desarrollo Sostenible de la Región Chorotega de la Universidad Nacional**, coordinated by Esteban Barboza Núñez). The 2024 study reported that property prices on the Guanacaste coast rose **hasta 400% entre 2020 y 2023**. **Use the "hasta" hedge — the study uses it in the headline.** Use past tense ("según el estudio publicado en 2024 por OBTUR-UNA, los precios subieron hasta 400% entre 2020 y 2023") — by April 2026 the study is two years old, present-tense framing would mislead. **Citable URLs (verified live):**
+     - Press version (recommended primary citation, more stable URL): `https://semanariouniversidad.com/pais/precio-de-propiedades-en-guanacaste-se-incremento-hasta-un-400-entre-2020-y-2023/`
+     - UNA original release: `https://www.unacomunica.una.ac.cr/index.php/marzo-2024/5179-hasta-400-de-precio-incrementaron-propiedades-en-costas-de-guanacaste`
+   - For the **correction and current state**: cite **Coldwell Banker Costa Rica's December 2025 Market Report** at `https://www.coldwellbankercostarica.com/article/december-2025-report-trends-costa-rica-real-estate-market-update` (verified live). The report's actual Guanacaste/Nicoya YTD 2025 vs 2024 figures:
+     - **Median list price: $1,332,551 (▼ 1.8%)** — list-side held, sellers anchored.
+     - **Median sold price: $707,527 (▼ 16.0%)** — *this is the killer datapoint*. List held but transactions cleared 16% lower YoY. Sellers asked, buyers negotiated, deals closed below.
+     - Sold listings: 291 (▼ 5.5%).
+     - Inventory: 571 homes (▲ 21.5%).
+     - Average days on market: **355 days (▲ 23.1%)**.
+   - The framing that emerges: the gap between median list (-1.8%) and median sold (-16.0%) is the operational reality of the market. *That's* the agent's edge — knowing how much the asking price will move at close. Sellers haven't capitulated on listing yet; buyers know they don't need to.
 
 2. **Lo que se mueve y lo que no** / *What's Moving and What Isn't* — Guanacaste is not a single market. Differentiate the microzones explicitly: **Tamarindo**, **Playa Flamingo**, **Nosara**, **Las Catalinas**, **Papagayo**, **Playas del Coco**. Each has its own dynamic, and an agent who generalizes loses credibility instantly with a serious buyer. Pricing notes (use these specific verified ranges only — do **not** use the wrong numbers from the source draft):
    - **Tamarindo: $1,400/m² (standard inland) to $9,000/m² (premium beachfront in Langosta and Tamarindo Centro).** Tamarindo prices fell ~10% Jan 2025 → Jan 2026 because inventory grew faster than demand.
@@ -100,9 +110,14 @@ Then the H2s, in this order:
    - The North American retiree: turnkey, established community, legal certainty, healthcare proximity.
    - The high-earning digital nomad: connectivity, community, walkable beach proximity.
    - The short-term-rental investor: evaluates by AirDNA occupancy and revenue-per-available-night, not aesthetics.
-   Treating all three with the same pitch is how an agent loses credibility fastest. Cite the verified **40% foreign-buyer share of CR transactions** (US 45%, Canada 25%, Europe 20%, other 10%) and note it skews higher in Guanacaste than the national average.
+   Treating all three with the same pitch is how an agent loses credibility fastest. Cite the **40% foreign-buyer share of CR transactions** (Coldwell Banker 2025 market trends report) and note it skews higher in Guanacaste than the national average. **Do NOT quote a 45/25/20/10 split** for US/Canada/Europe/other — no primary source publishes that breakdown. Use qualitative framing only: *"predominantemente estadounidenses, con presencia significativa de Canadá y Europa"* / *"predominantly US-based, with significant Canadian and European presence."*
 
-4. **Por qué este es momento de agente, no de espectador** / *Why This Is an Agent Moment, Not a Spectator Moment* — the operational metrics define a buyer's market: **average days on market ~340** (Coldwell Banker), **inventory equivalent to 8–12 months of absorption vs. 4–6 in a balanced market**, sales typically closing **5%–10% below asking**, with 276 properties cutting prices in 2025 averaging 10.2% reductions (and 15.2% for ultra-luxury). But — critically — *buyer's market does NOT mean any agent captures the deal*. It means the buyer has time, options, and demands criteria from the agent. The agent who shows up with a portfolio PDF gets ignored. The agent who shows up with microzone analysis, adjusted comps, and a read on which seller is actually ready to negotiate closes.
+4. **Por qué este es momento de agente, no de espectador** / *Why This Is an Agent Moment, Not a Spectator Moment* — the operational metrics define a buyer's market. **From the Coldwell Banker Dec 2025 report (citable as authority):**
+   - Average days on market: **355** (▲ 23.1% YoY).
+   - Inventory: **+21.5%** YoY.
+   - Median list -1.8% / median sold -16.0% — the spread *is* the buyer's leverage.
+   **Do NOT cite Coldwell Banker for "5–10% below asking", "8–12 months of absorption vs 4–6 balanced", or "276 properties at 10.2%"** — those numbers came from broker-blog interpretations (TheLatinvestor) and are not in the actual Coldwell Banker report. If you want to use them, attribute generically as "market commentary suggests" or cut. The Coldwell Banker median-list-vs-median-sold spread is a stronger and properly-sourced way to make the same point.
+   The framing that earns agent respect: *buyer's market does NOT mean any agent captures the deal*. It means the buyer has time, options, and demands criteria from the agent. The agent who shows up with a portfolio PDF gets ignored. The agent who shows up with microzone analysis, adjusted comps, and a read on which seller is ready to clear at -16% closes.
 
 5. **Lo que están haciendo los agentes ya posicionados** / *What the Already-Positioned Agents Are Doing* — they specialize by microzone and work it with discipline. Active relationships with developers and property managers (off-market access). Curated buyer rolodex by profile, not flooded with generic listings. Hours-not-days response time. They treat Guanacaste like a financial market with its own microstructure, not a tourism destination that happens to sell properties. Same playbook from `stand-out-agent` applied to a coastal geography.
 
@@ -154,14 +169,18 @@ For an audience of working agents, unsourced figures read as invented. This post
 **Minimum: three anchored citations** in the body (Guanacaste has more strong sources than Santa Ana, so the floor is higher). Attach to the most load-bearing claims: the 400% boom (UNA OBSERMIDE), the 30%–35% correction (Coldwell Banker / Global Property Guide), the operational metrics (Coldwell Banker), and the 40% foreign-buyer share.
 
 **Acceptable Costa Rican / international authority sources** (use these, not generic broker blogs):
-- **Universidad Nacional — Observatorio de Turismo, Migración y Desarrollo Sostenible (UNA OBSERMIDE)** — Costa Rican academic primary source for the 400% surge claim. The single strongest citation in the post.
-- **Coldwell Banker Costa Rica — December 2025 Market Update** (`coldwellbankercostarica.com/article/december-2025-report-trends-costa-rica-real-estate-market-update`) — citable for: 30%–35% correction, ~340 days on market, 5%–10% below asking, 8–12 months inventory, +15% inventory in 2025, $1.32M median Guanacaste/Nicoya listing.
-- **Global Property Guide — Costa Rica Residential Market Analysis 2025** (`globalpropertyguide.com/latin-america/costa-rica/price-history`) — cross-reference for correction magnitude and Central Valley comparisons.
-- **El Financiero** (`elfinancierocr.com`) — Costa Rica's main business newspaper. Useful for citing IMAE coverage, multinational investment, Liberia airport arrivals data. Verify specific article URLs before citing.
-- **BCCR — Estadísticas de la Construcción** (`bccr.fi.cr/indicadores-economicos/estadísticas-de-la-construcción`) — IMAE-Construcción for context on private-construction cycle if relevant.
+- **OBTUR-UNA — Observatorio de Turismo, Migraciones y Desarrollo Sostenible de la Región Chorotega de la Universidad Nacional** — Costa Rican academic primary source for the boom narrative. **Coordinator: Esteban Barboza Núñez. Study published 5 marzo 2024.** Use past tense ("según el estudio publicado en 2024") and keep the "hasta 400%" hedge. Citable URLs (verified live April 2026):
+  - Press version (recommended primary, more stable URL): `https://semanariouniversidad.com/pais/precio-de-propiedades-en-guanacaste-se-incremento-hasta-un-400-entre-2020-y-2023/`
+  - UNA original: `https://www.unacomunica.una.ac.cr/index.php/marzo-2024/5179-hasta-400-de-precio-incrementaron-propiedades-en-costas-de-guanacaste`
+- **CFIA — Colegio Federado de Ingenieros y Arquitectos** — government-certified construction-permit data, citable via the OBTUR-UNA study above (Barboza references CFIA stats directly). The 456,000→866,000 m² habitational growth and "25% of national construction in Guanacaste in July 2023" figures are both anchored to CFIA via this study.
+- **Coldwell Banker Costa Rica — December 2025 Market Report** (`https://www.coldwellbankercostarica.com/article/december-2025-report-trends-costa-rica-real-estate-market-update`, **verified live April 2026**). Citable strictly for: median list $1,332,551 (-1.8%), median sold $707,527 (-16.0%), sold listings 291 (-5.5%), inventory 571 (+21.5%), DOM 355 days (+23.1%), and the regional comparison (Central Valley, Central & South Pacific). **Do NOT attribute to this report**: the 30%–35% luxury correction, "5–10% below asking," "8–12 months absorption," "276 cuts at 10.2%" — those are broker-blog interpretations.
+- **Global Property Guide — Costa Rica Residential Market Analysis 2025** (`https://www.globalpropertyguide.com/latin-america/costa-rica/price-history`) — cross-reference for the +7.65% Central Valley listing-price growth, useful for contrast with Guanacaste's correction.
+- **2025 US State Department Investment Climate Statement — Costa Rica** (`https://www.state.gov/reports/2025-investment-climate-statements/costa-rica`) — citable for FDI macro context: $4.322B inflow, ~70% from US. Note: this is *all* FDI, not residential buyers — use only as macro color, do not conflate with the residential-buyer 40% share.
+- **El Financiero** (`elfinancierocr.com`) — Costa Rica's main business newspaper. Useful for citing IMAE-Construcción coverage and broader construction reporting. Verify specific article URLs before citing.
+- **BCCR — Estadísticas de la Construcción** (`https://www.bccr.fi.cr/indicadores-economicos/estad%C3%ADsticas-de-la-construcci%C3%B3n`) — IMAE-Construcción for context on private-construction cycle if relevant.
 - **ICT — Instituto Costarricense de Turismo** (`ict.go.cr`) — official tourism arrival statistics. Essential for any claim about Liberia airport (LIR) traffic or international arrival trends.
 - **CINDE** (`cinde.org`) — multinational/foreign investment data.
-- **Tico Times** (`ticotimes.net`) — English-language CR press; useful for English version citations.
+- **Tico Times** (`ticotimes.net`) — English-language CR press; useful for English version citations of the same data.
 
 **Citation rules**:
 - Inline links, anchor text is the source name read naturally in prose (e.g., *"según el [Observatorio de Turismo de la Universidad Nacional](url), los precios subieron cerca de 400%..."*). Not footnotes, not parenthetical.
@@ -180,13 +199,41 @@ Fact-checked April 2026. **Do not introduce numbers or named entities that aren'
 - **Liberia International Airport (LIR)** is the gateway; international arrivals trajectory is a key 2026 demand variable.
 - **Marina Flamingo Phase 1** opened February 2023, $12.7M project; planned expansion to 184 wet slips, vessels up to 40m.
 
-**Boom and correction (verified, citable as authority)**
-- **2020–2023 boom: ~400% price surge.** Source: **Universidad Nacional — Observatorio de Turismo, Migración y Desarrollo Sostenible (UNA OBSERMIDE)**. Strongest single citation in the post.
-- **2024–2025 luxury correction: 30%–35%** (some sources cite 30%–36%). Source: Coldwell Banker Costa Rica December 2025 market update; cross-referenced by Global Property Guide.
-- **Median Guanacaste/Nicoya listing price (June 2025): $1.32M, -3.05% YoY.** Source: Coldwell Banker. Useful for showing the correction concentrated in ultra-luxury, not broad market.
-- **Average home price across Guanacaste: $1,530/m², down 31% YoY** from 2024 peaks (broker-blog source, directional only — do not cite as authority but useful as cross-reference).
-- **Median home values dropped from peaks above $900K (2024) to ~$533K early 2025** (broker source, directional).
-- **Price cuts in 2025**: 276 properties reduced asking prices, average reduction 10.2%. Higher tiers cut more: $1M–$2M segment 13.6% average; >$2M segment 15.2% average.
+**Boom — verified primary source**
+- **OBTUR-UNA — Observatorio de Turismo, Migraciones y Desarrollo Sostenible de la Región Chorotega de la Universidad Nacional**. Coordinator: **Esteban Barboza Núñez**. Study published **5 marzo 2024**. Findings:
+  - Property prices on the Guanacaste coast rose **hasta 400% entre 2020 y 2023**. Always use "hasta" hedge, always past tense. The headline number is **the strongest single citation in the post.**
+  - Citable URLs (verified live April 2026):
+    - Press version (recommended primary citation): `https://semanariouniversidad.com/pais/precio-de-propiedades-en-guanacaste-se-incremento-hasta-un-400-entre-2020-y-2023/`
+    - UNA original: `https://www.unacomunica.una.ac.cr/index.php/marzo-2024/5179-hasta-400-de-precio-incrementaron-propiedades-en-costas-de-guanacaste`
+- **CFIA construction-volume data (within the same OBTUR-UNA source, citable to CFIA via Barboza)** — these numbers anchor the boom narrative concretely:
+  - Habitational construction in Guanacaste: **456,000 m² in 2019 → 866,000 m² in 2022** (~90% increase in 3 years).
+  - Commercial construction: **131,000 m² (2019) → 209,000 m² (2022)**.
+  - Top 4 cantones (Santa Cruz, Nicoya, Liberia, Carrillo) concentrated **89%** of habitational m² in 2022.
+  - Top 7 distritos costeros (Nosara, Tamarindo, Sardinal, Cabo Velas, Sámara, Nacascolo, Liberia central) totaled **609,000 m² = 70%** of all 2022 m².
+  - **July 2023: 25% of all CR construction m² were concentrated in Guanacaste** (~900K–1M m²).
+  - Useful framing: "second only to San José in 2022 m² processed."
+- **Property-level example from the same study:** a property worth $100K four years prior was at $400K–$500K. *Useful color, not a structural number.*
+
+**Correction & current state — verified (Coldwell Banker Dec 2025 Market Report)**
+- URL (verified live April 2026): `https://www.coldwellbankercostarica.com/article/december-2025-report-trends-costa-rica-real-estate-market-update`
+- **Guanacaste/Nicoya YTD 2025 vs 2024 (the actual numbers from the report):**
+  - Median **list** price: **$1,332,551 (▼ 1.8%)**.
+  - Median **sold** price: **$707,527 (▼ 16.0%)** ← *the killer datapoint; spread between list and sold is the buyer's leverage*.
+  - Sold listings: **291 (▼ 5.5%)**.
+  - Inventory: **571 homes (▲ 21.5%)**.
+  - Average days on market: **355 days (▲ 23.1%)**.
+- For **regional comparison** (also from the same report):
+  - Central & South Pacific: median list $1,130,210 (▲ 7.2%), DOM 406 days (▲ 47.1%) — Guanacaste is *not* the worst-affected coast; Pacífico Central/Sur is slower.
+  - Central Valley (GAM): median list $618,147 (▲ 6.9%), DOM 343 days (▲ 18.3%) — GAM is the relative outperformer in 2025.
+- **30%–35% "luxury correction" (broker-blog interpretation, NOT in the Coldwell Banker report itself):** ⚠️ This number circulates widely in broker commentary (TheLatinvestor, Blue Water Properties, Rebecca Clower, Sol Realty) but the actual Coldwell Banker Dec 2025 report does NOT publish a single "luxury correction percentage." If you cite the 30%–35% number, do NOT attribute to Coldwell Banker — attribute to "broker market commentary" or use the verified Coldwell Banker median-sold -16.0% figure instead, which makes the same point with proper sourcing.
+
+**Numbers that broker blogs publish but Coldwell Banker does NOT (do not attribute to Coldwell Banker)**
+- "5%–10% below asking on closing" — broker commentary; not in the Dec 2025 report.
+- "8–12 months of absorption vs 4–6 balanced" — broker commentary; not in the Dec 2025 report.
+- "276 properties cut prices in 2025 averaging 10.2%" — broker commentary; not in the Dec 2025 report. The 13.6% (>$1M) and 15.2% (>$2M) tier cuts are in this same broker-commentary lineage.
+- "Average home price $1,530/m², -31% YoY" — broker source, directional cross-reference only.
+
+If you want to use any of these in the post, attribute as "market commentary suggests..." or cut. They support the narrative but aren't authority-grade.
 
 **Microzone pricing — CORRECTED (do NOT use the wrong numbers from the source draft)**
 - ⚠️ Earlier draft circulating internally said Tamarindo runs "$966 to $6,000/m²." **The $966 floor is not in any verified source.** The correct verified range is **$1,400/m² (standard inland) to $9,000/m² (premium beachfront, Langosta, Tamarindo Centro)**. Use this range, not the earlier one.
@@ -194,16 +241,16 @@ Fact-checked April 2026. **Do not introduce numbers or named entities that aren'
 - ⚠️ Earlier draft said Papagayo runs "above $4,000/m²." **No primary source publishes a per-m² figure for Papagayo.** Use total-price framing instead: **listings typically $1.5M to $10M+, average listing ~$1.8M**. Do not quote a Papagayo per-m² number.
 - **Marina Flamingo proximity premium: +15%–20%** vs comparable non-marina properties (Tamarindo Real Estate / Flamingo Beach Realty source — directional).
 
-**Operational metrics (verified, citable)**
-- **Average days on market: ~340** (Coldwell Banker, December 2025 update). Note that monthly readings varied — 232 days in March 2025, climbed to 370 days by May 2025 — but the year-end average settled near 340.
-- **Inventory: 8–12 months of supply** vs 4–6 months in a balanced market. **+15% inventory increase in 2025.**
-- **Sales typically close 5%–10% below asking.**
+**Operational metrics (verified to Coldwell Banker Dec 2025 report — already covered above, restating for clarity)**
+- Days on market: **355** (▲ 23.1%). NOT 340.
+- Inventory increase: **+21.5%** YoY. NOT +15%.
+- Median list -1.8% / median sold -16.0% spread is the operational story, not "5–10% below asking."
 
-**Foreign-buyer composition (verified)**
-- **Foreign buyers: ~40% of all Costa Rica real estate transactions.** Higher share in Guanacaste than national average.
-- Demographic breakdown: **US 45%, Canada 25%, Europe 20%, other 10%.**
-- **Foreign investment in CR property +18% YoY in 2024**, projected to grow further in 2025.
-- **Net influx projection of 350+ HNWIs to Costa Rica in 2026, ~$2.8B in transferred investable assets.** Useful color, but flagging — confirm source before citing as authority.
+**Foreign-buyer composition — CORRECTED**
+- ✅ **40% foreign-buyer share of CR transactions** — sourced to Coldwell Banker 2025 market trends report. Citable.
+- ❌ **45/25/20/10 split for US/Canada/Europe/other** — **NO primary source publishes this breakdown.** It's broker-blog interpretation. **Do not quote percentages.** Use qualitative framing: *"predominantemente estadounidense, con presencia significativa de Canadá y Europa"* (ES) / *"predominantly US-based, with significant Canadian and European presence"* (EN). The most authoritative published statement is "most interest coming from the U.S., Canada, and Europe."
+- Macroeconomic FDI context (different metric than residential buyers, do NOT conflate): per the **2025 US State Department Investment Climate Statement**, FDI inflow to Costa Rica was **$4.322B in 2024 (4.5% of GDP)**, of which **US accounted for $3.048B (~70%)**. This is *all FDI*, not residential buyers — useful only as macro color, not as a residential-buyer split.
+- ⚠️ "Foreign investment in CR property +18% YoY in 2024" and "350+ HNWIs influx, $2.8B" — both broker-blog claims, no primary source. Cut or hedge.
 
 **2026 forward projections (verified across multiple sources)**
 - **Beachfront prime / luxury ocean-view: 6%–10% appreciation.**
@@ -215,6 +262,13 @@ Fact-checked April 2026. **Do not introduce numbers or named entities that aren'
 **Hard "do not say" list**
 - ❌ **Tamarindo "$966/m² floor"** — fabricated, no source. Use $1,400/m² floor.
 - ❌ **Papagayo "above $4,000/m²"** — no primary source publishes per-m² for Papagayo. Use total-price framing.
+- ❌ **"OBSERMIDE"** as the observatory acronym — wrong. The correct name is **OBTUR-UNA** (Observatorio de Turismo, Migraciones y Desarrollo Sostenible de la Región Chorotega de la Universidad Nacional). Always coordinate with Esteban Barboza Núñez attribution.
+- ❌ **Flat "400% surge" without "hasta"** — the OBTUR-UNA study says "hasta 400%". Always carry the hedge.
+- ❌ **Present-tense framing of the OBTUR-UNA study** — it's a 2024 publication measuring 2020–2023. Always past tense.
+- ❌ **"45% US / 25% Canada / 20% Europe / 10% other"** foreign-buyer split — no primary source. Use qualitative framing.
+- ❌ **Attributing "5–10% below asking", "8–12 months absorption", "276 cuts at 10.2%" to Coldwell Banker** — those are broker-blog (TheLatinvestor) interpretations, NOT in the Coldwell Banker Dec 2025 report. Either attribute as "market commentary suggests" or use the verified Coldwell Banker median-list -1.8% / median-sold -16.0% spread instead.
+- ❌ **"Median Guanacaste/Nicoya $1.32M, -3.05% YoY"** — wrong YoY figure I had earlier. Actual is **$1,332,551, -1.8%** for median list. Correct number, correct attribution.
+- ❌ **"30%–35% luxury correction" attributed to Coldwell Banker** — not in their actual Dec 2025 report. Use the Coldwell Banker median-sold -16.0% YoY figure instead, which is in the report and makes the same point.
 - ❌ **"Crash"** — the correction is normalization, not a crash. Use "corrección" / "normalization."
 - ❌ Generic "tourism-board" phrasing — paradise, pure life, slice of heaven, etc.
 - ❌ Specific multinational tenant names for Liberia / Guanacaste — do not borrow the Forum I/II framing from Santa Ana.
