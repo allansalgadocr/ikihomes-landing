@@ -2,7 +2,7 @@
 title: "Guanacaste in 2026: The Beach Opportunity for Agents Who Understand International Buyers"
 description: "Guanacaste real estate market 2026: the price correction, international-buyer profiles, and the operational window for focused agents."
 keywords: ["Guanacaste real estate market", "Tamarindo real estate", "Guanacaste property agent", "Costa Rica beach real estate", "Guanacaste correction 2026"]
-date: "2026-05-01"
+date: "2026-04-24"
 author: "IkiHomes"
 image: "/blog-guanacaste-2026.png"
 lang: "en"
