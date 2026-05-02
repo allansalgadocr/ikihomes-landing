@@ -7,7 +7,7 @@
         "eyebrow": "Opening by zones in Costa Rica",
         "headline_start": "The platform where serious buyers find ",
         "headline_em": "trusted agents",
-        "subheadline": "Buyers are already searching. The first agents to respond win the lead. IkiHomes opens soon — by zones, with limited spots.",
+        "subheadline": "Buyers post what they're looking for. The first agents to respond win the chance to connect. Early access by zones, with limited spots.",
         "cta": "Reserve my spot →",
         "logo_alt": "IkiHomes Logo"
     },
@@ -74,10 +74,11 @@
         ]
     },
     "bottom_cta": {
-        "title": "Get ready to launch in a stronger position",
-        "subtitle": "IkiHomes will roll out in stages across Costa Rica. Now is the time to be ready.",
+        "eyebrow": "EARLY ACCESS",
+        "title": "The platform where serious buyers find trusted agents",
+        "subtitle": "Buyers post what they're looking for. The first agents to respond get the chance to connect. IkiHomes is opening soon — by zone, with limited spots.",
         "cta": "Reserve my spot →",
-        "zones": "Initial opening · Escazú · Santa Ana · GAM"
+        "zones": "Initial opening: Escazú · Santa Ana · Greater Metropolitan Area"
     },
     "form": {
         "modal_title": "Request early access",

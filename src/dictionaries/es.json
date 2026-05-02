@@ -7,7 +7,7 @@
         "eyebrow": "Abriendo por zonas en Costa Rica",
         "headline_start": "La plataforma donde compradores serios encuentran ",
         "headline_em": "agentes confiables",
-        "subheadline": "Los compradores ya están buscando. Los primeros agentes en responder se quedan con el lead. IkiHomes abre pronto — por zonas, con cupos limitados.",
+        "subheadline": "Los compradores publican lo que buscan. Los primeros agentes en responder ganan la oportunidad de conectar. Acceso anticipado por zonas, con cupos limitados.",
         "cta": "Reservar mi lugar →",
         "logo_alt": "Logo de IkiHomes"
     },
@@ -74,10 +74,11 @@
         ]
     },
     "bottom_cta": {
-        "title": "Prepárate para abrir con mejor posición",
-        "subtitle": "IkiHomes inicia por etapas en Costa Rica. Este es el momento para estar listo.",
+        "eyebrow": "ACCESO ANTICIPADO",
+        "title": "Donde compradores reales encuentran agentes de confianza",
+        "subtitle": "Los compradores ya están buscando. Los agentes que responden primero tienen la primera oportunidad de conectar. IkiHomes abre pronto — por zonas, con cupos limitados.",
         "cta": "Reservar mi lugar →",
-        "zones": "Apertura inicial · Escazú · Santa Ana · GAM"
+        "zones": "Apertura inicial: Escazú · Santa Ana · Gran Área Metropolitana"
     },
     "form": {
         "modal_title": "Solicitar acceso anticipado",

@@ -4,6 +4,7 @@ const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface BottomCTASectionProps {
   dict: {
+    eyebrow: string;
     title: string;
     subtitle: string;
     cta: string;
@@ -18,6 +19,12 @@ export function BottomCTASection({ dict }: BottomCTASectionProps) {
       style={{ background: "#14425B" }}
     >
       <div className="max-w-[1100px] mx-auto">
+        <div
+          className="text-[11px] uppercase mb-3"
+          style={{ letterSpacing: "0.08em", color: "#A0E2BA" }}
+        >
+          {dict.eyebrow}
+        </div>
         <h2 className="type-heading text-[34px] text-white leading-[1.2] mb-3">
           {dict.title}
         </h2>
