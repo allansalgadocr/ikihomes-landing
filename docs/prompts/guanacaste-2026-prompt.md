@@ -27,7 +27,7 @@ You will produce TWO files, one per language, dropped into the existing content 
 
 - `docs/PLATFORM_CANONICAL.md` (in `ikihomes-app`) is the binding source of truth for any product claim made in the post.
 - Phase 1 is a **controlled zone launch**. Do not promise liquidity, agent counts, transaction volume, or platform features that aren't canonically committed.
-- Buyer requests are **Pro-only** and capped at 3 active per buyer — but **do not describe product mechanics in the body at all**. The post is market analysis.
+- Buyer requests are **Pro-only** for response access; canonically, **the first 3 valid agent responses per buyer request are accepted**, after which the request moves to `ResponseLimitReached` and additional responses are rejected server-side. **Do not describe this mechanic in the body at all** — the post is market analysis. The mechanic is in the brief only so you do not contradict it accidentally.
 - Agency/team features and trials are deferred — do not reference them.
 - If a claim feels load-bearing and you're not sure it's canonical, soften the language or cut it. Better to under-promise.
 - Note on zone scope: Guanacaste is **outside** the controlled-zone Phase 1 launch focus (which is GAM-centric). Frame the post as market analysis for agents who work the coast — not as an IkiHomes service announcement for Guanacaste. The IkiHomes launch is GAM-first; do not imply otherwise.

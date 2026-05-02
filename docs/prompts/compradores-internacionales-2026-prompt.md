@@ -31,7 +31,7 @@ You will produce TWO files, one per language, following the same content-tree st
 - `docs/PLATFORM_CANONICAL.md` (in `ikihomes-app`) is the binding source of truth for any product claim.
 - Phase 1 is a **controlled zone launch**. Do not promise platform features, agent counts, transaction volume, or international-buyer pipeline that aren't canonically committed.
 - **Critical claim guardrail for this topic**: Do not imply IkiHomes already has international-buyer demand on the platform. The post is about what international-buyer demand *means for an agent's positioning*, not about IkiHomes already delivering it. Phase 1 is a controlled launch — overclaiming buyer-side liquidity here is the highest-risk failure mode for this specific post.
-- Buyer requests: Pro-only, capped at 3 active per buyer — but **do not describe product mechanics in the body at all**. The post is market analysis.
+- Buyer requests: **Pro-only response access; first 3 valid agent responses per buyer request are accepted, after which the request moves to `ResponseLimitReached` and additional responses are rejected server-side.** This is the canonical mechanic. **Do not describe this mechanic in the article body** — it's product copy and the post is market analysis. The mechanic is in the brief only so you do not contradict it accidentally.
 - Agency/team features and trials are deferred — do not reference them.
 
 ## FILE DELIVERABLES
@@ -92,7 +92,7 @@ Then the H2s, in this order:
    - **Reinvestments $4,328M** — the highest level recorded — represent the largest share. *That's the more important signal than new capital, because reinvestment means existing multinationals are doubling down, not just trying CR for the first time.*
    - New capital $895M (-18%, consistent with global Greenfield decline of -16% per UNCTAD).
    - Sector mix: Free Trade Zone 66.4%, Definitive Regime 15.2%, **Tourism 7.5%, Real Estate 6.9%, Financial 3.1%.**
-   - Anchor names from the medical-device cluster: **Insulet, Boston Scientific, Zimmer Biomet, Johnson & Johnson, Thermo Fisher Scientific, Trelleborg, Medtronic.** Between 2023–2025: 175 new companies + 500+ reinvestments.
+   - Anchor names from the medical-device cluster — **use 4 or 5 max in the post, do NOT list all**: pick from **Insulet, Boston Scientific, Johnson & Johnson, Thermo Fisher Scientific, Medtronic**. Between 2023–2025: 175 new companies + 500+ reinvestments.
    - URL (verified live): `https://procomer.com/en/costa-rica-supera-segundo-ano-consecutivo-5-000-millones-en-ied/`
    The agent's framing of this section: **FDI ≠ residential demand directly, but FDI = the corporate-employee + extended-family residential demand pipeline.** When Boston Scientific brings 200 mid-senior engineers to a new facility, those engineers rent or buy. That's the connection.
 
@@ -109,7 +109,7 @@ Then the H2s, in this order:
    - **Public-safety trajectory**: Costa Rica recorded **16.6 homicides per 100,000 residents in 2024**, the second-highest in country history. The agent has to know this number, know the zones where the problem is concentrated (Limón province, parts of Puntarenas), and be able to explain why the residential corridors international buyers actually purchase in (Escazú, Santa Ana, Lindora, Guanacaste coast, Atenas, Grecia) operate on a different risk profile.
    - **Panama is a real comparable**: lower cost, US dollar, faster residency, territorial taxation. The agent should be able to articulate the *trade-offs* — Panama wins on cost and tax structure; Costa Rica wins on nature, public healthcare access, and the diaspora/network depth that comes from 50+ years of expat continuity.
    - **Closing process is bureaucratic relative to US norms**: escrow exists but isn't standardized; notary process is mandatory; SETENA environmental review for some properties; HOA due diligence is non-trivial. The agent who has a short list of trusted bilingual lawyers, escrow agents, and notaries closes faster than the agent who improvises.
-   - **Property tax is a 0.25% annual flat** at the national level (small, but exists), plus the *impuesto solidario* on luxury homes above a threshold. Foreign buyers ask. Know the answer.
+   - **Property tax basics**: a 0.25% annual flat municipal property tax, plus the **impuesto solidario** on luxury residences. The 2026 threshold is **₡143,000,000 measured on the construction value plus fixed permanent installations** (not raw land value — that nuance matters for buyer calculus), with progressive marginal rates 0.25%–0.55%. Per Executive Decree N° 45358-H. Foreign buyers ask. Know the answer.
    This section is what makes the post different from every brokerage blog post on the topic. *Honesty is the differentiator.*
 
 4. **Los tres perfiles de comprador (y cómo deciden distinto)** / *The Three Buyer Profiles (and How Each One Decides)* — same triptych used in the Guanacaste post but applied at a national level:
@@ -126,7 +126,7 @@ Then the H2s, in this order:
    - **Tercero**: develop an honest answer to the public-safety, Panama-comparison, and closing-process questions. Don't deflect; don't dismiss. Buyers respect agents who name the trade-offs.
    - **Cuarto**: pick a microcorridor and own it. "I sell Costa Rica" is not a positioning. "I sell Lindora and the Forum corridor" / "I sell Tamarindo and Las Catalinas" is.
 
-7. **Closing H2** — pure analytical wrap-up. **Do not mention IkiHomes by name in the body.** **Do not link to ikihomescr.com from the prose.** The auto-injected CTA card on the page template handles the brand moment. The closing H2 should leave the reader inside the analysis. Suggested ES titles: "Hacia adelante", "La oportunidad operativa". Suggested EN: "What Comes Next", "The Operational Opportunity". Closing line should be observational and earned: *"El flujo internacional no se va a redirigir solo. Se redirige hacia agentes que entienden a quién le están hablando y por qué."* (or equivalent). Stop there.
+7. **Closing H2** — pure analytical wrap-up. **Title (ES): "La oportunidad operativa"** / **Title (EN): "The Operational Opportunity"**. This title aligns directly with the agent-facing thesis. **Do not mention IkiHomes by name in the body.** **Do not link to ikihomescr.com from the prose.** The auto-injected CTA card on the page template handles the brand moment. The closing H2 should leave the reader inside the analysis. Closing line should be observational and earned: *"El flujo internacional no se va a redirigir solo. Se redirige hacia agentes que entienden a quién le están hablando y por qué."* (or equivalent). Stop there.
 
 ### Tone rules (non-negotiable)
 
@@ -145,6 +145,7 @@ Then the H2s, in this order:
 - **The word "IkiHomes" anywhere in the body.** Brand presence is carried entirely by the auto-injected CTA card.
 - **Inline link to `ikihomescr.com`** — same reason.
 - **Any claim that IkiHomes already has international buyers on the platform.** This is the highest-risk overclaim for this specific topic. Phase 1 is a controlled launch. Anything that implies "buyers are waiting" or "demand is already there" is out of bounds.
+- **Indirect product metaphors that leak the IkiHomes pitch through analytical-sounding language.** Specifically banned: *"marketplace", "platform flow", "the platform", "buyer requests" (the noun phrase), "request flow", "first responders win", "first-to-respond captures", "agent competition for buyers", "matched with serious buyers", "agent-buyer matching".* Writers obey the "don't mention brand" rule and then leak the product through these phrases. Don't. The post is **market analysis only** — describe what's happening in the market, never describe a mechanism by which an agent *would receive* international-buyer interest. The agent's preparation steps in section 6 should describe their own operational moves (build network, respond fast, develop honest answers, own a microcorridor) — *not* moves involving any platform or service.
 - Buyer-request mechanics, caps, or feature descriptions of any kind.
 - Trials, free agent onboarding, or agency/team features.
 - Any feature not in `PLATFORM_CANONICAL.md`.
@@ -176,7 +177,12 @@ Then the H2s, in this order:
 - **PROCOMER — Costa Rica reaches over $5 billion in FDI inflows for the second consecutive year** (April 2026 announcement). Verified URL: `https://procomer.com/en/costa-rica-supera-segundo-ano-consecutivo-5-000-millones-en-ied/`. **Strongest single citation in the post.** Cite for: $5,121.8M total, $4,328M reinvestments, sector mix, 175 new companies + 500 reinvestments 2023–2025, named multinationals (Insulet, Boston Scientific, etc.).
 - **BCCR — Banco Central de Costa Rica** (`bccr.fi.cr`) — the underlying data source PROCOMER references; cite directly if quoting FDI series-level data.
 - **2025 US State Department Investment Climate Statement — Costa Rica** (`https://www.state.gov/reports/2025-investment-climate-statements/costa-rica`) — citable for FDI macro context, US share of FDI (~70%), regulatory framework.
-- **OIJ / Ministerio de Seguridad Pública — homicide statistics** — primary source for the 16.6/100K 2024 homicide rate. The 2024 rate was widely covered in Costa Rican press (La Nación, Semanario Universidad, Tico Times). Verify a specific URL before citing.
+- **OIJ / Observatorio de la Violencia del Ministerio de Justicia y Paz** — primary source for raw homicide counts (880 in 2024) and geographic concentration (San José, Puntarenas, Limón). Verified live URLs:
+  - Tablas y gráficos: `https://observatorio.mj.go.cr/recursos/tablas-y-graficos`
+  - Análisis homicidios dolosos 2024 (PDF): `https://observatorio.mj.go.cr/sites/default/files/docs/homicidios_dolosos_2024.pdf`
+  - OIJ statistics portal: `https://pjenlinea3.poder-judicial.go.cr/estadisticasoij/`
+- **EFE/Swissinfo** (press anchor for "16.6 per 100,000 / second-highest in history" phrasing): `https://www.swissinfo.ch/spa/costa-rica-cerr%C3%B3-2024-con-880-homicidios,-la-segunda-cifra-m%C3%A1s-alta-de-su-historia/88672716`. **Use as the press citation for the explicit rate phrasing**, since OIJ's rate-per-100K table isn't always directly linkable. CNN español backup: `https://cnnespanol.cnn.com/2025/01/03/latinoamerica/costa-rica-homicidios-cifras-oficiales-orix`.
+- **Ministerio de Hacienda — Impuesto Solidario 2026** (primary source for the ₡143M threshold): `https://www.hacienda.go.cr/docs/Aviso_informativo_vencimiento_Impuesto_Solidario_2026.pdf`. Per Executive Decree N° 45358-H, La Gaceta N° 239, December 19, 2025.
 - **Tico Times** (`ticotimes.net`) — English-language CR press for English version of the post.
 - **El Financiero** (`elfinancierocr.com`) — Costa Rican business newspaper.
 - **CINDE** (`cinde.org`) — multinational investment landing data.
@@ -211,15 +217,18 @@ Fact-checked April 2026.
 - **2023–2025 cumulative**: 175 new companies attracted + 500+ reinvestments.
 - **Notable multinational anchors** (named in the announcement): **Insulet, Boston Scientific, Zimmer Biomet, Johnson & Johnson, Thermo Fisher Scientific, Trelleborg, Cretex Medical, Medtronic, Mozarc Medical, Penumbra.** Use a subset of 3–5 in the post; do not list all.
 
-**Foreign-buyer residential context (verified)**
-- ✅ **40% of all CR real estate transactions involve foreign buyers** — sourced to Coldwell Banker 2025 market trends report. Citable.
+**Foreign-buyer residential context — DOWNGRADED**
+- ⚠️ **The "40% of CR transactions are foreign-buyer" claim is broker-blog grade, not registry-grade.** Coldwell Banker's marketing-page reference is too clean and not a government source. **Recommend skipping the 40% number entirely** — the post already has enough macro support from PROCOMER, US State Dept, OIJ/EFE, and tax/legal sources. If you must reference foreign-buyer share, hedge it: *"Reportes de la industria estiman una participación significativa de compradores extranjeros en transacciones residenciales en Costa Rica, aunque ningún registro público publica un desglose limpio."* / *"Industry reports estimate a significant foreign-buyer share in Costa Rican residential transactions, but no single public registry source cleanly publishes that split."*
 - ❌ **No primary source publishes a "US 45% / Canada 25% / Europe 20% / other 10%" split.** Use qualitative framing only: *"predominantemente estadounidense, con presencia significativa de Canadá y Europa"* / *"predominantly US-based, with significant Canadian and European presence."*
 - Macroeconomic FDI context (different metric, do NOT conflate): per **2025 US State Dept Investment Climate Statement**, FDI inflow was $4.322B in 2024 (4.5% of GDP), with US share **~70%** ($3.048B). This is *all FDI*, not residential — use only as macro color.
 
 **Public safety — verified, must address honestly**
-- **2024 homicide rate: 16.6 per 100,000 residents** — the **second-highest in country history**.
-- **Concentration**: Limón province and parts of Puntarenas drive most of the increase. **Residential corridors international buyers actually purchase in** (Escazú, Santa Ana, Lindora, Heredia, Atenas, Grecia, Guanacaste tourist corridor) **operate on a meaningfully different risk profile** — but this distinction is *the agent's job to explain*, not to brush past.
-- The framing rule: name the national number, name the geographic concentration, and explain why the residential-buyer corridors operate differently. **Do not deny, deflect, or minimize.**
+- **Costa Rica registered 880 homicides in 2024**, a rate of **16.6 per 100,000 inhabitants**, the **second-highest in country history** (surpassed only by 905 in 2023, a 2.7% YoY reduction).
+- **Concentration** per OIJ administrative records: San José, Puntarenas, and Limón. Residential corridors international buyers actually purchase in (Escazú, Santa Ana, Lindora, Heredia, Atenas, Grecia, Guanacaste tourist corridor) operate on a meaningfully different risk profile — but this distinction is the agent's job to explain, not to brush past.
+- **Citation strategy** (use both, in this order):
+  - **Primary citation for raw counts and geographic concentration: OIJ / Observatorio de la Violencia del Ministerio de Justicia y Paz** (`https://observatorio.mj.go.cr/recursos/tablas-y-graficos`; PDF: `https://observatorio.mj.go.cr/sites/default/files/docs/homicidios_dolosos_2024.pdf`; OIJ statistics portal: `https://pjenlinea3.poder-judicial.go.cr/estadisticasoij/`).
+  - **Press citation for the "16.6 per 100,000 / second-highest in history" phrasing**: **EFE/Swissinfo** at `https://www.swissinfo.ch/spa/costa-rica-cerr%C3%B3-2024-con-880-homicidios,-la-segunda-cifra-m%C3%A1s-alta-de-su-historia/88672716`. CNN español also covered: `https://cnnespanol.cnn.com/2025/01/03/latinoamerica/costa-rica-homicidios-cifras-oficiales-orix`. Use the press source for the explicit rate phrasing because OIJ's rate table isn't always directly linkable.
+- The framing rule: name the national number with both citations, name the geographic concentration, and explain why the residential-buyer corridors operate differently. **Do not deny, deflect, or minimize.**
 
 **Structural buyer-side factors (verified, citable)**
 - **Foreign property rights**: foreigners hold same rights as nationals (with maritime-zone concession exception for the first 200m strip from the high tide line). Source: 2025 US State Dept Investment Climate Statement.
@@ -227,7 +236,7 @@ Fact-checked April 2026.
 - **Public healthcare**: CAJA available to residents.
 - **Military abolished 1948**; uninterrupted civilian democracy for 75+ years.
 - **Time zone**: UTC-6 (US Central year-round; ~3-hour flight from Miami, Houston, Atlanta).
-- **Property tax**: 0.25% annual flat at national level; *impuesto solidario* on luxury homes above ~₡145M threshold.
+- **Property tax**: 0.25% annual flat at the municipal level (territorial). The national-level **impuesto solidario** ("Solidarity Tax for Housing Programs") applies when the **construction value plus fixed permanent installations** of a residential property equals or exceeds **₡143,000,000 in 2026**, with progressive marginal rates **0.25%–0.55%** per Executive Decree N° 45358-H (La Gaceta N° 239, December 19, 2025). **Important nuance: the threshold is on construction/fixed-installations value, not raw property/land value.** The agent should know the distinction — buyers ask. Source: `https://www.hacienda.go.cr/docs/Aviso_informativo_vencimiento_Impuesto_Solidario_2026.pdf`.
 
 **Comparison to Panama (qualitative — agent should know, post should reference neutrally)**
 - Panama wins on: lower cost, US dollar, faster residency path, territorial taxation.
@@ -235,15 +244,19 @@ Fact-checked April 2026.
 - Don't quantify the comparison — qualitative framing only.
 
 **Hard "do not say" list**
-- ❌ "Costa Rica is the safest country in Latin America" — contradicted by the homicide trajectory.
+- ❌ "Costa Rica is the safest country in Latin America" — contradicted by the 16.6/100K homicide trajectory.
 - ❌ "Pure life lifestyle" / "paradise" / "your slice of heaven" — tourism-board phrasing.
 - ❌ "IkiHomes already has international buyers waiting" — out of canonical scope.
 - ❌ "Buyers are flooding to Costa Rica" — overstatement; FDI is up but residential is not the same number.
+- ❌ **"40% of CR transactions are foreign-buyer" cited as fact** — that claim is broker-blog grade, not registry-grade. Either skip or hedge as "industry reports estimate a significant foreign-buyer share, but no public registry publishes a clean split."
 - ❌ Specific negative claims about Panama, Mexico, or other comparables.
 - ❌ "First-world country" framing for Costa Rica — patronizing and inaccurate.
 - ❌ Implied claims that Insulet, Boston Scientific, etc. are *residential* drivers in specific zones — they're FDI/employment drivers; the residential connection is structural but not directly attributable.
 - ❌ "45/25/20/10" buyer-nationality split — no primary source.
 - ❌ Sweeping "all international buyers" generalizations — break out by retiree / nomad / STR investor profile instead.
+- ❌ **"Marketplace", "platform flow", "buyer requests" (as a noun phrase), "first responders win", "agent competition", "matched with serious buyers"** — indirect product-pitch leakage even when the brand name is absent.
+- ❌ **"₡145M" or any threshold figure other than ₡143,000,000** for the impuesto solidario — and never frame it as "above a property value threshold" without the construction-value-plus-fixed-installations nuance.
+- ❌ **"880 homicidios" without OIJ + EFE/Swissinfo dual citation** — cite both the primary and the press source.
 - ❌ Anything that contradicts `PLATFORM_CANONICAL.md`.
 
 ## DELIVERABLES CHECKLIST
@@ -260,11 +273,16 @@ Fact-checked April 2026.
 - [ ] **No "IkiHomes" anywhere in the body** — auto-CTA card carries the brand alone
 - [ ] **No outbound link to `ikihomescr.com`** from the body
 - [ ] **No claim that IkiHomes already has international buyers on the platform** — verified by reading section 5 and 7 carefully
-- [ ] **Public-safety paragraph in section 3** addresses 16.6/100K honestly with geographic concentration explanation
+- [ ] **Public-safety paragraph in section 3** cites both **OIJ/Observatorio (primary)** and **EFE/Swissinfo (press, for the 16.6/100K and "second-highest in history" phrasing)**. Geographic concentration in San José/Puntarenas/Limón named. Residential-corridor distinction explained.
 - [ ] **Panama comparison in section 3** is neutral, qualitative, names the trade-offs both ways
+- [ ] **Impuesto solidario citation** uses **₡143,000,000** (NOT ₡145M), explicitly mentions **construction value plus fixed permanent installations**, names progressive rates 0.25%–0.55%, and cites the Hacienda PDF
+- [ ] **40% foreign-buyer claim** is either omitted entirely or hedged with the "industry reports estimate... no public registry" framing
+- [ ] **Section 1 lists no more than 5 multinational anchor names** from the verified list
+- [ ] **Closing H2 is titled "La oportunidad operativa" (ES) / "The Operational Opportunity" (EN)** — not "Hacia adelante"
 - [ ] **No banned infoproduct phrases** (verified by search of body)
+- [ ] **No indirect product-metaphor leakage** — verified by search of body for: "marketplace", "platform", "request", "first responders", "agent competition", "matched with"
 - [ ] **No tourism-board phrasing** (paradise, pure life, slice of heaven, pura vida lifestyle)
-- [ ] **At least four inline citations** to authority sources, with at minimum: PROCOMER for the FDI numbers, OIJ/press for the homicide rate, US State Dept for the foreign-property-rights framework. URLs verified live.
+- [ ] **At least four inline citations** to authority sources, with at minimum: PROCOMER for the FDI numbers, OIJ + EFE/Swissinfo for the homicide rate (dual citation), US State Dept for the foreign-property-rights framework, Hacienda for the impuesto solidario. URLs verified live.
 - [ ] **No 45/25/20/10 buyer-nationality split** — qualitative framing only
 - [ ] **No closing IkiHomes pitch paragraph** — the closing H2 stays analytical
 - [ ] Reading time renders as ~5 min on the post page (950–1,050 ES words ÷ 200 wpm = 4.75–5.25 min)

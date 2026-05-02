@@ -26,7 +26,7 @@ You will produce TWO files, one per language, dropped into the existing content 
 
 - `docs/PLATFORM_CANONICAL.md` (in `ikihomes-app`) is the binding source of truth for any product claim made in the post.
 - Phase 1 is a **controlled zone launch**. Do not promise liquidity, agent counts, transaction volume, or platform features that aren't canonically committed.
-- Buyer requests are **Pro-only** and capped at 3 active per buyer — do not contradict either of those.
+- Buyer requests are **Pro-only** for response access; canonically, **the first 3 valid agent responses per buyer request are accepted**, after which the request moves to `ResponseLimitReached` and additional responses are rejected server-side. Do not contradict this canonical mechanic. **Do not describe it in the article body** — the post is market analysis, not product copy.
 - Agency/team features and trials are deferred — do not reference them.
 - If a claim feels load-bearing and you're not sure it's canonical, soften the language or cut it. Better to under-promise.
 
