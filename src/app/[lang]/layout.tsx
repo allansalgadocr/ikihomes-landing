@@ -135,7 +135,7 @@ function StructuredData({ lang }: { lang: string }) {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@ikihomescr.com",
+      email: "soporte@ikihomescr.com",
       contactType: "customer service",
       availableLanguage: ["Spanish", "English"],
     },

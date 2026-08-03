@@ -92,14 +92,14 @@
         "button_pending": "Enviando...",
         "footer": "Sin spam. Solo avisos importantes de la plataforma.",
         "success_title": "¡Solicitud recibida!",
-        "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
+        "success_msg": "Te contactaremos pronto. Revisá tu bandeja de entrada.",
         "add_another": "Enviar otra solicitud"
     },
     "blog_teaser": {
         "eyebrow": "Artículos",
         "title": "Desde el blog",
         "card_title": "Costa Rica tiene MLS — pero no funciona como crees",
-        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué puedes hacer.",
+        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué podés hacer.",
         "card_date": "2026-04-03",
         "card_image": "/blog-mls-costa-rica-reality.png",
         "read_article": "Leer artículo",
@@ -119,6 +119,6 @@
             "privacy": "Privacidad",
             "terms": "Términos"
         },
-        "contact_email": "contact@ikihomescr.com"
+        "contact_email": "soporte@ikihomescr.com"
     }
 }
