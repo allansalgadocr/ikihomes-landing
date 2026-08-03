@@ -79,7 +79,7 @@ export async function generateMetadata(
     },
     other: {
       "geo.region": "CR",
-      "geo.placename": "San José, Costa Rica",
+      "geo.placename": "Cartago, La Unión, Costa Rica",
     },
   };
 }
@@ -109,7 +109,8 @@ function StructuredData({ lang }: { lang: string }) {
     address: {
       "@type": "PostalAddress",
       addressCountry: "CR",
-      addressRegion: "San José",
+      addressRegion: "Cartago",
+      addressLocality: "La Unión",
     },
     areaServed: [
       {
