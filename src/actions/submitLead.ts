@@ -41,7 +41,7 @@ export async function submitLead(
 
   if (!formUrl || !emailEntryId || !nameEntryId || !zonesEntryId) {
     console.error("Missing Google Forms configuration");
-    return { ok: false, error: "Error de configuración. Intenta de nuevo." };
+    return { ok: false, error: "Error de configuración. Intentá de nuevo." };
   }
 
   const googleFormData = new URLSearchParams();
@@ -60,7 +60,7 @@ export async function submitLead(
 
     if (!response.ok) {
       console.error("Google Forms returned status:", response.status, response.statusText);
-      return { ok: false, error: "Error al enviar. Intenta de nuevo." };
+      return { ok: false, error: "Error al enviar. Intentá de nuevo." };
     }
 
     return { ok: true };

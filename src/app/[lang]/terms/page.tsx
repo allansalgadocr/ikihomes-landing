@@ -41,7 +41,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-10">
             <p className="type-body text-sm text-gray-500">
               These terms are provided in Spanish as the legally binding version under Costa Rican law.
-              For questions in English, contact us at <a href="mailto:contact@ikihomescr.com" className="text-primary hover:underline">contact@ikihomescr.com</a>.
+              For questions in English, contact us at <a href="mailto:soporte@ikihomescr.com" className="text-primary hover:underline">soporte@ikihomescr.com</a>.
             </p>
           </div>
         )}
@@ -60,7 +60,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
           <p className="type-body text-gray-700 leading-relaxed">
             Al enviar el formulario de acceso anticipado, aceptas estos Términos y Condiciones y
             nuestra <Link href={`/${lang}/privacy`} className="text-primary hover:underline">Política de Privacidad</Link>.
-            Si no estás de acuerdo con alguno de estos términos, no debes completar el registro.
+            Si no estás de acuerdo con alguno de estos términos, no debés completar el registro.
           </p>
         </section>
 
@@ -86,7 +86,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
           </ul>
           <p className="type-body text-gray-700 leading-relaxed mt-3">
             No enviaremos publicidad de terceros ni correos no relacionados con IkiHomes.
-            Puedes revocar este consentimiento en cualquier momento escribiendo a <a href="mailto:contact@ikihomescr.com" className="text-primary hover:underline">contact@ikihomescr.com</a>.
+            Podés revocar este consentimiento en cualquier momento escribiendo a <a href="mailto:soporte@ikihomescr.com" className="text-primary hover:underline">soporte@ikihomescr.com</a>.
           </p>
         </section>
 
@@ -131,7 +131,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
         <section className="mb-10">
           <h2 className="type-heading text-xl mb-4">9. Edad mínima</h2>
           <p className="type-body text-gray-700 leading-relaxed">
-            Debes ser mayor de 18 años para registrarte en IkiHomes. Al enviar el formulario de acceso
+            Debés ser mayor de 18 años para registrarte en IkiHomes. Al enviar el formulario de acceso
             anticipado, declaras que cumples con este requisito.
           </p>
         </section>
@@ -140,7 +140,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
           <h2 className="type-heading text-xl mb-4">10. Jurisdicción y ley aplicable</h2>
           <p className="type-body text-gray-700 leading-relaxed">
             Estos términos se rigen por las leyes de la República de Costa Rica. Cualquier disputa será
-            sometida a los tribunales competentes de San José, Costa Rica.
+            sometida a los tribunales competentes de Cartago, Costa Rica.
           </p>
         </section>
 
@@ -155,7 +155,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
 
         <div className="mt-12 pt-8 border-t border-gray-100">
           <p className="text-sm text-gray-500">
-            Contacto: <a href="mailto:contact@ikihomescr.com" className="text-primary hover:underline">contact@ikihomescr.com</a>
+            Contacto: <a href="mailto:soporte@ikihomescr.com" className="text-primary hover:underline">soporte@ikihomescr.com</a>
           </p>
           <p className="mt-4">
             <Link href={`/${lang}`} className="text-primary font-medium hover:underline">

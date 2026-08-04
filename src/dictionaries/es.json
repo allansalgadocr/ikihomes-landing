@@ -1,5 +1,5 @@
 {
-    "status_banner": "Acceso anticipado disponible ahora en Costa Rica — cupos limitados.",
+    "status_banner": "Acceso anticipado disponible ahora en Costa Rica. Cupos limitados.",
     "nav": {
         "badge": "Acceso anticipado"
     },
@@ -63,7 +63,7 @@
         "body": "Los agentes en pre-lanzamiento configuran su perfil antes de que lleguen las primeras solicitudes. Los que entren después competirán contra ellos desde el día uno.",
         "cta": "Reservar mi lugar →",
         "microcopy": "Sin spam. Solo avisos importantes de la plataforma.",
-        "preview_label": "Agentes activos — Escazú",
+        "preview_label": "Agentes activos en Escazú",
         "preview_footer_text": "Tiempo medio de respuesta en esta zona:",
         "preview_footer_value": "38 min",
         "preview_caption": "Ejemplo ilustrativo del producto",
@@ -76,7 +76,7 @@
     "bottom_cta": {
         "eyebrow": "ACCESO ANTICIPADO",
         "title": "Donde compradores reales encuentran agentes de confianza",
-        "subtitle": "Los compradores ya están buscando. Los agentes que responden primero tienen la primera oportunidad de conectar. IkiHomes abre pronto — por zonas, con cupos limitados.",
+        "subtitle": "Los compradores ya están buscando. Los agentes que responden primero tienen la primera oportunidad de conectar. IkiHomes abre pronto, por zonas y con cupos limitados.",
         "cta": "Reservar mi lugar →",
         "zones": "Apertura inicial: Escazú · Santa Ana · Gran Área Metropolitana"
     },
@@ -92,14 +92,14 @@
         "button_pending": "Enviando...",
         "footer": "Sin spam. Solo avisos importantes de la plataforma.",
         "success_title": "¡Solicitud recibida!",
-        "success_msg": "Te contactaremos pronto. Revisa tu bandeja de entrada.",
+        "success_msg": "Te contactaremos pronto. Revisá tu bandeja de entrada.",
         "add_another": "Enviar otra solicitud"
     },
     "blog_teaser": {
         "eyebrow": "Artículos",
         "title": "Desde el blog",
-        "card_title": "Costa Rica tiene MLS — pero no funciona como crees",
-        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué puedes hacer.",
+        "card_title": "Costa Rica tiene MLS, pero no funciona como crees",
+        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué podés hacer.",
         "card_date": "2026-04-03",
         "card_image": "/blog-mls-costa-rica-reality.png",
         "read_article": "Leer artículo",
@@ -107,7 +107,7 @@
     },
     "about": {
         "title": "Sobre IkiHomes",
-        "content": "IkiHomes es una plataforma que conecta compradores de propiedades en Costa Rica con agentes profesionales — clasificados por capacidad de respuesta y confianza, no solo por quién paga más."
+        "content": "IkiHomes es una plataforma que conecta compradores de propiedades en Costa Rica con agentes profesionales clasificados por capacidad de respuesta y confianza, no solo por quién paga más."
     },
     "modal": {
         "close": "Cerrar"
@@ -119,6 +119,6 @@
             "privacy": "Privacidad",
             "terms": "Términos"
         },
-        "contact_email": "contact@ikihomescr.com"
+        "contact_email": "soporte@ikihomescr.com"
     }
 }

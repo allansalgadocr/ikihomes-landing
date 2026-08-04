@@ -41,7 +41,7 @@ export default async function PrivacyPage(props: { params: Promise<{ lang: strin
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-10">
             <p className="type-body text-sm text-gray-500">
               This privacy policy is provided in Spanish as the legally binding version under Costa Rican law.
-              For questions in English, contact us at <a href="mailto:contact@ikihomescr.com" className="text-primary hover:underline">contact@ikihomescr.com</a>.
+              For questions in English, contact us at <a href="mailto:soporte@ikihomescr.com" className="text-primary hover:underline">soporte@ikihomescr.com</a>.
             </p>
           </div>
         )}
@@ -118,7 +118,7 @@ export default async function PrivacyPage(props: { params: Promise<{ lang: strin
         <section className="mb-10">
           <h2 className="type-heading text-xl mb-4">7. Tus derechos (PRODHAB, Ley 8968)</h2>
           <p className="type-body text-gray-700 mb-3">
-            Bajo la legislación costarricense, tienes los siguientes derechos sobre tus datos personales:
+            Bajo la legislación costarricense, tenés los siguientes derechos sobre tus datos personales:
           </p>
           <ul className="list-disc pl-5 space-y-2 type-body text-gray-700">
             <li><strong>Acceso:</strong> Solicitar una copia de los datos personales que tenemos sobre ti.</li>
@@ -129,7 +129,7 @@ export default async function PrivacyPage(props: { params: Promise<{ lang: strin
           <p className="type-body text-gray-700 mt-3">
             Para ejercer cualquiera de estos derechos, escribe a:
           </p>
-          <p className="mt-2 type-body-semibold text-primary">contact@ikihomescr.com</p>
+          <p className="mt-2 type-body-semibold text-primary">soporte@ikihomescr.com</p>
           <p className="type-body text-gray-500 text-sm mt-2">
             Respondemos a solicitudes de derechos dentro del plazo legalmente requerido bajo PRODHAB (5 días hábiles).
           </p>
@@ -163,7 +163,7 @@ export default async function PrivacyPage(props: { params: Promise<{ lang: strin
         <section className="mb-10">
           <h2 className="type-heading text-xl mb-4">11. Autoridad reguladora</h2>
           <p className="type-body text-gray-700">
-            Si consideras que tus derechos de protección de datos han sido vulnerados, puedes presentar una queja ante:
+            Si consideras que tus derechos de protección de datos han sido vulnerados, podés presentar una queja ante:
           </p>
           <p className="type-body-semibold text-gray-700 mt-2">
             PRODHAB (Agencia de Protección de Datos de los Habitantes)
@@ -175,7 +175,7 @@ export default async function PrivacyPage(props: { params: Promise<{ lang: strin
 
         <div className="mt-12 pt-8 border-t border-gray-100">
           <p className="text-sm text-gray-500">
-            Contacto: <a href="mailto:contact@ikihomescr.com" className="text-primary hover:underline">contact@ikihomescr.com</a>
+            Contacto: <a href="mailto:soporte@ikihomescr.com" className="text-primary hover:underline">soporte@ikihomescr.com</a>
           </p>
           <p className="mt-4">
             <Link href={`/${lang}`} className="text-primary font-medium hover:underline">

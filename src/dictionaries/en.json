@@ -1,5 +1,5 @@
 {
-    "status_banner": "Early access now available in Costa Rica — limited spots.",
+    "status_banner": "Early access now available in Costa Rica. Limited spots.",
     "nav": {
         "badge": "Early access"
     },
@@ -63,7 +63,7 @@
         "body": "Pre-launch agents set up their profile before the first requests arrive. Those who join later will compete against them from day one.",
         "cta": "Reserve my spot →",
         "microcopy": "No spam. Only important platform updates.",
-        "preview_label": "Active agents — Escazú",
+        "preview_label": "Active agents in Escazú",
         "preview_footer_text": "Average response time in this zone:",
         "preview_footer_value": "38 min",
         "preview_caption": "Illustrative product example",
@@ -76,7 +76,7 @@
     "bottom_cta": {
         "eyebrow": "EARLY ACCESS",
         "title": "The platform where serious buyers find trusted agents",
-        "subtitle": "Buyers post what they're looking for. The first agents to respond get the chance to connect. IkiHomes is opening soon — by zone, with limited spots.",
+        "subtitle": "Buyers post what they're looking for. The first agents to respond get the chance to connect. IkiHomes is opening soon, by zone and with limited spots.",
         "cta": "Reserve my spot →",
         "zones": "Initial opening: Escazú · Santa Ana · Greater Metropolitan Area"
     },
@@ -98,7 +98,7 @@
     "blog_teaser": {
         "eyebrow": "Insights",
         "title": "From the blog",
-        "card_title": "Costa Rica Has MLS — But Not the Way You Think",
+        "card_title": "Costa Rica Has MLS, But Not the Way You Think",
         "card_description": "Costa Rica has MLS systems, but none are mandatory or cover the whole market. How this fragmentation impacts your business and what you can do.",
         "card_date": "2026-04-03",
         "card_image": "/blog-mls-costa-rica-reality.png",
@@ -107,7 +107,7 @@
     },
     "about": {
         "title": "About IkiHomes",
-        "content": "IkiHomes is a platform that connects property buyers in Costa Rica with professional agents — ranked by responsiveness and trust, not just by who pays more."
+        "content": "IkiHomes is a platform that connects property buyers in Costa Rica with professional agents ranked by responsiveness and trust, not just by who pays more."
     },
     "modal": {
         "close": "Close"
@@ -119,6 +119,6 @@
             "privacy": "Privacy",
             "terms": "Terms"
         },
-        "contact_email": "contact@ikihomescr.com"
+        "contact_email": "soporte@ikihomescr.com"
     }
 }
