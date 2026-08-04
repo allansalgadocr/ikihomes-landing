@@ -140,7 +140,7 @@ export default async function TermsPage(props: { params: Promise<{ lang: string 
           <h2 className="type-heading text-xl mb-4">10. Jurisdicción y ley aplicable</h2>
           <p className="type-body text-gray-700 leading-relaxed">
             Estos términos se rigen por las leyes de la República de Costa Rica. Cualquier disputa será
-            sometida a los tribunales competentes de San José, Costa Rica.
+            sometida a los tribunales competentes de Cartago, Costa Rica.
           </p>
         </section>
 
