@@ -1,119 +1,242 @@
 {
-    "status_banner": "Acceso anticipado disponible ahora en Costa Rica. Cupos limitados.",
     "nav": {
-        "badge": "Acceso anticipado"
-    },
-    "hero": {
-        "eyebrow": "Abriendo por zonas en Costa Rica",
-        "headline_start": "La plataforma donde compradores serios encuentran ",
-        "headline_em": "agentes confiables",
-        "subheadline": "Los compradores publican lo que buscan. Los primeros agentes en responder ganan la oportunidad de conectar. Acceso anticipado por zonas, con cupos limitados.",
-        "cta": "Reservar mi lugar →",
+        "product": "El producto",
+        "owners": "Para propietarios",
+        "pricing": "Precios",
+        "faq": "Preguntas",
+        "login": "Entrar",
+        "cta": "Empezá gratis",
+        "cta_prelaunch": "Avisame cuando abramos",
         "logo_alt": "Logo de IkiHomes"
     },
-    "stats": {
-        "items": [
-            { "number": "3", "label": "agentes máximo por solicitud" },
-            { "number": "$0", "label": "para entrar en etapa anticipada" },
-            { "number": "—", "label": "Cupos limitados · Etapa anticipada" }
-        ]
+    "hero": {
+        "eyebrow": "Para agentes en Costa Rica",
+        "headline": "Un solo lugar para tu inventario, tus clientes y tus cierres.",
+        "subheadline": "IkiHomes es la plataforma de trabajo del agente inmobiliario: inventario ordenado, consultas de compradores y seguimiento de cada trato hasta el cierre, sin que nada se pierda en el chat.",
+        "cta_primary": "Empezá gratis",
+        "cta_primary_prelaunch": "Avisame cuando abramos",
+        "cta_secondary": "Ver el producto",
+        "prelaunch_note": "Todavía no abrimos el registro. Dejanos tu correo y te avisamos apenas puedas crear tu cuenta.",
+        "trust": [
+            "Sin tarjeta de crédito",
+            "Plan gratis, sin vencimiento",
+            "Hecho en Costa Rica"
+        ],
+        "screenshot_chrome": "app.ikihomescr.com/agent/dashboard",
+        "screenshot_caption": "Captura del producto",
+        "screenshot_alt": "Panel del agente en IkiHomes, con solicitudes, visitas y estado del pipeline"
     },
-    "mechanic": {
-        "label": "Cómo funciona",
-        "title": "El que responde primero, gana el lead",
-        "subtitle": "Cada solicitud llega a un grupo reducido de agentes Pro. Solo los primeros 3 en responder quedan visibles al comprador. Los demás no.",
-        "steps": [
-            {
-                "title": "El comprador comparte lo que busca",
-                "description": "Zona, presupuesto, tipo de propiedad y contexto de compra."
-            },
-            {
-                "title": "IkiHomes notifica a agentes Pro en esa zona",
-                "description": "Solo agentes verificados y activos reciben la solicitud completa."
-            },
-            {
-                "title": "Los primeros 3 en responder se quedan con el lead",
-                "description": "La solicitud se cierra. La velocidad define quién gana.",
-                "pill": "Solo 3 respuestas aceptadas"
-            }
-        ]
-    },
-    "trust": {
-        "label": "Por qué importa",
-        "title": "Construido para que la confianza sea visible",
-        "subtitle": "IkiHomes no es un directorio. Es una plataforma donde el comprador identifica al agente correcto antes de contactarlo.",
+    "proof": {
+        "eyebrow": "El producto",
+        "title": "No es una promesa. Ya está construido.",
+        "lede": "Capturas reales del producto, no ilustraciones.",
         "cards": [
             {
-                "title": "Verificado por IkiHomes",
-                "description": "Identidad validada. Visible en tu perfil y en cada listing compartido."
+                "tag": "Panel",
+                "title": "Tu día, resumido",
+                "image": "/hero-dashboard-real.png",
+                "body": "Las solicitudes abiertas en tus zonas, las visitas de la semana y el estado de tu pipeline en una sola pantalla.",
+                "alt": "Panel del agente en IkiHomes"
             },
             {
-                "title": "Insignias por tiempo de respuesta",
-                "description": "Tu velocidad es pública. Los compradores la ven antes de decidir a quién contactar."
+                "tag": "Solicitudes",
+                "title": "Compradores que te buscan",
+                "image": "/ikiradar.png",
+                "body": "Cuando un comprador publica lo que busca en tu zona, la solicitud le llega a los agentes Pro de esa zona. Los primeros en responder son los que quedan visibles.",
+                "alt": "Solicitudes de compradores entrantes en las zonas del agente"
             },
             {
-                "title": "Relevancia por zona",
-                "description": "Las solicitudes van a los agentes más relevantes para esa zona. No al que pagó más."
+                "tag": "Clientes",
+                "title": "Ningún cliente se enfría",
+                "image": "/lead2.png",
+                "body": "Cada consulta entra al tablero y avanza por etapas hasta el cierre, con notas y recordatorios.",
+                "alt": "Tablero de clientes por etapa en IkiHomes"
             }
         ]
     },
-    "split": {
-        "label": "Acceso anticipado",
-        "title": "Llega listo cuando abra tu zona",
-        "body": "Los agentes en pre-lanzamiento configuran su perfil antes de que lleguen las primeras solicitudes. Los que entren después competirán contra ellos desde el día uno.",
-        "cta": "Reservar mi lugar →",
-        "microcopy": "Sin spam. Solo avisos importantes de la plataforma.",
-        "preview_label": "Agentes activos en Escazú",
-        "preview_footer_text": "Tiempo medio de respuesta en esta zona:",
-        "preview_footer_value": "38 min",
-        "preview_caption": "Ejemplo ilustrativo del producto",
-        "agents": [
-            { "initials": "CM", "name": "Carlos Mora", "zone": "Escazú · Santa Ana", "badge": "⚡ Lightning", "badge_type": "lightning" },
-            { "initials": "AL", "name": "Ana López", "zone": "Escazú · Curridabat", "badge": "Respuesta rápida", "badge_type": "fast" },
-            { "initials": "RV", "name": "Roberto Vega", "zone": "Santa Ana · Pozos", "badge": "Activo", "badge_type": "active" }
+    "paths": {
+        "eyebrow": "Dos maneras de entrar",
+        "title": "Vendés propiedades de otros, o vendés la tuya.",
+        "agent": {
+            "label": "Agente inmobiliario",
+            "title": "Trabajás con clientes todos los días",
+            "body": "Publicás inventario, recibís consultas, hacés seguimiento y coordinás visitas. IkiHomes es tu herramienta de trabajo, no un portal más donde pagar por aparecer.",
+            "limit_number": "10",
+            "limit_label": "propiedades publicadas, gratis",
+            "features": [
+                "Perfil profesional verificable",
+                "Consultas de compradores directo a tu bandeja",
+                "Agenda de visitas con confirmación"
+            ],
+            "cta": "Crear mi cuenta de agente",
+            "cta_prelaunch": "Avisame cuando abramos"
+        },
+        "owner": {
+            "label": "Propietario",
+            "title": "Tenés una propiedad y la querés vender",
+            "body": "Publicás tu propiedad, la mostrás bien y hablás directo con quien pregunta. Sin comisión de la plataforma.",
+            "limit_number": "1",
+            "limit_label": "propiedad activa, gratis",
+            "cta": "Publicar mi propiedad",
+            "cta_prelaunch": "Avisame cuando abramos",
+            "photo_alt": "Casas en una ladera de Costa Rica al atardecer."
+        }
+    },
+    "capabilities": {
+        "eyebrow": "Lo que hacés adentro",
+        "title": "Las tareas de siempre, sin el desorden de siempre.",
+        "items": [
+            {
+                "icon": "home",
+                "title": "Inventario ordenado",
+                "body": "Todas tus propiedades en un solo lugar, con fotos, precios y estado al día."
+            },
+            {
+                "icon": "share",
+                "title": "Enlaces para compartir",
+                "body": "Mandás una ficha limpia por WhatsApp en vez de doce fotos sueltas y un PDF."
+            },
+            {
+                "icon": "users",
+                "title": "Seguimiento de clientes",
+                "body": "Cada consulta queda registrada y avanza por etapas hasta que se cierra."
+            },
+            {
+                "icon": "calendar",
+                "title": "Visitas coordinadas",
+                "body": "Proponés horarios, el cliente confirma y a los dos les queda el registro."
+            },
+            {
+                "icon": "shield",
+                "title": "Identidad verificada",
+                "body": "Validamos quién sos, y tu tiempo de respuesta queda a la vista de quien te contacta."
+            },
+            {
+                "icon": "user",
+                "title": "Tu presencia profesional",
+                "body": "Una página pública con tu foto, tu bio, tus zonas y todas tus propiedades. Es el enlace que mandás cuando alguien pregunta quién sos."
+            }
         ]
     },
-    "bottom_cta": {
-        "eyebrow": "ACCESO ANTICIPADO",
-        "title": "Donde compradores reales encuentran agentes de confianza",
-        "subtitle": "Los compradores ya están buscando. Los agentes que responden primero tienen la primera oportunidad de conectar. IkiHomes abre pronto, por zonas y con cupos limitados.",
-        "cta": "Reservar mi lugar →",
-        "zones": "Apertura inicial: Escazú · Santa Ana · Gran Área Metropolitana"
+    "pricing": {
+        "eyebrow": "Precios",
+        "title": "Gratis para empezar. Pro cuando haga falta.",
+        "lede": "Un solo plan pago, un solo precio. Sin permanencia y sin letra chica.",
+        "per_month": "/mes",
+        "free": {
+            "name": "Gratis",
+            "price": "$0",
+            "description": "Para empezar a ordenar tu inventario y recibir consultas.",
+            "features": [
+                "Perfil público con tus datos de contacto",
+                "Consultas de compradores",
+                "Agenda de visitas"
+            ],
+            "split_agent_label": "Si sos agente:",
+            "split_agent_value": "hasta 10 propiedades publicadas.",
+            "split_owner_label": "Si sos propietario:",
+            "split_owner_value": "1 propiedad activa. Escribinos si necesitás más.",
+            "cta": "Crear cuenta gratis",
+            "cta_prelaunch": "Avisame cuando abramos"
+        },
+        "pro": {
+            "badge": "Para agentes activos",
+            "name": "Realtor Pro",
+            "price": "$49",
+            "currency_note": "Se cobra en dólares. Referencia en colones al tipo de cambio del día.",
+            "description": "Todo lo del plan gratis, más las herramientas de cierre.",
+            "features": [
+                "Propiedades publicadas sin límite",
+                "Listados privados con enlace para compartir",
+                "Tablero de clientes por etapa",
+                "Solicitudes de compradores en tus zonas",
+                "Sello de confianza en tu perfil"
+            ],
+            "caveat": "Abrimos en septiembre. Podés escribirnos desde ya y te avisamos apenas puedas activar tu cuenta.",
+            "cta": "Activar Realtor Pro",
+            "cta_prelaunch": "Hablar con el equipo"
+        }
     },
-    "form": {
-        "modal_title": "Solicitar acceso anticipado",
-        "name_label": "Nombre completo",
-        "name_placeholder": "Nombre completo",
+    "september": {
+        "title": "Abrimos en septiembre",
+        "subtitle": "Estamos afinando los últimos detalles. Dejanos tu correo y te escribimos el día que abramos.",
+        "steps": [
+            {
+                "title": "Dejás tu correo",
+                "body": "Sin spam. Dos correos: la guía para llegar listo, y el aviso de apertura."
+            },
+            {
+                "title": "Te avisamos en septiembre",
+                "body": "Con el enlace para crear tu cuenta y empezar a publicar."
+            },
+            {
+                "title": "Publicás desde el primer día",
+                "body": "Dejás tu perfil y tus propiedades listos antes de compartir el primer enlace."
+            }
+        ],
+        "cta": "Avisame cuando abramos"
+    },
+    "faq": {
+        "eyebrow": "Preguntas",
+        "title": "Lo que nos preguntan siempre.",
+        "items": [
+            {
+                "q": "¿Cómo pago Realtor Pro?",
+                "a": "Con tarjeta desde tu panel, o por SINPE Móvil y transferencia si te queda mejor. Se cobra mes a mes en dólares y cancelás cuando querás, sin penalidad."
+            },
+            {
+                "q": "¿El plan gratis vence?",
+                "a": "No. Podés usarlo el tiempo que quieras. Si un día necesitás las herramientas de cierre, pasás a Pro."
+            },
+            {
+                "q": "¿Hay alguna forma de conseguir Pro sin pagarlo?",
+                "a": "Estamos armando un programa de invitaciones entre agentes: traer colegas que publiquen de verdad va a reconocerse en tu plan. Todavía no publicamos las condiciones porque queremos que funcionen antes de prometerlas. Si dejás tu correo, te contamos cuando abramos."
+            },
+            {
+                "q": "¿IkiHomes cobra comisión sobre mis ventas?",
+                "a": "No. La plataforma no participa en la negociación ni cobra un porcentaje. Solo existe la suscripción mensual de Pro."
+            },
+            {
+                "q": "Soy propietario y no agente. ¿Puedo usarlo igual?",
+                "a": "Sí. Creás tu cuenta como propietario y publicás tu propiedad. El plan gratis incluye una propiedad activa. Si tenés varias, escribinos y lo vemos."
+            },
+            {
+                "q": "¿Qué son los listados privados?",
+                "a": "Propiedades que cargás al sistema pero no salen en el buscador público. Generás un enlace y lo compartís solo con quien vos querés."
+            },
+            {
+                "q": "¿Puedo cancelar cuando quiera?",
+                "a": "Sí, sin penalidad. Al cancelar mantenés tu cuenta gratis y no perdés ninguna propiedad: las que pasen del límite del plan gratis quedan como borrador hasta que reactivés."
+            }
+        ]
+    },
+    "notify": {
+        "eyebrow": "Septiembre",
+        "title": "Te escribimos el día que abramos.",
+        "lede": "Dejanos tu correo y decinos cómo vas a usar IkiHomes. Vas a recibir dos correos: una guía corta para llegar listo, y el aviso de apertura.",
+        "secondary_cta": "Hablar con el equipo",
+        "trust_line": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
+        "card_title": "Anotate",
         "email_label": "Correo electrónico",
-        "email_placeholder": "Correo electrónico",
-        "zones_label": "Zona principal de trabajo",
-        "zones_placeholder": "Ej: Escazú, Santa Ana, San José",
-        "button": "Reservar mi lugar →",
-        "button_pending": "Enviando...",
-        "footer": "Sin spam. Solo avisos importantes de la plataforma.",
-        "success_title": "¡Solicitud recibida!",
-        "success_msg": "Te contactaremos pronto. Revisá tu bandeja de entrada.",
-        "add_another": "Enviar otra solicitud"
-    },
-    "blog_teaser": {
-        "eyebrow": "Artículos",
-        "title": "Desde el blog",
-        "card_title": "Costa Rica tiene MLS, pero no funciona como crees",
-        "card_description": "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubre todo el mercado. Cómo esta fragmentación afecta tu negocio y qué podés hacer.",
-        "card_date": "2026-04-03",
-        "card_image": "/blog-mls-costa-rica-reality.png",
-        "read_article": "Leer artículo",
-        "view_all": "Ver todos los artículos"
-    },
-    "about": {
-        "title": "Sobre IkiHomes",
-        "content": "IkiHomes es una plataforma que conecta compradores de propiedades en Costa Rica con agentes profesionales clasificados por capacidad de respuesta y confianza, no solo por quién paga más."
-    },
-    "modal": {
-        "close": "Cerrar"
+        "email_placeholder": "tu@correo.com",
+        "role_legend": "Cómo vas a usar IkiHomes",
+        "role_agent": "Soy agente inmobiliario",
+        "role_owner": "Tengo una propiedad para vender",
+        "submit": "Avisame cuando abramos",
+        "submit_pending": "Enviando...",
+        "micro": "Sin spam. Solo esos dos correos, y podés salirte cuando querás.",
+        "success_title": "Listo, te anotamos.",
+        "success_msg": "Te escribimos a ese correo cuando abramos. Mientras tanto, si querés adelantar algo, escribinos.",
+        "error_email": "Ingresá un correo válido.",
+        "error_generic": "No pudimos guardar tu correo. Intentá de nuevo."
     },
     "footer": {
-        "copyright": "© 2026 IkiHomes · Hecho en Costa Rica · Compradores reales · Agentes reales",
+        "copyright": "© 2026 IkiHomes · Hecho en Costa Rica",
+        "nav": {
+            "product": "El producto",
+            "pricing": "Precios",
+            "faq": "Preguntas"
+        },
         "links": {
             "blog": "Blog",
             "privacy": "Privacidad",

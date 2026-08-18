@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
 import { Urbanist, Source_Sans_3 } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import "../globals.css";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
 });
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export async function generateMetadata(
@@ -52,11 +49,11 @@ export async function generateMetadata(
       images: [
         {
           url: "/og-image.png",
-          width: 1024,
-          height: 1024,
+          width: 1200,
+          height: 630,
           alt: isEs
-            ? "IkiHomes — Plataforma para agentes inmobiliarios en Costa Rica"
-            : "IkiHomes — Platform for real estate agents in Costa Rica",
+            ? "IkiHomes, la plataforma de trabajo del agente inmobiliario en Costa Rica"
+            : "IkiHomes, the working platform for real estate agents in Costa Rica",
         },
       ],
       type: "website",
@@ -85,11 +82,9 @@ export async function generateMetadata(
 }
 
 import { getDictionary } from "../../dictionaries";
-import { StatusBanner } from "@/components/StatusBanner";
-import { SiteHeader } from "@/components/SiteHeader";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
-import { FormModal } from "@/components/FormModal";
+import { StickyCta } from "@/components/StickyCta";
 import { MetaPixel } from "@/components/MetaPixel";
 
 /** JSON-LD structured data for Organization + WebSite */
@@ -197,12 +192,10 @@ export default async function RootLayout(
       <body
         className={`${urbanist.variable} ${sourceSans.variable} antialiased`}
       >
-        <StatusBanner text={dict.status_banner} />
-        <LanguageSelector />
         <NavBar dict={dict.nav} />
         {children}
         <Footer lang={lang} dict={dict.footer} />
-        <FormModal closeLabel={dict.modal.close} formDict={dict.form} />
+        <StickyCta label={dict.nav.cta} labelPrelaunch={dict.nav.cta_prelaunch} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <MetaPixel />
       </body>

@@ -1,10 +1,10 @@
 import { HeroSection } from "@/components/HeroSection";
-import { StatsBar } from "@/components/StatsBar";
-import { MechanicSection } from "@/components/MechanicSection";
-import { TrustSection } from "@/components/TrustSection";
-import { SplitSection } from "@/components/SplitSection";
-import { BottomCTASection } from "@/components/BottomCTASection";
-import { StickyCTA } from "@/components/StickyCTA";
+import { ProductProofSection } from "@/components/ProductProofSection";
+import { PathSplitSection } from "@/components/PathSplitSection";
+import { CapabilitiesGrid } from "@/components/CapabilitiesGrid";
+import { PricingSection } from "@/components/PricingSection";
+import { FaqSection } from "@/components/FaqSection";
+import { NotifySection } from "@/components/NotifySection";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home(props: { params: Promise<{ lang: string }> }) {
@@ -12,14 +12,14 @@ export default async function Home(props: { params: Promise<{ lang: string }> })
   const dict = await getDictionary(lang);
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="flex min-h-screen flex-col">
       <HeroSection dict={dict.hero} />
-      <StickyCTA label={dict.hero.cta} />
-      <StatsBar dict={dict.stats} />
-      <MechanicSection dict={dict.mechanic} />
-      <TrustSection dict={dict.trust} />
-      <SplitSection dict={dict.split} />
-      <BottomCTASection dict={dict.bottom_cta} />
+      <ProductProofSection dict={dict.proof} />
+      <PathSplitSection dict={dict.paths} />
+      <CapabilitiesGrid dict={dict.capabilities} />
+      <PricingSection dict={dict.pricing} september={dict.september} />
+      <FaqSection dict={dict.faq} />
+      <NotifySection dict={dict.notify} />
     </main>
   );
 }

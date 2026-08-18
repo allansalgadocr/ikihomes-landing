@@ -1,71 +1,78 @@
 "use server";
 
+/**
+ * Pre-launch notify capture.
+ *
+ * Returns a stable error CODE rather than a sentence, so the copy lives at the
+ * presentation boundary and the English page does not render Spanish errors.
+ *
+ * `role` is sent now. The Google Form has always had a role entry configured,
+ * but the previous version of this action never populated it, so every captured
+ * lead arrived with a blank role column and agents could not be told apart from
+ * property owners.
+ */
+
+export type SubmitLeadErrorCode = "invalid_email" | "config" | "network";
+
 export type SubmitLeadState = {
   ok: boolean;
-  error?: string;
+  error?: SubmitLeadErrorCode;
 };
+
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function submitLead(
   prevState: SubmitLeadState,
   formData: FormData
 ): Promise<SubmitLeadState> {
-  const name = (formData.get("name") as string) || "";
-  const email = formData.get("email") as string;
-  const zones = (formData.get("zones") as string) || "";
-  const company = formData.get("company") as string; // Honeypot
+  const email = ((formData.get("email") as string) || "").trim();
+  const role = ((formData.get("role") as string) || "").trim();
+  const name = ((formData.get("name") as string) || "").trim();
+  const zones = ((formData.get("zones") as string) || "").trim();
+  const company = formData.get("company") as string; // honeypot
 
-  // 1. Bot Protection (Honeypot)
-  if (company) {
-    // Silently succeed to fool bots
-    return { ok: true };
-  }
+  // Silently succeed so a bot cannot tell it was caught.
+  if (company) return { ok: true };
 
-  // 2. Validate required fields
-  if (!name.trim()) {
-    return { ok: false, error: "Por favor ingresa tu nombre." };
-  }
+  if (!EMAIL.test(email)) return { ok: false, error: "invalid_email" };
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { ok: false, error: "Por favor ingresa un correo válido." };
-  }
-
-  if (!zones.trim()) {
-    return { ok: false, error: "Por favor ingresa tus zonas de trabajo." };
-  }
-
-  // 3. Prepare Google Forms Payload
   const formUrl = process.env.GOOGLE_FORMS_ACTION_URL;
-  const nameEntryId = process.env.GOOGLE_FORMS_ENTRY_NAME;
   const emailEntryId = process.env.GOOGLE_FORMS_ENTRY_EMAIL;
+  const roleEntryId = process.env.GOOGLE_FORMS_ENTRY_ROLE;
+  const nameEntryId = process.env.GOOGLE_FORMS_ENTRY_NAME;
   const zonesEntryId = process.env.GOOGLE_FORMS_ENTRY_ZONES;
 
-  if (!formUrl || !emailEntryId || !nameEntryId || !zonesEntryId) {
-    console.error("Missing Google Forms configuration");
-    return { ok: false, error: "Error de configuración. Intentá de nuevo." };
+  if (!formUrl || !emailEntryId) {
+    console.error("submitLead: missing Google Forms configuration");
+    return { ok: false, error: "config" };
   }
 
-  const googleFormData = new URLSearchParams();
-  googleFormData.append(nameEntryId, name.trim());
-  googleFormData.append(emailEntryId, email.trim());
-  googleFormData.append(zonesEntryId, zones.trim());
+  const payload = new URLSearchParams();
+  payload.append(emailEntryId, email);
+  if (roleEntryId && role) payload.append(roleEntryId, role);
+  // The form still has these fields; send them when a surface collects them.
+  if (nameEntryId && name) payload.append(nameEntryId, name);
+  if (zonesEntryId && zones) payload.append(zonesEntryId, zones);
 
   try {
     const response = await fetch(formUrl, {
       method: "POST",
-      body: googleFormData,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
+      body: payload,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
 
     if (!response.ok) {
-      console.error("Google Forms returned status:", response.status, response.statusText);
-      return { ok: false, error: "Error al enviar. Intentá de nuevo." };
+      console.error(
+        "submitLead: Google Forms returned",
+        response.status,
+        response.statusText
+      );
+      return { ok: false, error: "network" };
     }
 
     return { ok: true };
   } catch (err) {
-    console.error("Lead submission error:", err);
-    return { ok: false, error: "Ocurrió un error inesperado." };
+    console.error("submitLead: submission failed", err);
+    return { ok: false, error: "network" };
   }
 }
