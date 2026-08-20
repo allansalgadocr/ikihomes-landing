@@ -56,15 +56,15 @@ En ese vacío, lo que compra primero no es el activo, sino criterio delegado. Co
 
 Esta es la razón por la que en este segmento se compite menos por inventario bruto y más por credibilidad operativa. Dos agentes pueden mostrar unidades similares, pero no generan el mismo nivel de seguridad percibida. El diferencial está en la calidad del juicio y en la consistencia del proceso.
 
-## Cómo se prepara el agente para este flujo
+## Cómo prepararte para este flujo
 
-Primero, construye una red profesional bilingüe antes de necesitarla: abogado, escrow, notario, asesor fiscal para no residentes y administrador de renta corta donde tenga sentido. Armar ese equipo en medio de una visita exploratoria del comprador suele salir caro en tiempo y en reputación.
+Primero, construí una red profesional bilingüe antes de necesitarla: abogado, escrow, notario, asesor fiscal para no residentes y administrador de renta corta donde tenga sentido. Armar ese equipo en medio de una visita exploratoria del comprador suele salir caro en tiempo y en reputación.
 
-Segundo, responde en horas y en inglés profesional. Muchos compradores comparan Costa Rica con otras jurisdicciones en paralelo y la referencia inicial la marca quien organiza mejor la conversación desde el primer contacto, no quien aparece tarde con más inventario.
+Segundo, respondé en horas y en inglés profesional. Muchos compradores comparan Costa Rica con otras jurisdicciones en paralelo y la referencia inicial la marca quien organiza mejor la conversación desde el primer contacto, no quien aparece tarde con más inventario.
 
-Tercero, entrena respuestas directas para seguridad pública, comparación con Panamá, proceso de cierre e impuestos. Evitar temas sensibles no protege la relación comercial; la debilita. La claridad, aun cuando incluye fricciones, mejora la percepción de profesionalismo.
+Tercero, entrená respuestas directas para seguridad pública, comparación con Panamá, proceso de cierre e impuestos. Evitar temas sensibles no protege la relación comercial; la debilita. La claridad, aun cuando incluye fricciones, mejora la percepción de profesionalismo.
 
-Cuarto, elige un microcorredor y profundiza ahí. Decir "vendo Costa Rica" suena amplio, pero comunica poca especialización. Decir "trabajo Lindora-Forum" o "trabajo Tamarindo-Las Catalinas" permite construir autoridad verificable, red local pertinente y recomendaciones con mayor precisión.
+Cuarto, elegí un microcorredor y profundizá ahí. Decir "vendo Costa Rica" suena amplio, pero comunica poca especialización. Decir "trabajo Lindora-Forum" o "trabajo Tamarindo-Las Catalinas" permite construir autoridad verificable, red local pertinente y recomendaciones con mayor precisión.
 
 ## La oportunidad operativa
 

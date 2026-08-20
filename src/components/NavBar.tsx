@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { usePathname, useRouter } from "next/navigation";
-import { PORTAL_LIVE, primaryHref, NOTIFY_ANCHOR } from "@/lib/portal";
+import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
 
 interface NavBarProps {
   dict: {
@@ -58,7 +58,7 @@ export function NavBar({ dict }: NavBarProps) {
 
           <a
             className="btn btn-primary btn-sm"
-            href={PORTAL_LIVE ? primaryHref() : NOTIFY_ANCHOR}
+            href={PORTAL_LIVE ? primaryHref() : notifyHref(lang)}
           >
             {PORTAL_LIVE ? dict.cta : dict.cta_prelaunch}
           </a>

@@ -371,3 +371,254 @@ footer.site{background:var(--band); color:var(--band-body); padding-block:56px 4
 }
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* ============================================================================
+   IkiHomes — BLOG design system additions
+   ----------------------------------------------------------------------------
+   These rules are written to be appended verbatim to
+   ikihomes-landing/src/app/mockup.css.
+
+   Why here and not Tailwind utilities: mockup.css is imported UNLAYERED after
+   `@import "tailwindcss"`, so it outranks every Tailwind utility regardless of
+   specificity. Utility classes on the blog (text-xl, mb-6, text-white) are
+   currently dead. Semantic classes in this file are the only reliable lever,
+   and they inherit the theme tokens so dark mode works for free.
+
+   Every value below reuses an existing token from mockup.css. No new colour,
+   radius, shadow or easing is introduced.
+   ========================================================================= */
+
+
+/* ============ SHARED: editorial page header ============ */
+/* Used by both the index and the article. Sits on --surface so the warm
+   neutral, not white, is the ground the chrome meets. */
+.post-head{
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  padding-block:clamp(40px,5vw,72px) clamp(36px,4.4vw,60px);
+}
+.post-head h1{max-width:20ch}
+.post-head .lede{margin-top:18px}
+
+/* Breadcrumb — mirrors the BreadcrumbList JSON-LD that already ships. */
+.crumbs{
+  display:flex; flex-wrap:wrap; align-items:center; gap:9px;
+  font-size:14px; color:var(--meta); margin-bottom:22px;
+}
+.crumbs a{color:var(--meta)}
+.crumbs a:hover{color:var(--brand)}
+.crumbs span[aria-hidden]{opacity:.5}
+.crumbs .here{color:var(--ink); font-weight:600}
+
+/* Meta line: date · reading time · author */
+.post-meta{
+  display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px;
+  font-size:14.5px; color:var(--meta);
+}
+.post-meta span[aria-hidden]{opacity:.5}
+
+
+/* ============ BLOG INDEX ============ */
+
+/* Featured post — the newest article, given real estate the others don't get.
+   Reuses the .door-main deep-Ikigai band treatment from the home page. */
+.feature{
+  display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
+  gap:0; border-radius:var(--r-panel); overflow:hidden;
+  background:var(--band); color:var(--band-body); box-shadow:var(--sh-lg);
+  margin-bottom:clamp(40px,4.4vw,64px);
+}
+.feature-media{position:relative; min-height:320px; background:var(--surface)}
+.feature-media img{width:100%; height:100%; object-fit:cover}
+.feature-body{
+  padding:clamp(28px,3vw,48px);
+  display:flex; flex-direction:column; gap:16px; justify-content:center;
+}
+.feature-body h2{
+  color:var(--band-ink); font-size:clamp(26px,2.5vw,36px);
+  line-height:1.12; max-width:18ch;
+}
+.feature-body p{color:var(--band-body); font-size:16.5px; max-width:48ch}
+.feature-body .post-meta{color:var(--band-body); opacity:.85}
+.feature .tag{background:var(--seafoam); color:var(--ikigai); margin-bottom:0; align-self:flex-start}
+.feature-link{
+  display:inline-flex; align-items:center; gap:9px; margin-top:4px;
+  font-size:15.5px; font-weight:600; color:var(--seafoam);
+}
+.feature-link svg{width:17px; height:17px; transition:transform .2s var(--ease)}
+.feature:hover .feature-link svg{transform:translateX(4px)}
+/* The whole panel is the hit area, but only one link sits in the accessibility
+   tree: the visible "read article" link stretches over the panel rather than
+   wrapping the image and heading in a second anchor. */
+.feature{position:relative}
+.feature-link::after{content:""; position:absolute; inset:0}
+@media (max-width:900px){
+  .feature{grid-template-columns:1fr}
+  .feature-media{min-height:0; aspect-ratio:16/10}
+}
+
+/* Post grid — the .proof-card anatomy from the home page, reused wholesale. */
+.post-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px}
+.post-card{
+  background:var(--canvas); border:1px solid var(--line); border-radius:var(--r-card);
+  box-shadow:var(--sh-sm); overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .2s var(--ease), transform .2s var(--ease);
+}
+.post-card:hover{box-shadow:var(--sh-md); transform:translateY(-3px)}
+.post-card:hover h3{color:var(--brand)}
+.post-media{
+  aspect-ratio:16/10; background:var(--surface);
+  border-bottom:1px solid var(--line); overflow:hidden; position:relative;
+}
+/* The illustration set is stylistically mixed. A neutral warm mat plus a
+   consistent inset stops the flat-vector pieces from bleeding to the edge and
+   reads as one family until the art is re-cut. */
+.post-media img{width:100%; height:100%; object-fit:cover; object-position:center}
+.post-body{padding:22px 24px 26px; display:flex; flex-direction:column; gap:10px; flex:1}
+/* Clamp title and dek so every row in the grid keeps one baseline. Titles run
+   long in Spanish; without this the cards stagger and the grid reads untidy. */
+.post-body h3{
+  transition:color .2s var(--ease); text-wrap:balance;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.post-body p{
+  font-size:15px; color:var(--body);
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.post-body .post-meta{margin-top:auto; padding-top:6px; font-size:13.5px}
+.post-card .tag{margin-bottom:0; align-self:flex-start}
+@media (max-width:1000px){.post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.post-grid{grid-template-columns:1fr}}
+
+
+/* ============ ARTICLE ============ */
+
+/* The measure. Furniture (hero, pull quote, CTA) may break wider; running text
+   never does. 68ch at 18px lands near 720px, the long-form comfort zone. */
+.article{padding-block:clamp(36px,4vw,56px) clamp(48px,5vw,80px)}
+.measure{max-width:720px; margin-inline:auto}
+
+.article-title{font-size:clamp(32px,4vw,50px); line-height:1.08; max-width:19ch}
+.article-lede{
+  font-size:clamp(19px,1.5vw,21px); line-height:1.6; color:var(--ink);
+  font-weight:400; margin-top:20px; max-width:60ch;
+}
+
+/* Hero image — breaks past the measure to the full wrap, which is what makes
+   the page read editorial rather than like a document. */
+.article-hero{
+  /* margin-inline is explicit: <figure> carries a 40px browser default and
+     .article-hero would otherwise depend on Tailwind preflight to clear it. */
+  margin-block:clamp(28px,3vw,44px); margin-inline:0;
+  border-radius:var(--r-panel); overflow:hidden;
+  border:1px solid var(--line); background:var(--surface);
+}
+.article-hero img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover}
+.article-hero figcaption{
+  padding:12px 20px; font-size:13.5px; color:var(--meta);
+  border-top:1px solid var(--line); background:var(--canvas);
+}
+
+/* ---- Long-form running text ----
+   Explicit margins on every element: mockup.css sets h1..h4{margin:0} and
+   p{margin:0} globally, so prose must restore its own rhythm. */
+.prose{font-size:18px; line-height:1.75; color:var(--body)}
+.prose > * + *{margin-top:1.15em}
+.prose p{font-size:18px; line-height:1.75; color:var(--body)}
+.prose h2{
+  font-size:clamp(26px,2.2vw,32px); line-height:1.15; color:var(--ink);
+  margin-top:2.2em; margin-bottom:.5em; max-width:24ch; text-wrap:balance;
+}
+.prose h3{
+  font-size:clamp(19px,1.5vw,22px); line-height:1.25; color:var(--ink);
+  margin-top:1.9em; margin-bottom:.4em; max-width:30ch;
+}
+.prose h2 + p, .prose h3 + p{margin-top:0}
+.prose ul,.prose ol{margin:1.3em 0; padding-left:1.35em; display:flex; flex-direction:column; gap:.6em}
+.prose li{padding-left:.2em}
+.prose li::marker{color:var(--brand)}
+.prose strong{color:var(--ink); font-weight:700}
+.prose a{color:var(--brand); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px}
+.prose a:hover{color:var(--brand-hover)}
+.prose img{border-radius:var(--r-card); margin-block:1.8em}
+.prose hr{border:0; border-top:1px solid var(--line); margin-block:2.4em}
+
+/* Pull quote — seafoam rule, Urbanist 800, breaks slightly past the measure. */
+.pullquote{
+  margin:2.4em 0; padding-left:clamp(20px,2.4vw,32px);
+  border-left:3px solid var(--seafoam);
+  font-family:var(--font-urbanist),system-ui,sans-serif;
+  font-weight:800; letter-spacing:-.018em;
+  font-size:clamp(20px,1.8vw,25px); line-height:1.35; color:var(--ink);
+}
+.pullquote cite{
+  display:block; margin-top:12px;
+  font-family:var(--font-source-sans),sans-serif; font-style:normal;
+  font-size:14.5px; font-weight:600; color:var(--meta); letter-spacing:0;
+}
+
+/* Key-figure callout — for the stat-heavy market posts. */
+.figure-note{
+  margin:2.2em 0; padding:clamp(20px,2.2vw,28px);
+  background:var(--surface-brand); border:1px solid var(--line);
+  border-radius:var(--r-card);
+  display:flex; gap:20px; align-items:flex-start;
+}
+.figure-note .fig{
+  font-family:var(--font-urbanist),sans-serif; font-weight:900;
+  font-size:clamp(30px,3vw,40px); line-height:1; letter-spacing:-.03em;
+  color:var(--brand); flex:none; font-variant-numeric:tabular-nums;
+}
+.figure-note p{font-size:15.5px; color:var(--body); line-height:1.6}
+
+/* ---- Article CTA: the deep-Ikigai band panel, same as the home page.
+   .btn-onband sets an explicit colour, which is what the current
+   `bg-primary text-white` anchor fails to do (a{color:var(--brand)} wins,
+   giving teal-on-teal at 1.0:1 contrast). ---- */
+.article-cta{
+  margin-top:clamp(44px,4.5vw,68px);
+  background:var(--band); color:var(--band-body);
+  border-radius:var(--r-panel); padding:clamp(30px,3.4vw,48px);
+  box-shadow:var(--sh-lg); text-align:center;
+}
+.article-cta h3{color:var(--band-ink); font-size:clamp(22px,2vw,28px); max-width:22ch; margin:0 auto}
+.article-cta p{color:var(--band-body); max-width:52ch; margin:14px auto 26px; font-size:16.5px}
+.article-cta .btn{margin-inline:auto}
+.article-cta .micro{font-size:13.5px; opacity:.8; margin-top:16px}
+
+/* ---- Author / share strip ---- */
+.article-foot{
+  margin-top:clamp(36px,4vw,56px); padding-top:26px; border-top:1px solid var(--line);
+  display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center;
+  font-size:14.5px; color:var(--meta);
+}
+.article-foot .who{display:flex; align-items:center; gap:12px}
+.article-foot .avatar{
+  width:40px; height:40px; border-radius:var(--r-pill); flex:none;
+  background:var(--surface-brand); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-urbanist),sans-serif; font-weight:900; color:var(--brand); font-size:15px;
+}
+.article-foot .who b{display:block; color:var(--ink); font-weight:700; font-size:15px}
+.share{margin-left:auto; display:flex; gap:10px; align-items:center}
+.share a{
+  width:38px; height:38px; border-radius:var(--r-pill); border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center; color:var(--body);
+  transition:border-color .2s var(--ease), color .2s var(--ease), background-color .2s var(--ease);
+}
+.share a:hover{border-color:var(--brand); color:var(--brand); background:var(--surface-brand)}
+.share svg{width:17px; height:17px}
+
+/* ---- Keep reading ---- */
+.keep-reading{background:var(--surface); border-top:1px solid var(--line)}
+.keep-reading .head{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 16px; margin-bottom:30px;
+}
+.keep-reading .head a{font-size:15px; font-weight:600; margin-left:auto}
+
+@media (max-width:760px){
+  .prose{font-size:17px}
+  .prose p{font-size:17px}
+  .article-hero{border-radius:var(--r-card)}
+}

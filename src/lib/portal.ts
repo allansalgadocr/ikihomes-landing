@@ -30,3 +30,24 @@ export function primaryHref(path = "/sign-up"): string {
 
 /** Support address, used for the Pro conversation which does not need the portal. */
 export const SUPPORT_MAILTO = "mailto:soporte@ikihomescr.com";
+
+/**
+ * Where the notify call to action should point from a given route.
+ *
+ * `#avisame` is rendered by NotifySection, which only mounts on the home page.
+ * Emitting the bare fragment from the blog, privacy or terms produced a link
+ * that scrolled nowhere -- every call to action on those routes was dead. Off
+ * home the CTA has to navigate home and then scroll.
+ */
+export function notifyHref(lang: string): string {
+  return `/${lang}${NOTIFY_ANCHOR}`;
+}
+
+/**
+ * Same problem for the section anchors the footer links to (#producto,
+ * #precios, #preguntas). A language-qualified path works from every route and
+ * still scrolls without a reload when you are already on the home page.
+ */
+export function sectionHref(lang: string, id: string): string {
+  return `/${lang}#${id}`;
+}

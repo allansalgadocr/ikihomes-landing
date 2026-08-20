@@ -243,5 +243,33 @@
             "terms": "Terms"
         },
         "contact_email": "soporte@ikihomescr.com"
+    },
+    "blog": {
+        "eyebrow": "Articles for agents",
+        "title": "The market, without the gloss.",
+        "lede": "Zone data, buyer profiles and what actually moves a deal in Costa Rica. Written for the agent who works.",
+        "crumb_home": "Home",
+        "crumb_blog": "Blog",
+        "featured": "Featured",
+        "read_article": "Read article",
+        "empty": "Coming soon.",
+        "reading_time": "min read",
+        "keep_reading": "Keep reading",
+        "view_all": "View all articles",
+        "cta_title": "Position yourself before everyone else.",
+        "cta_body": "IkiHomes opens in September. Leave your email and we will write on day one, with your profile ready to publish.",
+        "cta_micro": "No credit card · Free plan, no expiry",
+        "author_role": "Market research, Costa Rica",
+        "share_whatsapp": "Share on WhatsApp",
+        "share_linkedin": "Share on LinkedIn",
+        "categories": {
+            "escazu-2026": "Escazú",
+            "guanacaste-2026": "Guanacaste",
+            "santa-ana-mercado-silencioso": "Santa Ana",
+            "compradores-internacionales-2026": "Buyers",
+            "mls-costa-rica-reality": "Market",
+            "stand-out-agent": "Practice",
+            "_default": "Market"
+        }
     }
 }
