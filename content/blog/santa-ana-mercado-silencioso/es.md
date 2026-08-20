@@ -20,7 +20,7 @@ En escala país, [CINDE documenta más de 400 multinacionales operando en Costa 
 
 ## Los números: lo que Escazú ya no puede ofrecer
 
-Escazú sigue siendo referencia de precio para producto premium, con la banda usada por el mercado en torno a $1,800-$2,500 por m2. La lectura útil para Santa Ana no es copiar esa etiqueta, sino observar cómo la zona se posiciona ligeramente por debajo mientras la brecha se estrecha.
+Escazú sigue siendo referencia de precio para producto premium, con la banda usada por el mercado en torno a $1,800-$2,500 por m². La lectura útil para Santa Ana no es copiar esa etiqueta, sino observar cómo la zona se posiciona ligeramente por debajo mientras la brecha se estrecha.
 
 En términos de precios de listado, [Global Property Guide reporta un +7.65% interanual en el Valle Central](https://www.globalpropertyguide.com/latin-america/costa-rica/price-history), con mediana de oferta al alza.
 
