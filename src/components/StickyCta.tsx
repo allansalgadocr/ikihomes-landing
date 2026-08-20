@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { IconArrow } from "./Icons";
-import { PORTAL_LIVE, primaryHref, NOTIFY_ANCHOR } from "@/lib/portal";
+import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
 
 /**
  * The mobile action bar. mockup.css hides the header nav, the login link and
@@ -25,7 +25,7 @@ export function StickyCta({
 
   return (
     <div className="sticky">
-      <a className="btn btn-primary" href={PORTAL_LIVE ? primaryHref() : NOTIFY_ANCHOR}>
+      <a className="btn btn-primary" href={PORTAL_LIVE ? primaryHref() : notifyHref(lang)}>
         {PORTAL_LIVE ? label : labelPrelaunch}
         <IconArrow />
       </a>

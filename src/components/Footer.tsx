@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { sectionHref } from "@/lib/portal";
 
 interface FooterProps {
   lang: string;
@@ -18,9 +19,9 @@ export function Footer({ lang, dict }: FooterProps) {
         <div className="foot">
           <Logo />
           <div className="foot-links">
-            <a href="#producto">{dict.nav.product}</a>
-            <a href="#precios">{dict.nav.pricing}</a>
-            <a href="#preguntas">{dict.nav.faq}</a>
+            <a href={sectionHref(lang, "producto")}>{dict.nav.product}</a>
+            <a href={sectionHref(lang, "precios")}>{dict.nav.pricing}</a>
+            <a href={sectionHref(lang, "preguntas")}>{dict.nav.faq}</a>
             <Link href={`/${lang}/blog`}>{dict.links.blog}</Link>
             <Link href={`/${lang}/privacy`}>{dict.links.privacy}</Link>
             <Link href={`/${lang}/terms`}>{dict.links.terms}</Link>
