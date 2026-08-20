@@ -2,12 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllSlugs, getPost } from "@/lib/blog";
+import { getAllSlugs, getPost, listPosts } from "@/lib/blog";
+import {
+  categoryLabel,
+  formatDate,
+  readingMinutes,
+  relatedPosts,
+} from "@/lib/blogPresentation";
 import { BlogMarkdown } from "@/components/BlogMarkdown";
 import { BlogPixelTracker } from "@/components/BlogPixelTracker";
+import { PostCard } from "@/components/PostCard";
+import { IconArrow, IconShare, IconUsers } from "@/components/Icons";
+import { getDictionary } from "../../../../dictionaries";
+import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
 
 const BASE = "https://ikihomescr.com";
-const FORM_URL = process.env.NEXT_PUBLIC_EARLY_ACCESS_FORM_URL || "#";
 
 interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
@@ -74,9 +83,8 @@ function BlogPostingJsonLd({
     ? `${BASE}${post.image}`
     : `${BASE}/og-image.png`;
 
-  // Estimate reading time (~200 words/min for Spanish, ~250 for English)
   const wordCount = post.content.split(/\s+/).length;
-  const readingMinutes = Math.max(1, Math.round(wordCount / (lang === "es" ? 200 : 250)));
+  const readingTime = readingMinutes(post.content, lang);
 
   const blogPostingSchema = {
     "@context": "https://schema.org",
@@ -86,7 +94,7 @@ function BlogPostingJsonLd({
     datePublished: post.date,
     dateModified: post.date,
     wordCount,
-    timeRequired: `PT${readingMinutes}M`,
+    timeRequired: `PT${readingTime}M`,
     author: {
       "@type": "Organization",
       name: post.author,
@@ -154,91 +162,148 @@ export default async function BlogPostPage(props: PageProps) {
   const post = getPost(slug, lang);
   if (!post) notFound();
 
-  const dateStr = new Date(post.date).toLocaleDateString(
-    lang === "es" ? "es-CR" : "en-US",
-    { year: "numeric", month: "long", day: "numeric" }
-  );
+  const dict = await getDictionary(lang as "en" | "es");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const b = (dict as any).blog;
 
-  const wordCount = post.content.split(/\s+/).length;
-  const readingMinutes = Math.max(1, Math.round(wordCount / (lang === "es" ? 200 : 250)));
-  const readingLabel = lang === "es"
-    ? `${readingMinutes} min de lectura`
-    : `${readingMinutes} min read`;
+  const dateStr = formatDate(post.date, lang);
+  const readingLabel = `${readingMinutes(post.content, lang)} ${b.reading_time}`;
+  const tag = categoryLabel(post, b);
+  const related = relatedPosts(listPosts(lang), slug);
 
-  const ctaLabel = lang === "es"
-    ? "Únete al Acceso Anticipado"
-    : "Join Early Access";
-  const ctaContext = lang === "es"
-    ? "¿Listo para posicionarte antes de que todos lo hagan?"
-    : "Ready to position yourself before everyone else?";
+  const ctaHref = PORTAL_LIVE ? primaryHref() : notifyHref(lang);
+  const ctaLabel = PORTAL_LIVE ? dict.nav.cta : dict.nav.cta_prelaunch;
+
+  const canonical = `${BASE}/${lang}/blog/${slug}`;
+  const encodedUrl = encodeURIComponent(canonical);
+  const shareText = encodeURIComponent(`${post.title} ${canonical}`);
 
   return (
     <>
       <BlogPostingJsonLd post={post} lang={lang} slug={slug} />
       <BlogPixelTracker slug={slug} />
-      <main className="min-h-screen bg-white py-20 px-4">
-        <article className="max-w-3xl mx-auto">
-          <nav className="mb-8">
-            <Link
-              href={`/${lang}/blog`}
-              className="text-primary font-medium hover:underline text-sm"
-            >
-              ← Blog
-            </Link>
-          </nav>
 
-          <header className="mb-10">
-            <div className="flex items-center gap-3 text-sm text-gray-400">
-              <time dateTime={post.date} className="type-body">
-                {dateStr}
-              </time>
+      <main>
+        {/* The visible breadcrumb mirrors the BreadcrumbList schema above. */}
+        <section className="post-head">
+          <div className="wrap">
+            <nav className="crumbs" aria-label={b.crumb_blog}>
+              <Link href={`/${lang}`}>{b.crumb_home}</Link>
+              <span aria-hidden="true">/</span>
+              <Link href={`/${lang}/blog`}>{b.crumb_blog}</Link>
+              <span aria-hidden="true">/</span>
+              <span className="here">{tag}</span>
+            </nav>
+            <p className="eyebrow">{tag}</p>
+            <h1 className="article-title">{post.title}</h1>
+            <p className="article-lede">{post.description}</p>
+            <div className="post-meta" style={{ marginTop: 22 }}>
+              <time dateTime={post.date}>{dateStr}</time>
               <span aria-hidden="true">·</span>
-              <span className="type-body">{readingLabel}</span>
+              <span>{readingLabel}</span>
+              <span aria-hidden="true">·</span>
+              <span>{post.author}</span>
             </div>
-            <h1 className="type-heading text-3xl sm:text-4xl mt-2 leading-tight">
-              {post.title}
-            </h1>
-          </header>
-
-          {post.image && (
-            <div className="mb-10 rounded-2xl overflow-hidden">
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={1376}
-                height={768}
-                className="w-full h-auto"
-                priority
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
-            </div>
-          )}
-
-          <BlogMarkdown content={post.content} />
-
-          {/* CTA — internal link for SEO juice */}
-          <div className="mt-12 p-6 sm:p-8 bg-primary/4 rounded-2xl text-center">
-            <p className="type-body text-gray-600 mb-4">{ctaContext}</p>
-            <a
-              href={FORM_URL}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base"
-            >
-              {ctaLabel}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
           </div>
+        </section>
 
-          <footer className="mt-12 pt-8 border-t border-gray-100">
-            <Link
-              href={`/${lang}/blog`}
-              className="text-primary font-medium hover:underline"
-            >
-              {lang === "es" ? "← Volver al blog" : "← Back to blog"}
-            </Link>
-          </footer>
+        <article className="band article">
+          <div className="wrap">
+            {post.image && (
+              <figure className="article-hero">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={1376}
+                  height={768}
+                  priority
+                  sizes="(max-width: 1240px) 100vw, 1160px"
+                />
+              </figure>
+            )}
+
+            <div className="measure prose">
+              <BlogMarkdown content={post.content} />
+            </div>
+
+            <div className="measure">
+              {/*
+                .btn-onband sets an explicit colour. The previous
+                `bg-primary text-white` anchor did not: mockup.css is imported
+                unlayered, so its bare `a{color:var(--brand)}` outranked the
+                Tailwind utility and painted teal on teal at 1.0:1 contrast.
+              */}
+              <div className="article-cta">
+                <h3>{b.cta_title}</h3>
+                <p>{b.cta_body}</p>
+                <a className="btn btn-onband" href={ctaHref}>
+                  {ctaLabel}
+                  <IconArrow />
+                </a>
+                <p className="micro">{b.cta_micro}</p>
+              </div>
+
+              <div className="article-foot">
+                <div className="who">
+                  <div className="avatar" aria-hidden="true">
+                    IH
+                  </div>
+                  <div>
+                    <b>{post.author}</b>
+                    {b.author_role}
+                  </div>
+                </div>
+                {/*
+                  Share targets are plain links so this stays a server
+                  component. A copy-to-clipboard button would need client JS
+                  for no real gain over the browser's own share affordances.
+                */}
+                <div className="share">
+                  <a
+                    href={`https://wa.me/?text=${shareText}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={b.share_whatsapp}
+                  >
+                    <IconShare />
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={b.share_linkedin}
+                  >
+                    <IconUsers />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
+
+        {related.length > 0 && (
+          <section className="band keep-reading">
+            <div className="wrap">
+              <div className="head">
+                <h2 style={{ fontSize: "clamp(24px,2.2vw,32px)" }}>
+                  {b.keep_reading}
+                </h2>
+                <Link href={`/${lang}/blog`}>{b.view_all} →</Link>
+              </div>
+              <div className="post-grid">
+                {related.map((p) => (
+                  <PostCard
+                    key={p.slug}
+                    post={p}
+                    lang={lang}
+                    dict={b}
+                    sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

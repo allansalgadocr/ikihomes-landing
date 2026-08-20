@@ -11,6 +11,13 @@ export interface BlogPostMeta {
   author: string;
   image?: string;
   lang: string;
+  /**
+   * Optional editorial tag shown on cards and in the article eyebrow. No post
+   * sets it yet; the pages fall back to a per-slug label from the dictionary,
+   * so adding `category:` to a post's frontmatter later takes precedence
+   * without a code change.
+   */
+  category?: string;
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -47,6 +54,7 @@ export function getPost(slug: string, lang: string): BlogPost | null {
     author: data.author ?? "IkiHomes",
     image: data.image,
     lang: data.lang ?? lang,
+    category: data.category,
     content,
   };
 }

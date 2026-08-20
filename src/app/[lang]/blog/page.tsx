@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { listPosts } from "@/lib/blog";
+import { formatDate } from "@/lib/blogPresentation";
+import { getDictionary } from "../../../dictionaries";
+import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
+import { IconArrow } from "@/components/Icons";
+import { PostCard } from "@/components/PostCard";
 
 const TITLES: Record<string, { title: string; description: string; heading: string }> = {
   en: {
@@ -55,71 +61,99 @@ export default async function BlogIndexPage(
   props: { params: Promise<{ lang: string }> }
 ) {
   const { lang } = await props.params;
-  const t = TITLES[lang] ?? TITLES.en;
-  const posts = listPosts(lang);
+  const dict = await getDictionary(lang as "en" | "es");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const b = (dict as any).blog;
 
-  const backLabel = lang === "es" ? "← Volver al inicio" : "← Back to home";
-  const readMore = lang === "es" ? "Leer artículo" : "Read article";
+  const posts = listPosts(lang);
+  const [featured, ...rest] = posts;
+
+  const ctaHref = PORTAL_LIVE ? primaryHref() : notifyHref(lang);
+  const ctaLabel = PORTAL_LIVE ? dict.nav.cta : dict.nav.cta_prelaunch;
 
   return (
-    <main className="min-h-screen bg-white py-20 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="type-heading text-3xl mb-10">{t.heading}</h1>
-
-        {posts.length === 0 && (
-          <p className="type-body text-gray-500">
-            {lang === "es" ? "Próximamente." : "Coming soon."}
-          </p>
-        )}
-
-        <div className="flex flex-col gap-8">
-          {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/${lang}/blog/${post.slug}`}
-              className="group block rounded-3xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              {post.image && (
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 sm:h-56 object-cover"
-                  loading="lazy"
-                />
-              )}
-              <div className="p-6 sm:p-8">
-                <time
-                  dateTime={post.date}
-                  className="type-body text-sm text-gray-400"
-                >
-                  {new Date(post.date).toLocaleDateString(
-                    lang === "es" ? "es-CR" : "en-US",
-                    { year: "numeric", month: "long", day: "numeric" }
-                  )}
-                </time>
-                <h2 className="type-heading text-xl mt-2 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h2>
-                <p className="type-body text-gray-600 mt-2">
-                  {post.description}
-                </p>
-                <span className="inline-block mt-4 text-sm font-medium text-primary">
-                  {readMore} →
-                </span>
-              </div>
-            </Link>
-          ))}
+    <main>
+      <section className="post-head">
+        <div className="wrap">
+          <nav className="crumbs" aria-label={b.crumb_blog}>
+            <Link href={`/${lang}`}>{b.crumb_home}</Link>
+            <span aria-hidden="true">/</span>
+            <span className="here">{b.crumb_blog}</span>
+          </nav>
+          <p className="eyebrow">{b.eyebrow}</p>
+          <h1>{b.title}</h1>
+          <p className="lede">{b.lede}</p>
         </div>
+      </section>
 
-        <p className="mt-12">
-          <Link
-            href={`/${lang}`}
-            className="text-primary font-medium hover:underline"
-          >
-            {backLabel}
-          </Link>
-        </p>
-      </div>
+      <section className="band">
+        <div className="wrap">
+          {posts.length === 0 && <p className="lede">{b.empty}</p>}
+
+          {featured && (
+            <article className="feature">
+              <div className="feature-media">
+                {featured.image && (
+                  <Image
+                    src={featured.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 900px) 100vw, 55vw"
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                )}
+              </div>
+              <div className="feature-body">
+                <span className="tag">{b.featured}</span>
+                <h2>{featured.title}</h2>
+                <p>{featured.description}</p>
+                <div className="post-meta">
+                  <time dateTime={featured.date}>
+                    {formatDate(featured.date, lang)}
+                  </time>
+                </div>
+                <Link
+                  className="feature-link"
+                  href={`/${lang}/blog/${featured.slug}`}
+                >
+                  {b.read_article}
+                  <IconArrow />
+                </Link>
+              </div>
+            </article>
+          )}
+
+          {rest.length > 0 && (
+            <div className="post-grid">
+              {rest.map((post) => (
+                <PostCard
+                  key={post.slug}
+                  post={post}
+                  lang={lang}
+                  dict={b}
+                  sizes="(max-width: 680px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="band final">
+        <div className="wrap">
+          <p className="eyebrow on-band">{dict.notify.eyebrow}</p>
+          <h2>{b.cta_title}</h2>
+          <p>{b.cta_body}</p>
+          <div className="cta-row">
+            <a className="btn btn-onband" href={ctaHref}>
+              {ctaLabel}
+              <IconArrow />
+            </a>
+          </div>
+          <p className="zones">{b.cta_micro}</p>
+        </div>
+      </section>
     </main>
   );
 }

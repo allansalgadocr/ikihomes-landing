@@ -243,5 +243,33 @@
             "terms": "Términos"
         },
         "contact_email": "soporte@ikihomescr.com"
+    },
+    "blog": {
+        "eyebrow": "Artículos para agentes",
+        "title": "El mercado, sin adornos.",
+        "lede": "Datos de zona, perfiles de comprador y lo que de verdad mueve una operación en Costa Rica. Escrito para el agente que trabaja.",
+        "crumb_home": "Inicio",
+        "crumb_blog": "Blog",
+        "featured": "Destacado",
+        "read_article": "Leer artículo",
+        "empty": "Próximamente.",
+        "reading_time": "min de lectura",
+        "keep_reading": "Seguí leyendo",
+        "view_all": "Ver todos los artículos",
+        "cta_title": "Posicionate antes de que todos lo hagan.",
+        "cta_body": "IkiHomes abre en septiembre. Dejanos tu correo y te escribimos el primer día, con tu perfil listo para publicar.",
+        "cta_micro": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
+        "author_role": "Investigación de mercado, Costa Rica",
+        "share_whatsapp": "Compartir por WhatsApp",
+        "share_linkedin": "Compartir en LinkedIn",
+        "categories": {
+            "escazu-2026": "Escazú",
+            "guanacaste-2026": "Guanacaste",
+            "santa-ana-mercado-silencioso": "Santa Ana",
+            "compradores-internacionales-2026": "Compradores",
+            "mls-costa-rica-reality": "Mercado",
+            "stand-out-agent": "Práctica",
+            "_default": "Mercado"
+        }
     }
 }
