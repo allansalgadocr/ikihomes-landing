@@ -12,7 +12,11 @@
  * property owners.
  */
 
-export type SubmitLeadErrorCode = "invalid_email" | "config" | "network";
+export type SubmitLeadErrorCode =
+  | "invalid_email"
+  | "captcha"
+  | "config"
+  | "network";
 
 export type SubmitLeadState = {
   ok: boolean;
@@ -20,6 +24,60 @@ export type SubmitLeadState = {
 };
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const TURNSTILE_VERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+/**
+ * PLAT-1121: confirms a human answered the Turnstile challenge.
+ *
+ * Absent TURNSTILE_SECRET_KEY the whole check is skipped, which is how this ships:
+ * the widget and the flip are a separate change. Once the secret is set the check
+ * fails closed, because a verification we could not complete is the exact moment a
+ * bot would pick.
+ */
+async function humanVerified(formData: FormData): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return true;
+
+  const token = ((formData.get("cf-turnstile-response") as string) || "").trim();
+  if (!token) {
+    console.error("submitLead: Turnstile token missing");
+    return false;
+  }
+
+  const body = new URLSearchParams();
+  body.append("secret", secret);
+  body.append("response", token);
+
+  try {
+    const response = await fetch(TURNSTILE_VERIFY_URL, {
+      method: "POST",
+      body,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
+
+    if (!response.ok) {
+      console.error(
+        "submitLead: Turnstile siteverify returned",
+        response.status,
+        response.statusText
+      );
+      return false;
+    }
+
+    const result = (await response.json()) as { success?: boolean };
+    if (!result.success) {
+      console.error("submitLead: Turnstile rejected the challenge");
+      return false;
+    }
+
+    return true;
+  } catch {
+    console.error("submitLead: Turnstile siteverify could not be reached");
+    return false;
+  }
+}
 
 export async function submitLead(
   prevState: SubmitLeadState,
@@ -35,6 +93,8 @@ export async function submitLead(
   if (company) return { ok: true };
 
   if (!EMAIL.test(email)) return { ok: false, error: "invalid_email" };
+
+  if (!(await humanVerified(formData))) return { ok: false, error: "captcha" };
 
   const formUrl = process.env.GOOGLE_FORMS_ACTION_URL;
   const emailEntryId = process.env.GOOGLE_FORMS_ENTRY_EMAIL;
