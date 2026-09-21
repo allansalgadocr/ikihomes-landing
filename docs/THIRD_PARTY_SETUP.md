@@ -51,3 +51,29 @@ GOOGLE_FORMS_ACTION_URL=https://docs.google.com/forms/d/e/YOUR_FORM_ID/formRespo
 GOOGLE_FORMS_ENTRY_EMAIL=entry.123456
 GOOGLE_FORMS_ENTRY_ROLE=entry.987654
 ```
+
+## 4. Cloudflare Turnstile (Waitlist Bot Protection)
+
+The waitlist form is protected by a Turnstile challenge (PLAT-1122). Both halves
+must be configured together: the widget renders only when the public key is set,
+and the server action verifies only when the secret is set.
+
+| Variable | Scope | Where |
+|---|---|---|
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Public, inlined into the bundle | Vercel Production and Preview |
+| `TURNSTILE_SECRET_KEY` | Server only, never exposed | Vercel Production and Preview |
+
+### Step 1: Create the Widget
+1. Cloudflare dashboard, **Turnstile**, **Add widget**.
+2. Hostnames must be fully qualified domains (`ikihomescr.com`, `www.ikihomescr.com`,
+   plus any Vercel preview domain you want to exercise). A bare label is rejected.
+3. Copy the site key and the secret key.
+
+### Step 2: Set the Variables
+Add both to Vercel for Production and Preview, then redeploy: the public key is
+baked into the bundle at build time, so changing it needs a new build.
+
+### Step 3: Local Testing
+Use Cloudflare's test pair in `.env.local`. `1x00000000000000000000AA` with secret
+`1x0000000000000000000000000000000AA` always passes; site key
+`2x00000000000000000000AB` always fails, which is how you exercise the refusal path.

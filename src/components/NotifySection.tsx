@@ -1,11 +1,16 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { submitLead, SubmitLeadState } from "@/actions/submitLead";
 import { trackMetaEvent } from "@/components/MetaPixel";
+import { TurnstileField } from "./TurnstileField";
 import { IconArrow } from "./Icons";
 import { SUPPORT_MAILTO } from "@/lib/portal";
+
+// PLAT-1122: inlined at build time. Empty means no challenge, which is how the
+// landing ships until Cloudflare is configured.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
 interface NotifySectionProps {
   dict: {
@@ -23,6 +28,8 @@ const initialState: SubmitLeadState = { ok: false };
 
 export function NotifySection({ dict }: NotifySectionProps) {
   const [state, formAction, isPending] = useActionState(submitLead, initialState);
+  const [token, setToken] = useState<string | null>(null);
+  const [resetSignal, setResetSignal] = useState(0);
 
   useEffect(() => {
     if (state.ok) {
@@ -32,6 +39,23 @@ export function NotifySection({ dict }: NotifySectionProps) {
       sendGAEvent("event", "lead_form_error", { category: "lead", error: state.error });
     }
   }, [state]);
+
+  // Turnstile tokens are single use and expire 300 seconds after issue, so a
+  // spent one cannot back a retry. submitLead redeems the token before it posts
+  // to Google Forms, which means a "config" or "network" result leaves a
+  // consumed token sitting in the hidden input and the next press is a
+  // guaranteed captcha refusal. Re-challenge on any error that got that far.
+  // invalid_email returns before siteverify, so that token is still unspent.
+  //
+  // Adjusting during render rather than in an effect is React's documented
+  // pattern for state derived from a hook result changing, and it avoids
+  // rendering a form whose submit is briefly enabled against a dead token.
+  const [refusal, setRefusal] = useState<SubmitLeadState | null>(null);
+  if (state.error && state.error !== "invalid_email" && state !== refusal) {
+    setRefusal(state);
+    setToken(null);
+    setResetSignal((signal) => signal + 1);
+  }
 
   return (
     <section className="signup" id="avisame">
@@ -81,7 +105,15 @@ export function NotifySection({ dict }: NotifySectionProps) {
                     {dict.role_owner}
                   </label>
                 </div>
-                <button className="btn btn-onband" type="submit" disabled={isPending}
+                {TURNSTILE_SITE_KEY !== "" ? (
+                  <TurnstileField
+                    siteKey={TURNSTILE_SITE_KEY}
+                    onToken={setToken}
+                    resetSignal={resetSignal}
+                  />
+                ) : null}
+                <button className="btn btn-onband" type="submit"
+                        disabled={isPending || (TURNSTILE_SITE_KEY !== "" && token === null)}
                         style={{ justifySelf: "stretch" }}>
                   {isPending ? dict.submit_pending : dict.submit}
                   {!isPending && <IconArrow />}
