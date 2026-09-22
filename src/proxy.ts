@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 const locales = ["en", "es"];
 const defaultLocale = "es";
+const BUYER_SITE_PATH = /^\/(?!blog\/)[^/]+\/.+/;
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -13,6 +14,12 @@ export function proxy(request: NextRequest) {
   );
 
   if (pathnameHasLocale) return;
+
+  // Two or more segments outside the blog is the buyer site behind the fallback
+  // rewrite: short links, shares, private views, OG images, API routes and its
+  // prefixed assets. It must arrive unprefixed, because the buyer site
+  // negotiates its own locale and some of those routes have none.
+  if (BUYER_SITE_PATH.test(pathname)) return;
 
   // Redirect if there is no locale
   const locale = defaultLocale;
@@ -25,6 +32,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip internal paths (_next), static assets, and sitemap/robots
-    "/((?!_next|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.gif$|.*\\.txt$|.*\\.xml$|sitemap|robots).*)",
+    "/((?!_next|web-static/|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.gif$|.*\\.txt$|.*\\.xml$|sitemap|robots).*)",
   ],
 };
