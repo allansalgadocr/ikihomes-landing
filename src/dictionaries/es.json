@@ -29,7 +29,15 @@
     "proof": {
         "eyebrow": "El producto",
         "title": "No es una promesa. Ya está construido.",
-        "lede": "Capturas reales del producto, no ilustraciones.",
+        "lede": "Un recorrido de dos minutos por el portal y capturas reales, no ilustraciones.",
+        "video": {
+            "play_label": "Mirá cómo funciona en 2 minutos",
+            "player_title": "Cómo funciona IkiHomes para agentes inmobiliarios",
+            "note": "Así vas a trabajar en IkiHomes. Empezá gratis, sin tarjeta de crédito.",
+            "note_prelaunch": "Así vas a trabajar en IkiHomes. Todavía no abrimos el registro: anotate en la lista y podés recibir una invitación de acceso anticipado con Realtor Pro gratis por un tiempo.",
+            "cta": "Empezá gratis",
+            "cta_prelaunch": "Anotarme en la lista"
+        },
         "cards": [
             {
                 "tag": "Panel",
@@ -163,7 +171,7 @@
         "steps": [
             {
                 "title": "Dejás tu correo",
-                "body": "Sin spam. Dos correos: la guía para llegar listo, y el aviso de apertura."
+                "body": "Sin spam. Un correo cuando abramos y, si te elegimos para el acceso anticipado, tu invitación."
             },
             {
                 "title": "Te avisamos en septiembre",
@@ -213,7 +221,7 @@
     "notify": {
         "eyebrow": "Septiembre",
         "title": "Te escribimos el día que abramos.",
-        "lede": "Dejanos tu correo y decinos cómo vas a usar IkiHomes. Vas a recibir dos correos: una guía corta para llegar listo, y el aviso de apertura.",
+        "lede": "Dejanos tu correo y decinos cómo vas a usar IkiHomes. Te escribimos cuando abramos y, si te elegimos para el acceso anticipado, también te llega una invitación con Realtor Pro gratis por un tiempo.",
         "secondary_cta": "Hablar con el equipo",
         "trust_line": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
         "card_title": "Anotate",
@@ -224,7 +232,7 @@
         "role_owner": "Tengo una propiedad para vender",
         "submit": "Avisame cuando abramos",
         "submit_pending": "Enviando...",
-        "micro": "Sin spam. Solo esos dos correos, y podés salirte cuando querás.",
+        "micro": "Sin spam: solo el aviso de apertura y, si te elegimos, tu invitación. Podés salirte cuando querás.",
         "success_title": "Listo, te anotamos.",
         "success_msg": "Te escribimos a ese correo cuando abramos. Mientras tanto, si querés adelantar algo, escribinos.",
         "error_email": "Ingresá un correo válido.",

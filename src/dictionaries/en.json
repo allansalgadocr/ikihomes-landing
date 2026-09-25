@@ -29,7 +29,15 @@
     "proof": {
         "eyebrow": "The product",
         "title": "Not a promise. Already built.",
-        "lede": "Real product screens, not illustrations.",
+        "lede": "A two-minute tour of the portal and real screens, not illustrations.",
+        "video": {
+            "play_label": "Watch how it works in 2 minutes (in Spanish)",
+            "player_title": "How IkiHomes works for real estate agents",
+            "note": "This is how you will work in IkiHomes. Start free, no credit card.",
+            "note_prelaunch": "This is how you will work in IkiHomes. Sign-up is not open yet: join the list and you may receive an early access invitation with Realtor Pro free for a while.",
+            "cta": "Start free",
+            "cta_prelaunch": "Join the list"
+        },
         "cards": [
             {
                 "tag": "Dashboard",
@@ -163,7 +171,7 @@
         "steps": [
             {
                 "title": "You leave your email",
-                "body": "No spam. Two emails: a short guide to arrive ready, and the launch notice."
+                "body": "No spam. One email when we open and, if we pick you for early access, your invitation."
             },
             {
                 "title": "We write in September",
@@ -213,7 +221,7 @@
     "notify": {
         "eyebrow": "September",
         "title": "We will write on the day we open.",
-        "lede": "Leave your email and tell us how you will use IkiHomes. You will get two emails: a short guide to arrive ready, and the launch notice.",
+        "lede": "Leave your email and tell us how you will use IkiHomes. We will write when we open and, if we pick you for early access, you will also get an invitation with Realtor Pro free for a while.",
         "secondary_cta": "Talk to the team",
         "trust_line": "No credit card · Free plan, no expiry",
         "card_title": "Sign up",
@@ -224,7 +232,7 @@
         "role_owner": "I have a property to sell",
         "submit": "Notify me at launch",
         "submit_pending": "Sending...",
-        "micro": "No spam. Only those two emails, and you can opt out whenever you want.",
+        "micro": "No spam: only the launch notice and, if we pick you, your invitation. You can opt out whenever you want.",
         "success_title": "You are on the list.",
         "success_msg": "We will write to that address when we open. In the meantime, if you want to get ahead, write to us.",
         "error_email": "Enter a valid email address.",
