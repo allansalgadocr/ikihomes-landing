@@ -1,10 +1,11 @@
 import { IconArrow, IconCheck } from "./Icons";
-import { PORTAL_LIVE, primaryHref, NOTIFY_ANCHOR, SUPPORT_MAILTO } from "@/lib/portal";
+import { PORTAL_LIVE, primaryHref, NOTIFY_ANCHOR } from "@/lib/portal";
 
 /**
  * ONVO card checkout is expected live at launch, so Pro becomes a normal
- * self-serve upgrade in September; SINPE and transfer stay available alongside.
- * Before launch there is no account to upgrade, so it falls back to email.
+ * self-serve upgrade at launch; SINPE and transfer stay available alongside.
+ * Before launch there is no account to upgrade, so it points at the list, where
+ * the prelaunch offer is Pro (an email link would lose the visitor's Lead).
  *
  * NOTE: deploy-prod.yml still pins Payment__Provider=Manual as a safety default
  * while the ONVO keys are absent, and ProductionPaymentPostureTests reads that
@@ -34,7 +35,7 @@ interface PricingSectionProps {
 
 export function PricingSection({ dict, september }: PricingSectionProps) {
   const freeHref = PORTAL_LIVE ? primaryHref() : NOTIFY_ANCHOR;
-  const proHref = PORTAL_LIVE ? primaryHref("/sign-up?plan=pro") : SUPPORT_MAILTO;
+  const proHref = PORTAL_LIVE ? primaryHref("/sign-up?plan=pro") : NOTIFY_ANCHOR;
 
   return (
     <section className="band" id="precios">

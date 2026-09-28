@@ -18,10 +18,16 @@ export type SubmitLeadErrorCode =
   | "config"
   | "network";
 
+export type SubmitLeadRole = "agente" | "propietario";
+
 export type SubmitLeadState = {
   ok: boolean;
   error?: SubmitLeadErrorCode;
+  /** The role the form sent, on success, so the page can tag the Meta Lead. */
+  role?: SubmitLeadRole;
 };
+
+const ROLES: readonly string[] = ["agente", "propietario"] satisfies SubmitLeadRole[];
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -130,7 +136,7 @@ export async function submitLead(
       return { ok: false, error: "network" };
     }
 
-    return { ok: true };
+    return ROLES.includes(role) ? { ok: true, role: role as SubmitLeadRole } : { ok: true };
   } catch (err) {
     console.error("submitLead: submission failed", err);
     return { ok: false, error: "network" };

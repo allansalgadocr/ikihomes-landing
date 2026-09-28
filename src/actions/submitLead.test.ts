@@ -126,6 +126,36 @@ describe("submitLead", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
+  it("returns the submitted role so the page can tell agent Leads from owner Leads", async () => {
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+    const form = new FormData();
+    form.append("email", "ana@example.com");
+    form.append("role", "agente");
+
+    const result = await submitLead(EMPTY_STATE, form);
+
+    expect(result).toStrictEqual({ ok: true, role: "agente" });
+  });
+
+  it("does not echo a role the form never offers", async () => {
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+
+    const result = await submitLead(EMPTY_STATE, leadForm());
+
+    expect(result).toStrictEqual({ ok: true });
+  });
+
+  it("sends the name to the Google Form's name entry, which invitations need", async () => {
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+    vi.stubEnv("GOOGLE_FORMS_ENTRY_NAME", "entry.300");
+    const form = leadForm();
+    form.append("name", "  Ana Mora ");
+
+    await submitLead(EMPTY_STATE, form);
+
+    expect(new URLSearchParams(calls(fetchMock)[0][1]).get("entry.300")).toBe("Ana Mora");
+  });
+
   it("still rejects a malformed email before any verification", async () => {
     vi.stubEnv("TURNSTILE_SECRET_KEY", SECRET);
     const form = new FormData();

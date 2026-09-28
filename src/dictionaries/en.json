@@ -6,7 +6,7 @@
         "faq": "FAQ",
         "login": "Log in",
         "cta": "Start free",
-        "cta_prelaunch": "Notify me at launch",
+        "cta_prelaunch": "Join the list",
         "logo_alt": "IkiHomes logo"
     },
     "hero": {
@@ -14,7 +14,7 @@
         "headline": "One place for your listings, your clients and your closings.",
         "subheadline": "IkiHomes is the working platform for Costa Rican real estate agents: organised inventory, buyer enquiries, and every deal tracked to closing without anything getting lost in a chat thread.",
         "cta_primary": "Start free",
-        "cta_primary_prelaunch": "Notify me at launch",
+        "cta_primary_prelaunch": "Join the list",
         "cta_secondary": "See the product",
         "prelaunch_note": "Sign-up is not open yet. Leave your email and we will tell you the moment you can create your account.",
         "trust": [
@@ -34,7 +34,7 @@
             "play_label": "Watch how it works in 2 minutes (in Spanish)",
             "player_title": "How IkiHomes works for real estate agents",
             "note": "This is how you will work in IkiHomes. Start free, no credit card.",
-            "note_prelaunch": "This is how you will work in IkiHomes. Sign-up is not open yet: join the list and you may receive an early access invitation with Realtor Pro free for a while.",
+            "note_prelaunch": "This is how you will work in IkiHomes. During prelaunch, the first 20 agents on the list receive an invitation with 2 months of Realtor Pro free, no card required.",
             "cta": "Start free",
             "cta_prelaunch": "Join the list"
         },
@@ -50,7 +50,7 @@
                 "tag": "Requests",
                 "title": "Buyers looking for you",
                 "image": "/ikiradar.png",
-                "body": "When a buyer posts what they are looking for in your zone, the request reaches the Pro agents covering it. The first to respond are the ones the buyer sees.",
+                "body": "When a buyer posts what they are looking for in your zone, the request reaches the radar of the Pro agents in that zone. Only the first 3 to respond take it.",
                 "alt": "Incoming buyer requests in the agent's zones"
             },
             {
@@ -74,10 +74,10 @@
             "features": [
                 "A verifiable professional profile",
                 "Buyer enquiries straight to your inbox",
-                "Viewings with confirmation"
+                "Viewing requests with the times the buyer proposes"
             ],
             "cta": "Create my agent account",
-            "cta_prelaunch": "Notify me at launch"
+            "cta_prelaunch": "Join the list"
         },
         "owner": {
             "label": "Property owner",
@@ -86,7 +86,7 @@
             "limit_number": "1",
             "limit_label": "active listing, free",
             "cta": "List my property",
-            "cta_prelaunch": "Notify me at launch",
+            "cta_prelaunch": "Join the list",
             "photo_alt": "Homes on a Costa Rican hillside at sunset."
         }
     },
@@ -112,12 +112,12 @@
             {
                 "icon": "calendar",
                 "title": "Viewings that stick",
-                "body": "You propose times, the client confirms, and both of you keep the record."
+                "body": "The client proposes 2 or 3 times, you confirm one, and both of you keep the record."
             },
             {
                 "icon": "shield",
-                "title": "Verified identity",
-                "body": "We validate who you are, and your response time is visible to whoever contacts you."
+                "title": "Trust in plain sight",
+                "body": "Your response badge and, if you have it, the Verified by IkiHomes badge are visible to whoever contacts you."
             },
             {
                 "icon": "user",
@@ -137,15 +137,15 @@
             "description": "To get your inventory in order and start taking enquiries.",
             "features": [
                 "Public profile with your contact details",
-                "Buyer enquiries",
-                "Viewing scheduling"
+                "Buyer enquiries in your inbox",
+                "Viewing requests"
             ],
             "split_agent_label": "If you are an agent:",
             "split_agent_value": "up to 10 published listings.",
             "split_owner_label": "If you are an owner:",
             "split_owner_value": "1 active listing. Write to us if you need more.",
             "cta": "Create a free account",
-            "cta_prelaunch": "Notify me at launch"
+            "cta_prelaunch": "Join the list"
         },
         "pro": {
             "badge": "For working agents",
@@ -156,25 +156,26 @@
             "features": [
                 "Unlimited published listings",
                 "Private listings with a shareable link",
-                "Client pipeline by stage",
-                "Buyer requests in your zones",
-                "Trust badge on your profile"
+                "Your brand on every link you share",
+                "AI review of your listings, every day",
+                "Client pipeline: reply to enquiries and confirm viewings",
+                "Buyer requests in your zones"
             ],
-            "caveat": "We open in September. Write to us now and we will tell you as soon as you can activate your account.",
+            "caveat": "During prelaunch, the first 20 agents on the list receive 2 months of Realtor Pro free. No card and no automatic charge.",
             "cta": "Get Realtor Pro",
-            "cta_prelaunch": "Talk to the team"
+            "cta_prelaunch": "Join the list"
         }
     },
     "september": {
-        "title": "We open in September",
+        "title": "How the prelaunch works",
         "subtitle": "We are finishing the last details. Leave your email and we will write on the day we open.",
         "steps": [
             {
                 "title": "You leave your email",
-                "body": "No spam. One email when we open and, if we pick you for early access, your invitation."
+                "body": "No spam. If you are among the first 20 agents, you get our invitation with 2 months of Pro. If not, one email when we open."
             },
             {
-                "title": "We write in September",
+                "title": "We write when we open",
                 "body": "With the link to create your account and start listing."
             },
             {
@@ -182,7 +183,7 @@
                 "body": "Your profile and your properties ready before you share the first link."
             }
         ],
-        "cta": "Notify me at launch"
+        "cta": "Join the list"
     },
     "faq": {
         "eyebrow": "Questions",
@@ -198,7 +199,7 @@
             },
             {
                 "q": "Is there any way to get Pro without paying for it?",
-                "a": "We are building an agent referral program: bringing in colleagues who genuinely list will count toward your plan. We have not published the conditions yet because we want them to work before we promise them. Leave your email and we will tell you when we open."
+                "a": "During prelaunch, yes: the first 20 agents on the list receive an invitation with 2 months of Realtor Pro free, no card required. When it ends nothing is charged and your account returns to the free plan."
             },
             {
                 "q": "Does IkiHomes take commission on my sales?",
@@ -219,22 +220,23 @@
         ]
     },
     "notify": {
-        "eyebrow": "September",
-        "title": "We will write on the day we open.",
-        "lede": "Leave your email and tell us how you will use IkiHomes. We will write when we open and, if we pick you for early access, you will also get an invitation with Realtor Pro free for a while.",
-        "secondary_cta": "Talk to the team",
+        "eyebrow": "Prelaunch",
+        "title": "Two months of Pro for the first 20 agents.",
+        "lede": "Leave your name and email, and tell us how you will use IkiHomes. During prelaunch, the first 20 agents on the list receive an invitation from us with 2 months of Realtor Pro free: no card and no automatic charge. Afterwards you stay on the free plan or move to Pro for $49 a month.",
         "trust_line": "No credit card · Free plan, no expiry",
         "card_title": "Sign up",
+        "name_label": "Name",
+        "name_placeholder": "Your name",
         "email_label": "Email address",
         "email_placeholder": "you@email.com",
         "role_legend": "How you will use IkiHomes",
         "role_agent": "I am a real estate agent",
         "role_owner": "I have a property to sell",
-        "submit": "Notify me at launch",
+        "submit": "Join the list",
         "submit_pending": "Sending...",
-        "micro": "No spam: only the launch notice and, if we pick you, your invitation. You can opt out whenever you want.",
+        "micro": "No spam: your invitation if you are among the first 20 agents, and the launch notice. You can opt out whenever you want.",
         "success_title": "You are on the list.",
-        "success_msg": "We will write to that address when we open. In the meantime, if you want to get ahead, write to us.",
+        "success_msg": "If you are among the first 20 agents, Adriana and Allan will write to this address with your invitation. If not, we will let you know when we open.",
         "error_email": "Enter a valid email address.",
         "error_generic": "We could not save your email. Please try again."
     },
@@ -265,7 +267,7 @@
         "keep_reading": "Keep reading",
         "view_all": "View all articles",
         "cta_title": "Position yourself before everyone else.",
-        "cta_body": "IkiHomes opens in September. Leave your email and we will write on day one, with your profile ready to publish.",
+        "cta_body": "Leave your email. During prelaunch, the first 20 agents on the list receive 2 months of Realtor Pro free.",
         "cta_micro": "No credit card · Free plan, no expiry",
         "author_role": "Market research, Costa Rica",
         "share_whatsapp": "Share on WhatsApp",

@@ -6,7 +6,7 @@
         "faq": "Preguntas",
         "login": "Entrar",
         "cta": "Empezá gratis",
-        "cta_prelaunch": "Avisame cuando abramos",
+        "cta_prelaunch": "Anotarme en la lista",
         "logo_alt": "Logo de IkiHomes"
     },
     "hero": {
@@ -14,7 +14,7 @@
         "headline": "Un solo lugar para tu inventario, tus clientes y tus cierres.",
         "subheadline": "IkiHomes es la plataforma de trabajo del agente inmobiliario: inventario ordenado, consultas de compradores y seguimiento de cada trato hasta el cierre, sin que nada se pierda en el chat.",
         "cta_primary": "Empezá gratis",
-        "cta_primary_prelaunch": "Avisame cuando abramos",
+        "cta_primary_prelaunch": "Anotarme en la lista",
         "cta_secondary": "Ver el producto",
         "prelaunch_note": "Todavía no abrimos el registro. Dejanos tu correo y te avisamos apenas puedas crear tu cuenta.",
         "trust": [
@@ -34,7 +34,7 @@
             "play_label": "Mirá cómo funciona en 2 minutos",
             "player_title": "Cómo funciona IkiHomes para agentes inmobiliarios",
             "note": "Así vas a trabajar en IkiHomes. Empezá gratis, sin tarjeta de crédito.",
-            "note_prelaunch": "Así vas a trabajar en IkiHomes. Todavía no abrimos el registro: anotate en la lista y podés recibir una invitación de acceso anticipado con Realtor Pro gratis por un tiempo.",
+            "note_prelaunch": "Así vas a trabajar en IkiHomes. En el prelanzamiento, los primeros 20 agentes de la lista reciben una invitación con 2 meses de Realtor Pro gratis, sin tarjeta.",
             "cta": "Empezá gratis",
             "cta_prelaunch": "Anotarme en la lista"
         },
@@ -50,7 +50,7 @@
                 "tag": "Solicitudes",
                 "title": "Compradores que te buscan",
                 "image": "/ikiradar.png",
-                "body": "Cuando un comprador publica lo que busca en tu zona, la solicitud le llega a los agentes Pro de esa zona. Los primeros en responder son los que quedan visibles.",
+                "body": "Cuando un comprador publica lo que busca en tu zona, la solicitud llega al radar de los agentes Pro de esa zona. Solo los primeros 3 en responder la toman.",
                 "alt": "Solicitudes de compradores entrantes en las zonas del agente"
             },
             {
@@ -74,10 +74,10 @@
             "features": [
                 "Perfil profesional verificable",
                 "Consultas de compradores directo a tu bandeja",
-                "Agenda de visitas con confirmación"
+                "Solicitudes de visita con los horarios que propone el comprador"
             ],
             "cta": "Crear mi cuenta de agente",
-            "cta_prelaunch": "Avisame cuando abramos"
+            "cta_prelaunch": "Anotarme en la lista"
         },
         "owner": {
             "label": "Propietario",
@@ -86,7 +86,7 @@
             "limit_number": "1",
             "limit_label": "propiedad activa, gratis",
             "cta": "Publicar mi propiedad",
-            "cta_prelaunch": "Avisame cuando abramos",
+            "cta_prelaunch": "Anotarme en la lista",
             "photo_alt": "Casas en una ladera de Costa Rica al atardecer."
         }
     },
@@ -112,12 +112,12 @@
             {
                 "icon": "calendar",
                 "title": "Visitas coordinadas",
-                "body": "Proponés horarios, el cliente confirma y a los dos les queda el registro."
+                "body": "El cliente propone 2 o 3 horarios, vos confirmás uno y a los dos les queda el registro."
             },
             {
                 "icon": "shield",
-                "title": "Identidad verificada",
-                "body": "Validamos quién sos, y tu tiempo de respuesta queda a la vista de quien te contacta."
+                "title": "Confianza a la vista",
+                "body": "Tu insignia de respuesta y, si la tenés, la de Verificado por IkiHomes quedan a la vista de quien te contacta."
             },
             {
                 "icon": "user",
@@ -137,15 +137,15 @@
             "description": "Para empezar a ordenar tu inventario y recibir consultas.",
             "features": [
                 "Perfil público con tus datos de contacto",
-                "Consultas de compradores",
-                "Agenda de visitas"
+                "Recibís consultas de compradores",
+                "Recibís solicitudes de visita"
             ],
             "split_agent_label": "Si sos agente:",
             "split_agent_value": "hasta 10 propiedades publicadas.",
             "split_owner_label": "Si sos propietario:",
             "split_owner_value": "1 propiedad activa. Escribinos si necesitás más.",
             "cta": "Crear cuenta gratis",
-            "cta_prelaunch": "Avisame cuando abramos"
+            "cta_prelaunch": "Anotarme en la lista"
         },
         "pro": {
             "badge": "Para agentes activos",
@@ -156,25 +156,26 @@
             "features": [
                 "Propiedades publicadas sin límite",
                 "Listados privados con enlace para compartir",
-                "Tablero de clientes por etapa",
-                "Solicitudes de compradores en tus zonas",
-                "Sello de confianza en tu perfil"
+                "Tu marca en cada enlace que compartís",
+                "Revisión con IA de tus propiedades, todos los días",
+                "Tablero de clientes: respondé consultas y confirmá visitas",
+                "Solicitudes de compradores en tus zonas"
             ],
-            "caveat": "Abrimos en septiembre. Podés escribirnos desde ya y te avisamos apenas puedas activar tu cuenta.",
+            "caveat": "En el prelanzamiento, los primeros 20 agentes de la lista reciben 2 meses de Realtor Pro gratis. Sin tarjeta y sin cobro automático.",
             "cta": "Activar Realtor Pro",
-            "cta_prelaunch": "Hablar con el equipo"
+            "cta_prelaunch": "Anotarme en la lista"
         }
     },
     "september": {
-        "title": "Abrimos en septiembre",
+        "title": "Así funciona el prelanzamiento",
         "subtitle": "Estamos afinando los últimos detalles. Dejanos tu correo y te escribimos el día que abramos.",
         "steps": [
             {
                 "title": "Dejás tu correo",
-                "body": "Sin spam. Un correo cuando abramos y, si te elegimos para el acceso anticipado, tu invitación."
+                "body": "Sin spam. Si estás entre los primeros 20 agentes, te llega nuestra invitación con 2 meses de Pro. Si no, un correo cuando abramos."
             },
             {
-                "title": "Te avisamos en septiembre",
+                "title": "Te avisamos cuando abramos",
                 "body": "Con el enlace para crear tu cuenta y empezar a publicar."
             },
             {
@@ -182,7 +183,7 @@
                 "body": "Dejás tu perfil y tus propiedades listos antes de compartir el primer enlace."
             }
         ],
-        "cta": "Avisame cuando abramos"
+        "cta": "Anotarme en la lista"
     },
     "faq": {
         "eyebrow": "Preguntas",
@@ -198,7 +199,7 @@
             },
             {
                 "q": "¿Hay alguna forma de conseguir Pro sin pagarlo?",
-                "a": "Estamos armando un programa de invitaciones entre agentes: traer colegas que publiquen de verdad va a reconocerse en tu plan. Todavía no publicamos las condiciones porque queremos que funcionen antes de prometerlas. Si dejás tu correo, te contamos cuando abramos."
+                "a": "En el prelanzamiento, sí: los primeros 20 agentes de la lista reciben una invitación con 2 meses de Realtor Pro gratis, sin tarjeta. Al terminar no se cobra nada y tu cuenta vuelve al plan gratis."
             },
             {
                 "q": "¿IkiHomes cobra comisión sobre mis ventas?",
@@ -219,22 +220,23 @@
         ]
     },
     "notify": {
-        "eyebrow": "Septiembre",
-        "title": "Te escribimos el día que abramos.",
-        "lede": "Dejanos tu correo y decinos cómo vas a usar IkiHomes. Te escribimos cuando abramos y, si te elegimos para el acceso anticipado, también te llega una invitación con Realtor Pro gratis por un tiempo.",
-        "secondary_cta": "Hablar con el equipo",
+        "eyebrow": "Prelanzamiento",
+        "title": "Dos meses de Pro para los primeros 20 agentes.",
+        "lede": "Dejanos tu nombre y tu correo, y decinos cómo vas a usar IkiHomes. En el prelanzamiento, los primeros 20 agentes de la lista reciben una invitación nuestra con 2 meses de Realtor Pro gratis: sin tarjeta y sin cobro automático. Después seguís en el plan gratis o pasás a Pro por $49 al mes.",
         "trust_line": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
         "card_title": "Anotate",
+        "name_label": "Nombre",
+        "name_placeholder": "Tu nombre",
         "email_label": "Correo electrónico",
         "email_placeholder": "tu@correo.com",
         "role_legend": "Cómo vas a usar IkiHomes",
         "role_agent": "Soy agente inmobiliario",
         "role_owner": "Tengo una propiedad para vender",
-        "submit": "Avisame cuando abramos",
+        "submit": "Anotarme en la lista",
         "submit_pending": "Enviando...",
-        "micro": "Sin spam: solo el aviso de apertura y, si te elegimos, tu invitación. Podés salirte cuando querás.",
+        "micro": "Sin spam: tu invitación si estás entre los primeros 20 agentes, y el aviso de apertura. Podés salirte cuando querás.",
         "success_title": "Listo, te anotamos.",
-        "success_msg": "Te escribimos a ese correo cuando abramos. Mientras tanto, si querés adelantar algo, escribinos.",
+        "success_msg": "Si estás entre los primeros 20 agentes, Adriana y Allan te escriben a este correo con tu invitación. Si no, te avisamos cuando abramos.",
         "error_email": "Ingresá un correo válido.",
         "error_generic": "No pudimos guardar tu correo. Intentá de nuevo."
     },
@@ -265,7 +267,7 @@
         "keep_reading": "Seguí leyendo",
         "view_all": "Ver todos los artículos",
         "cta_title": "Posicionate antes de que todos lo hagan.",
-        "cta_body": "IkiHomes abre en septiembre. Dejanos tu correo y te escribimos el primer día, con tu perfil listo para publicar.",
+        "cta_body": "Dejanos tu correo. En el prelanzamiento, los primeros 20 agentes de la lista reciben 2 meses de Realtor Pro gratis.",
         "cta_micro": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
         "author_role": "Investigación de mercado, Costa Rica",
         "share_whatsapp": "Compartir por WhatsApp",

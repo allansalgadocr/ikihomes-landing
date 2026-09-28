@@ -6,7 +6,6 @@ import { submitLead, SubmitLeadState } from "@/actions/submitLead";
 import { trackMetaEvent } from "@/components/MetaPixel";
 import { TurnstileField } from "./TurnstileField";
 import { IconArrow } from "./Icons";
-import { SUPPORT_MAILTO } from "@/lib/portal";
 
 // PLAT-1122: inlined at build time. Empty means no challenge, which is how the
 // landing ships until Cloudflare is configured.
@@ -15,7 +14,8 @@ const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 interface NotifySectionProps {
   dict: {
     eyebrow: string; title: string; lede: string;
-    secondary_cta: string; trust_line: string; card_title: string;
+    trust_line: string; card_title: string;
+    name_label: string; name_placeholder: string;
     email_label: string; email_placeholder: string;
     role_legend: string; role_agent: string; role_owner: string;
     submit: string; submit_pending: string; micro: string;
@@ -33,8 +33,13 @@ export function NotifySection({ dict }: NotifySectionProps) {
 
   useEffect(() => {
     if (state.ok) {
-      sendGAEvent("event", "lead_form_success", { category: "lead", source: "notify_section" });
-      trackMetaEvent("Lead", { content_name: "prelaunch_notify" });
+      const role = state.role ? { role: state.role } : {};
+      sendGAEvent("event", "lead_form_success", { category: "lead", source: "notify_section", ...role });
+      // content_category splits agent Leads from owner Leads in Ads Manager.
+      trackMetaEvent("Lead", {
+        content_name: "prelaunch_notify",
+        ...(state.role ? { content_category: state.role } : {}),
+      });
     } else if (state.error) {
       sendGAEvent("event", "lead_form_error", { category: "lead", error: state.error });
     }
@@ -64,11 +69,6 @@ export function NotifySection({ dict }: NotifySectionProps) {
           <p className="eyebrow on-band">{dict.eyebrow}</p>
           <h2>{dict.title}</h2>
           <p className="lede">{dict.lede}</p>
-          <div className="cta-row" style={{ marginTop: 26 }}>
-            <a className="btn btn-onband-ghost" href={SUPPORT_MAILTO}>
-              {dict.secondary_cta}
-            </a>
-          </div>
           <p className="zones" style={{ marginTop: 18 }}>{dict.trust_line}</p>
         </div>
 
@@ -87,6 +87,14 @@ export function NotifySection({ dict }: NotifySectionProps) {
                   aria-hidden="true"
                   style={{ position: "absolute", width: 0, height: 0, opacity: 0, padding: 0, border: 0 }}
                 />
+                <div>
+                  <label htmlFor="av-name">{dict.name_label}</label>
+                  <input
+                    id="av-name" name="name" type="text" required autoComplete="name" maxLength={80}
+                    placeholder={dict.name_placeholder}
+                    style={{ marginTop: 8, width: "100%" }}
+                  />
+                </div>
                 <div>
                   <label htmlFor="av-mail">{dict.email_label}</label>
                   <input
