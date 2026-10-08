@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist, Source_Sans_3 } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 
 const urbanist = Urbanist({
@@ -198,6 +199,7 @@ export default async function RootLayout(
         <StickyCta label={dict.nav.cta} labelPrelaunch={dict.nav.cta_prelaunch} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <MetaPixel />
+        <Analytics />
       </body>
     </html>
   );
