@@ -28,6 +28,28 @@ export function primaryHref(path = "/sign-up"): string {
   return new URL(path, PORTAL_URL).toString();
 }
 
+/**
+ * Where every agent door on the Spanish site goes. The Spanish home is the
+ * buyer page, so there is no agent page on this site: an agent is sent to the
+ * portal's sign in, whose "Crear cuenta" tab serves an agent with no account.
+ * Fixed rather than built from PORTAL_URL, because it is the founder's chosen
+ * address and does not depend on whether sign up is open.
+ */
+export const AGENT_PAGE_URL = "https://app.ikihomescr.com/login";
+
+/**
+ * The buyer site's pages the Spanish home sends people to once it opens. They
+ * are not routes of this app: on ikihomescr.com the fallback rewrite in
+ * next.config.ts serves them from the buyer site. So they are plain links,
+ * never next/link, which would try a client navigation into a route this app
+ * does not have.
+ */
+export const BUYER_SITE = {
+  search: "/es/search",
+  findForMe: "/es/busca-por-mi",
+  agents: "/es/agents",
+} as const;
+
 /** Support address, used for the Pro conversation which does not need the portal. */
 export const SUPPORT_MAILTO = "mailto:soporte@ikihomescr.com";
 

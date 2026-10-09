@@ -14,7 +14,7 @@ import { BlogPixelTracker } from "@/components/BlogPixelTracker";
 import { PostCard } from "@/components/PostCard";
 import { IconArrow, IconShare, IconUsers } from "@/components/Icons";
 import { getDictionary } from "../../../../dictionaries";
-import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
+import { blogBand } from "@/lib/blogBand";
 
 const BASE = "https://ikihomescr.com";
 
@@ -171,8 +171,7 @@ export default async function BlogPostPage(props: PageProps) {
   const tag = categoryLabel(post, b);
   const related = relatedPosts(listPosts(lang), slug);
 
-  const ctaHref = PORTAL_LIVE ? primaryHref() : notifyHref(lang);
-  const ctaLabel = PORTAL_LIVE ? dict.nav.cta : dict.nav.cta_prelaunch;
+  const band = blogBand(lang, dict);
 
   const canonical = `${BASE}/${lang}/blog/${slug}`;
   const encodedUrl = encodeURIComponent(canonical);
@@ -234,13 +233,13 @@ export default async function BlogPostPage(props: PageProps) {
                 Tailwind utility and painted teal on teal at 1.0:1 contrast.
               */}
               <div className="article-cta">
-                <h3>{b.cta_title}</h3>
-                <p>{b.cta_body}</p>
-                <a className="btn btn-onband" href={ctaHref}>
-                  {ctaLabel}
+                <h3>{band.title}</h3>
+                <p>{band.body}</p>
+                <a className="btn btn-onband" href={band.href}>
+                  {band.label}
                   <IconArrow />
                 </a>
-                <p className="micro">{b.cta_micro}</p>
+                <p className="micro">{band.micro}</p>
               </div>
 
               <div className="article-foot">

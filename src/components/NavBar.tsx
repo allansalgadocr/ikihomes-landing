@@ -12,9 +12,32 @@ interface NavBarProps {
   };
 }
 
-export function NavBar({ dict }: NavBarProps) {
+/** The ES and EN pills. The Spanish header reuses it on blog and legal pages. */
+export function LanguageSwitch() {
   const pathname = usePathname();
   const router = useRouter();
+  const lang = (pathname.split("/")[1] || "es") as "en" | "es";
+
+  return (
+    <div className="lang" role="group" aria-label="Idioma">
+      {(["es", "en"] as const).map((code) => (
+        <button
+          key={code}
+          type="button"
+          aria-pressed={lang === code}
+          onClick={() =>
+            code !== lang && router.push(pathname.replace(`/${lang}`, `/${code}`))
+          }
+        >
+          {code.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export function NavBar({ dict }: NavBarProps) {
+  const pathname = usePathname();
   const lang = (pathname.split("/")[1] || "es") as "en" | "es";
   const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
 
@@ -35,20 +58,7 @@ export function NavBar({ dict }: NavBarProps) {
         )}
 
         <div className="hdr-right">
-          <div className="lang" role="group" aria-label="Idioma">
-            {(["es", "en"] as const).map((code) => (
-              <button
-                key={code}
-                type="button"
-                aria-pressed={lang === code}
-                onClick={() =>
-                  code !== lang && router.push(pathname.replace(`/${lang}`, `/${code}`))
-                }
-              >
-                {code.toUpperCase()}
-              </button>
-            ))}
-          </div>
+          <LanguageSwitch />
 
           {PORTAL_LIVE && (
             <a className="link-quiet" href={primaryHref("/login")}>

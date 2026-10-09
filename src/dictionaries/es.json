@@ -266,8 +266,10 @@
         "reading_time": "min de lectura",
         "keep_reading": "Seguí leyendo",
         "view_all": "Ver todos los artículos",
-        "cta_title": "Posicionate antes de que todos lo hagan.",
-        "cta_body": "Dejanos tu correo. En el prelanzamiento, los primeros 20 agentes de la lista reciben 2 meses de Realtor Pro gratis.",
+        "cta_eyebrow": "Para agentes",
+        "cta_title": "Mandá propiedades, no capturas.",
+        "cta_body": "Cada propiedad publicada tiene su página, con fotos, precio, ubicación y tu perfil. La mandás con un enlace. En el plan gratis tenés hasta 10 publicadas a la vez.",
+        "cta_label": "Ingresá o creá tu cuenta",
         "cta_micro": "Sin tarjeta de crédito · Plan gratis sin vencimiento",
         "author_role": "Investigación de mercado, Costa Rica",
         "share_whatsapp": "Compartir por WhatsApp",
@@ -280,6 +282,235 @@
             "mls-costa-rica-reality": "Mercado",
             "stand-out-agent": "Práctica",
             "_default": "Mercado"
+        }
+    },
+    "buyer": {
+        "hero": {
+            "a": {
+                "headline_pre": "Buscar casa en Costa Rica está por cambiar.",
+                "lede_pre": "Mejor para quien busca y para el agente que responde. Precio a la vista, insignias de confianza antes de contactar y visitas en los horarios que vos proponés.",
+                "cta_primary_pre": "Avisame cuando abra",
+                "cta_secondary_pre": "Ver qué cambia",
+                "headline_open": "Buscar casa en Costa Rica ya es distinto.",
+                "lede_open": "Precio a la vista, insignias de confianza antes de contactar y visitas en los horarios que vos proponés. Empezá por las propiedades, o publicá lo que necesitás con Buscá por mí.",
+                "cta_primary_open": "Buscar propiedades",
+                "cta_secondary_open": "Buscá por mí"
+            },
+            "note_pre": "Un solo correo, el día de la apertura."
+        },
+        "countdown": {
+            "kicker": "Abrimos en",
+            "unit_days": "días",
+            "unit_hours": "horas",
+            "unit_minutes": "minutos",
+            "unit_seconds": "segundos",
+            "unit_days_one": "día",
+            "unit_hours_one": "hora",
+            "unit_minutes_one": "minuto",
+            "unit_seconds_one": "segundo",
+            "date_line": "{date_long} · {time}, {tz}",
+            "aria_label": "Cuenta regresiva para la apertura de IkiHomes",
+            "aria_remaining": "Faltan {days} días, {hours} horas y {minutes} minutos para la apertura: {date_long}, {time}, {tz}.",
+            "noscript": "Abrimos el {date_short} a las {time}, {tz}.",
+            "done_title": "Ya abrimos.",
+            "done_cta": "Buscar propiedades"
+        },
+        "trust": {
+            "items": [
+                "Gratis para quien busca",
+                "Sin cuenta para buscar",
+                "Tu contacto, solo cuando vos lo decidís"
+            ]
+        },
+        "benefits": {
+            "title": "Menos adivinar, más información antes de visitar.",
+            "items": [
+                {
+                    "title": "Precio a la vista",
+                    "body": "Para publicar, cada propiedad necesita precio, ubicación, descripción y al menos tres fotos. Sabés qué estás viendo antes de preguntar."
+                },
+                {
+                    "title": "Agentes con respaldo",
+                    "body": "Si un agente tiene la insignia Verificado por IkiHomes o una insignia de respuesta, la ves antes de contactarlo. Nunca se ocultan."
+                },
+                {
+                    "title": "Visitas a tu horario",
+                    "body": "Proponés dos o tres horarios desde la página de la propiedad. El agente confirma uno o te propone otros, y te avisamos por correo."
+                },
+                {
+                    "title": "Búsqueda con mapa",
+                    "body": "Filtrá por zona, precio y tipo de propiedad, y mirá los resultados en el mapa para ubicar cada opción."
+                },
+                {
+                    "title": "Guardá y compará",
+                    "body": "Con tu cuenta guardás favoritos y comparás hasta cuatro propiedades lado a lado."
+                },
+                {
+                    "title": "Reseñas de contacto real",
+                    "body": "Solo puede dejar una reseña quien contactó a ese agente por medio de IkiHomes. Detrás de cada opinión hubo una conversación."
+                }
+            ]
+        },
+        "bpm": {
+            "eyebrow": "Buscá por mí",
+            "headline": "Describí lo que buscás. Hasta 3 agentes pueden responderte.",
+            "body": "En vez de escribirle a un agente por cada propiedad, publicás tu búsqueda una sola vez. Llega a los agentes que trabajan esa zona y hasta 3 pueden tomarla, para que no se te llene el teléfono de mensajes.",
+            "steps": [
+                {
+                    "title": "Describís tu búsqueda",
+                    "body": "Comprar o alquilar, zona, tipo de propiedad y presupuesto."
+                },
+                {
+                    "title": "Entra al radar",
+                    "body": "Llega a los agentes que trabajan tu zona. Todavía no ven tu nombre, tu correo ni tu teléfono."
+                },
+                {
+                    "title": "Elegís con quién seguir",
+                    "body": "Hasta 3 agentes pueden responderte. Solo ellos reciben tu contacto, y vos decidís a quién contestarle."
+                }
+            ],
+            "status_line": "Tu búsqueda ya está en el radar.",
+            "coverage_note": "Si todavía ningún agente cubre tu zona, tu búsqueda queda registrada. Si eso cambia, te avisamos por correo.",
+            "reassurance": "Gratis. Sin cuenta.",
+            "cta_pre": "Avisame cuando abra",
+            "cta_open": "Publicar mi búsqueda"
+        },
+        "manifesto": {
+            "headline": "Mejor para quien busca. Mejor para quien responde.",
+            "body": "Quien busca casa merece datos claros y saber con quién está hablando. El agente que responde bien merece que eso se note. Por eso en IkiHomes la respuesta de cada agente se mide y queda a la vista."
+        },
+        "agent_door": {
+            "line": "¿Sos agente o tenés una propiedad para vender? Creás tu cuenta gratis y elegís tu perfil.",
+            "cta": "Ingresá o creá tu cuenta"
+        },
+        "notify": {
+            "title": "Te avisamos el día que abrimos.",
+            "lede": "Dejanos tu correo y el {date_short} te escribimos una sola vez, con el enlace para empezar a buscar.",
+            "email_label": "Correo electrónico",
+            "email_placeholder": "tu@correo.com",
+            "submit": "Avisame cuando abra",
+            "submit_pending": "Enviando...",
+            "micro": "Te escribimos una sola vez, el día de la apertura, y no usamos tu correo para nada más. Conocé cómo tratamos tus datos en la {privacy_link}.",
+            "privacy_link_label": "Política de privacidad",
+            "success_title": "Listo, quedó anotado.",
+            "success_msg": "El {date_short} te escribimos a este correo con el enlace para empezar a buscar. Es el único correo que vas a recibir.",
+            "error_email": "Ese correo no parece válido. Revisalo e intentá de nuevo.",
+            "error_generic": "No pudimos guardar tu correo. Intentá de nuevo y, si sigue fallando, escribinos a soporte@ikihomescr.com."
+        },
+        "closing": {
+            "title_open": "Empezá por donde querás.",
+            "lede_open": "Buscá entre las propiedades publicadas o contanos qué necesitás.",
+            "cta_primary_open": "Buscar propiedades",
+            "cta_secondary_open": "Buscá por mí"
+        },
+        "faq": {
+            "title": "Lo que conviene saber antes de empezar.",
+            "items": [
+                {
+                    "q": "¿Cuánto me cuesta usar IkiHomes?",
+                    "a": "Nada. IkiHomes no te cobra por buscar, contactar a un agente, pedir una visita ni usar Buscá por mí. El acuerdo sobre la propiedad es aparte: queda entre vos y el agente o el propietario."
+                },
+                {
+                    "q": "¿Qué significa Verificado por IkiHomes?",
+                    "a": "Que nuestro equipo revisó a ese agente de forma individual antes de darle la insignia. Es una validación interna de IkiHomes: no equivale a una licencia del gobierno ni a una certificación de terceros. Otros agentes sin la insignia también publican y responden."
+                },
+                {
+                    "q": "¿Cómo funciona una solicitud de visita?",
+                    "a": "En la página de la propiedad elegís dos o tres horarios. El agente confirma uno o te propone otras fechas. Cuando responde, te avisamos por correo. Puede que antes te pidamos confirmar tu correo con un enlace."
+                },
+                {
+                    "q": "¿Qué pasa con mis datos?",
+                    "a": "Ver una propiedad no le envía tu contacto a ningún agente. Un agente lo recibe solo cuando vos das el paso: lo contactás, pedís una visita o publicás tu búsqueda y él la responde. El detalle completo está en la {privacy_link}."
+                },
+                {
+                    "q": "¿Qué es Buscá por mí?",
+                    "a": "Una forma de buscar al revés: describís qué necesitás y tu búsqueda llega a los agentes que trabajan esa zona. Hasta 3 pueden responderte. Si todavía ningún agente cubre tu zona, tu búsqueda queda registrada y te avisamos por correo si eso cambia."
+                },
+                {
+                    "q": "Soy agente, ¿dónde entro?",
+                    "a": "Iniciás sesión en app.ikihomescr.com. Si todavía no tenés cuenta, la creás ahí mismo, gratis.",
+                    "link_label": "Ingresá o creá tu cuenta"
+                }
+            ],
+            "privacy_link_label": "Política de privacidad"
+        },
+        "nav": {
+            "links_pre": ["Qué cambia", "Buscá por mí", "Preguntas"],
+            "links_open": ["Buscá por mí", "Encontrar un agente", "Preguntas"],
+            "agent_door": "Soy agente",
+            "cta_pre": "Avisame cuando abra",
+            "cta_open": "Buscar propiedades"
+        },
+        "sticky": {
+            "label_pre": "Avisame cuando abra",
+            "label_open": "Buscar propiedades"
+        },
+        "footer": {
+            "links_pre": ["Qué cambia", "Buscá por mí", "Preguntas"],
+            "links_open": ["Buscar propiedades", "Buscá por mí", "Encontrar un agente"],
+            "agent_door": "Para agentes"
+        },
+        "seo": {
+            "title": "Comprar o alquilar casa en Costa Rica | IkiHomes",
+            "description_pre": "IkiHomes abre el {date_short}. Propiedades con precio a la vista, agentes con insignias de confianza y visitas en los horarios que vos proponés.",
+            "description_open": "Propiedades con precio a la vista, agentes con insignias de confianza y visitas en tus horarios. Gratis para quien busca casa en Costa Rica.",
+            "schema_website_description": "Propiedades en venta y alquiler en Costa Rica, con las insignias de confianza de cada agente a la vista."
+        },
+        "og": {
+            "title_pre": "IkiHomes abre el {date_short}",
+            "description_pre": "Buscar casa en Costa Rica está por cambiar. Dejá tu correo y te avisamos el día de la apertura.",
+            "title_open": "Buscar casa en Costa Rica ya es distinto",
+            "description_open": "Precio a la vista, insignias de confianza antes de contactar y visitas en tus horarios. Gratis para quien busca.",
+            "image_alt": "IkiHomes: una forma distinta de buscar casa en Costa Rica"
+        },
+        "vignettes": {
+            "listing": {
+                "badge": "Respuesta inmediata",
+                "title": "Casa de tres habitaciones",
+                "location": "Santa Ana, San José",
+                "specs": [
+                    { "value": "3", "label": "habitaciones" },
+                    { "value": "2", "label": "baños" },
+                    { "value": "180", "label": "m²" }
+                ],
+                "price": "$285.000"
+            },
+            "agent": {
+                "initials": "AE",
+                "name": "Agente de ejemplo",
+                "role": "Agente Inmobiliario",
+                "verified": "Verificado por IkiHomes",
+                "response": "Respuesta inmediata"
+            },
+            "visit": {
+                "title": "¿Cuándo te gustaría visitar?",
+                "hint": "Elegí de 2 a 3 horarios. El agente confirmará uno.",
+                "days": [
+                    { "weekday": "mar", "date": "13", "month": "oct", "on": false },
+                    { "weekday": "mié", "date": "14", "month": "oct", "on": true },
+                    { "weekday": "jue", "date": "15", "month": "oct", "on": false },
+                    { "weekday": "vie", "date": "16", "month": "oct", "on": false }
+                ],
+                "times": [
+                    { "label": "9:00 a. m.", "on": false },
+                    { "label": "10:00 a. m.", "on": true },
+                    { "label": "11:00 a. m.", "on": false },
+                    { "label": "2:00 p. m.", "on": false },
+                    { "label": "3:00 p. m.", "on": true },
+                    { "label": "4:00 p. m.", "on": false }
+                ],
+                "tz": "(hora de Costa Rica)"
+            },
+            "request": {
+                "title": "Tu búsqueda",
+                "operations": [
+                    { "label": "Comprar", "on": true },
+                    { "label": "Alquilar", "on": false }
+                ],
+                "type": { "label": "Tipo de propiedad", "value": "Casa" },
+                "province": { "label": "Provincia", "value": "San José" },
+                "canton": { "label": "Cantón", "value": "Escazú" }
+            }
         }
     }
 }

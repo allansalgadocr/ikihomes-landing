@@ -644,3 +644,321 @@ html{scroll-behavior:smooth}
   .prose p{font-size:17px}
   .article-hero{border-radius:var(--r-card)}
 }
+
+
+/* ============================================================================
+   The buyer home, Spanish only.
+   ----------------------------------------------------------------------------
+   Section 2 of the approved mockup (landing-compradores/mockup.html), the third
+   pass. Every colour, radius, shadow and easing is an existing token.
+
+   Only Spanish pages carry data-phase on <html>, so every rule that would reach
+   a class the English pages also use is scoped to html[data-phase], to the
+   buyer home's main (.buyer-home) or to #aviso. /en renders exactly as before.
+   ========================================================================= */
+
+/* ---------- shared ---------- */
+.sr-only{position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.nw{white-space:nowrap}
+html[data-phase] main section[id]{scroll-margin-top:74px}
+.opening :focus-visible,.manifesto :focus-visible{outline-color:var(--seafoam)}
+/* Two labels survive the removal of the eyebrows, because they name something
+   the heading under them does not: what the countdown counts to, and the
+   feature the Buscá por mí band is about. Sentence case, body size, no tracking. */
+.kicker{margin:0 0 14px; font-size:clamp(17px,1.35vw,19px); line-height:1.4; font-weight:600; letter-spacing:0; color:var(--brand)}
+.countdown .kicker{margin-bottom:clamp(12px,1.4vw,18px); font-size:clamp(17px,1.5vw,20px); color:var(--seafoam)}
+.sec-title{max-width:26ch; margin-bottom:clamp(32px,3.6vw,48px)}
+
+/* ---------- header: the agent door ---------- */
+.hdr-door{display:inline-flex; align-items:center; min-height:44px; font-size:15px; font-weight:600; color:var(--ink); white-space:nowrap}
+.hdr-door:hover{color:var(--brand)}
+/* three links, the door and the button do not fit on one line between 761px and 880px */
+html[data-phase] .nav a{white-space:nowrap}
+@media (max-width:880px){html[data-phase] .nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero-buyer{padding-bottom:var(--pad); overflow:visible}
+.hero-head{
+  display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(28px,5vw,88px); align-items:end; margin-bottom:clamp(30px,3.4vw,48px);
+}
+.hero-buyer h1{margin-bottom:0}
+.hero-buyer .lede{margin-bottom:26px}
+.hero-buyer .cta-row{align-items:center; gap:10px 26px; margin-bottom:0}
+.hero-buyer .trust-row{margin-top:clamp(20px,2.2vw,28px)}
+/* Without the arrow the label alone would make these buttons 53px, so the
+   label keeps the arrow's line box and no button changes height. */
+.hero-buyer .cta-row .btn,.buyer-home .final .btn-onband,.bpm-actions .btn,.agent-door .btn,.opening-done .btn,html[data-phase] .sticky .btn{line-height:18px}
+/* the secondary action is a quiet link, never a second button */
+.cta-link{display:inline-flex; align-items:center; gap:8px; min-height:44px; font-size:16px; font-weight:600; color:var(--ink)}
+.cta-link:hover{color:var(--brand)}
+
+/* ---------- the opening stage ----------
+   Three modes: the countdown while <html> says pre, the photo once it says
+   open, and done (data-mode on the stage) when the hour passes with the page
+   open. The two bodies share one grid cell, so the stage keeps its height
+   when one replaces the other. */
+.opening{
+  position:relative; isolation:isolate; overflow:hidden; display:grid;
+  min-height:clamp(300px,27vw,392px);
+  border-radius:var(--r-panel); background:var(--band); color:var(--band-body); box-shadow:var(--sh-lg);
+}
+.opening-photo{position:absolute; top:0; right:0; z-index:-2; width:64%; height:100%; object-fit:cover; object-position:100% 60%}
+/* protection scrim, in the band colour so it follows the theme */
+.opening::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(90deg,
+    var(--band) 0%, var(--band) 46%,
+    color-mix(in srgb,var(--band) 88%,transparent) 58%,
+    color-mix(in srgb,var(--band) 46%,transparent) 76%,
+    color-mix(in srgb,var(--band) 10%,transparent) 94%, transparent 100%);
+}
+.opening-body{
+  grid-area:1/1; align-self:center; min-width:0; padding:clamp(24px,3.6vw,52px);
+  opacity:0; visibility:hidden; transition:opacity .36s var(--ease), visibility 0s linear .36s;
+}
+html[data-phase="pre"] .opening-countdown,
+.opening[data-mode="done"] .opening-done{opacity:1; visibility:visible; transition-delay:0s}
+html[data-phase]:not([data-phase="pre"]) .opening:not([data-mode="done"]) .opening-body{display:none}
+html[data-phase]:not([data-phase="pre"]) .opening:not([data-mode="done"]) .opening-photo{width:100%; object-position:50% 58%}
+html[data-phase]:not([data-phase="pre"]) .opening:not([data-mode="done"])::before{background:none}
+.opening-done{display:flex; flex-direction:column; align-items:flex-start; gap:clamp(18px,2vw,28px)}
+.opening-done-title{
+  font-family:var(--font-urbanist),system-ui,sans-serif; font-weight:900; color:var(--band-ink);
+  font-size:clamp(46px,7vw,96px); line-height:.95; letter-spacing:-.035em;
+}
+
+/* ---------- countdown ----------
+   Urbanist has no tabular figures (a 1 is .365em wide, a 0 is .609em, and
+   font-variant-numeric changes nothing). The digits are set at their own
+   width, so "11" has no gap inside it, and each number sits in a box as wide
+   as the widest two digit number ("04", 1.206em). The box never changes, so
+   the dividers and the units after it never move. Each label also reserves
+   the width of its plural, so "1 minuto" does not move the seconds either. */
+.countdown{--cd-size:clamp(40px,7.9vw,112px); --cd-gap:clamp(10px,2.1vw,30px)}
+.cd-face{display:inline-grid; max-width:100%}
+.cd-row{display:flex; margin:0 0 clamp(20px,2.3vw,30px)}
+.countdown:not(.is-live) .cd-row{visibility:hidden}
+.cd-unit{display:flex; flex-direction:column; gap:clamp(7px,.8vw,12px); padding-inline:var(--cd-gap); border-left:1px solid var(--band-line)}
+.cd-unit:first-child{padding-left:0; border-left:0}
+.cd-unit:last-child{padding-right:0}
+.cd-num{
+  display:flex; font-family:var(--font-urbanist),system-ui,sans-serif; font-weight:900;
+  font-size:var(--cd-size); line-height:.84; letter-spacing:0; color:var(--band-ink);
+  font-variant-numeric:tabular-nums; width:1.21em;
+}
+.cd-num span{display:block}
+.cd-label{font-size:clamp(12.5px,1.1vw,15px); line-height:1.2; font-weight:500; color:var(--band-body)}
+.cd-label::after{content:attr(data-plural); display:block; height:0; overflow:hidden; visibility:hidden}
+.cd-date{
+  padding-top:clamp(14px,1.5vw,20px); border-top:1px solid var(--band-line);
+  font-size:clamp(14.5px,1.15vw,16px); line-height:1.45; font-weight:500; color:var(--band-ink);
+}
+.cd-noscript{
+  font-family:var(--font-urbanist),system-ui,sans-serif; font-weight:800; color:var(--band-ink);
+  font-size:clamp(22px,2.6vw,32px); line-height:1.2; letter-spacing:-.02em; max-width:22ch;
+}
+/* the same component, small, beside the notify form */
+.countdown-compact{--cd-size:clamp(30px,3.4vw,44px); --cd-gap:clamp(10px,1.4vw,18px); margin-top:clamp(24px,2.8vw,36px)}
+.countdown-compact .cd-row{margin-bottom:16px}
+.countdown-compact .cd-label{font-size:13px}
+.countdown-compact .cd-date{padding-top:14px; font-size:14.5px; font-weight:400; color:var(--band-body)}
+
+/* ---------- lo que cambia para vos ---------- */
+.gains{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-bottom:24px}
+.gain{
+  display:flex; flex-direction:column; overflow:hidden;
+  background:var(--canvas); border:1px solid var(--line); border-radius:var(--r-card); box-shadow:var(--sh-sm);
+}
+.gain-media{
+  display:grid; grid-template-columns:minmax(0,1fr); place-items:center; height:320px; padding:clamp(18px,2vw,24px);
+  background:var(--surface-brand); border-bottom:1px solid var(--line);
+}
+.gain-body{padding:24px 24px 28px}
+.gain-body h3{margin-bottom:8px}
+.gain-body p{font-size:15.5px}
+.buyer-home .feat h3{font-size:16px; letter-spacing:-.01em; line-height:1.3}
+
+/* ---------- product vignettes ----------
+   Drawn from ikihomes-web, not designed here. The badge and selection colours
+   are the product's and stay fixed in both themes; the surfaces follow the
+   theme tokens. */
+.pv{
+  --pv-primary:#23696A;
+  width:100%; max-width:330px; min-width:0; text-align:left;
+  background:var(--canvas); border:1px solid var(--line-strong); border-radius:8px; box-shadow:var(--sh-md);
+  font-size:14px; line-height:1.4; color:var(--body);
+}
+.pv-verified,.pv-trust{
+  display:inline-flex; align-items:center; border-radius:var(--r-pill); padding:2px 10px;
+  font-size:12px; font-weight:600; line-height:16px; white-space:nowrap; box-shadow:0 1px 2px rgba(9,17,32,.08);
+}
+.pv-verified{gap:4px; background:var(--pv-primary); color:#FFFFFF}
+.pv-verified svg{width:14px; height:14px; fill:currentColor}
+.pv-trust{gap:6px; border:1px solid #FDE68A; background:#FFFBEB; color:#B45309}
+.pv-trust svg{width:16px; height:16px; fill:#F59E0B}
+
+/* search list row, the way it stacks under 640px */
+.pv-listing{position:relative; padding:12px}
+.pv-listing .pv-trust{position:absolute; top:16px; right:16px}
+.pv-photo{width:100%; height:128px; object-fit:cover; border-radius:8px; margin-bottom:12px}
+.pv-title{font-size:16px; font-weight:600; color:var(--ink); margin-bottom:4px}
+.pv-loc{font-size:14px; margin-bottom:4px}
+.pv-specs{display:flex; flex-wrap:wrap; gap:8px 12px; font-size:12px; color:var(--meta); margin-bottom:8px}
+.pv-specs b{font-weight:500; margin-right:4px}
+.pv-price{font-size:20px; font-weight:700; line-height:1.3; color:var(--brand)}
+
+/* contact sidebar, identity row and trust stack */
+.pv-agent{padding:20px}
+.pv-agent-id{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+.pv-avatar{
+  display:grid; place-items:center; flex:none; width:48px; height:48px; border-radius:50%;
+  background:color-mix(in srgb,var(--brand) 12%,transparent); color:var(--brand); font-size:18px; font-weight:700;
+}
+.pv-agent-name{font-size:16px; font-weight:600; color:var(--ink)}
+.pv-agent-role{font-size:12px; color:var(--meta); margin-top:2px}
+.pv-stack{display:flex; flex-direction:column; align-items:flex-start; gap:6px}
+
+/* visit slot picker */
+.pv-slots{padding:16px}
+.pv-slots-title{font-family:var(--font-urbanist),sans-serif; font-size:16px; font-weight:700; line-height:1.3; color:var(--ink)}
+.pv-hint{font-size:14px; color:var(--meta); margin-top:2px}
+.pv-days{display:flex; gap:8px; margin:16px 0; overflow:hidden}
+.pv-day{flex:1 1 64px; min-width:0; padding:8px 4px; text-align:center; border:1px solid var(--line-strong); border-radius:16px; color:var(--body)}
+.pv-day small{display:block; font-size:12px; line-height:1.35}
+.pv-day b{display:block; font-size:18px; font-weight:600; line-height:1.25}
+.pv-day i{display:block; font-size:10px; font-style:normal; line-height:1; color:var(--meta)}
+.pv-times{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px}
+.pv-time{position:relative; padding:12px 0; text-align:center; border:1px solid var(--line-strong); border-radius:12px; font-size:13.5px; font-weight:500; color:var(--body)}
+.pv-day.is-on,.pv-time.is-on{border-color:var(--pv-primary); background:var(--pv-primary); color:#FFFFFF; box-shadow:0 1px 2px rgba(9,17,32,.08)}
+.pv-time svg{position:absolute; top:4px; right:4px; width:11px; height:11px; stroke-width:2.4}
+.pv-tz{font-size:12px; color:var(--meta); margin-top:8px}
+
+/* Buscá por mí: step one of the form, and the status card */
+.pv-request{max-width:none; padding:20px; border-radius:16px; box-shadow:var(--sh-sm)}
+.pv-request-title{font-family:var(--font-urbanist),sans-serif; font-size:20px; font-weight:700; line-height:1.3; color:var(--ink); margin-bottom:16px}
+.pv-seg{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
+.pv-seg span{display:flex; align-items:center; justify-content:center; padding:12px 16px; border:2px solid var(--line-strong); border-radius:12px; font-size:16px; font-weight:700; color:var(--body)}
+.pv-seg span.is-on{border-color:var(--pv-primary); background:var(--pv-primary); color:#FFFFFF; box-shadow:0 4px 6px rgba(9,17,32,.1)}
+.pv-field{margin-top:14px}
+.pv-field b{display:block; margin-bottom:8px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:.025em; color:var(--body)}
+.pv-select{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:11px 14px; border:1px solid var(--line-strong); border-radius:12px; font-size:16px; color:var(--ink)}
+.pv-select svg{width:16px; height:16px; flex:none; color:var(--meta)}
+.pv-fields-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.pv-radar{
+  position:relative; z-index:1; width:min(90%,380px); max-width:none; margin:-20px 0 0 auto; padding:16px 18px;
+  border-radius:16px; border-color:color-mix(in srgb,var(--seafoam) 60%,var(--line-strong)); box-shadow:var(--sh-lg);
+}
+.pv-radar-line{
+  margin:0; font-family:var(--font-urbanist),sans-serif; font-weight:900; color:var(--ink);
+  font-size:clamp(20px,2.2vw,26px); line-height:1.15; letter-spacing:-.02em; text-wrap:balance;
+}
+
+/* ---------- Buscá por mí band ---------- */
+.bpm-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.92fr); gap:clamp(32px,5vw,84px); align-items:center}
+.bpm-copy h2{max-width:17ch; margin-bottom:18px}
+.bpm-copy .lede{margin-bottom:clamp(28px,3vw,40px)}
+/* the numbered rail from above, stood on end at every width */
+.steps-col{grid-template-columns:1fr; gap:26px; margin-bottom:clamp(28px,3vw,38px)}
+.steps-col .step{padding-top:0; padding-left:48px}
+.steps-col .step::before{top:2px}
+.steps-col .step::after{
+  top:38px; left:15px; right:auto; bottom:-26px; width:1.5px; height:auto;
+  background:linear-gradient(180deg,var(--seafoam),color-mix(in srgb,var(--seafoam) 20%,transparent));
+}
+.steps-col .step h3{font-size:17px; letter-spacing:-.015em}
+.bpm-actions{display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px}
+.bpm-reassure{font-size:15px; font-weight:600; color:var(--ink)}
+.bpm-note{margin-top:18px; max-width:54ch; font-size:14px; color:var(--meta)}
+.bpm-visual{padding:clamp(18px,2.6vw,36px); border:1px solid var(--line); border-radius:var(--r-panel); background:var(--surface-brand)}
+
+/* ---------- the two sided statement and the agent door ---------- */
+.manifesto{background:var(--band); color:var(--band-body)}
+.manifesto h2{max-width:980px; margin-bottom:clamp(20px,2.4vw,30px); color:var(--band-ink); font-size:clamp(32px,4.7vw,60px); line-height:1.04}
+.manifesto h2 span{display:block}
+.manifesto h2 .accent{color:var(--seafoam)}
+.manifesto-body{max-width:60ch; font-size:clamp(17px,1.4vw,20px); line-height:1.65}
+/* quieter than the statement: a hairline, small type, a ghost button */
+.agent-door{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px 40px;
+  margin-top:clamp(40px,5vw,72px); padding-top:clamp(24px,2.6vw,32px); border-top:1px solid var(--band-line);
+}
+.agent-door-line{max-width:58ch; font-size:16px}
+
+/* ---------- notify form ---------- */
+#aviso form{margin-top:0}
+#aviso form[hidden]{display:none}   /* .signup form{display:grid} would otherwise outrank the hidden attribute */
+#aviso .signup-card{align-self:center}
+#aviso .micro a{color:var(--band-ink); text-decoration:underline; text-underline-offset:3px}
+#aviso input[aria-invalid="true"]{border-color:#FFB4A6}
+.field-error{display:flex; align-items:flex-start; gap:8px; margin-top:-4px; font-size:14px; line-height:1.4; color:#FFD3C9}
+.field-error[hidden]{display:none}
+.field-error svg{width:18px; height:18px; flex:none; margin-top:1px}
+#aviso .btn[disabled]{opacity:.72; cursor:progress}
+.notify-success{display:flex; flex-direction:column; align-items:flex-start; gap:12px; outline:none}
+.notify-success svg{width:34px; height:34px; color:var(--seafoam)}
+.notify-success h3{font-size:clamp(22px,2vw,28px); margin:0}
+.notify-success p{font-size:16px; color:var(--band-body)}
+
+/* ---------- faq links ---------- */
+.buyer-home details a{text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px}
+.buyer-home details a:hover{color:var(--brand-hover)}
+
+/* ---------- the two states ----------
+   Both states are in the HTML. The phase on <html> picks which one shows, so
+   a statically generated page can change at the hour without a deploy. */
+html[data-phase="pre"] [data-when="open"]{display:none !important}
+html[data-phase]:not([data-phase="pre"]) [data-when="pre"]{display:none !important}
+html[data-phase="pre"] [data-closing]{display:none}
+html[data-phase]:not([data-phase="pre"]):not([data-keep-form]) [data-notify]{display:none}
+html[data-keep-form] [data-closing]{display:none}
+@keyframes swap-in{from{opacity:0} to{opacity:1}}
+html[data-crossed] [data-when="open"]{animation:swap-in .36s var(--ease)}
+
+/* ---------- sticky bar: steps aside while the form or the closing band is on screen ---------- */
+html[data-phase] .sticky{transition:transform .2s var(--ease)}
+.sticky.is-away{transform:translateY(110%)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  /* On one column the stage moves up, right under the headline, so the
+     countdown is on the first screen of a phone. Only the visual order
+     changes: the DOM keeps the deck's order. */
+  .hero-buyer .wrap{display:flex; flex-direction:column}
+  .hero-head{display:contents}
+  .hero-head > :first-child{order:1}
+  .opening{order:2; margin-block:clamp(24px,4vw,34px) clamp(26px,4vw,36px)}
+  .hero-head > :last-child{order:3}
+  .hero-buyer .trust-row{order:4}
+  .bpm-grid{grid-template-columns:1fr}
+}
+/* three across needs room for the vignettes: below 1100px each benefit is a row, picture beside text */
+@media (max-width:1100px){
+  .gains{grid-template-columns:1fr}
+  .gain{flex-direction:row}
+  .gain-media{flex:0 0 min(48%,400px); height:auto; min-height:300px; border-bottom:0; border-right:1px solid var(--line)}
+  .gain-body{align-self:center; padding:clamp(24px,4vw,40px)}
+}
+@media (max-width:680px){
+  .gain{flex-direction:column}
+  .gain-media{flex:none; min-height:0; border-right:0; border-bottom:1px solid var(--line)}
+  .gain-body{align-self:auto; padding:24px 24px 28px}
+}
+@media (max-width:760px){
+  .cta-link{width:100%; justify-content:center}
+  .opening{min-height:0}
+  .opening-photo{position:relative; grid-area:2/1; z-index:0; width:100%; height:164px}
+  .opening::before{
+    inset:auto 0 0 0; height:164px; z-index:1;
+    background:linear-gradient(180deg, var(--band) 0%, color-mix(in srgb,var(--band) 50%,transparent) 40%, transparent 100%);
+  }
+  html[data-phase]:not([data-phase="pre"]) .opening:not([data-mode="done"]) .opening-photo{height:232px}
+  .countdown{--cd-size:clamp(34px,12vw,68px); --cd-gap:clamp(7px,2.4vw,16px)}
+  .countdown-compact{--cd-size:clamp(30px,9vw,44px)}
+  .agent-door .btn{width:100%}
+  .bpm-actions .btn{width:100%}
+  /* the room for the sticky bar moves from main to the footer, so no pale strip
+     opens between the last dark band and the dark footer */
+  main.buyer-home{padding-bottom:0}
+  main.buyer-home ~ footer.site{padding-bottom:calc(40px + 78px + env(safe-area-inset-bottom))}
+}

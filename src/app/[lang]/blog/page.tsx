@@ -4,7 +4,7 @@ import Link from "next/link";
 import { listPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/blogPresentation";
 import { getDictionary } from "../../../dictionaries";
-import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
+import { blogBand } from "@/lib/blogBand";
 import { IconArrow } from "@/components/Icons";
 import { PostCard } from "@/components/PostCard";
 
@@ -68,8 +68,7 @@ export default async function BlogIndexPage(
   const posts = listPosts(lang);
   const [featured, ...rest] = posts;
 
-  const ctaHref = PORTAL_LIVE ? primaryHref() : notifyHref(lang);
-  const ctaLabel = PORTAL_LIVE ? dict.nav.cta : dict.nav.cta_prelaunch;
+  const band = blogBand(lang, dict);
 
   return (
     <main>
@@ -142,16 +141,16 @@ export default async function BlogIndexPage(
 
       <section className="band final">
         <div className="wrap">
-          <p className="eyebrow on-band">{dict.notify.eyebrow}</p>
-          <h2>{b.cta_title}</h2>
-          <p>{b.cta_body}</p>
+          <p className="eyebrow on-band">{band.eyebrow}</p>
+          <h2>{band.title}</h2>
+          <p>{band.body}</p>
           <div className="cta-row">
-            <a className="btn btn-onband" href={ctaHref}>
-              {ctaLabel}
+            <a className="btn btn-onband" href={band.href}>
+              {band.label}
               <IconArrow />
             </a>
           </div>
-          <p className="zones">{b.cta_micro}</p>
+          <p className="zones">{band.micro}</p>
         </div>
       </section>
     </main>
