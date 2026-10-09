@@ -64,13 +64,70 @@ describe("the pause control", () => {
     );
   });
 
-  it("sits in the film, after the video, with the sources of the crop", () => {
+  it("sits in the film, after the video, with the sources of the crop, MP4 first", () => {
     const markup = renderToStaticMarkup(<HeroFilmView view={playing} label={LABEL} />);
     expect(markup).toContain('<div class="opening-photo opening-film is-on">');
     expect(video(markup)).toContain(
-      '<source src="/hero-film/desktop-side.webm" type="video/webm; codecs=&quot;vp9&quot;"/><source src="/hero-film/desktop-side.mp4" type="video/mp4"/>'
+      '<source src="/hero-film/desktop-side.mp4" type="video/mp4"/><source src="/hero-film/desktop-side.webm" type="video/webm; codecs=&quot;vp9&quot;"/></video>'
     );
     expect(markup.indexOf("<button")).toBeGreaterThan(markup.indexOf("</video>"));
+  });
+});
+
+describe("a refused autoplay", () => {
+  const base = { mode: "countdown" as const, phone: false, calm: false, loaded: true, played: false };
+
+  it("offers the control, named Pausar el video and pressed, over the poster, so a tap starts the film", () => {
+    const markup = renderToStaticMarkup(
+      <HeroFilmView view={filmView({ ...base, paused: true, refused: true })} label={LABEL} />
+    );
+    expect(markup).toMatch(/^<div class="opening-photo opening-film">/);
+    expect(toggle(markup)).toBe(
+      '<button type="button" class="opening-film-toggle" aria-label="Pausar el video" aria-pressed="true">'
+    );
+    expect(video(markup)).toContain('<source src="/hero-film/desktop-side.mp4" type="video/mp4"/>');
+  });
+
+  it("offers no control while play() has not been refused, an AbortError included", () => {
+    expect(renderToStaticMarkup(<HeroFilmView view={filmView({ ...base, paused: false })} label={LABEL} />)).not.toContain(
+      "<button"
+    );
+  });
+});
+
+describe("once every format has failed", () => {
+  const broken = filmView({
+    mode: "countdown",
+    phone: false,
+    calm: false,
+    loaded: true,
+    played: true,
+    paused: false,
+    failed: ["mp4", "webm"],
+  });
+  const markup = renderToStaticMarkup(<HeroFilmView view={broken} label={LABEL} />);
+
+  it("shows the poster with no source and no control", () => {
+    expect(markup).toMatch(/^<div class="opening-photo opening-film">/);
+    expect(video(markup)).not.toContain("<source");
+    expect(markup).not.toContain("<button");
+  });
+});
+
+describe("after a format has failed", () => {
+  it("attaches only the formats left, in order", () => {
+    const view = filmView({
+      mode: "photo",
+      phone: true,
+      calm: false,
+      loaded: true,
+      played: true,
+      paused: false,
+      failed: ["mp4"],
+    });
+    expect(video(renderToStaticMarkup(<HeroFilmView view={view} label={LABEL} />))).toMatch(
+      /^<video [^>]*><source src="\/hero-film\/phone-full\.webm" type="video\/webm; codecs=&quot;vp9&quot;"\/><\/video>$/
+    );
   });
 });
 

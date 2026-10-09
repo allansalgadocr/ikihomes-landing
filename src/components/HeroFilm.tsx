@@ -1,17 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore, type Ref } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type Ref } from "react";
 import type { LaunchPhase } from "@/lib/launch";
 import { useLaunchClock } from "@/lib/launchClock";
 import {
   HERO_FILM_PHONE_QUERY,
   REDUCED_MOTION_QUERY,
+  failFormat,
   filmMode,
   filmPosters,
-  filmSources,
   filmView,
   loadCrop,
-  type FilmCrop,
+  playFilm,
+  toggleFilm,
+  type FilmFormat,
   type FilmView,
 } from "@/lib/heroFilm";
 
@@ -68,7 +70,8 @@ const readLoaded = () => afterLoad;
  * The film in the photograph's box: the poster for the panel's mode (a picture
  * that follows the breakpoint, so it is right with JavaScript off), the video
  * over it with the crop's sources once they may load, and the pause control
- * over both while the film moves. No player chrome, no audio track.
+ * over both while the film moves or waits for the visitor to start it. No
+ * player chrome, no audio track.
  */
 export function HeroFilmView({
   view,
@@ -108,8 +111,9 @@ export function HeroFilmView({
         disableRemotePlayback
         onPlaying={onPlaying}
       >
-        {view.crop !== null &&
-          filmSources(view.crop).map((source) => <source key={source.src} src={source.src} type={source.type} />)}
+        {view.sources.map((source) => (
+          <source key={source.src} src={source.src} type={source.type} />
+        ))}
       </video>
       {view.control && (
         <button
@@ -129,7 +133,10 @@ export function HeroFilmView({
  * mode and the breakpoint and keeps its time when it changes. It plays muted,
  * in a loop, from the poster's second, and stops while it cannot be seen: off
  * screen, in a hidden tab, or paused by the visitor (click, tap, Enter or
- * Space). Under reduced motion it never loads and the poster stays.
+ * Space). A format that fails gives way to the next one at the same time; a
+ * refused autoplay leaves the poster with the control paused, for the
+ * visitor's tap to start it. Under reduced motion it never loads and the
+ * poster stays.
  *
  * serverPhase is the phase the server rendered <html> with, so the server and
  * the hydration render pick the same poster; the client then follows <html>.
@@ -137,7 +144,7 @@ export function HeroFilmView({
 export function HeroFilm({ label, serverPhase }: { label: string; serverPhase: LaunchPhase }) {
   const box = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
-  const loadedCrop = useRef<FilmCrop | null>(null);
+  const loadedSources = useRef<string | null>(null);
 
   const phase = useSyncExternalStore(subscribePhase, readPhase, () => serverPhase);
   const crossed = useLaunchClock()?.crossed === true;
@@ -148,30 +155,52 @@ export function HeroFilm({ label, serverPhase }: { label: string; serverPhase: L
   const [seen, setSeen] = useState(true);
   const [played, setPlayed] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [refused, setRefused] = useState(false);
+  const [failed, setFailed] = useState<readonly FilmFormat[]>([]);
 
-  const view = filmView({ mode: filmMode(phase, crossed), phone, calm, loaded, played, paused });
-  const crop = view.crop;
+  const view = filmView({ mode: filmMode(phase, crossed), phone, calm, loaded, played, paused, failed, refused });
+  const sources = view.sources.map(({ src }) => src).join(" ");
 
-  // A new crop: load its sources, from the poster's second the first time and
-  // from where the last crop was every time after.
+  // A refused autoplay (Low Power Mode, an in-app browser) keeps the poster
+  // and offers the control paused, so the visitor's tap starts the film.
+  const refuse = useCallback(() => {
+    setRefused(true);
+    setPaused(true);
+  }, []);
+
+  // A format that fails, by an error on the video (a decode error included) or
+  // on one of its <source>s, is dropped, and the next one loads. A <source>'s
+  // error does not bubble, so the video listens for it on the way down.
   useEffect(() => {
     const element = video.current;
-    if (!element || crop === null || crop === loadedCrop.current) return;
-    loadCrop(element, loadedCrop.current === null);
-    loadedCrop.current = crop;
-  }, [crop]);
+    if (!element) return;
+    const fail = (event: Event) => {
+      const url = event.target instanceof HTMLSourceElement ? event.target.src : element.currentSrc;
+      setFailed((was) => failFormat(was, url));
+    };
+    element.addEventListener("error", fail, true);
+    return () => element.removeEventListener("error", fail, true);
+  }, []);
+
+  // New sources, a new crop or the next format: load them, from the poster's
+  // second the first time and from where the film was every time after.
+  useEffect(() => {
+    const element = video.current;
+    if (!element || !sources || sources === loadedSources.current) return;
+    loadCrop(element, loadedSources.current === null);
+    loadedSources.current = sources;
+  }, [sources]);
 
   // It plays only while it can be seen and the visitor has not paused it.
   useEffect(() => {
     const element = video.current;
     if (!element) return;
-    if (crop !== null && seen && visible && !paused) {
-      // A refused autoplay (low power mode, for one) leaves the poster.
-      element.play()?.catch(() => {});
+    if (sources && seen && visible && !paused) {
+      playFilm(element, refuse);
     } else {
       element.pause();
     }
-  }, [crop, seen, visible, paused]);
+  }, [sources, seen, visible, paused, refuse]);
 
   useEffect(() => {
     const element = box.current;
@@ -185,7 +214,7 @@ export function HeroFilm({ label, serverPhase }: { label: string; serverPhase: L
     <HeroFilmView
       view={view}
       label={label}
-      onToggle={() => setPaused((was) => !was)}
+      onToggle={() => setPaused(toggleFilm(video.current, paused, refuse))}
       onPlaying={() => setPlayed(true)}
       boxRef={box}
       videoRef={video}
