@@ -145,10 +145,19 @@ describe("the countdown as the server renders it", () => {
 });
 
 describe("the images", () => {
-  it("uses the landing's lifestyle photo in the hero, loaded first", () => {
-    const photo = section("top").match(/<img[^>]*class="opening-photo"[^>]*>/)?.[0] ?? "";
-    expect(photo).toContain("hero-lifestyle.jpg");
-    expect(photo).not.toContain('loading="lazy"');
+  it("puts the hero film in the photograph's place, with the photograph gone", () => {
+    const hero = section("top");
+    expect(hero).toMatch(/<div class="opening-photo opening-film"><picture>.*?<\/picture><video [^>]*><\/video><\/div>/);
+    expect(markup).not.toContain("hero-lifestyle");
+  });
+
+  it("loads the film's poster first and no source of the film from the server markup", () => {
+    const hero = section("top");
+    const poster = hero.match(/<img[^>]*hero-film[^>]*>/)?.[0] ?? "";
+    expect(poster).toContain('fetchPriority="high"');
+    expect(poster).not.toContain('loading="lazy"');
+    expect(hero).not.toMatch(/<video[^>]*\ssrc=/);
+    expect(hero).not.toMatch(/\.(webm|mp4)/);
   });
 
   it("uses the sample listing photo in the listing card", () => {

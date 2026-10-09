@@ -296,7 +296,8 @@
                 "cta_primary_open": "Buscar propiedades",
                 "cta_secondary_open": "Buscá por mí"
             },
-            "note_pre": "Un solo correo, el día de la apertura."
+            "note_pre": "Un solo correo, el día de la apertura.",
+            "film_toggle": "Pausar el video"
         },
         "countdown": {
             "kicker": "Abrimos en",

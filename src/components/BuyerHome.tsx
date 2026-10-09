@@ -1,11 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type es from "@/dictionaries/es.json";
-import { fillLaunch } from "@/lib/launch";
+import { currentPhase, fillLaunch } from "@/lib/launch";
 import { AGENT_PAGE_URL, BUYER_SITE } from "@/lib/portal";
 import { BuyerNotifyForm } from "./BuyerNotifyForm";
 import { CountdownFace, OpeningStage } from "./BuyerCountdown";
+import { HeroFilm } from "./HeroFilm";
 import { AgentVignette, ListingVignette, RequestVignette, VisitVignette } from "./BuyerVignettes";
 import { IconCheck, IconHeart, IconMap, IconReview } from "./Icons";
 
@@ -86,15 +86,7 @@ export function BuyerHome({ dict }: { dict: BuyerDict }) {
               <p className="opening-done-title">{countdown.done_title}</p>
               <a className="btn btn-onband" href={BUYER_SITE.search}>{countdown.done_cta}</a>
             </div>
-            <Image
-              className="opening-photo"
-              src="/hero-lifestyle.jpg"
-              width={2560}
-              height={1440}
-              alt=""
-              priority
-              sizes="(max-width: 1240px) 100vw, 1160px"
-            />
+            <HeroFilm label={hero.film_toggle} serverPhase={currentPhase()} />
           </OpeningStage>
 
           <div className="trust-row">

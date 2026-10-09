@@ -728,6 +728,43 @@ html[data-phase]:not([data-phase="pre"]) .opening:not([data-mode="done"])::befor
   font-size:clamp(46px,7vw,96px); line-height:.95; letter-spacing:-.035em;
 }
 
+/* ---------- the hero film, in the photograph's place ----------
+   The film keeps the photograph's class, so it takes the same box in every mode
+   and at every width. Poster and video fill it the way the photograph did, with
+   the same object-position. The video fades in once it plays. */
+.opening-film{overflow:hidden}
+.opening-film picture,.opening-film img,.opening-film video{position:absolute; inset:0; display:block; width:100%; height:100%; max-width:none; object-fit:cover; object-position:inherit}
+.opening-film video{opacity:0; transition:opacity .36s var(--ease)}
+.opening-film.is-on video{opacity:1}
+/* The pause control covers the film and has no look of its own. The panel clips
+   everything outside it, so the focus ring is drawn inside the film, above the
+   video, in Ikigai with a white edge so it reads on light and dark footage. */
+.opening-film-toggle{
+  appearance:none; position:absolute; inset:0; display:block; width:100%; height:100%; margin:0; padding:0;
+  border:0; border-radius:0; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent;
+}
+.opening-film-toggle::after{content:""; position:absolute; inset:8px; border-radius:calc(var(--r-panel) - 8px); box-shadow:0 0 0 2px #FFFFFF, 0 0 0 4px var(--ikigai); opacity:0; pointer-events:none}
+.opening-film-toggle:focus-visible{outline:none}
+.opening-film-toggle:focus-visible::after{opacity:1}
+/* the countdown lies over the film: a click on the film reaches it, the panel's own links still work */
+.opening:has(.opening-film) .opening-body{pointer-events:none}
+.opening:has(.opening-film) .opening-body a,.opening:has(.opening-film) .opening-body button{pointer-events:auto}
+/* Over interface footage the photograph's long fusion turned grey and took the
+   contrast from the seconds. With the film, while the panel keeps the countdown's
+   box (before the opening, and "Ya abrimos." at zero), on two columns: solid teal
+   behind every digit (to 66 %), then a short fusion. */
+@media (min-width:761px){
+  html[data-phase="pre"] .opening:has(.opening-film)::before,
+  .opening[data-mode="done"]:has(.opening-film)::before{
+    background:linear-gradient(90deg,
+      var(--band) 0%, var(--band) 66%,
+      color-mix(in srgb,var(--band) 82%,transparent) 70%,
+      color-mix(in srgb,var(--band) 38%,transparent) 75%,
+      color-mix(in srgb,var(--band) 9%,transparent) 81%, transparent 87%);
+  }
+}
+@media (prefers-reduced-motion:reduce){.opening-film video{display:none}}
+
 /* ---------- countdown ----------
    Urbanist has no tabular figures (a 1 is .365em wide, a 0 is .609em, and
    font-variant-numeric changes nothing). The digits are set at their own
