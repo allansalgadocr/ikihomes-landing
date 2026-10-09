@@ -137,6 +137,28 @@ describe("submitLead", () => {
     expect(result).toStrictEqual({ ok: true, role: "agente" });
   });
 
+  it("posts comprador to the Google Form's role entry so buyers stand apart from the agent list", async () => {
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+    const form = new FormData();
+    form.append("email", "ana@example.com");
+    form.append("role", "comprador");
+
+    await submitLead(EMPTY_STATE, form);
+
+    expect(new URLSearchParams(calls(fetchMock)[0][1]).get("entry.200")).toBe("comprador");
+  });
+
+  it("returns the comprador role so the page can tag a buyer Lead", async () => {
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+    const form = new FormData();
+    form.append("email", "ana@example.com");
+    form.append("role", "comprador");
+
+    const result = await submitLead(EMPTY_STATE, form);
+
+    expect(result).toStrictEqual({ ok: true, role: "comprador" });
+  });
+
   it("does not echo a role the form never offers", async () => {
     vi.stubEnv("TURNSTILE_SECRET_KEY", "");
 

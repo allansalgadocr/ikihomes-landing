@@ -18,7 +18,7 @@ export type SubmitLeadErrorCode =
   | "config"
   | "network";
 
-export type SubmitLeadRole = "agente" | "propietario";
+export type SubmitLeadRole = "agente" | "propietario" | "comprador";
 
 export type SubmitLeadState = {
   ok: boolean;
@@ -27,7 +27,7 @@ export type SubmitLeadState = {
   role?: SubmitLeadRole;
 };
 
-const ROLES: readonly string[] = ["agente", "propietario"] satisfies SubmitLeadRole[];
+const ROLES: readonly string[] = ["agente", "propietario", "comprador"] satisfies SubmitLeadRole[];
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
