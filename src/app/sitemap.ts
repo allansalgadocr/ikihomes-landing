@@ -16,19 +16,8 @@ function langAlternates(path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = getAllSlugs();
 
+  // The home is the buyer site's, and its own sitemap lists it.
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE}/en`,
-      alternates: langAlternates(""),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE}/es`,
-      alternates: langAlternates(""),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
     {
       url: `${BASE}/es/privacy`,
       alternates: langAlternates("/privacy"),

@@ -3,8 +3,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 // The snapshots in __snapshots__ were written from the English site as it was
 // before the Spanish home became the buyer page. They hold /en to that output:
-// any change to the English home, its header, footer, sticky bar, blog bands
-// or metadata fails here.
+// any change to its header, footer, sticky bar, blog bands or metadata fails
+// here. The English home is not among them: the buyer site answers /en now.
 
 vi.mock("server-only", () => ({}));
 vi.mock("next/font/google", () => ({
@@ -20,7 +20,6 @@ vi.mock("next/navigation", async (importOriginal) => ({
 }));
 
 import RootLayout, { generateMetadata } from "./layout";
-import Home from "./page";
 import BlogIndexPage from "./blog/page";
 import BlogPostPage from "./blog/[slug]/page";
 import { listPosts } from "@/lib/blog";
@@ -33,11 +32,6 @@ async function renderEnglish(pathname: string, page: React.ReactNode) {
 }
 
 describe("the English site", () => {
-  it("keeps its home page, header, footer and sticky bar", async () => {
-    const markup = await renderEnglish("/en", await Home({ params: en() }));
-    expect(markup).toMatchSnapshot();
-  });
-
   it("keeps its metadata", async () => {
     expect(await generateMetadata({ params: en() })).toMatchSnapshot();
   });

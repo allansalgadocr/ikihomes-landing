@@ -1,3 +1,4 @@
+import { existsSync, readdirSync } from "node:fs";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { LAUNCH_AT, PHASE_SCRIPT } from "@/lib/launch";
@@ -16,7 +17,7 @@ vi.mock("next/navigation", async (importOriginal) => ({
 }));
 
 import RootLayout, { generateMetadata } from "./layout";
-import Home, { revalidate } from "./page";
+import sitemap from "../sitemap";
 
 const BEFORE = LAUNCH_AT - 60 * 60 * 1000;
 const AFTER = LAUNCH_AT + 60 * 1000;
@@ -136,15 +137,31 @@ describe("the Spanish home's metadata", () => {
   });
 });
 
-describe("the home route", () => {
-  it("regenerates every minute, so its server HTML turns open by itself shortly after the hour", () => {
-    expect(revalidate).toBe(60);
+// The home, the privacy policy and the terms are the buyer site's. A page for
+// any of them here would answer ahead of the fallback rewrite and hide the
+// buyer site's home and its versioned legal texts on the public domain.
+describe("the addresses that belong to the buyer site", () => {
+  const here = (path: string) => new URL(path, import.meta.url);
+
+  it("have no home page in this app", () => {
+    expect(readdirSync(here("./")).filter((name) => /^page\./.test(name))).toEqual([]);
   });
 
-  it("renders the buyer page in Spanish", async () => {
-    vi.setSystemTime(BEFORE);
-    const markup = renderToStaticMarkup(await Home({ params: params("es") }));
-    expect(markup).toContain('<main class="buyer-home">');
-    expect(markup).not.toContain("Anotarme en la lista");
+  it.each(["privacy", "terms"])("have no %s route in this app", (route) => {
+    expect(existsSync(here(`./${route}`))).toBe(false);
+  });
+
+  it("leave the home out of this app's sitemap, which keeps the legal pages and the blog", () => {
+    const urls = sitemap().map((entry) => entry.url);
+
+    expect(urls.filter((url) => /\/(en|es)$/.test(url))).toEqual([]);
+    expect(urls).toEqual(
+      expect.arrayContaining([
+        "https://ikihomescr.com/es/privacy",
+        "https://ikihomescr.com/en/terms",
+        "https://ikihomescr.com/es/blog",
+        "https://ikihomescr.com/en/blog",
+      ])
+    );
   });
 });
