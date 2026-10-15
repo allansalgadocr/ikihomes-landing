@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Urbanist, Source_Sans_3 } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import "../globals.css";
 
 const urbanist = Urbanist({
@@ -109,7 +108,6 @@ import { StickyCta } from "@/components/StickyCta";
 import { BuyerNavBar } from "@/components/BuyerNavBar";
 import { BuyerFooter } from "@/components/BuyerFooter";
 import { BuyerStickyCta } from "@/components/BuyerStickyCta";
-import { MetaPixel } from "@/components/MetaPixel";
 import { PHASE_SCRIPT, currentPhase, fillLaunch } from "@/lib/launch";
 
 /** JSON-LD structured data for Organization + WebSite */
@@ -245,8 +243,6 @@ export default async function RootLayout(
         ) : (
           <StickyCta label={dict.nav.cta} labelPrelaunch={dict.nav.cta_prelaunch} />
         )}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
-        <MetaPixel />
       </body>
     </html>
   );
