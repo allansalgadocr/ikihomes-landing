@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/blog";
 
-const BASE = "https://ikihomescr.com";
+const BASE = "https://www.ikihomescr.com";
 
 function langAlternates(path: string) {
   return {

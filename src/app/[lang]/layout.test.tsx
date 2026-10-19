@@ -157,11 +157,56 @@ describe("the addresses that belong to the buyer site", () => {
     expect(urls.filter((url) => /\/(en|es)$/.test(url))).toEqual([]);
     expect(urls).toEqual(
       expect.arrayContaining([
-        "https://ikihomescr.com/es/privacy",
-        "https://ikihomescr.com/en/terms",
-        "https://ikihomescr.com/es/blog",
-        "https://ikihomescr.com/en/blog",
+        "https://www.ikihomescr.com/es/privacy",
+        "https://www.ikihomescr.com/en/terms",
+        "https://www.ikihomescr.com/es/blog",
+        "https://www.ikihomescr.com/en/blog",
       ])
     );
+  });
+});
+
+// The apex redirects to www, so an apex address in a canonical, an alternate or
+// the sitemap points search engines at a redirect and Google picks the apex as
+// the canonical over the page itself.
+describe("the addresses this app declares", () => {
+  const APEX = "https://ikihomescr.com";
+  const WWW = "https://www.ikihomescr.com";
+
+  it("resolve relative canonicals and alternates against www", async () => {
+    const metadata = await generateMetadata({ params: params("es") });
+    expect(metadata.metadataBase?.toString()).toBe(`${WWW}/`);
+  });
+
+  it.each(["es", "en"])("are all on www in the %s layout", async (lang) => {
+    vi.setSystemTime(AFTER);
+    expect(await renderSite(lang)).not.toContain(APEX);
+  });
+
+  it("are all on www in the sitemap, alternates included", () => {
+    const addresses = sitemap().flatMap((entry) => [
+      entry.url,
+      ...Object.values(entry.alternates?.languages ?? {}),
+    ]);
+    expect(addresses.length).toBeGreaterThan(0);
+    expect(addresses.filter((url) => !String(url).startsWith(`${WWW}/`))).toEqual([]);
+  });
+
+  it("leave the hreflang links to each page's metadata, so a page carries one set", async () => {
+    vi.setSystemTime(AFTER);
+    expect(await renderSite("es")).not.toMatch(/hreflang/i);
+  });
+
+  it("name the brand's Instagram and Facebook profiles", async () => {
+    vi.setSystemTime(AFTER);
+    const blocks = [...(await renderSite("es")).matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)];
+    const organization = blocks
+      .map(([, json]) => JSON.parse(json))
+      .find((schema) => schema["@type"] === "Organization");
+    expect(organization.url).toBe(WWW);
+    expect(organization.sameAs).toEqual([
+      "https://www.instagram.com/ikihomescr",
+      "https://www.facebook.com/ikihomescr",
+    ]);
   });
 });

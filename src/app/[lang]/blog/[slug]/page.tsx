@@ -16,7 +16,7 @@ import { IconArrow, IconShare, IconUsers } from "@/components/Icons";
 import { getDictionary } from "../../../../dictionaries";
 import { blogBand } from "@/lib/blogBand";
 
-const BASE = "https://ikihomescr.com";
+const BASE = "https://www.ikihomescr.com";
 
 interface PageProps {
   params: Promise<{ lang: string; slug: string }>;

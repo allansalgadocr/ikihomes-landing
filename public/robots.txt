@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /*/login
 
-Sitemap: https://ikihomescr.com/sitemap.xml
+Sitemap: https://www.ikihomescr.com/sitemap.xml
 Sitemap: https://www.ikihomescr.com/sitemap-listings.xml

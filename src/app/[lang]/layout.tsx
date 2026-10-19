@@ -56,7 +56,7 @@ export async function generateMetadata(
   return {
     title,
     description,
-    metadataBase: new URL("https://ikihomescr.com"),
+    metadataBase: new URL("https://www.ikihomescr.com"),
     alternates: {
       canonical: `/${lang}`,
       languages: {
@@ -118,9 +118,9 @@ function StructuredData({ lang, websiteDescription }: { lang: string; websiteDes
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "IkiHomes",
-    url: "https://ikihomescr.com",
-    logo: "https://ikihomescr.com/logo.svg",
-    image: "https://ikihomescr.com/og-image.png",
+    url: "https://www.ikihomescr.com",
+    logo: "https://www.ikihomescr.com/logo.svg",
+    image: "https://www.ikihomescr.com/og-image.png",
     description: isEs
       ? "Plataforma que conecta compradores de propiedades en Costa Rica con agentes inmobiliarios clasificados por confianza y capacidad de respuesta."
       : "Platform connecting property buyers in Costa Rica with real estate agents ranked by trust and responsiveness.",
@@ -158,14 +158,14 @@ function StructuredData({ lang, websiteDescription }: { lang: string; websiteDes
       contactType: "customer service",
       availableLanguage: ["Spanish", "English"],
     },
-    sameAs: [],
+    sameAs: ["https://www.instagram.com/ikihomescr", "https://www.facebook.com/ikihomescr"],
   };
 
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "IkiHomes",
-    url: "https://ikihomescr.com",
+    url: "https://www.ikihomescr.com",
     inLanguage: ["es", "en"],
     description: websiteDescription,
   };
@@ -212,9 +212,7 @@ export default async function RootLayout(
     >
       <head>
         {isEs && <script dangerouslySetInnerHTML={{ __html: PHASE_SCRIPT }} />}
-        <link rel="alternate" hrefLang="en" href="https://ikihomescr.com/en" />
-        <link rel="alternate" hrefLang="es" href="https://ikihomescr.com/es" />
-        <link rel="alternate" hrefLang="x-default" href="https://ikihomescr.com/es" />
+        {/* No hreflang links here: each page's metadata declares its own, and a second set conflicts. */}
         <StructuredData
           lang={lang}
           websiteDescription={
