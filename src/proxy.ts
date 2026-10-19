@@ -26,7 +26,9 @@ export function proxy(request: NextRequest) {
   request.nextUrl.pathname = `/${locale}${pathname}`;
   // e.g. incoming request is /products
   // The new URL is now /en/products
-  return NextResponse.redirect(request.nextUrl);
+  // Permanent: the default locale is fixed, and a temporary redirect keeps
+  // Google treating the unprefixed address as the canonical page.
+  return NextResponse.redirect(request.nextUrl, 308);
 }
 
 export const config = {

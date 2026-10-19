@@ -21,6 +21,10 @@ describe("landing proxy", () => {
     },
   );
 
+  it.each(["/", "/blog"])("redirects %s permanently, so Google keeps the prefixed page", (path) => {
+    expect(run(path)?.status).toBe(308);
+  });
+
   it.each([
     "/es",
     "/en/blog",

@@ -1,0 +1,32 @@
+# IkiHomes
+
+> IkiHomes (ikihomescr.com) is a real estate marketplace in Costa Rica. Buyers and renters search
+> homes, condos, lots and commercial properties listed by local real estate agents, and every
+> agent's verification badges and response times are shown on their listings and profile.
+> The site is in Spanish, with an English version.
+
+## For buyers and renters
+- Search properties for sale and for rent in all seven provinces. Searching is free.
+- Contact the listing agent by WhatsApp, message or visit request.
+- "Encontrar mi hogar" (Find my home): describe what you are looking for and agents reply with options.
+- Buyer data is not sold; the buyer chooses when and with whom to talk.
+
+## For real estate agents
+- A free account publishes listings and a public agent profile.
+- Realtor Pro adds replying to buyer requests, lead management, private listing sharing and analytics.
+- Agent portal: https://app.ikihomescr.com
+
+## Main pages
+- [Search properties](https://www.ikihomescr.com/es/search)
+- [Search properties, English](https://www.ikihomescr.com/en/search)
+- [Find my home](https://www.ikihomescr.com/es/busca-por-mi)
+- [Real estate agents](https://www.ikihomescr.com/es/agents)
+- [Properties by zone](https://www.ikihomescr.com/es/locations)
+- [Blog: the Costa Rica real estate market](https://www.ikihomescr.com/es/blog)
+- [Privacy policy](https://www.ikihomescr.com/es/privacy)
+- [Terms](https://www.ikihomescr.com/es/terms)
+
+## Contact
+- soporte@ikihomescr.com
+- Instagram: https://www.instagram.com/ikihomescr
+- Facebook: https://www.facebook.com/ikihomescr
