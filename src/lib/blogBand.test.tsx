@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { BLOG_AGENT_HREF, blogBand } from "./blogBand";
+import { BLOG_AGENT_HREF, BLOG_AGENT_PAGE_HREF, blogBand } from "./blogBand";
 import es from "@/dictionaries/es.json";
 import en from "@/dictionaries/en.json";
 
@@ -48,10 +48,12 @@ describe("the English blog band", () => {
     expect(band.micro).toBe("No credit card. The free plan does not expire.");
   });
 
-  it("sends the agent to the portal's sign in, like the Spanish band, and never to the notify form", () => {
-    expect(band.label).toBe("Sign in or create your account");
-    expect(band.href).toBe(BLOG_AGENT_HREF);
+  it("sends the agent to the public agent page, tagged as a click from the blog band, and never to the notify form", () => {
+    expect(band.label).toBe("See how it works for agents (in Spanish)");
+    expect(band.href).toBe("https://www.ikihomescr.com/es/para-agentes?utm_source=blog&utm_medium=cta_band");
+    expect(BLOG_AGENT_PAGE_HREF).toBe(band.href);
     expect(band.href).not.toContain("#avisame");
+    expect(band.href).not.toContain("/login");
   });
 });
 
