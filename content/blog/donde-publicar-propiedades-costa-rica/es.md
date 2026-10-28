@@ -4,7 +4,7 @@ description: "Dónde publicar propiedades en Costa Rica: qué revisar en cada op
 keywords: ["publicar propiedades Costa Rica", "dónde publicar propiedades", "alternativas a Encuentra24", "plataforma inmobiliaria Costa Rica", "agente inmobiliario Costa Rica"]
 date: "2026-10-28"
 author: "IkiHomes"
-image: "/blog-donde-publicar.png"
+image: "/blog-donde-publicar.jpg"
 lang: "es"
 ---
 

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs, getPost, modifiedDate } from "@/lib/blog";
+import { getAllSlugs, getPost, modifiedDate, postLanguages } from "@/lib/blog";
 
 const BASE = "https://www.ikihomescr.com";
 
@@ -11,6 +11,14 @@ function langAlternates(path: string) {
       "x-default": `${BASE}/es${path}`,
     },
   };
+}
+
+/** An article's alternates list only the languages it exists in; x-default is Spanish when there is one. */
+function postAlternates(slug: string) {
+  const languages: Record<string, string> = {};
+  for (const l of postLanguages(slug)) languages[l] = `${BASE}/${l}/blog/${slug}`;
+  languages["x-default"] = languages.es ?? languages.en;
+  return { languages };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -70,7 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
           url: `${BASE}/${lang}/blog/${slug}`,
           lastModified: modifiedDate(post),
-          alternates: langAlternates(`/blog/${slug}`),
+          alternates: postAlternates(slug),
           changeFrequency: "monthly" as const,
           priority: 0.7,
         },

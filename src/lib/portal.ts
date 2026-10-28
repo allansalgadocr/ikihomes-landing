@@ -34,8 +34,9 @@ export const AGENT_PAGE_URL = "https://app.ikihomescr.com/login";
 
 /**
  * The public agent product page, on the buyer site, served on www through the
- * fallback rewrite. The footer's "Para agentes" door goes here; the header
- * door and the band keep sending an agent to sign in.
+ * fallback rewrite. The Spanish footer door "Para agentes" and the English
+ * blog band go here; the header door and the Spanish band keep sending an
+ * agent to sign in.
  */
 export const AGENT_PRODUCT_PAGE_URL = "https://www.ikihomescr.com/es/para-agentes";
 

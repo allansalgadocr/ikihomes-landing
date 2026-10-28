@@ -44,6 +44,14 @@ export function getAllSlugs(): string[] {
     .map((d) => d.name);
 }
 
+export const BLOG_LANGS = ["en", "es"] as const;
+export type BlogLang = (typeof BLOG_LANGS)[number];
+
+/** The languages a post exists in, by file presence, without reading the file. */
+export function postLanguages(slug: string): BlogLang[] {
+  return BLOG_LANGS.filter((lang) => fs.existsSync(getPostFile(slug, lang)));
+}
+
 export function getPost(slug: string, lang: string): BlogPost | null {
   const filePath = getPostFile(slug, lang);
   if (!fs.existsSync(filePath)) return null;
