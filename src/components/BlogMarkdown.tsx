@@ -1,5 +1,9 @@
 import Markdown from "react-markdown";
 import type { Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+/** Links to the site itself stay in the tab; every other http link opens a new one. */
+const SITE_ORIGIN = "https://www.ikihomescr.com/";
 
 /**
  * Long-form article body.
@@ -20,7 +24,7 @@ const components: Components = {
   ),
 
   a: ({ href, children }) => {
-    const external = href?.startsWith("http");
+    const external = href?.startsWith("http") && !href.startsWith(SITE_ORIGIN);
     return (
       <a
         href={href}
@@ -31,6 +35,14 @@ const components: Components = {
       </a>
     );
   },
+
+  // A GFM table scrolls sideways inside its own box on a phone instead of
+  // widening the article.
+  table: ({ children }) => (
+    <div className="table-scroll">
+      <table>{children}</table>
+    </div>
+  ),
 
   img: ({ src, alt }) =>
     typeof src === "string" ? (
@@ -44,5 +56,9 @@ interface BlogMarkdownProps {
 }
 
 export function BlogMarkdown({ content }: BlogMarkdownProps) {
-  return <Markdown components={components}>{content}</Markdown>;
+  return (
+    <Markdown components={components} remarkPlugins={[remarkGfm]}>
+      {content}
+    </Markdown>
+  );
 }

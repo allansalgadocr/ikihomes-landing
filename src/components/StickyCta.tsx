@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { IconArrow } from "./Icons";
-import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
+import { primaryHref } from "@/lib/portal";
 
 /**
  * The mobile action bar. mockup.css hides the header nav, the login link and
@@ -11,13 +11,7 @@ import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
  * Without it rendered, mobile had no call to action at all and an empty slab
  * above the footer.
  */
-export function StickyCta({
-  label,
-  labelPrelaunch,
-}: {
-  label: string;
-  labelPrelaunch: string;
-}) {
+export function StickyCta({ label }: { label: string }) {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "es";
   const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
@@ -25,8 +19,8 @@ export function StickyCta({
 
   return (
     <div className="sticky">
-      <a className="btn btn-primary" href={PORTAL_LIVE ? primaryHref() : notifyHref(lang)}>
-        {PORTAL_LIVE ? label : labelPrelaunch}
+      <a className="btn btn-primary" href={primaryHref()}>
+        {label}
         <IconArrow />
       </a>
     </div>

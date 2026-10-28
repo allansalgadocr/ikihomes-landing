@@ -5,6 +5,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 // before the Spanish home became the buyer page. They hold /en to that output:
 // any change to its header, footer, sticky bar, blog bands or metadata fails
 // here. The English home is not among them: the buyer site answers /en now.
+// Refreshed on 2026-10-28 on purpose: the header sends an agent to the portal
+// instead of the retired notify form, and the blog band carries the approved
+// English set B. Nothing else about /en changed.
 
 vi.mock("server-only", () => ({}));
 vi.mock("next/font/google", () => ({

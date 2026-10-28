@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { BLOG_AGENT_HREF, blogBand } from "./blogBand";
-import { PORTAL_LIVE, notifyHref, primaryHref } from "./portal";
 import es from "@/dictionaries/es.json";
 import en from "@/dictionaries/en.json";
 
@@ -40,17 +39,19 @@ describe("the Spanish blog band", () => {
 describe("the English blog band", () => {
   const band = blogBand("en", en);
 
-  it("keeps today's eyebrow, title, body and micro line", () => {
-    expect(band.eyebrow).toBe(en.notify.eyebrow);
-    expect(band.title).toBe(en.blog.cta_title);
-    expect(band.body).toBe(en.blog.cta_body);
-    expect(band.micro).toBe(en.blog.cta_micro);
+  it("speaks to agents with the approved set B", () => {
+    expect(band.eyebrow).toBe("For agents in Costa Rica");
+    expect(band.title).toBe("Send listings, not screenshots.");
+    expect(band.body).toBe(
+      "Every published listing gets its own page with photos, price, location and your profile. You send it as a link. The free plan holds up to 10 published listings at a time."
+    );
+    expect(band.micro).toBe("No credit card. The free plan does not expire.");
   });
 
-  it("keeps today's label and target, so it never renders an empty button", () => {
-    expect(band.label).toBe(PORTAL_LIVE ? en.nav.cta : en.nav.cta_prelaunch);
-    expect(band.label).not.toBe("");
-    expect(band.href).toBe(PORTAL_LIVE ? primaryHref() : notifyHref("en"));
+  it("sends the agent to the portal's sign in, like the Spanish band, and never to the notify form", () => {
+    expect(band.label).toBe("Sign in or create your account");
+    expect(band.href).toBe(BLOG_AGENT_HREF);
+    expect(band.href).not.toContain("#avisame");
   });
 });
 

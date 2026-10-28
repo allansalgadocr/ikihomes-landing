@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllSlugs, getPost, listPosts } from "@/lib/blog";
+import { getAllSlugs, getPost, listPosts, modifiedDate } from "@/lib/blog";
 import {
   categoryLabel,
   formatDate,
@@ -46,7 +46,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      modifiedTime: post.date,
+      modifiedTime: modifiedDate(post),
       authors: [post.author],
       section: "Real Estate",
       tags: post.keywords,
@@ -92,7 +92,7 @@ function BlogPostingJsonLd({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: modifiedDate(post),
     wordCount,
     timeRequired: `PT${readingTime}M`,
     author: {

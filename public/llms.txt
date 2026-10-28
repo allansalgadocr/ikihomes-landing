@@ -8,12 +8,15 @@
 ## For buyers and renters
 - Search properties for sale and for rent in all seven provinces. Searching is free.
 - Contact the listing agent by WhatsApp, message or visit request.
-- "Encontrar mi hogar" (Find my home): describe what you are looking for and agents reply with options.
+- "Buscá por mí" (Find my home): describe what you are looking for and agents reply with options.
 - Buyer data is not sold; the buyer chooses when and with whom to talk.
 
 ## For real estate agents
-- A free account publishes listings and a public agent profile.
-- Realtor Pro adds replying to buyer requests, lead management, private listing sharing and analytics.
+- Free plan: US$0, a public agent profile, up to 10 published listings at a time and unlimited drafts.
+- Realtor Pro: US$49 per month. Online purchase is not open yet; today Realtor Pro is activated by writing to soporte@ikihomescr.com.
+- Buyer requests ("Buscá por mí"): only Realtor Pro agents can respond, and only the first three valid responses per request are accepted.
+- [For agents](https://www.ikihomescr.com/es/para-agentes)
+- [Where to publish properties in Costa Rica, guide in Spanish](https://www.ikihomescr.com/es/blog/donde-publicar-propiedades-costa-rica)
 - Agent portal: https://app.ikihomescr.com
 
 ## Main pages

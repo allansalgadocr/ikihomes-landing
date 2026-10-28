@@ -239,7 +239,7 @@ export default async function RootLayout(
         {isEs ? (
           <BuyerStickyCta dict={dict.buyer.sticky} />
         ) : (
-          <StickyCta label={dict.nav.cta} labelPrelaunch={dict.nav.cta_prelaunch} />
+          <StickyCta label={dict.nav.cta} />
         )}
       </body>
     </html>

@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { usePathname, useRouter } from "next/navigation";
-import { PORTAL_LIVE, primaryHref, notifyHref } from "@/lib/portal";
+import { primaryHref } from "@/lib/portal";
 
 interface NavBarProps {
   dict: {
     product: string; owners: string; pricing: string; faq: string;
-    login: string; cta: string; cta_prelaunch: string;
+    login: string; cta: string;
   };
 }
 
@@ -60,17 +60,12 @@ export function NavBar({ dict }: NavBarProps) {
         <div className="hdr-right">
           <LanguageSwitch />
 
-          {PORTAL_LIVE && (
-            <a className="link-quiet" href={primaryHref("/login")}>
-              {dict.login}
-            </a>
-          )}
+          <a className="link-quiet" href={primaryHref("/login")}>
+            {dict.login}
+          </a>
 
-          <a
-            className="btn btn-primary btn-sm"
-            href={PORTAL_LIVE ? primaryHref() : notifyHref(lang)}
-          >
-            {PORTAL_LIVE ? dict.cta : dict.cta_prelaunch}
+          <a className="btn btn-primary btn-sm" href={primaryHref()}>
+            {dict.cta}
           </a>
         </div>
       </div>

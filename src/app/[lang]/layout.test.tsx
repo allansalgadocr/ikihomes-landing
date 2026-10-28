@@ -60,11 +60,11 @@ describe("the Spanish pages", () => {
     expect(head).toContain(`<script>${PHASE_SCRIPT}</script>`);
   });
 
-  it("carry the buyer header and footer, with the agent door to the portal", async () => {
+  it("carry the buyer header and footer, with the header door to the portal and the footer door to the agent page", async () => {
     vi.setSystemTime(BEFORE);
     const markup = await renderSite("es");
     expect(markup).toContain('<a class="hdr-door" href="https://app.ikihomescr.com/login">Soy agente</a>');
-    expect(markup).toContain('<a href="https://app.ikihomescr.com/login">Para agentes</a>');
+    expect(markup).toContain('<a href="https://www.ikihomescr.com/es/para-agentes">Para agentes</a>');
     expect(markup).not.toContain("Anotarme en la lista");
   });
 
