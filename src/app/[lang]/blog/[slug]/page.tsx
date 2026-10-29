@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getAllSlugs, getPost, listPosts } from "@/lib/blog";
+import { notFound, permanentRedirect } from "next/navigation";
+import { getAllSlugs, getPost, listPosts, modifiedDate, postLanguages } from "@/lib/blog";
 import {
   categoryLabel,
   formatDate,
@@ -22,6 +22,18 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
+/**
+ * hreflang for the languages the post exists in only; a single-language post
+ * (the guide, so far) declares no twin that would answer 404. x-default is the
+ * Spanish page when there is one.
+ */
+function languageAlternates(slug: string): Record<string, string> {
+  const languages: Record<string, string> = {};
+  for (const l of postLanguages(slug)) languages[l] = `/${l}/blog/${slug}`;
+  languages["x-default"] = languages.es ?? languages.en;
+  return languages;
+}
+
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const { lang, slug } = await props.params;
   const post = getPost(slug, lang);
@@ -35,18 +47,14 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     keywords: post.keywords,
     alternates: {
       canonical: `/${lang}/blog/${slug}`,
-      languages: {
-        en: `/en/blog/${slug}`,
-        es: `/es/blog/${slug}`,
-        "x-default": `/es/blog/${slug}`,
-      },
+      languages: languageAlternates(slug),
     },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      modifiedTime: post.date,
+      modifiedTime: modifiedDate(post),
       authors: [post.author],
       section: "Real Estate",
       tags: post.keywords,
@@ -92,7 +100,7 @@ function BlogPostingJsonLd({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: modifiedDate(post),
     wordCount,
     timeRequired: `PT${readingTime}M`,
     author: {
@@ -160,7 +168,13 @@ function BlogPostingJsonLd({
 export default async function BlogPostPage(props: PageProps) {
   const { lang, slug } = await props.params;
   const post = getPost(slug, lang);
-  if (!post) notFound();
+  if (!post) {
+    // The header language switch swaps the lang segment; a post that exists
+    // only in the other language is served there instead of a 404.
+    const other = postLanguages(slug).find((l) => l !== lang);
+    if (other) permanentRedirect(`/${other}/blog/${slug}`);
+    notFound();
+  }
 
   const dict = await getDictionary(lang as "en" | "es");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

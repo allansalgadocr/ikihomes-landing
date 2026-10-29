@@ -4,6 +4,7 @@ description: "Key strategies that differentiate successful agents in Costa Rica:
 keywords: ["real estate agent Costa Rica", "how to get real estate clients", "real estate leads Costa Rica", "stand out as an agent"]
 date: "2026-03-28"
 author: "IkiHomes"
+updated: "2026-10-28"
 image: "/blog-stand-out-agent.png"
 lang: "en"
 ---
@@ -72,4 +73,6 @@ Platforms like IkiHomes are being built specifically to carry those signals with
 
 If you take your reputation, your speed, and your zone knowledge seriously, those tools work in your favor.
 
-2026 isn't the year for generic lead generators. It's the year for specialized, responsive, credible agents. [Early access is open](https://ikihomescr.com/en).
+2026 isn't the year for generic lead generators. It's the year for specialized, responsive, credible agents.
+
+IkiHomes is open to agents. If you want your listings shown with a visible price, a map location and a complete property page, [see how it works for agents](https://www.ikihomescr.com/es/para-agentes) (the page is in Spanish) and create your free account.

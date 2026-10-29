@@ -1,17 +1,20 @@
-import { AGENT_PAGE_URL, PORTAL_LIVE, notifyHref, primaryHref } from "./portal";
+import { AGENT_PAGE_URL, AGENT_PRODUCT_PAGE_URL } from "./portal";
 
-/** The agent door at the end of the Spanish blog, tagged so the portal can count blog clicks. */
-export const BLOG_AGENT_HREF = `${AGENT_PAGE_URL}?utm_source=blog&utm_medium=cta_band`;
+const BLOG_UTM = "?utm_source=blog&utm_medium=cta_band";
+
+/** The Spanish band's door: the portal's sign in, tagged so the portal can count blog clicks. */
+export const BLOG_AGENT_HREF = `${AGENT_PAGE_URL}${BLOG_UTM}`;
+
+/** The English band's door: the public agent page on www, tagged the same way. */
+export const BLOG_AGENT_PAGE_HREF = `${AGENT_PRODUCT_PAGE_URL}${BLOG_UTM}`;
 
 interface BlogBandDict {
-  nav: { cta: string; cta_prelaunch: string };
-  notify: { eyebrow: string };
   blog: {
+    cta_eyebrow: string;
     cta_title: string;
     cta_body: string;
+    cta_label: string;
     cta_micro: string;
-    cta_eyebrow?: string;
-    cta_label?: string;
   };
 }
 
@@ -26,26 +29,14 @@ export interface BlogBand {
 }
 
 /**
- * The closing band of the blog index and of every article.
- *
- * Spanish speaks to agents and sends them to the portal: the Spanish home is
- * the buyer page now, so neither its notify form nor its eyebrow belongs here.
- * English keeps today's band exactly, with its label and target taken from the
- * nav, because en.json has no band label or eyebrow of its own.
+ * The closing band of the blog index and of every article. It speaks to agents
+ * in both languages. The Spanish band sends them to the portal's sign in; the
+ * English band sends them to the public agent page (Spanish only, and its label
+ * says so), decided by the founder on 2026-10-28. The English band used to fall
+ * back to the prelaunch notify form, which no longer exists.
  */
 export function blogBand(lang: string, dict: BlogBandDict): BlogBand {
-  const { cta_title: title, cta_body: body, cta_micro: micro, cta_eyebrow, cta_label } = dict.blog;
-
-  if (lang === "es" && cta_eyebrow && cta_label) {
-    return { eyebrow: cta_eyebrow, title, body, label: cta_label, href: BLOG_AGENT_HREF, micro };
-  }
-
-  return {
-    eyebrow: dict.notify.eyebrow,
-    title,
-    body,
-    label: PORTAL_LIVE ? dict.nav.cta : dict.nav.cta_prelaunch,
-    href: PORTAL_LIVE ? primaryHref() : notifyHref(lang),
-    micro,
-  };
+  const { cta_eyebrow: eyebrow, cta_title: title, cta_body: body, cta_label: label, cta_micro: micro } = dict.blog;
+  const href = lang === "en" ? BLOG_AGENT_PAGE_HREF : BLOG_AGENT_HREF;
+  return { eyebrow, title, body, label, href, micro };
 }

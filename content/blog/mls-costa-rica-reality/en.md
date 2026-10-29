@@ -4,6 +4,7 @@ description: "Costa Rica has MLS systems, but none are mandatory or cover the wh
 keywords: ["MLS Costa Rica", "real estate agent Costa Rica", "real estate platform Costa Rica", "real estate leads"]
 date: "2026-04-03"
 author: "IkiHomes"
+updated: "2026-10-28"
 image: "/blog-mls-costa-rica-reality.png"
 lang: "en"
 ---
@@ -54,6 +55,6 @@ What changes is what you can show a buyer on the first call. Instead of forwardi
 
 The forward-thinking agents in Costa Rica are paying attention to this shift. They're watching how technology reorganizes industries. They're thinking about how to differentiate themselves in a crowded market. And they're asking the right question: what tools make me more efficient *now*, before everyone adopts them?
 
-IkiHomes is building a platform for exactly this problem. It doesn't compete with the existing MLS systems. It fills in what's missing: a place to publish a property with a visible price, a real map location, and a complete data sheet, without rebuilding the information every time someone asks. The free plan covers up to 10 published listings plus unlimited drafts.
+IkiHomes is a platform built for exactly this problem. It doesn't compete with the existing MLS systems. It fills in what's missing: a place to publish a property with a visible price, a real map location, and a complete data sheet, without rebuilding the information every time someone asks. The free plan covers up to 10 published listings plus unlimited drafts.
 
-[Early access is open](https://ikihomescr.com/en).
+IkiHomes is open to agents. If you want your listings shown with a visible price, a map location and a complete property page, [see how it works for agents](https://www.ikihomescr.com/es/para-agentes) (the page is in Spanish) and create your free account.

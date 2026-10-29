@@ -8,6 +8,12 @@ export interface BlogPostMeta {
   description: string;
   keywords: string[];
   date: string;
+  /**
+   * The day the text last changed, set in the frontmatter only when an article
+   * is edited after publication. `date` stays the publication day; this one
+   * feeds dateModified, og:modified_time and the sitemap's lastmod.
+   */
+  updated?: string;
   author: string;
   image?: string;
   lang: string;
@@ -38,6 +44,14 @@ export function getAllSlugs(): string[] {
     .map((d) => d.name);
 }
 
+export const BLOG_LANGS = ["en", "es"] as const;
+export type BlogLang = (typeof BLOG_LANGS)[number];
+
+/** The languages a post exists in, by file presence, without reading the file. */
+export function postLanguages(slug: string): BlogLang[] {
+  return BLOG_LANGS.filter((lang) => fs.existsSync(getPostFile(slug, lang)));
+}
+
 export function getPost(slug: string, lang: string): BlogPost | null {
   const filePath = getPostFile(slug, lang);
   if (!fs.existsSync(filePath)) return null;
@@ -51,12 +65,18 @@ export function getPost(slug: string, lang: string): BlogPost | null {
     description: data.description ?? "",
     keywords: data.keywords ?? [],
     date: data.date ?? "",
+    updated: data.updated,
     author: data.author ?? "IkiHomes",
     image: data.image,
     lang: data.lang ?? lang,
     category: data.category,
     content,
   };
+}
+
+/** The date a post was last modified: its `updated` day, or its publication day when never edited. */
+export function modifiedDate(post: Pick<BlogPostMeta, "date" | "updated">): string {
+  return post.updated ?? post.date;
 }
 
 export function listPosts(lang: string): BlogPostMeta[] {

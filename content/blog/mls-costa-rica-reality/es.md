@@ -4,6 +4,7 @@ description: "Costa Rica tiene sistemas MLS, pero ninguno es obligatorio ni cubr
 keywords: ["MLS Costa Rica", "agente inmobiliario Costa Rica", "plataforma inmobiliaria Costa Rica", "leads inmobiliarios"]
 date: "2026-04-03"
 author: "IkiHomes"
+updated: "2026-10-28"
 image: "/blog-mls-costa-rica-reality.png"
 lang: "es"
 ---
@@ -52,6 +53,6 @@ No se trata de reemplazar tus redes personales. Se trata de amplificarlas: sumar
 
 Los agentes que están leyendo bien el mercado ya se hacen la pregunta correcta: qué herramientas me hacen más eficiente ahora, antes de que todos las adopten.
 
-IkiHomes está construyendo una plataforma para exactamente este problema. No compite con los MLS existentes: complementa lo que falta. Publicás una propiedad con precio visible, ubicación en el mapa y ficha completa, sin rearmar la información cada vez que alguien pregunta. El plan gratis incluye hasta 10 propiedades publicadas y borradores ilimitados.
+IkiHomes es una plataforma pensada para exactamente este problema. No compite con los MLS existentes: complementa lo que falta. Publicás una propiedad con precio visible, ubicación en el mapa y ficha completa, sin rearmar la información cada vez que alguien pregunta. El plan gratis incluye hasta 10 propiedades publicadas y borradores ilimitados.
 
-[Sumate al acceso temprano](https://ikihomescr.com/es).
+IkiHomes ya está abierto para agentes. Si querés que tu inventario se vea con precio visible, ubicación en el mapa y ficha completa, [mirá cómo funciona para agentes](https://www.ikihomescr.com/es/para-agentes) y creá tu cuenta gratis.

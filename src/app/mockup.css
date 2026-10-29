@@ -565,6 +565,11 @@ html{scroll-behavior:smooth}
 .prose a:hover{color:var(--brand-hover)}
 .prose img{border-radius:var(--r-card); margin-block:1.8em}
 .prose hr{border:0; border-top:1px solid var(--line); margin-block:2.4em}
+/* GFM tables (the comparison in the guide): the box scrolls sideways on a phone. */
+.prose .table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-block:1.8em}
+.prose table{border-collapse:collapse; width:100%; min-width:760px; font-size:15px; line-height:1.5}
+.prose th,.prose td{padding:10px 12px; border:1px solid var(--line); vertical-align:top; text-align:left}
+.prose th{color:var(--ink); font-weight:700; background:var(--surface)}
 
 /* Pull quote — seafoam rule, Urbanist 800, breaks slightly past the measure. */
 .pullquote{

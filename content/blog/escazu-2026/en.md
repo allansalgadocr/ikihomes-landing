@@ -4,6 +4,7 @@ description: "Analysis of the Escazú 2026 real estate market. Price trends, gro
 keywords: ["Escazú real estate market", "Costa Rica real estate 2026", "Escazú property agent", "buy house Escazú"]
 date: "2026-04-01"
 author: "IkiHomes"
+updated: "2026-10-28"
 image: "/blog-escazu-2026.png"
 lang: "en"
 ---
@@ -60,4 +61,4 @@ The real estate market in Escazú is mature but not saturated, growing but contr
 
 If you're serious about capturing meaningful market share in one of Costa Rica's most competitive segments, now is when you specialize in Escazú. Learn every neighborhood, every project, every price point. Build relationships with international buyers. Position yourself as the expert for the zone, because that's what the demand is looking for.
 
-IkiHomes is opening early access in Escazú. If you want a platform where your inventory is presented with a visible price, a real map location, and a complete data sheet, [join from the start](https://ikihomescr.com/en).
+IkiHomes is open to agents. If you want your listings shown with a visible price, a map location and a complete property page, [see how it works for agents](https://www.ikihomescr.com/es/para-agentes) (the page is in Spanish) and create your free account.

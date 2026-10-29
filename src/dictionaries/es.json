@@ -281,6 +281,7 @@
             "compradores-internacionales-2026": "Compradores",
             "mls-costa-rica-reality": "Mercado",
             "stand-out-agent": "Práctica",
+            "donde-publicar-propiedades-costa-rica": "Guía",
             "_default": "Mercado"
         }
     },
@@ -436,18 +437,14 @@
             "privacy_link_label": "Política de privacidad"
         },
         "nav": {
-            "links_pre": ["Qué cambia", "Buscá por mí", "Preguntas"],
             "links_open": ["Buscá por mí", "Encontrar un agente", "Preguntas"],
             "agent_door": "Soy agente",
-            "cta_pre": "Avisame cuando abra",
             "cta_open": "Buscar propiedades"
         },
         "sticky": {
-            "label_pre": "Avisame cuando abra",
             "label_open": "Buscar propiedades"
         },
         "footer": {
-            "links_pre": ["Qué cambia", "Buscá por mí", "Preguntas"],
             "links_open": ["Buscar propiedades", "Buscá por mí", "Encontrar un agente"],
             "agent_door": "Para agentes"
         },

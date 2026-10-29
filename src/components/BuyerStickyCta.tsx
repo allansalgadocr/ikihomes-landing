@@ -5,11 +5,10 @@ import { usePathname } from "next/navigation";
 import { BUYER_SITE } from "@/lib/portal";
 
 /**
- * The mobile action bar of the Spanish home, carrying the action of each
- * phase. It steps aside while the notify form or the closing band is on
- * screen, because both already hold the same action.
+ * The mobile action bar of the Spanish home. It steps aside while the closing
+ * band is on screen, because the band already holds the same action.
  */
-export function BuyerStickyCta({ dict }: { dict: { label_pre: string; label_open: string } }) {
+export function BuyerStickyCta({ dict }: { dict: { label_open: string } }) {
   const pathname = usePathname();
   const isHome = pathname === "/es" || pathname === "/es/";
   const [away, setAway] = useState(false);
@@ -35,8 +34,7 @@ export function BuyerStickyCta({ dict }: { dict: { label_pre: string; label_open
 
   return (
     <div className={away ? "sticky is-away" : "sticky"}>
-      <a className="btn btn-primary" data-when="pre" href="#aviso">{dict.label_pre}</a>
-      <a className="btn btn-primary" data-when="open" href={BUYER_SITE.search}>{dict.label_open}</a>
+      <a className="btn btn-primary" href={BUYER_SITE.search}>{dict.label_open}</a>
     </div>
   );
 }
