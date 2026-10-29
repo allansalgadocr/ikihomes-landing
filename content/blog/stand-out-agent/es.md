@@ -4,7 +4,7 @@ description: "Estrategias clave para diferenciarte como agente inmobiliario en C
 keywords: ["agente inmobiliario Costa Rica", "cómo conseguir clientes inmobiliarios", "leads inmobiliarios Costa Rica", "diferenciarse como agente"]
 date: "2026-03-28"
 author: "IkiHomes"
-updated: "2026-10-28"
+updated: "2026-10-29"
 image: "/blog-stand-out-agent.png"
 lang: "es"
 ---
@@ -19,7 +19,7 @@ Hablemos con honestidad. La mayoría de agentes en Costa Rica no tienen un probl
 
 Una persona te escribe preguntando por una propiedad. Respondés al día siguiente. Desaparece. Esperás una semana y le mandás un mensaje. No contesta. Meses después descubrís que compró con otro agente porque ese otro agente devolvió la llamada más rápido.
 
-Los números lo confirman: los inmuebles en Costa Rica tardan entre 360 y 420 días en venderse en promedio. Eso no es un error del mercado. Es un síntoma de que los leads se pierden en el camino. Y casi siempre la razón es la velocidad de seguimiento y la consistencia.
+Los inmuebles en Costa Rica suelen tardar meses en venderse, y a veces más de un año. Eso no es solo el mercado. Es un síntoma de que los leads se pierden en el camino. Y casi siempre la razón es la velocidad de seguimiento y la consistencia.
 
 ## La velocidad de respuesta es tu arma más importante
 
@@ -39,7 +39,7 @@ Un agente con verdadera expertise en su zona no manda listas genéricas. Llama a
 
 ## Transparencia en precios: negociá mejor construyendo credibilidad
 
-Los compradores saben que van a negociar. Esperan negociar. En Costa Rica es normal que haya un descuento de 5 a 12% sobre el precio inicial. No es sorpresa, es protocolo.
+Los compradores saben que van a negociar. Esperan negociar. En Costa Rica es normal que haya una rebaja sobre el precio inicial. No es sorpresa, es protocolo.
 
 Pero aquí está la diferencia: los agentes que construyen más confianza son los que explican el mercado desde el inicio. "Esta propiedad está en este rango porque..." "En esta zona, los compradores típicamente negocian esto, y aquí está por qué." "Las últimas tres ventas en esta cuadra cerraron a este precio."
 
@@ -67,7 +67,7 @@ Cuarto, construí relaciones en tu zona. Con otros agentes (sí, hasta con compe
 
 ## Lo que está cambiando en la industria
 
-Plataformas como IkiHomes se están construyendo precisamente para esto: para que agentes como vos muestren esas señales sin depender de un chat. Fichas completas con precio visible y ubicación en el mapa. Presencia ordenada en tu zona. Tiempos de respuesta que se notan.
+Plataformas como IkiHomes existen precisamente para esto: para que agentes como vos muestren esas señales sin depender de un chat. Fichas completas con precio visible y ubicación en el mapa. Presencia ordenada en tu zona. Tiempos de respuesta que se notan.
 
 Si te tomás en serio tu reputación, tu velocidad y tu conocimiento de zona, esas herramientas trabajan a tu favor.
 
